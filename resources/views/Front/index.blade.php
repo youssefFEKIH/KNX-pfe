@@ -13,6 +13,7 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//imagehover.min.css">
   <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//style.css">
   <link rel="shortcut icon" href="{{ asset('Front/img')}}/course01.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//style.css">
 
 </head>
 
