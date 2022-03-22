@@ -670,6 +670,14 @@ Footer
 .footer .form-control:focus{
     box-shadow: none;
 }
+.map{
+    border-radius: 8px;
+    max-width: 50%;
+    height: auto;
+}
+.map:hover{
+    transform: scale(1.5);
+}
 /***********************************
 ************************************
 Responsive media queries

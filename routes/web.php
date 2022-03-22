@@ -13,3 +13,5 @@
 |
 */
 Route :: get('/','App\Http\Controllers\front\homepageController@index');
+Route :: get('/cours',function()  { return view ('Front.cours'); }) ;
+

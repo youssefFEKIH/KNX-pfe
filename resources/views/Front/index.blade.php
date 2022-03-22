@@ -27,7 +27,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">KNX<span> Training</span></a>
+        <a class="navbar-brand" href="/">KNX<span> Training</span></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
@@ -324,8 +324,8 @@
             </figcaption>
             <a href="#"></a>
           </figure>
-          <button name="submit" type="submit" class="btn btn-block btn-submit">
-            Consulter touts les cours  <i class="fa fa-arrow-right"></i></button>
+          <a href="/cours"> <button   name="submit" type="submit" class="btn btn-block btn-submit">
+            Consulter touts les cours  <i class="fa fa-arrow-right"></i></button></a>
         </div>
       </div>
     </div>
@@ -482,7 +482,7 @@
     <div class="container">
       <div class="row">
         <div class="header-section text-center">
-          <h2>Contact Us</h2>
+          <h2>Nous contacter</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
           <hr class="bottom-line">
         </div>
@@ -525,41 +525,18 @@
   <footer id="footer" class="footer">
     <div class="container text-center">
 
-      <h3>Start Your Free Trial Now!</h3>
-
-      <form class="mc-trial row">
-        <div class="form-group col-md-3 col-md-offset-2 col-sm-4">
-          <div class=" controls">
-            <input name="name" placeholder="Enter Your Name" class="form-control" type="text">
-          </div>
-        </div>
-        <!-- End email input -->
-        <div class="form-group col-md-3 col-sm-4">
-          <div class=" controls">
-            <input name="EMAIL" placeholder="Enter Your email" class="form-control" type="email">
-          </div>
-        </div>
-        <!-- End email input -->
-        <div class="col-md-2 col-sm-4">
-          <p>
-            <button name="submit" type="submit" class="btn btn-block btn-submit">
-            Submit <i class="fa fa-arrow-right"></i></button>
-          </p>
-        </div>
-      </form>
+      <h3>Centre de formation accrédité par KNX Association pour l’organisation des formations KNX </h3>
+      <a href="https://www.google.com/maps/place/Rue+de+Rakkada,+Sfax/@34.7445164,10.7602546,19z/data=!4m13!1m7!3m6!1s0x1301d2d0b8847da9:0xa97f427d4ee77845!2sCit%C3%A9+Jardin,+Sfax!3b1!8m2!3d34.7488433!4d10.7626385!3m4!1s0x1301d2d135b34641:0x9564a3e57a2e79f4!8m2!3d34.7444391!4d10.76059" target="_blanc"><p>Rue de Rakkada,Cité Zitouna Imm65 App4 , Sfax, Tunisia</p></a> 
+      <a href="https://www.google.com/maps/place/Rue+de+Rakkada,+Sfax/@34.7445164,10.7602546,19z/data=!4m13!1m7!3m6!1s0x1301d2d0b8847da9:0xa97f427d4ee77845!2sCit%C3%A9+Jardin,+Sfax!3b1!8m2!3d34.7488433!4d10.7626385!3m4!1s0x1301d2d135b34641:0x9564a3e57a2e79f4!8m2!3d34.7444391!4d10.76059" target="_blanc" ><img src="{{ asset('Front/img')}}/map.png" class="map"></img></a>
       <!-- End newsletter-form -->
       <ul class="social-links">
-        <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
-        <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
-        <li><a href="#link"><i class="fa fa-google-plus fa-fw"></i></a></li>
-        <li><a href="#link"><i class="fa fa-dribbble fa-fw"></i></a></li>
-        <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
+        <li><a href="#link"><img src="{{ asset('Front/img')}}/link.png" class="fa fa-linkedin fa-fw"></img></a></li>
+        <li><a href="#link"><img src="{{ asset('Front/img')}}/insta.png" class="fa fa-facebook fa-fw"></img></a></li>
+        <li><a href="#link"><img src="{{ asset('Front/img')}}/FB.png" class="fa fa-twitter fa-fw"></img></a></li>
+        <li><a href="#link"><img src="{{ asset('Front/img')}}/ph.png" class="fa fa-linkedin fa-fw"></img></a></li>
       </ul>
-      ©2016 Mentor Theme. All rights reserved
-      <div class="credits">
-
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
-      </div>
+      ©{{date("Y")}} Mirage Group. All rights reserved
+      
     </div>
   </footer>
   <!--/ Footer-->
