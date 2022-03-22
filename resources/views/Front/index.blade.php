@@ -96,7 +96,7 @@
     <!--Modal box-->
     <div class="modal fade" id="inscrire" role="dialog">
       <div class="modal-dialog modal-sm">
-  
+
         <!-- Modal content no 1-->
         <div class="modal-content">
           <div class="modal-header">
@@ -104,7 +104,7 @@
             <h4 class="modal-title text-center form-title">S'inscrire</h4>
           </div>
           <div class="modal-body padtrbl">
-  
+
             <div class="login-box-body">
               <p class="login-box-msg">Enregistrer un nouveau compte</p>
               <div class="form-group">
@@ -138,9 +138,9 @@
                     <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span>
                     <!---Alredy exists  ! -->
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    
+
                   </div>
-                 
+
                     <div class="col-xs-12">
                       <button type="button" class="btn btn-green btn-block btn-flat" onclick="userlogin()">S'inscrire</button>
                     </div>
@@ -151,7 +151,7 @@
             </div>
           </div>
         </div>
-  
+
       </div>
     </div>
     <!--/ Modal box-->
@@ -167,7 +167,7 @@
             <div class="intro-para text-center quote">
               <p class="big-text">Apprendre aujourd'hui. . . Diriger demain.</p>
               <p class="small-text">Centre de formation accrédité par KNX Association pour l’organisation <br> des formations KNX .</p>
-              <a href="#footer" class="btn get-quote">S 'INCRIRE</a>
+              <a href="#" class="btn get-quote" data-target="#inscrire" data-toggle="modal">S 'INCRIRE</a>
             </div>
             <a href="#featureX" class="mouse-hover">
               <div class="mouse"></div>
@@ -472,10 +472,10 @@
         </div>
       </div>
     </div>
-  
+
   </section>
 
- 
+
 
   <!--Contact-->
   <section id="contact" class="section-padding">
@@ -557,7 +557,7 @@
       </ul>
       ©2016 Mentor Theme. All rights reserved
       <div class="credits">
-        
+
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
       </div>
     </div>
