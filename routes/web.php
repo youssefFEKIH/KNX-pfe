@@ -12,6 +12,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route :: get('/','App\Http\Controllers\front\homepageController@index');
-Route :: get('/cours',function()  { return view ('Front.cours'); }) ;
-
+Route :: get('/','App\Http\Controllers\front\homepageController@index')->name('pagedaccueil');
+Route :: get('/home',function()  { return view ('Front.index'); })->name('home') ;
+Route :: get('/cours',function()  { return view ('Front.cours'); })->name('cours') ;
+Route :: get('/projets',function()  { return view ('Front.projets'); })->name('projets') ;

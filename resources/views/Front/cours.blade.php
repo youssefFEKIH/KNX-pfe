@@ -27,14 +27,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">KNX<span> Training</span></a>
+        <a class="navbar-brand" href="{{ route('home') }}">KNX<span> Training</span></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/#featureX">Mirage Group</a></li>
-          <li><a href="/#courses">Cours</a></li>
-          <li><a href="/#faculity-member">Projet de Fin d'Études</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a href="{{ route('home') }}/#featureX">Mirage Group</a></li>
+          <li><a href="{{ route('home') }}/#courses">Cours</a></li>
+          <li><a href="{{ route('home') }}/#faculity-member">Projet de Fin d'Études</a></li>
+          <li><a href="{{ route('home') }}/#contact">Contact</a></li>
           <li><a href="/#" data-target="#login" data-toggle="modal">Connexion</a></li>
           <li class="btn-trial"><a href="/#" data-target="#inscrire" data-toggle="modal">S'inscrire</a></li>
          </ul>
@@ -229,12 +229,69 @@
             <a href="#"></a>
           </figure>
         </div>
+  <!--un cours-->
+  <div class="col-md-4 col-sm-6 padleft-right">
+          <figure class="imghvr-fold-up">
+            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
+            <figcaption>
+              <h3>Course Name</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
+            </figcaption>
+            <a href="#"></a>
+          </figure>
+        </div>
+   <!--fin d'un cours-->     
+
       </div>
     </div>
   </section>
   <!--/ Cours-->
 
 
-  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Footer-->
+<footer id="footer" class="footer">
+    <div class="container text-center">
+    <h3>Centre de formation accrédité par KNX Association pour l’organisation des formations KNX </h3>
+      <a href="https://www.google.com/maps/place/Rue+de+Rakkada,+Sfax/@34.7445164,10.7602546,19z/data=!4m13!1m7!3m6!1s0x1301d2d0b8847da9:0xa97f427d4ee77845!2sCit%C3%A9+Jardin,+Sfax!3b1!8m2!3d34.7488433!4d10.7626385!3m4!1s0x1301d2d135b34641:0x9564a3e57a2e79f4!8m2!3d34.7444391!4d10.76059" target="_blanc"><p>Rue de Rakkada,Cité Zitouna Imm65 App4 , Sfax, Tunisia</p></a> 
+      <a href="https://www.google.com/maps/place/Rue+de+Rakkada,+Sfax/@34.7445164,10.7602546,19z/data=!4m13!1m7!3m6!1s0x1301d2d0b8847da9:0xa97f427d4ee77845!2sCit%C3%A9+Jardin,+Sfax!3b1!8m2!3d34.7488433!4d10.7626385!3m4!1s0x1301d2d135b34641:0x9564a3e57a2e79f4!8m2!3d34.7444391!4d10.76059" target="_blanc" ><img src="{{ asset('Front/img')}}/map.png" class="map"></img></a>
+      
+      <!-- End newsletter-form -->
+      <ul class="social-links">
+        <li><a href="#link"><img src="{{ asset('Front/img')}}/link.png" class="fa fa-linkedin fa-fw"></img></a></li>
+        <li><a href="#link"><img src="{{ asset('Front/img')}}/insta.png" class="fa fa-facebook fa-fw"></img></a></li>
+        <li><a href="https://www.facebook.com/miragegroupknxtraining"><img src="{{ asset('Front/img')}}/FB.png" class="fa fa-twitter fa-fw"></img></a></li>
+        <li><a href="#link"><img src="{{ asset('Front/img')}}/ph.png" class="fa fa-linkedin fa-fw"></img></a></li>
+      </ul>
+      
+      ©{{date("Y")}} Mirage Group. All rights reserved
+      
+    </div>
+  </footer>
+  <!--/ Footer-->
+
+  <script src="{{ asset('Front/js')}}/jquery.min.js"></script>
+  <script src="{{ asset('Front/js')}}/jquery.easing.min.js"></script>
+  <script src="{{ asset('Front/js')}}/bootstrap.min.js"></script>
+  <script src="{{ asset('Front/js')}}/custom.js"></script>
+  <script src="{{ asset('Front/contactform')}}/contactform.js"></script>
+
+</body>
 
 </html>
+
+
