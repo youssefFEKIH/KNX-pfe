@@ -8,7 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class choix extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'choix'
-    ];
 }

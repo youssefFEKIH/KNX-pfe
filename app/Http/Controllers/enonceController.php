@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\enonce;
 use Illuminate\Http\Request;
-use App\Models\Enonce;
 
 class EnonceController extends Controller
 {
@@ -14,8 +14,17 @@ class EnonceController extends Controller
      */
     public function index()
     {
-        $enonce = Enonce::all()->toArray();
-       return array_reverse($enonce);
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -26,50 +35,51 @@ class EnonceController extends Controller
      */
     public function store(Request $request)
     {
-        $enonce = new Enonce([
-            'enonce' => $request->input('enonce'),
-            
-            ]);
-            $enonce->save();
-            return response()->json('Enonce créé !');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\enonce  $enonce
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(enonce $enonce)
     {
-        $enonce = Enonce::find($id);
-         return response()->json($enonce);
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\enonce  $enonce
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(enonce $enonce)
+    {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\enonce  $enonce
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, enonce $enonce)
     {
-        $enonce = Enonce::find($id);
-       $enonce->update($request->all());
-        return response()->json('Enonce MAJ !'); 
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\enonce  $enonce
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(enonce $enonce)
     {
-        $enonce = Enonce::find($id);
-      $enonce->delete();
-       return response()->json('Enonce supprimé !');
+        //
     }
 }

@@ -13,9 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('_enonce', function (Blueprint $table) {
-            $table->id();
-            $table->string('enonce');
+        Schema::create('cours', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nom');
+            $table->string('url_image');
+            $table->string('description');
+
+            $table->foreign('formateur_id')->on('formateurs');
+            $table->unsignedBigInteger('formateur_id');
             $table->timestamps();
         });
     }
@@ -27,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_enonce');
+        Schema::dropIfExists('cours');
     }
 };

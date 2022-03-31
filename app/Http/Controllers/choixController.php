@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\choix;
 use Illuminate\Http\Request;
-use App\Models\Choix;
 
-class choixController extends Controller
+class ChoixController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,17 @@ class choixController extends Controller
      */
     public function index()
     {
-        $choix = Choix::all()->toArray();
-       return array_reverse($choix);
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -26,50 +35,51 @@ class choixController extends Controller
      */
     public function store(Request $request)
     {
-        $choix = new Choix([
-            'choix' => $request->input('choix'),
-            
-            ]);
-            $choix->save();
-            return response()->json('Choix créé !');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\choix  $choix
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(choix $choix)
     {
-        $choix = Choix::find($id);
-         return response()->json($choix);
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\choix  $choix
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(choix $choix)
+    {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\choix  $choix
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, choix $choix)
     {
-        $choix = Choix::find($id);
-       $choix->update($request->all());
-        return response()->json('Choix MAJ !'); 
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\choix  $choix
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(choix $choix)
     {
-        $choix = Choix::find($id);
-      $choix->delete();
-       return response()->json('Choix supprimé !');
+        //
     }
 }

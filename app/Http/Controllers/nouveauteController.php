@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\nouveaute;
 use Illuminate\Http\Request;
-use App\Models\Nouveaute;
-class nouveauteController extends Controller
+
+class NouveauteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,17 @@ class nouveauteController extends Controller
      */
     public function index()
     {
-        $nouveaute = Nouveaute::all()->toArray();
-        return array_reverse($nouveaute);
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -25,49 +35,51 @@ class nouveauteController extends Controller
      */
     public function store(Request $request)
     {
-        $nouveaute = new nouveaute([
-            
-            ]);
-            $nouveaute->save();
-            return response()->json('Nouveaute créé !');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\nouveaute  $nouveaute
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(nouveaute $nouveaute)
     {
-        $nouveaute = Nouveaute::find($id);
-         return response()->json($nouveaute);
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\nouveaute  $nouveaute
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(nouveaute $nouveaute)
+    {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\nouveaute  $nouveaute
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, nouveaute $nouveaute)
     {
-        $nouveaute = Nouveaute::find($id);
-$nouveaute->update($request->all());
-return response()->json('Nouveaute MAJ !');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\nouveaute  $nouveaute
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(nouveaute $nouveaute)
     {
-        $nouveaute = Nouveaute::find($id);
-    $nouveaute->delete();
-     return response()->json('Nouveaute supprimé !');
+        //
     }
 }

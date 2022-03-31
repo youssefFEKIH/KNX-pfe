@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\reponse;
 use Illuminate\Http\Request;
-use App\Models\Reponse;
-class reponseController extends Controller
+
+class ReponseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,17 @@ class reponseController extends Controller
      */
     public function index()
     {
-        $reponse = Reponse::all()->toArray();
-        return array_reverse($reponse);
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -25,50 +35,51 @@ class reponseController extends Controller
      */
     public function store(Request $request)
     {
-        $reponse = new Reponse([
-            'reponse' => $request->input('reponse'),
-            
-            ]);
-            $reponse->save();
-            return response()->json('Reponse créé !');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\reponse  $reponse
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(reponse $reponse)
     {
-        $reponse = Reponse::find($id);
-         return response()->json($reponse);
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\reponse  $reponse
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(reponse $reponse)
+    {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\reponse  $reponse
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, reponse $reponse)
     {
-        $reponse = Reponse::find($id);
-$reponse->update($request->all());
-return response()->json('Reponse MAJ !');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\reponse  $reponse
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(reponse $reponse)
     {
-        $reponse = Reponse::find($id);
-    $reponse->delete();
-     return response()->json('Reponse supprimé !');
+        //
     }
 }

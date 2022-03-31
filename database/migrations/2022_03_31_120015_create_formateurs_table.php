@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('_test', function (Blueprint $table) {
-            $table->id();
+        Schema::create('formateurs', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('nom');
-            $table->float('note');
+            $table->string('prenom');
+            $table->string('tel');
+            $table->string('mail');
+            $table->string('mot_de_passe');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_test');
+        Schema::dropIfExists('formateurs');
     }
 };

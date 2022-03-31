@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\test;
 use Illuminate\Http\Request;
-use App\Models\Test;
 
-class testController extends Controller
+class TestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,17 @@ class testController extends Controller
      */
     public function index()
     {
-        $test = Test::all()->toArray();
-        return array_reverse($test);
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -26,51 +35,51 @@ class testController extends Controller
      */
     public function store(Request $request)
     {
-        $test = new Test([
-            'nom' => $request->input('nom'),
-            'note' => $request->input('note'),
-            
-            ]);
-            $test->save();
-            return response()->json('test créé !');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\test  $test
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(test $test)
     {
-        $test = Test::find($id);
-         return response()->json($test);
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\test  $test
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(test $test)
+    {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\test  $test
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, test $test)
     {
-        $test = Test::find($id);
-$test->update($request->all());
-return response()->json('Test MAJ !');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\test  $test
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(test $test)
     {
-        $test = Test::find($id);
-    $test->delete();
-     return response()->json('Test supprimé !');
+        //
     }
 }

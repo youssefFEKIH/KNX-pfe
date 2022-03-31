@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('choix', function (Blueprint $table) {
-            $table->id();
-            $table->string('choix');
+        Schema::create('quizzes', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('quiz');
+
+            $table->foreign('chapitre_id')->on('chapitres');
+            $table->unsignedBigInteger('chapitre_id');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('choix');
+        Schema::dropIfExists('quizzes');
     }
 };

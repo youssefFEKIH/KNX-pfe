@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('chapitre', function (Blueprint $table) {
-            $table->id();
+        Schema::create('media', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('nom');
+            $table->string('adresse');
+
+            $table->foreign('chapitre_id')->on('chapitres');
+            $table->unsignedBigInteger('chapitre_id');
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chapitre');
+        Schema::dropIfExists('media');
     }
 };

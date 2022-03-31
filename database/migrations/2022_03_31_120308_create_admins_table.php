@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('media', function (Blueprint $table) {
-            $table->id();
+        Schema::create('admins', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('nom');
-            $table->string('adresse');
+            $table->string('prenom');
+            $table->string('tel');
+            $table->string('mail');
+            $table->string('mot_de_passe');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('media');
+        Schema::dropIfExists('admins');
     }
 };

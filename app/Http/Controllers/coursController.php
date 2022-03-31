@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cours;
 use Illuminate\Http\Request;
-use App\Models\Cours;
 
-class coursController extends Controller
+class CoursController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,17 @@ class coursController extends Controller
      */
     public function index()
     {
-        $cours = Cours::all()->toArray();
-       return array_reverse($cours);
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -26,53 +35,51 @@ class coursController extends Controller
      */
     public function store(Request $request)
     {
-        $cours = new Cours([
-            'nom' => $request->input('nom'),
-            
-            ]);
-            $cours->save();
-            return response()->json('Cours créé !');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\cours  $cours
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(cours $cours)
     {
-        $cours = Cours::find($id);
-         return response()->json($cours);
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\cours  $cours
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(cours $cours)
+    {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\cours  $cours
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, cours $cours)
     {
-        $cours = Cours::find($id);
-       $cours->update($request->all());
-        return response()->json('Cours MAJ !'); 
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\cours  $cours
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(cours $cours)
     {
-        $cours = Cours::find($id);
-      $cours->delete();
-       return response()->json('Cours supprimé !');
+        //
     }
 }
-
-
-    

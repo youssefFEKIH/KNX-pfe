@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+
 return new class extends Migration
 {
     /**
@@ -12,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cours', function (Blueprint $table) {
-            $table->id();
-            $table->string('nom');
+        Schema::create('questions', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('question');
+            $table->foreign('question_id')->on('questions');
+            $table->unsignedBigInteger('question_id');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cours');
+        Schema::dropIfExists('questions');
     }
 };

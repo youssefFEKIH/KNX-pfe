@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\quiz;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 
-class QuizController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class QuizController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\quiz  $quiz
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(quiz $quiz)
+    public function show(Admin $admin)
     {
         //
     }
@@ -52,10 +52,10 @@ class QuizController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\quiz  $quiz
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(quiz $quiz)
+    public function edit(Admin $admin)
     {
         //
     }
@@ -64,10 +64,10 @@ class QuizController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\quiz  $quiz
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, quiz $quiz)
+    public function update(Request $request, Admin $admin)
     {
         //
     }
@@ -75,10 +75,10 @@ class QuizController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\quiz  $quiz
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(quiz $quiz)
+    public function destroy(Admin $admin)
     {
         //
     }

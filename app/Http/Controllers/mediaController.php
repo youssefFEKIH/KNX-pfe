@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\media;
 use Illuminate\Http\Request;
-use App\Models\Media;
-class mediaController extends Controller
+
+class MediaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,17 @@ class mediaController extends Controller
      */
     public function index()
     {
-        $media = Media::all()->toArray();
-        return array_reverse($media);
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -25,51 +35,51 @@ class mediaController extends Controller
      */
     public function store(Request $request)
     {
-        $media = new Media([
-            'nom' => $request->input('nom'),
-            'adresse' => $request->input('adresse'),
-            
-            ]);
-            $media->save();
-            return response()->json('Media créé !');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\media  $media
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(media $media)
     {
-        $media = Media::find($id);
-         return response()->json($media);
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\media  $media
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(media $media)
+    {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\media  $media
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, media $media)
     {
-        $media = Media::find($id);
-$media->update($request->all());
-return response()->json('Media MAJ !');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\media  $media
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(media $media)
     {
-        $media = Media::find($id);
-    $media->delete();
-     return response()->json('Media supprimé !');
+        //
     }
 }

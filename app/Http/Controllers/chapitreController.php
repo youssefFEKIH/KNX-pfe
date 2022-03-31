@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\chapitre;
 use Illuminate\Http\Request;
-use App\Models\Chapitre;
 
-class chapitreController extends Controller
+class ChapitreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,17 @@ class chapitreController extends Controller
      */
     public function index()
     {
-        $chapitre = Chapitre::all()->toArray();
-        return array_reverse($chapitre);
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -26,50 +35,51 @@ class chapitreController extends Controller
      */
     public function store(Request $request)
     {
-        $chapitre = new Chapitre([
-            'nom' => $request->input('nom'),
-            
-            ]);
-            $chapitre->save();
-            return response()->json('Chapitre créé !');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\chapitre  $chapitre
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(chapitre $chapitre)
     {
-        $chapitre = Chapitre::find($id);
-        return response()->json($chapitre);
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\chapitre  $chapitre
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(chapitre $chapitre)
+    {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\chapitre  $chapitre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, chapitre $chapitre)
     {
-        $chapitre = Chapitre::find($id);
-        $chapitre->update($request->all());
-        return response()->json('Chapitre MAJ !');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\chapitre  $chapitre
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(chapitre $chapitre)
     {
-        $chapitre = Chapitre::find($id);
-        $chapitre->delete();
-          return response()->json('Chapitre supprimé !');
+        //
     }
 }

@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('_nouveaute', function (Blueprint $table) {
-            $table->id();
+        Schema::create('enonces', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('enonce');
+
+            $table->foreign('quiz_id')->on('quizzes');
+            $table->unsignedBigInteger('quiz_id');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_nouveaute');
+        Schema::dropIfExists('enonces');
     }
 };
