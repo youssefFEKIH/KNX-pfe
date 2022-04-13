@@ -74,7 +74,7 @@
                 <li><a href="KNX-France-KNX.html" title="KNX">KNX</a></li>
                 <li><a href="KNX-France-logiciels.html" title="Outils/logiciels">Logiciels</a></li>
                 <li><a href="KNX-France-documentation.html" title="Documentation">Documentation</a></li>
-                <li><a href="{{ route('knxtunisie-com') }}" title="Communauté">Communauté</a></li>
+                <li><a href="#" title="Communauté">Communauté</a></li>
                 <li><a href="KNX-France-formation.html" title="Formation">Formation</a></li>
                 <li><a href="KNX-France-actus.html" title="News">Actus</a></li>
                 <li><a href="KNX-France-e-newsletter.html" title="News">Newsletter</a></li>
