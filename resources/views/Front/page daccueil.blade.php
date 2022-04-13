@@ -25,7 +25,7 @@
       <div class="row">
         <div class="header-section text-center">
           <h2>Bienvenu Au Mirage GROUP</h2>
-         
+
           <hr class="bottom-line">
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
@@ -39,11 +39,11 @@
               <p class="pm-staff-profile-name">Mirage Group <br> "KNX Training"</p>
               <p class="pm-staff-profile-bio">Centre de formation accrédité par KNX Association pour l’organisation des formations KNX.</p>
               <a href="{{ route('home') }}"> <button   name="submit" type="submit" class="btn btn-block btn-submit">
-            Consulter  <i class="fa fa-arrow-right"></i></button></a>          
+            Consulter  <i class="fa fa-arrow-right"></i></button></a>
             </div>
           </div>
         </div>
-        
+
         <!--un projet-->
         <div class="col-lg-4 col-md-4 col-sm-4">
           <div class="pm-staff-profile-container">
@@ -55,8 +55,8 @@
             <div class="pm-staff-profile-details text-center">
               <p class="pm-staff-profile-name">KNX NATIONAL <br> Tunisie </p>
               <p class="pm-staff-profile-bio">KNX : le standard mondial pour la gestion technique des bâtiments résidentiels et tertiaires.</p>
-              <a href="#"> <button   name="submit" type="submit" class="btn btn-block btn-submit">
-            Consulter  <i class="fa fa-arrow-right"></i></button></a>          
+              <a href="{{ route('knxtunisie') }}"> <button   name="submit" type="submit" class="btn btn-block btn-submit">
+            Consulter  <i class="fa fa-arrow-right"></i></button></a>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@
               <p class="pm-staff-profile-name">KNX Tunisie <br> "Trainers"</p>
               <p class="pm-staff-profile-bio">Les formateurs accrédités <br> KNX en Tunisie <br>et leurs nouveautés</p>
               <a href="#"> <button   name="submit" type="submit" class="btn btn-block btn-submit">
-            Consulter  <i class="fa fa-arrow-right"></i></button></a>          
+            Consulter  <i class="fa fa-arrow-right"></i></button></a>
             </div>
           </div>
         </div>
@@ -82,11 +82,11 @@
 
       </div>
     </div>
-    
+
 
   </section>
 
-  
+
   <script src="{{ asset('Front/js')}}/jquery.min.js"></script>
   <script src="{{ asset('Front/js')}}/jquery.easing.min.js"></script>
   <script src="{{ asset('Front/js')}}/bootstrap.min.js"></script>
