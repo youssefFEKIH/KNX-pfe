@@ -109,7 +109,8 @@
             <div class="login-box-body">
               <p class="login-box-msg">Enregistrer un nouveau compte</p>
               <div class="form-group">
-                <form name="" id="loginForm">
+                <form action="" method="POST" name="" id="loginForm">
+                  @csrf 
                   <div class="form-group has-feedback">
                     <!----- username -------------->
                     <input class="form-control" placeholder="Nom d'utilisateur" id="loginid" type="text" autocomplete="off" />
@@ -143,7 +144,7 @@
                   </div>
 
                     <div class="col-xs-12">
-                      <button type="button" class="btn btn-green btn-block btn-flat" onclick="userlogin()">S'inscrire</button>
+                      <button type="submit" class="btn btn-green btn-block btn-flat" >S'inscrire</button>
                     </div>
                     <p class="link-bottom"> Êtes vous membre?  <a href="#" data-target="#login" data-dismiss="modal" data-toggle="modal">Connexion</a></p>
                   </div>

@@ -19,3 +19,5 @@ Route::get('/projets', function () {return view('Front.projets');})->name('proje
 Route::get('/knxtunisiecom', function () {return view('Front.KnxTunisie.knxtunisiecom');})->name('knxtunisiecom');
 Route::get('/knxtunisieacceuil', function () {return view('Front.KnxTunisie.knxtunisieacceuil');})->name('knxtunisieacceuil');
 Route::get('/knx', function () {return view('Front.KnxTunisie.knx');})->name('knx');
+
+Route::post('/home', function () [ContactsController::class, 'store']))->name('home');
