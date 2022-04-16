@@ -24,5 +24,9 @@ Route::get('/knx', function () {return view('Front.KnxTunisie.knx');})->name('kn
 Route::post('/home', [MembreController::class,'store'])->name('home');
 Route::post('/cours', [MembreController::class,'store'])->name('cours');
 Route::post('/projets', [MembreController::class,'store'])->name('projets');
+Route::post('/inscriptionget', [MembreController::class,'store'])->name('inscription');
+
+
+Route::get('/inscriptionget', function () {return view('Front.inscription');})->name('inscriptionget');
 
 

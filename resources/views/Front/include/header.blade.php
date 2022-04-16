@@ -118,26 +118,14 @@
                   <div class="form-group has-feedback">
                     <!----- Email -------------->
                       <input type="email" class="form-control" name="mail" id="email" placeholder="Email" autocomplete="off" required/>
-                    <!---Alredy exists  ! -->
-                    @if($errors->has('mail'))
-                    <h6 style="color: red; ">Veuillez remplir ce champ</h6>
-                    @endif
-                  </div>
+                      </div>
                   <div class="form-group has-feedback">
                     <!----- password -------------->
                     <input class="form-control" placeholder="mot de passe" name="mot_de_passe" id="loginpsw" type="password" autocomplete="off" required/>
-                    <!---Alredy exists  ! -->
-                    @if($errors->has('mot_de_passe'))
-                    <h6 style="color: red; ">Veuillez remplir ce champ</h6>
-                    @endif
                   </div>
                   <div class="form-group has-feedback">
                     <!----- Repat password -------------->
                     <input class="form-control" placeholder="Repeter votre mot de passe" name="mot_de_passe_2" id="loginpsw" type="password" autocomplete="off" required />
-                   <!---Alredy exists  ! -->
-                    @if($errors->has('mot_de_passe_2'))
-                    <h6 style="color: red; ">Veuillez remplir ce champ</h6>
-                    @endif
                     </div>
 
                     <div class="col-xs-12">
@@ -274,26 +262,14 @@
                   <div class="form-group has-feedback">
                     <!----- Email -------------->
                       <input type="email" class="form-control" name="mail" id="email" placeholder="Email"  required/>
-                    <!---Alredy exists  ! -->
-                    @if($errors->has('mail'))
-                    <h6 style="color: red; ">Veuillez remplir ce champ</h6>
-                    @endif
                   </div>
                   <div class="form-group has-feedback">
                     <!----- password -------------->
                     <input class="form-control" placeholder="mot de passe" name="mot_de_passe" id="loginpsw" type="password" autocomplete="off" required/>
-                    <!---Alredy exists  ! -->
-                    @if($errors->has('mot_de_passe'))
-                    <h6 style="color: red; ">Veuillez remplir ce champ</h6>
-                    @endif
                   </div>
                   <div class="form-group has-feedback">
                     <!----- Repat password -------------->
                     <input class="form-control" placeholder="Repeter votre mot de passe" name="mot_de_passe_2" id="loginpsw" type="password" autocomplete="off" required />
-                   <!---Alredy exists  ! -->
-                    @if($errors->has('mot_de_passe_2'))
-                    <h6 style="color: red; ">Veuillez remplir ce champ</h6>
-                    @endif
                     </div>
 
                     <div class="col-xs-12">

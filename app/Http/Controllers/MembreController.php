@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Validator;
 use App\Models\Membre;
 use Illuminate\Http\Request;
 
@@ -39,19 +39,25 @@ class MembreController extends Controller
     {
 
         
-        $request->validate(
+        $validator = Validator::make($request->all(), 
             [
             'nom'=> 'required',
             'mail'=>'required|email|unique:membres',
             'mot_de_passe'=>'required|min:8',
             'mot_de_passe_2'=>'required|same:mot_de_passe'
            ]);
+           if($validator->fails()){
+            return redirect('inscriptionget')->withErrors($validator)->withInput();
+        }
            $m=new membre();
            $m-> nom=$request->nom;
            $m-> mail=$request->mail;
            $m-> mot_de_passe=$request->mot_de_passe;
-           $m->save();
-
+           if ($m->save()){
+            return view('Front.index');
+           }
+         
+        
     }
 
     /**
