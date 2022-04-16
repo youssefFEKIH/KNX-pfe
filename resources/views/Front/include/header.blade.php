@@ -109,39 +109,36 @@
             <div class="login-box-body">
               <p class="login-box-msg">Enregistrer un nouveau compte</p>
               <div class="form-group">
-                <form action="" method="POST" name="" id="loginForm">
+                <form action="" method="POST"  id="loginForm">
                   @csrf 
                   <div class="form-group has-feedback">
                     <!----- username -------------->
-                    <input class="form-control" placeholder="Nom d'utilisateur" id="loginid" type="text" autocomplete="off" />
-                    <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span>
-                    <!---Alredy exists  ! -->
-                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                  </div>
+                    <input class="form-control" placeholder="Nom d'utilisateur" name="nom" id="loginid" type="text" autocomplete="off" required />
+                    </div>
                   <div class="form-group has-feedback">
                     <!----- Email -------------->
-                      <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
-                      <div class="validation">
-                    </div>
-                    <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span>
+                      <input type="email" class="form-control" name="mail" id="email" placeholder="Email" autocomplete="off" required/>
                     <!---Alredy exists  ! -->
-                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    @if($errors->has('mail'))
+                    <h6 style="color: red; ">Veuillez remplir ce champ</h6>
+                    @endif
                   </div>
                   <div class="form-group has-feedback">
                     <!----- password -------------->
-                    <input class="form-control" placeholder="mot de passe" id="loginpsw" type="password" autocomplete="off" />
-                    <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span>
+                    <input class="form-control" placeholder="mot de passe" name="mot_de_passe" id="loginpsw" type="password" autocomplete="off" required/>
                     <!---Alredy exists  ! -->
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    @if($errors->has('mot_de_passe'))
+                    <h6 style="color: red; ">Veuillez remplir ce champ</h6>
+                    @endif
                   </div>
                   <div class="form-group has-feedback">
                     <!----- Repat password -------------->
-                    <input class="form-control" placeholder="Repeter votre mot de passe" id="loginpsw" type="password" autocomplete="off" />
-                    <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span>
-                    <!---Alredy exists  ! -->
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-
-                  </div>
+                    <input class="form-control" placeholder="Repeter votre mot de passe" name="mot_de_passe_2" id="loginpsw" type="password" autocomplete="off" required />
+                   <!---Alredy exists  ! -->
+                    @if($errors->has('mot_de_passe_2'))
+                    <h6 style="color: red; ">Veuillez remplir ce champ</h6>
+                    @endif
+                    </div>
 
                     <div class="col-xs-12">
                       <button type="submit" class="btn btn-green btn-block btn-flat" >S'inscrire</button>
@@ -253,8 +250,8 @@
     </div>
   </div>
   <!--/ Modal box-->
-    <!--Modal box-->
-    <div class="modal fade" id="inscrire" role="dialog">
+ <!--Modal box-->
+ <div class="modal fade" id="inscrire" role="dialog">
       <div class="modal-dialog modal-sm">
 
         <!-- Modal content no 1-->
@@ -268,41 +265,39 @@
             <div class="login-box-body">
               <p class="login-box-msg">Enregistrer un nouveau compte</p>
               <div class="form-group">
-                <form name="" id="loginForm">
+                <form action="" method="POST"  id="loginForm">
+                  @csrf 
                   <div class="form-group has-feedback">
                     <!----- username -------------->
-                    <input class="form-control" placeholder="Nom d'utilisateur" id="loginid" type="text" autocomplete="off" />
-                    <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span>
-                    <!---Alredy exists  ! -->
-                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                  </div>
+                    <input class="form-control" placeholder="Nom d'utilisateur" name="nom" id="loginid" type="text" autocomplete="off" required />
+                    </div>
                   <div class="form-group has-feedback">
                     <!----- Email -------------->
-                      <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
-                      <div class="validation">
-                    </div>
-                    <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span>
+                      <input type="email" class="form-control" name="mail" id="email" placeholder="Email"  required/>
                     <!---Alredy exists  ! -->
-                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    @if($errors->has('mail'))
+                    <h6 style="color: red; ">Veuillez remplir ce champ</h6>
+                    @endif
                   </div>
                   <div class="form-group has-feedback">
                     <!----- password -------------->
-                    <input class="form-control" placeholder="mot de passe" id="loginpsw" type="password" autocomplete="off" />
-                    <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span>
+                    <input class="form-control" placeholder="mot de passe" name="mot_de_passe" id="loginpsw" type="password" autocomplete="off" required/>
                     <!---Alredy exists  ! -->
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    @if($errors->has('mot_de_passe'))
+                    <h6 style="color: red; ">Veuillez remplir ce champ</h6>
+                    @endif
                   </div>
                   <div class="form-group has-feedback">
                     <!----- Repat password -------------->
-                    <input class="form-control" placeholder="Repeter votre mot de passe" id="loginpsw" type="password" autocomplete="off" />
-                    <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span>
-                    <!---Alredy exists  ! -->
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-
-                  </div>
+                    <input class="form-control" placeholder="Repeter votre mot de passe" name="mot_de_passe_2" id="loginpsw" type="password" autocomplete="off" required />
+                   <!---Alredy exists  ! -->
+                    @if($errors->has('mot_de_passe_2'))
+                    <h6 style="color: red; ">Veuillez remplir ce champ</h6>
+                    @endif
+                    </div>
 
                     <div class="col-xs-12">
-                      <button type="button" class="btn btn-green btn-block btn-flat" onclick="userlogin()">S'inscrire</button>
+                      <button type="submit" class="btn btn-green btn-block btn-flat" >S'inscrire</button>
                     </div>
                     <p class="link-bottom"> Êtes vous membre?  <a href="#" data-target="#login" data-dismiss="modal" data-toggle="modal">Connexion</a></p>
                   </div>
@@ -315,4 +310,9 @@
       </div>
     </div>
     <!--/ Modal box-->
+
+
+
+
+
     @endif
