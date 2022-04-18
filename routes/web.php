@@ -18,12 +18,12 @@ Route::get('/home/connect', function () {return view('Front.index');})->name('ho
 Route::get('/cours', function () {return view('Front.cours');})->name('cours');
 Route::get('/projets', function () {return view('Front.projets');})->name('projets');
 Route::get('/inscriptionget', function () {return view('Front.inscription');})->name('inscriptionget');
+Route::get('/connexion', function () {return view('Front.connexion');})->name('connexion');
+
 Route::post('/home', [MembreController::class,'store'])->name('home');
 Route::post('/cours', [MembreController::class,'store'])->name('cours');
 Route::post('/projets', [MembreController::class,'store'])->name('projets');
 Route::post('/inscriptionget', [MembreController::class,'store'])->name('inscription');
-
-
 Route::post('/home/connect', [MembreController::class,'connect'])->name('homeconnect');
 
 

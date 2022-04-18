@@ -61,6 +61,15 @@ class MembreController extends Controller
         
     }
      public function connect(Request $request){
+        $validator = Validator::make($request->all(), 
+        [
+        'mail'=>'required|email|',
+        'mot_de_passe'=>'required|min:8',
+        
+       ]);
+       if($validator->fails()){
+        return redirect('connexion')->withErrors($validator)->withInput();
+    }
         
         $resultat=auth()->attempt([
             'mail' => request('mail'),
