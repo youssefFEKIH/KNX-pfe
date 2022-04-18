@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Validator;
 use App\Models\Membre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class MembreController extends Controller
 {
@@ -52,13 +53,22 @@ class MembreController extends Controller
            $m=new membre();
            $m-> nom=$request->nom;
            $m-> mail=$request->mail;
-           $m-> mot_de_passe=$request->mot_de_passe;
+           $m-> mot_de_passe=Hash::make($request->mot_de_passe);
            if ($m->save()){
             return view('Front.index');
            }
          
         
     }
+     public function connect(Request $request){
+        
+        $resultat=auth()->attempt([
+            'mail' => request('mail'),
+            'password' => request('mot_de_passe'),
+        ]);
+        var_dump($resultat);
+        
+	}
 
     /**
      * Display the specified resource.
