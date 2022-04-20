@@ -5,21 +5,21 @@
     <meta name="keywords" content="domotique, immotique, knx, konnex, EIB, ETS, ETS3, ETS4, gestion du bâtiment, technique, GTB, automatisme, GTC ">
 
     <!-- titres des pages -->
-    <title>KNX Tunisie - Communauté</title><!-- Fin Titres des pages -->
+    <title>KNX Tunisie - Accueil</title><!-- Fin Titres des pages -->
 
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <link href="Front2/style/style.css" rel="stylesheet" type="text/css">
+    <link href="Front3/style/style.css" rel="stylesheet" type="text/css">
 
     <!-- Gallerie Photos Newsletters -->
-    <link href="Front2/style/gallerie.css" rel="stylesheet" type="text/css">
+    <link href="Front3/style/gallerie.css" rel="stylesheet" type="text/css">
     <!-- Fin Gallerie Photos Newsletters -->
 
     <!-- Slideshows -->
-    <link rel="stylesheet" href="Front2/style/flexslider.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="Front3/style/flexslider.css" type="text/css" media="screen">
     <!-- Slideshows -->
 
     <!-- Menu -->
-    <link type="text/css" rel="stylesheet" href="Front2/style/jquery.mmenu.css">
+    <link type="text/css" rel="stylesheet" href="Front3/style/jquery.mmenu.css">
     <!-- Menu -->
 
     <!-- Script Menu Mobile + Tablette Type Facebook-->
@@ -36,7 +36,7 @@
      <!-- Script Nouveau Slideshow -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> </script>
 
-    <script src="Front2/js/jquery.flexslider-min.js"></script>
+    <script src="Front3/js/jquery.flexslider-min.js"></script>
 
         <!-- Hook up the FlexSlider -->
         <script>
@@ -62,7 +62,7 @@
     <!-- fin script google analytics -->
 
     <!-- Script Menu Mobile + Tablette Type Facebook-->
-    <script src="Front2/js/jquery.mmenu.min.js"></script>
+    <script src="Front3/js/jquery.mmenu.min.js"></script>
     <!-- Fin Script Menu Mobile + Tablette Type Facebook -->
     </head>
 
@@ -70,19 +70,18 @@
 
 
     <body><nav id="menu" class="mm-menu mm-horizontal mm-ismenu mm-offcanvas"><ul class="mm-list mm-panel mm-opened mm-current" id="mm-0">
-                <li><a href="KNX-France-accueil.html" title="Accueil">Accueil</a></li>
-                <li><a href="KNX-France-KNX.html" title="KNX">KNX</a></li>
-                <li><a href="KNX-France-logiciels.html" title="Outils/logiciels">Logiciels</a></li>
-                <li><a href="KNX-France-documentation.html" title="Documentation">Documentation</a></li>
-                <li><a href="KNX-France-communaute.html" title="Communauté">Communauté</a></li>
-
-                <li><a href="KNX-France-formation.html" title="Formation">Formation</a></li>
-                <li><a href="KNX-France-actus.html" title="News">Actus</a></li>
-                <li><a href="KNX-France-e-newsletter.html" title="News">Newsletter</a></li>
-                <li><a href="KNX-France-espace-membre.html" title="Espace Membre">Espace Membre</a></li>
-                <li><a href="KNX-France-espace-presse.html" title="Espace Presse">Presse</a></li>
-                <li><a href="KNX-France-contact.html" title="Contact">Contact</a></li>
-                <li><a href="KNX-France-mentions-legales.html" title="Mentions légales">Mentions Légales</a></li>
+                <li><a href="" title="Accueil">Accueil</a></li>
+                <li><a href="" title="KNX">KNX</a></li>
+                <li><a href="" title="Outils/logiciels">Logiciels</a></li>
+                <li><a href="" title="Documentation">Documentation</a></li>
+                <li><a href="{{ route('knxtunisie-com') }}" title="Communauté">Communauté</a></li>
+                <li><a href="" title="Formation">Formation</a></li>
+                <li><a href="" title="News">Actus</a></li>
+                <li><a href="" title="News">Newsletter</a></li>
+                <li><a href="" title="Espace Membre">Espace Membre</a></li>
+                <li><a href="" title="Espace Presse">Presse</a></li>
+                <li><a href="" title="Contact">Contact</a></li>
+                <li><a href="" title="Mentions légales">Mentions Légales</a></li>
             </ul></nav>
     <!-- Script défilement logos membres-->
     <script>//<![CDATA[
@@ -149,7 +148,7 @@
          //]]></script>
     <!-- Fin Script défilement logos membres-->
     <!-- Script défilement logos membres-->
-    <script src="Front2/js/jMyCarousel.js"></script>
+    <script src="Front3/js/jMyCarousel.js"></script>
     <script>//<![CDATA[
             $(function() {
                 $(".jMyCarousel").jMyCarousel({
@@ -224,11 +223,11 @@
 
                 <div id="menu_big">
                    <ul id="menu_site">
-                      <li><a href="{{ route('knxtunisieacceuil') }}" title="Accueil">Accueil</a></li>
+                      <li><a href="KNX-France-accueil.html" title="Accueil">Accueil</a></li>
                       <li><a href="KNX-France-KNX.html" title="KNX">KNX</a></li>
                       <li><a href="KNX-France-logiciels.html" title="logiciels">Logiciels</a></li>
                       <li><a href="KNX-France-documentation.html" title="Documentation">Documentation</a></li>
-                      <li><a href="{{ route('knxtunisiecom') }}" title="Communauté">Communauté</a></li>
+                      <li><a href="{{ route('knxtunisie-com') }}" title="Communauté">Communauté</a></li>
                       <li><a href="KNX-France-formation.html" title="Formations">Formations</a></li>
                       <li><a href="KNX-France-actus.html" title="Actus">Actus</a></li>
                       <li><a href="KNX-France-contact.html" title="Contact">Contact</a></li>
@@ -259,9 +258,9 @@
 
                     <li style="width: 100%; float: left; margin-right: -100%; display: none;">
                     <a href="https://bit.ly/2Z1TD7q" title="Lire Le KNX Journal 2021" target="_blank">
-                        <img src="Front2/images/Bandeau_KNX_Journal_2021_mobile.jpg" alt="header_mob">
-                        <img src="Front2/images/Bandeau_KNX_Journal_2021_tab.jpg" alt="header_tab">
-                        <img src="Front2/images/Bandeau_KNX_Journal_2021_site.jpg" alt="header_site">
+                        <img src="http://www.knx.fr/images/Bandeau_KNX_Journal_2021_mobile" alt="header_mob">
+                        <img src="http://www.knx.fr/images/Bandeau_KNX_Journal_2021_tab.jpg" alt="header_tab">
+                        <img src="http://www.knx.fr/images/Bandeau_KNX_Journal_2021_site.jpg" alt="header_site">
                     </a>
                     </li>
                     <!--
@@ -273,33 +272,34 @@
                     </a>
                     </li>
                     -->
-                    <li style="width: 100%; float: left; margin-right: -100%; display: none;"> <a href="http://knx.fr/news/Formation_2021/" title="Former en KNX pour développer le marché du Smart Building" target="_blank">
-                        <img src="Front2/images/header_mobile_img38.jpg" alt="header_mob">
-                        <img src="Front2/images/bandeau_formation_2021_tab.jpg" alt="header_tab">
-                        <img src="Front2/images/bandeau_formation_2021.jpg" alt="header_site">
+                    <li style="width: 100%; float: left; margin-right: -100%; display: list-item;"> <a href="http://knx.fr/news/Formation_2021/" title="Former en KNX pour développer le marché du Smart Building" target="_blank">
+                        <img src="http://www.knx.fr/images/header_mobile_img38.jpg" alt="header_mob">
+                        <img src="http://www.knx.fr/images/bandeau_formation_2021_tab.jpg" alt="header_tab">
+
+                        <img src="http://www.knx.fr/images/bandeau_formation_2021.jpg" alt="header_site">
                    </a> </li>
 
                     <li style="width: 100%; float: left; margin-right: -100%; display: none;">
                     <a href="http://www.knx.fr/KNX-France-ets6.html" title="Logiciel ETS6 : Intelligent, sécurisé et ouvert" target="_blank">
-                        <img src="Front2/images/Bandeau_ETS6_mobile.jpg" alt="header_mob">
-                        <img src="Front2/images/Bandeau_ETS6_tab.jpg" alt="header_tab">
-                        <img src="Front2/images/Bandeau_ETS6_site.jpg" alt="header_site">
+                        <img src="http://www.knx.fr/images/Bandeau_ETS6_mobile.jpg" alt="header_mob">
+                        <img src="http://www.knx.fr/images/Bandeau_ETS6_tab.jpg" alt="header_tab">
+                        <img src="http://www.knx.fr/images/Bandeau_ETS6_site.jpg" alt="header_site">
                         </a>
                     </li>
 
                     <li style="width: 100%; float: left; margin-right: -100%; display: none;"><a href="https://bit.ly/2Z1TD7q" title="Lire Le KNX Journal 2021" target="_blank">
-                        <img src="Front2/images/Bandeau_KNX_Journal_2021_mobile2.jpg" alt="header_mob">
-                        <img src="Front2/images/Bandeau_KNX_Journal_2021_tab2.jpg" alt="header_tab">
-                        <img src="Front2/images/Bandeau_KNX_Journal_2021_site2.jpg" alt="header_site">
+                        <img src="http://www.knx.fr/images/Bandeau_KNX_Journal_2021_mobile2.jpg" alt="header_mob">
+                        <img src="http://www.knx.fr/images/Bandeau_KNX_Journal_2021_tab2.jpg" alt="header_tab">
+                        <img src="http://www.knx.fr/images/Bandeau_KNX_Journal_2021_site2.jpg" alt="header_site">
                         </a> </li>
 
-                    <li style="width: 100%; float: left; margin-right: -100%; display: list-item;">
-                        <img src="Front2/images/header_mobile_img41.jpg" alt="header_mob">
-                        <img src="Front2/images/header_tab_img41.jpg" alt="header_tab">
-                        <img src="Front2/images/header_site_img41.jpg" alt="header_site">
+                    <li style="width: 100%; float: left; margin-right: -100%; display: none;">
+                        <img src="http://www.knx.fr/images/header_mobile_img41.jpg" alt="header_mob">
+                        <img src="http://www.knx.fr/images/header_tab_img41.jpg" alt="header_tab">
+                        <img src="http://www.knx.fr/images/header_site_img41.jpg" alt="header_site">
                     </li>
                     </ul>
-                <ol class="flex-control-nav"><li><a class="">1</a></li><li><a class="">2</a></li><li><a class="">3</a></li><li><a class="">4</a></li><li><a class="active">5</a></li></ol><ul class="flex-direction-nav"><li><a class="prev" href="#">Previous</a></li><li><a class="next" href="#">Next</a></li></ul></div>
+                <ol class="flex-control-nav"><li><a class="">1</a></li><li><a class="active">2</a></li><li><a class="">3</a></li><li><a class="">4</a></li><li><a class="">5</a></li></ol><ul class="flex-direction-nav"><li><a class="prev" href="#">Previous</a></li><li><a class="next" href="#">Next</a></li></ul></div>
              </div>
 
             </div>
@@ -314,99 +314,73 @@
             <!--  Contenu gauche   -->
             <div id="contenu_gauche">
 
-        <p class="fil-ariane"><a href="KNX-France-accueil.html" title="Accueil">&gt; Accueil</a> &gt; Communauté</p>
+
+    <h1>Accueil</h1>
 
 
-
-    <h1>Communauté KNX :</h1>
-
-        <a href="KNX-France-membres.html" title="Membres KNX France" style="text-decoration:none;"><div class="accueil-bloc">
-
-
-            <img src="Front2/images/membres.jpg" alt="accueil">
-            <h4>Membres de KNX France</h4>
-            <p>Découvrez les membres de l'association KNX France.</p>
-
-        </div></a>
+        <div class="accueil-bloc">
+            <a href="KNX-France-quest-ce-que-knx.html" style="text-decoration:none;" title="Qu'est-ce-que KNX ?"><img src="Front3/images/knx.jpg" alt="accueil"></a>
+            <a href="KNX-France-quest-ce-que-knx.html" style="text-decoration:none;" title="Qu'est-ce-que KNX ?"><h4 class="titre_bloc">Qu'est-ce-que KNX ?</h4></a>
+            <p class="texte_bloc">
+            <a href="KNX-France-quest-ce-que-knx.html" style="text-decoration:none;" title="Qu'est-ce-que KNX ?">KNX propose un standard de compatibilité et d'interopérabilité unique dans les secteurs de la domotique et de la gestion technique du bâtiment... <img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a></p>
+        </div>
 
 
 
 
-
-        <a href="KNX-France-devenir-membre.html" title="Devenir membre" style="text-decoration:none;"><div class="accueil-bloc">
-
-
-            <img src="Front2/images/rejoignez-nous.jpg" alt="accueil">
-            <h4>Devenir membre</h4>
-            <p>Pas encore membre de KNX ? Rejoignez-nous ! Téléchargez le bulletin d'inscription pour adhérer à KNX France et découvrez tous les avantages à faire partie de la communauté KNX. </p>
-
-        </div></a>
-
-
-
-
-
-
-         <a href="KNX-France-partenaires.html" title="KNX Partners" style="text-decoration:none;"><div class="accueil-bloc">
-
-
-            <img src="Front2/images/partner.jpg" alt="accueil">
-            <h4>KNX Partners</h4>
-            <p>Retrouvez la liste complète des KNX Partners français.</p>
-
-        </div></a>
+         <div class="accueil-bloc">
+             <a href="KNX-France-logiciels.html" style="text-decoration:none;" title="Les Outils ETS"><img src="Front3/images/ets.jpg" alt="accueil"></a>
+             <a href="KNX-France-logiciels.html" style="text-decoration:none;" title="Les Outils ETS"><h4 class="titre_bloc">Les Outils ETS</h4></a>
+             <p class="texte_bloc">
+             Des questions  sur les outils KNX ?
+             Obtenez des réponses en contactant KNX Association.<br>
+             <span style=" color:#1e65a3;">Tel : +32 27 75 86 59<br>
+        email : <a href="mailto:info@knx.org" title="Envoyer un email">info@knx.org</a></span><br>
+        <a href="KNX-France-logiciels.html" style="text-decoration:none;color:#1760b4;" title="Les Outils ETS">Voir tous les outils ETS <img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a></p>
+          </div>
 
 
 
 
-
-        <a href="http://knx.fr/College_Integrateurs/" title="Collège Intégrateurs KNX France" target="_blank" style="text-decoration:none;"><div class="accueil-bloc">
-
-
-            <img src="Front2/images/college_integrateurs.jpg" alt="accueil">
-            <h4>Collège KNX Intégrateurs</h4>
-            <p>Un groupe actif de professionnels KNX qualifiés</p>
-
-        </div></a>
+        <div class="accueil-bloc">
+            <a href="KNX-France-brochures.html" style="text-decoration:none;" title="Nouvelles Documentations"><img src="Front3/images/document.jpg" alt="accueil"></a>
+            <a href="KNX-France-brochures.html" style="text-decoration:none;" title="Nouvelles Documentations"><h4 class="titre_bloc">Nouvelles Documentations</h4></a>
+            <p class="texte_bloc">
+            <a href="KNX-France-brochures.html" style="text-decoration:none;" title="Nouvelles Documentations">KNX propose un grand nombre de documentations sur tous les aspects de sa technologie. Découvrez tous les avantages de cette technologie ouverte et innovante...<img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a>
+            </p>
+        </div>
 
 
 
-
-
-
-        <a href="KNX-France-userclub.html" title="KNX Userclub France" style="text-decoration:none;"><div class="accueil-bloc">
-
-
-            <img src="Front2/images/userclub2.jpg" alt="accueil">
-            <h4>KNX Userclub France</h4>
-            <p>La plateforme d'échange et d'entraide entre professionnels KNX qualifiés.</p>
-
-        </div></a>
+        <div class="accueil-bloc">
+            <a href="KNX-France-centres-formation.html" style="text-decoration:none;" title="Centres de Formation"><img src="Front3/images/formation.jpg" alt="accueil"></a>
+            <a href="KNX-France-centres-formation.html" style="text-decoration:none;" title="Centres de Formation"><h4>Formations</h4></a>
+            <p class="texte_bloc">
+            <a href="KNX-France-centres-formation.html" style="text-decoration:none;" title="Centres de Formation">La technologie KNX vous intéresse ? Faites partie de la communauté KNX en vous formant à différents niveaux dans l'un des nombreux centres de formation en France...<img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a>
+            </p>
+        </div>
 
 
 
 
-        <a href="KNX-France-partenaires2.html" title="Partenaires KNX France" style="text-decoration:none;"><div class="accueil-bloc">
-
-
-            <img src="Front2/images/partenariat3.jpg" alt="accueil">
-            <h4>Partenaires associés KNX France</h4>
-            <p>Organismes et partenaires associés à KNX France.</p>
-
-        </div></a>
-
+        <div class="accueil-bloc">
+            <a href="KNX-France-communaute.html" style="text-decoration:none;" title="Communauté KNX"><img src="Front3/images/communaute.png" alt="accueil"></a>
+            <a href="KNX-France-communaute.html" style="text-decoration:none;" title="Communauté KNX"><h4>Communauté KNX</h4></a>
+            <p class="texte_bloc">
+            <a href="KNX-France-communaute.html" style="text-decoration:none;" title="Communauté KNX">La communauté KNX est composée de Groupes Nationaux, Membres, Partenaires, Centres de formation, Partenaires scientifiques, UserClub, Laboratoires de tests...<img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a>
+            </p>
+        </div>
 
 
 
 
-         <a href="KNX-France-monde.html" title="KNX Monde" style="text-decoration:none;"><div class="accueil-bloc">
-
-
-            <img src="Front2/images/monde2.jpg" alt="accueil">
-            <h4>KNX dans le monde</h4>
-            <p>KNX est présent un peu partout dans le monde, divisé en plusieurs goupes nationaux autogérés. découvrez l'ensemble des groupes KNX dans le monde.</p>
-
-        </div></a>
+        <div class="accueil-bloc">
+            <a href="KNX-France-realisations.html" style="text-decoration:none;" title="Réalisations en KNX"><img src="Front3/images/realisation.jpg" alt="accueil"></a>
+            <a href="KNX-France-realisations.html" style="text-decoration:none;" title="Réalisations en KNX"><h4>Réalisations en KNX</h4></a>
+            <p class="texte_bloc">
+            <a href="KNX-France-realisations.html" style="text-decoration:none;" title="Réalisations en KNX">KNX, standard de compatibilité et d'interopérabilité unique peut se décliner dans diverses infrastructures. Découvrez les plus belles réalisations Françaises en KNX...<img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a>
+            </p>
+        </div>
 
 
 
