@@ -352,15 +352,15 @@
                 <!-- Réseaux Sociaux -->
                 <h1> Rejoignez-nous</h1>
                 <div id="reseaux_sociaux">
-                    <p><a href="https://www.facebook.com/pages/KNX-France/170508866305467" title="Facebook" target="_blank"><img src="Front2/images/facebook.jpg" alt="Facebook"></a>
-                      <a href="https://twitter.com/KNXFrance" title="Twitter" target="_blank"><img src="Front2/images/twitter.jpg" alt="Twitter"></a>
-                      <a href="https://www.linkedin.com/company/knx-france/" title="LinkedIn" target="_blank"><img src="Front2/images/linkedin.jpg" alt="LinkedIn"></a>
-                      <a href="https://www.instagram.com/knxfrance/?hl=fr" title="Instagram" target="_blank"><img src="Front2/images/instagram.jpg" alt="Instagram"></a>
-                      <a href="http://www.youtube.com/user/KnxFrance" title="YouTube" target="_blank"><img src="Front2/images/youtube.jpg" alt="YouTube"></a> </p> <br></div>
+                    <p><a href="" title="Facebook" target="_blank"><img src="Front2/images/facebook.jpg" alt="Facebook"></a>
+                      <a href="" title="Twitter" target="_blank"><img src="Front2/images/twitter.jpg" alt="Twitter"></a>
+                      <a href="" title="LinkedIn" target="_blank"><img src="Front2/images/linkedin.jpg" alt="LinkedIn"></a>
+                      <a href="" title="Instagram" target="_blank"><img src="Front2/images/instagram.jpg" alt="Instagram"></a>
+                      <a href="" title="YouTube" target="_blank"><img src="Front2/images/youtube.jpg" alt="YouTube"></a> </p> <br></div>
 
 
                 <div><br><br>
-              <p> Retrouvez toute l'actualité de KNX France sur Apple Store et Google Play <a href="http://www.knx.fr/KNX-France-app.html" style="text-decoration:none;color:#1760b4; " title="Accès UserClub France" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a></p></div>
+              <p> Retrouvez toute l'actualité de KNX France sur Les reseaux sociaux<a href="http://www.knx.fr/KNX-France-app.html" style="text-decoration:none;color:#1760b4; " title="Accès UserClub France" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a></p></div>
 
 
 
@@ -473,25 +473,17 @@
                 <div class="footers">
 
                    <h2>Contact Logiciel</h2>
-                   
+
                 <span>
                     Tél. : +32 (0)27 75 86 59<br>
                     email : <a href="mailto:info@knx.org" title="Envoyer un email">info@knx.org</a></span>
                 </div>
 
                 <div class="footers">
-                    <h2>KNX France</h2>
-                    <span>11-17rue de l'Amiral Hamelin<br>
-                    75116 Paris</span><br>
-
-                    <a href="KNX-France-contact.html" title="Contact">Contact</a><br>
-                    <a href="KNX-France-mentions-legales.html" title="Mentions Légales">Mentions Légales</a><br><br>
-
-                    <span>Conception / Réalisation :<br>
-                    INFOCOM INDUSTRIE<br>
-                    <a href="http://www.infocom-industrie.fr" title="Infocom Industrie">www.infocom-industrie.fr</a></span>
+                    <h2>KNX Tunisie</h2>
+                    <span>Adresse:</span>
+                    <a href="https://www.google.com/maps/place/Rue+de+Rakkada,+Sfax/@34.7445164,10.7602546,19z/data=!4m13!1m7!3m6!1s0x1301d2d0b8847da9:0xa97f427d4ee77845!2sCit%C3%A9+Jardin,+Sfax!3b1!8m2!3d34.7488433!4d10.7626385!3m4!1s0x1301d2d135b34641:0x9564a3e57a2e79f4!8m2!3d34.7444391!4d10.76059" target="_blanc"><span>Adresse: Rue de Rakkada,Cité Zitouna Imm65 App4 , Sfax, Tunisia</span></a>
                 </div>
-
 
         <div style="clear:both;"></div>
       </div>
