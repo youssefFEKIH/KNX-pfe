@@ -1,11 +1,11 @@
 <html lang="fr"><head>
-    <link rel="icon" type="image/png" href="Front2/images/logo/domotique-knx.jpg">
+    <link rel="icon" type="image/png" href="Front2/images/logo/knx.png">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="KNX : le standard mondial pour la gestion technique des bâtiments résidentiels et tertiaires">
     <meta name="keywords" content="domotique, immotique, knx, konnex, EIB, ETS, ETS3, ETS4, gestion du bâtiment, technique, GTB, automatisme, GTC ">
 
     <!-- titres des pages -->
-    <title>KNX Tunisie - Communauté</title><!-- Fin Titres des pages -->
+    <title>KNX Tunisie - Actus</title><!-- Fin Titres des pages -->
 
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link href="Front2/style/style.css" rel="stylesheet" type="text/css">
@@ -70,18 +70,18 @@
 
 
     <body><nav id="menu" class="mm-menu mm-horizontal mm-ismenu mm-offcanvas"><ul class="mm-list mm-panel mm-opened mm-current" id="mm-0">
-                <li><a href="KNX-France-accueil.html" title="Accueil">Accueil</a></li>
-                <li><a href="KNX-France-KNX.html" title="KNX">KNX</a></li>
-                <li><a href="KNX-France-logiciels.html" title="Outils/logiciels">Logiciels</a></li>
-                <li><a href="KNX-France-documentation.html" title="Documentation">Documentation</a></li>
-                <li><a href="KNX-France-communaute.html" title="Communauté">Communauté</a></li>
+                <li><a href="{{ route('knxtunisie-acceuil') }}" title="Accueil">Accueil</a></li>
+                <li><a href="{{ route('knx') }}" title="KNX">KNX</a></li>
+                <li><a href="{{ route('knxtunisie-logiciel') }}" title="Outils/logiciels">Logiciels</a></li>
+                <li><a href="{{ route('knxtunisie-doc') }}" title="Documentation">Documentation</a></li>
+                <li><a href="{{ route('knxtunisie-com') }}" title="Communauté">Communauté</a></li>
 
-                <li><a href="KNX-France-formation.html" title="Formation">Formation</a></li>
-                <li><a href="KNX-France-actus.html" title="News">Actus</a></li>
+                <li><a href="{{ route('knxtunisie-formation') }}" title="Formation">Formation</a></li>
+                <li><a href="{{ route('knxtunisie-actus') }}" title="News">Actus</a></li>
                 <li><a href="KNX-France-e-newsletter.html" title="News">Newsletter</a></li>
                 <li><a href="KNX-France-espace-membre.html" title="Espace Membre">Espace Membre</a></li>
                 <li><a href="KNX-France-espace-presse.html" title="Espace Presse">Presse</a></li>
-                <li><a href="KNX-France-contact.html" title="Contact">Contact</a></li>
+                <li><a href="{{ route('knxtunisie-contact') }}" title="Contact">Contact</a></li>
                 <li><a href="KNX-France-mentions-legales.html" title="Mentions légales">Mentions Légales</a></li>
             </ul></nav>
     <!-- Script défilement logos membres-->
@@ -165,8 +165,9 @@
         <!--  header   -->
         <div id="header">
             <div id="logo">
-               <a href="KNX-France-accueil.html" title="Accueil">
-               <img src="Front2/images/logo/knx-tunisie.jpg" alt="logo">
+               <a href="{{ route('knxtunisie-acceuil') }}" title="Accueil">
+               <img src="Front2/images/logo/knx-tunisie.png" alt="logo" height="135px">
+
                 </a>
 
             </div>
@@ -224,14 +225,14 @@
 
                 <div id="menu_big">
                    <ul id="menu_site">
-                      <li><a href="{{ route('knxtunisieacceuil') }}" title="Accueil">Accueil</a></li>
-                      <li><a href="KNX-France-KNX.html" title="KNX">KNX</a></li>
-                      <li><a href="KNX-France-logiciels.html" title="logiciels">Logiciels</a></li>
-                      <li><a href="KNX-France-documentation.html" title="Documentation">Documentation</a></li>
-                      <li><a href="{{ route('knxtunisiecom') }}" title="Communauté">Communauté</a></li>
-                      <li><a href="KNX-France-formation.html" title="Formations">Formations</a></li>
-                      <li><a href="KNX-France-actus.html" title="Actus">Actus</a></li>
-                      <li><a href="KNX-France-contact.html" title="Contact">Contact</a></li>
+                      <li><a href="{{ route('knxtunisie-acceuil') }}" title="Accueil">Accueil</a></li>
+                      <li><a href="{{ route('knx') }}" title="KNX">KNX</a></li>
+                      <li><a href="{{ route('knxtunisie-logiciel') }}" title="Outils/logiciels">Logiciels</a></li>
+                      <li><a href="{{ route('knxtunisie-doc') }}" title="Documentation">Documentation</a></li>
+                      <li><a href="{{ route('knxtunisie-com') }}" title="Communauté">Communauté</a></li>
+                      <li><a href="{{ route('knxtunisie-formation') }}" title="Formation">Formation</a></li>
+                      <li><a href="{{ route('knxtunisie-actus') }}" title="News">Actus</a></li>
+                      <li><a href="{{ route('knxtunisie-contact') }}" title="Contact">Contact</a></li>
 
                   </ul>
                 </div>
@@ -314,101 +315,20 @@
             <!--  Contenu gauche   -->
             <div id="contenu_gauche">
 
-        <p class="fil-ariane"><a href="KNX-France-accueil.html" title="Accueil">&gt; Accueil</a> &gt; Communauté</p>
+        <p class="fil-ariane"><a href="KNX-France-accueil.html" title="Accueil">&gt; Accueil</a> &gt; Actus</p>
 
 
 
-    <h1>Communauté KNX :</h1>
+    <h1>Actus KNX :</h1>
 
         <a href="KNX-France-membres.html" title="Membres KNX France" style="text-decoration:none;"><div class="accueil-bloc">
 
 
             <img src="Front2/images/membres.jpg" alt="accueil">
-            <h4>Membres de KNX France</h4>
-            <p>Découvrez les membres de l'association KNX France.</p>
+            <h4>KNX Tunisie </h4>
+            <p>L'association KNX Tunisie.</p>
 
         </div></a>
-
-
-
-
-
-        <a href="KNX-France-devenir-membre.html" title="Devenir membre" style="text-decoration:none;"><div class="accueil-bloc">
-
-
-            <img src="Front2/images/rejoignez-nous.jpg" alt="accueil">
-            <h4>Devenir membre</h4>
-            <p>Pas encore membre de KNX ? Rejoignez-nous ! Téléchargez le bulletin d'inscription pour adhérer à KNX France et découvrez tous les avantages à faire partie de la communauté KNX. </p>
-
-        </div></a>
-
-
-
-
-
-
-         <a href="KNX-France-partenaires.html" title="KNX Partners" style="text-decoration:none;"><div class="accueil-bloc">
-
-
-            <img src="Front2/images/partner.jpg" alt="accueil">
-            <h4>KNX Partners</h4>
-            <p>Retrouvez la liste complète des KNX Partners français.</p>
-
-        </div></a>
-
-
-
-
-
-        <a href="http://knx.fr/College_Integrateurs/" title="Collège Intégrateurs KNX France" target="_blank" style="text-decoration:none;"><div class="accueil-bloc">
-
-
-            <img src="Front2/images/college_integrateurs.jpg" alt="accueil">
-            <h4>Collège KNX Intégrateurs</h4>
-            <p>Un groupe actif de professionnels KNX qualifiés</p>
-
-        </div></a>
-
-
-
-
-
-
-        <a href="KNX-France-userclub.html" title="KNX Userclub France" style="text-decoration:none;"><div class="accueil-bloc">
-
-
-            <img src="Front2/images/userclub2.jpg" alt="accueil">
-            <h4>KNX Userclub France</h4>
-            <p>La plateforme d'échange et d'entraide entre professionnels KNX qualifiés.</p>
-
-        </div></a>
-
-
-
-
-        <a href="KNX-France-partenaires2.html" title="Partenaires KNX France" style="text-decoration:none;"><div class="accueil-bloc">
-
-
-            <img src="Front2/images/partenariat3.jpg" alt="accueil">
-            <h4>Partenaires associés KNX France</h4>
-            <p>Organismes et partenaires associés à KNX France.</p>
-
-        </div></a>
-
-
-
-
-
-         <a href="KNX-France-monde.html" title="KNX Monde" style="text-decoration:none;"><div class="accueil-bloc">
-
-
-            <img src="Front2/images/monde2.jpg" alt="accueil">
-            <h4>KNX dans le monde</h4>
-            <p>KNX est présent un peu partout dans le monde, divisé en plusieurs goupes nationaux autogérés. découvrez l'ensemble des groupes KNX dans le monde.</p>
-
-        </div></a>
-
-
 
             </div>
             <!--  fin Contenu gauche   -->
@@ -432,15 +352,15 @@
                 <!-- Réseaux Sociaux -->
                 <h1> Rejoignez-nous</h1>
                 <div id="reseaux_sociaux">
-                    <p><a href="https://www.facebook.com/pages/KNX-France/170508866305467" title="Facebook" target="_blank"><img src="Front2/images/facebook.jpg" alt="Facebook"></a>
-                      <a href="https://twitter.com/KNXFrance" title="Twitter" target="_blank"><img src="Front2/images/twitter.jpg" alt="Twitter"></a>
-                      <a href="https://www.linkedin.com/company/knx-france/" title="LinkedIn" target="_blank"><img src="Front2/images/linkedin.jpg" alt="LinkedIn"></a>
-                      <a href="https://www.instagram.com/knxfrance/?hl=fr" title="Instagram" target="_blank"><img src="Front2/images/instagram.jpg" alt="Instagram"></a>
-                      <a href="http://www.youtube.com/user/KnxFrance" title="YouTube" target="_blank"><img src="Front2/images/youtube.jpg" alt="YouTube"></a> </p> <br></div>
+                    <p><a href="" title="Facebook" target="_blank"><img src="Front2/images/facebook.jpg" alt="Facebook"></a>
+                      <a href="" title="Twitter" target="_blank"><img src="Front2/images/twitter.jpg" alt="Twitter"></a>
+                      <a href="" title="LinkedIn" target="_blank"><img src="Front2/images/linkedin.jpg" alt="LinkedIn"></a>
+                      <a href="" title="Instagram" target="_blank"><img src="Front2/images/instagram.jpg" alt="Instagram"></a>
+                      <a href="" title="YouTube" target="_blank"><img src="Front2/images/youtube.jpg" alt="YouTube"></a> </p> <br></div>
 
 
                 <div><br><br>
-              <p> Retrouvez toute l'actualité de KNX France sur Apple Store et Google Play <a href="http://www.knx.fr/KNX-France-app.html" style="text-decoration:none;color:#1760b4; " title="Accès UserClub France" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a></p></div>
+              <p> Retrouvez toute l'actualité de KNX France sur Les reseaux sociaux <a href="http://www.knx.fr/KNX-France-app.html" style="text-decoration:none;color:#1760b4; " title="Accès UserClub France" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a></p></div>
 
 
 
@@ -544,38 +464,26 @@
         <div id="footer">
             <div id="limite_footer_site">
                 <div class="footers">
-                    <h2>Logiciels KNX</h2>
-                    <a href="KNX-France-ets5.html" title="ETS5">ETS Professional</a><br>
-                    <a href="KNX-France-ets-apps.html" title="ETS Apps">ETS Apps</a><br><br>
-
-                    <span>Site de vente en ligne :</span><br>
+                    <h2>Site de vente en ligne</h2>
                     <a href="https://my.knx.org/" title="MyKNX" target="_blank">MyKNX</a><br>
 
 
               </div>
 
                 <div class="footers">
-                    <h2>Dépannage/Support</h2>
-                    <a href="https://my.knx.org/support/topic" title="Support" target="_blank">KNX Support</a><br><br>
 
-                    <span>Contact Logiciel :<br>
+                   <h2>Contact Logiciel</h2>
+
+                <span>
                     Tél. : +32 (0)27 75 86 59<br>
                     email : <a href="mailto:info@knx.org" title="Envoyer un email">info@knx.org</a></span>
                 </div>
 
                 <div class="footers">
-                    <h2>KNX France</h2>
-                    <span>11-17rue de l'Amiral Hamelin<br>
-                    75116 Paris</span><br>
-
-                    <a href="KNX-France-contact.html" title="Contact">Contact</a><br>
-                    <a href="KNX-France-mentions-legales.html" title="Mentions Légales">Mentions Légales</a><br><br>
-
-                    <span>Conception / Réalisation :<br>
-                    INFOCOM INDUSTRIE<br>
-                    <a href="http://www.infocom-industrie.fr" title="Infocom Industrie">www.infocom-industrie.fr</a></span>
+                    <h2>KNX Tunisie</h2>
+                    <span>Adresse:</span>
+                    <a href="https://www.google.com/maps/place/Rue+de+Rakkada,+Sfax/@34.7445164,10.7602546,19z/data=!4m13!1m7!3m6!1s0x1301d2d0b8847da9:0xa97f427d4ee77845!2sCit%C3%A9+Jardin,+Sfax!3b1!8m2!3d34.7488433!4d10.7626385!3m4!1s0x1301d2d135b34641:0x9564a3e57a2e79f4!8m2!3d34.7444391!4d10.76059" target="_blanc"><span>Adresse: Rue de Rakkada,Cité Zitouna Imm65 App4 , Sfax, Tunisia</span></a>
                 </div>
-
 
         <div style="clear:both;"></div>
       </div>
