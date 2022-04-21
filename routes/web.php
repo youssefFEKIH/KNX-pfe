@@ -19,6 +19,7 @@ Route::get('/cours', function () {return view('Front.cours');})->name('cours');
 Route::get('/projets', function () {return view('Front.projets');})->name('projets');
 Route::get('/inscriptionget', function () {return view('Front.inscription');})->name('inscriptionget');
 Route::get('/connexion', function () {return view('Front.connexion');})->name('connexion');
+Route::get('/compte', function () {return view('Front.tableaudebordmembre');})->name('profil');
 
 Route::post('/home', [MembreController::class,'store'])->name('home');
 Route::post('/cours', [MembreController::class,'store'])->name('cours');
@@ -32,11 +33,7 @@ Route::post('/home/connect', [MembreController::class,'connect'])->name('homecon
 
 
 
-/*
-|--------------------------------------------------------------------------
-| KNX tunisie
-|--------------------------------------------------------------------------
-*/
+
 Route::get('/knxtunisiecom', function () {return view('Front.KnxTunisie.knxtunisiecom');})->name('knxtunisiecom');
 Route::get('/knxtunisieacceuil', function () {return view('Front.KnxTunisie.knxtunisieacceuil');})->name('knxtunisieacceuil');
 Route::get('/knx', function () {return view('Front.KnxTunisie.knx');})->name('knx');

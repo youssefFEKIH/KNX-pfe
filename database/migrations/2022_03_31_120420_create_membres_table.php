@@ -16,8 +16,6 @@ return new class extends Migration
         Schema::create('membres', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nom');
-            $table->string('prenom');
-            $table->string('tel');
             $table->string('mail');
             $table->string('mot_de_passe');
             $table->timestamps();
