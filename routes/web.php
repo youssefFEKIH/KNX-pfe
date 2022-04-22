@@ -22,7 +22,7 @@ Route::get('/projets', function () {return view('Front.projets');})->name('proje
 Route::get('/inscriptionget', function () {return view('Front.inscription');})->name('inscriptionget');
 Route::get('/connexion', function () {return view('Front.connexion');})->name('connexion');
 Route::get('/compte', function () {return view('Front.tableaudebordmembre');})->name('profil');
-
+Route::get('/compte', [MembreController::class, 'return'])->name('home');
 
 Route::post('/home', [MembreController::class, 'store'])->name('home');
 Route::post('/cours', [MembreController::class, 'store'])->name('cours');

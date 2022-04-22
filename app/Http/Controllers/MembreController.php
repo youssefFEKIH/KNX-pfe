@@ -75,10 +75,15 @@ class MembreController extends Controller
             'mail' => request('mail'),
             'password' => request('mot_de_passe'),
         ]);
-        var_dump($resultat);
+         return view('Front.tableaudebordmembre');
         
 	}
-
+    public function return(Membre $membre)
+    {
+       if  (Auth()::user()){
+        return back()->view('Front.tableaudebordmembre');
+       } 
+    }
     /**
      * Display the specified resource.
      *
