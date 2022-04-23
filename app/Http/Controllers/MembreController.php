@@ -55,7 +55,7 @@ class MembreController extends Controller
            $m-> mail=$request->mail;
            $m-> mot_de_passe=Hash::make($request->mot_de_passe);
            if ($m->save()){
-            return view('Front.index');
+            return view('Front.tableaudebordmembre');
            }
          
         
@@ -75,10 +75,15 @@ class MembreController extends Controller
             'mail' => request('mail'),
             'password' => request('mot_de_passe'),
         ]);
-        var_dump($resultat);
+         return view('Front.tableaudebordmembre');
         
 	}
-
+    public function return(Membre $membre)
+    {
+       if  (Auth()::user()){
+        return back()->view('Front.tableaudebordmembre');
+       } 
+    }
     /**
      * Display the specified resource.
      *

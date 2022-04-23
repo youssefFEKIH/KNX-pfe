@@ -16,7 +16,7 @@
                 @csrf 
                 <div class="form-group has-feedback">
                   <!----- mail -------------->
-                  <input class="form-control"  placeholder="Email" name="mail" id="loginid" type="Email" autocomplete="off" required/>
+                  <input class="form-control"  placeholder="Email" name="mail" id="loginid" type="Email" autocomplete="off" value="{{old('mail')}}" required/>
                   </div>
                 <div class="form-group has-feedback">
                   <!----- password -------------->
