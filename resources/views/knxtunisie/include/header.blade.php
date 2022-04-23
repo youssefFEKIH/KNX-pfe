@@ -1,12 +1,9 @@
-<html lang="fr">
-    <head>
+<html lang="fr"><head>
     <link rel="icon" type="image/png" href="Front2/images/logo/knx.png">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="KNX : le standard mondial pour la gestion technique des bâtiments résidentiels et tertiaires">
     <meta name="keywords" content="domotique, immotique, knx, konnex, EIB, ETS, ETS3, ETS4, gestion du bâtiment, technique, GTB, automatisme, GTC ">
 
-    <!-- titres des pages -->
-    <title>KNX Tunisie - Logiciels/Outils</title><!-- Fin Titres des pages -->
 
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link href="Front2/style/style.css" rel="stylesheet" type="text/css">
@@ -38,7 +35,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> </script>
 
 
-
         <!-- Hook up the FlexSlider -->
         <script>
             $(window).load(function() {
@@ -62,15 +58,99 @@
 
     <!-- fin script google analytics -->
 
-
-
     </head>
 
 
+    <body><nav id="menu" class="mm-menu mm-horizontal mm-ismenu mm-offcanvas"><ul class="mm-list mm-panel mm-opened mm-current" id="mm-0">
+                <li><a href="{{ route('knxtunisie-acceuil') }}" title="Accueil">Accueil</a></li>
+                <li><a href="{{ route('knx') }}" title="KNX">KNX</a></li>
+                <li><a href="{{ route('knxtunisie-logiciel') }}" title="Outils/logiciels">Logiciels</a></li>
+                <li><a href="{{ route('knxtunisie-doc') }}" title="Documentation">Documentation</a></li>
+                <li><a href="{{ route('knxtunisie-com') }}" title="Communauté">Communauté</a></li>
 
+                <li><a href="{{ route('knxtunisie-formation') }}" title="Formation">Formation</a></li>
+                <li><a href="{{ route('knxtunisie-actus') }}" title="News">Actus</a></li>
+                <li><a href="KNX-France-e-newsletter.html" title="News">Newsletter</a></li>
+                <li><a href="KNX-France-espace-membre.html" title="Espace Membre">Espace Membre</a></li>
+                <li><a href="KNX-France-espace-presse.html" title="Espace Presse">Presse</a></li>
+                <li><a href="{{ route('knxtunisie-contact') }}" title="Contact">Contact</a></li>
+                <li><a href="KNX-France-mentions-legales.html" title="Mentions légales">Mentions Légales</a></li>
+            </ul></nav>
+    <!-- Script défilement logos membres-->
+    <script>//<![CDATA[
+            $().ready(function() {
+        var slider = $('#slider').bxSlider({
+            pager: false,
+            controls: true,
+            prevText: '',
+            prevImage: '/global/abbzh/abbzh259.nsf/bf177942f19f4a98c1257148003b7a0a/2ceb3d93da33dacac1257936001fd23f/$FILE/slider-navi-prev.png',
+            nextText: '',
+            nextImage: '/global/abbzh/abbzh259.nsf/bf177942f19f4a98c1257148003b7a0a/de0129f865e4e9dcc1257936001fbedb/$FILE/slider-navi-next.png',
+            auto: true,
+            pause: 5000,
+            onBeforeSlide: function(currentSlide) {
+                $("#coda-nav-1 a").removeClass("current");
+                $("#coda-nav-1 .tab" + (currentSlide + 1) + " a").addClass("current");
+            }
+        });
+        $("#coda-nav-1 a").click(function() {
+            var tabNumber = $(this).parent().index();
+            slider.goToSlide(tabNumber);
+            return false;
+        });
+        // Add link to left menu heading (unless there is already one)
+        if ($(".left-side h4 a").length == 0)
+            $(".left-side h4").contents().wrap('<a href="/cawp/abbzh259/db3d0dc8d817f4c3c1257919004a07ba.aspx" style="color: #D2D2D2;" />');
+        // Change link in logo
+        $("h1.logo a").attr("href", "/");
+        // Manipulate stock ticker (change title and comma to dot)
+        $(".contentStockTicker h3 a").each(function() {
+            var titleText = $(this).html();
+            titleText = titleText.replace("Actual", "Current");
+            $(this).html(titleText);
+        });
+        $(".stockTicker .percentage").each(function() {
+            var h = $(this).html();
+            h = h.replace(",", ".");
+            $(this).html(h);
+        });
+        //
+            $("#aaa").mouseover(function() {
+                $("#aaa").css("text-decoration","none");
+                $("#aaa").css("color","#00AAE4");
+            });
+            $("#aaa").mouseout(function(){
+                $("#aaa").css("color","#93D4EE");
+            });
+            $("#bbb").mouseover(function() {
+                $("#bbb").css("text-decoration","none");
+                $("#bbb").css("color","#00AAE4");
+            });
+            $("#bbb").mouseout(function(){
+                $("#bbb").css("color","#93D4EE");
+            });
+            $("#ccc").mouseover(function() {
+                $("#ccc").css("text-decoration","none");
+                $("#ccc").css("color","#00AAE4");
+            });
+            $("#ccc").mouseout(function(){
+                $("#ccc").css("color","#93D4EE");
+            });
+           });
 
-    <body>
-    
+         //]]></script>
+    <!-- Fin Script défilement logos membres-->
+    <!-- Script défilement logos membres-->
+
+    <script>//<![CDATA[
+            $(function() {
+                $(".jMyCarousel").jMyCarousel({
+                    visible: '100%'
+                });
+            });
+    //]]></script>
+     <!-- Fin Script défilement logos membres-->
+
     <!--  div globale di site   -->
     <div id="global" class="mm-page">
 
@@ -88,9 +168,27 @@
                <ul id="prive">
 
                        <li>
-                      <h2> 
-                          KNX Tunisie <br><br><br>
-                      </h2>
+                      <a class="newsletter2" href="KNX-France-devenir-membre.html">
+                          Devenir membre
+                      </a>
+                    </li>
+
+                  <li>
+                      <a class="newsletter" href="KNX-France-e-newsletter.html">
+                          Newsletter
+                      </a>
+                    </li>
+
+                    <li>
+                       <a class="espace-membre" href="KNX-France-espace-membre.html">
+                        Espace Membres
+                       </a>
+                     </li>
+
+                    <li>
+                       <a class="presse" href="KNX-France-espace-presse.html">
+                        Presse
+                       </a>
                     </li>
 
                   </ul>
@@ -206,27 +304,12 @@
             </div>
             <!--  fin Slideshow   -->
 
-            <!--  Contenu gauche   -->
-            <div id="contenu_gauche">
+           <!--  Contenu gauche   -->
+           <div id="contenu_gauche">
+          
 
-        <p class="fil-ariane"><a href="KNX-France-accueil.html" title="Accueil">&gt; Accueil</a> &gt; Logiciels/Outils</p>
-
-
-
-    <h1>Logiciels et Outils :</h1>
-
-        <a href="KNX-France-membres.html" title="Membres KNX France" style="text-decoration:none;"><div class="accueil-bloc">
-
-
-            <img src="Front2/images/membres.jpg" alt="accueil">
-            <h4>KNX Tunisie</h4>
-            <p>L'association KNX Tunisie.</p>
-
-        </div></a>
-
-            </div>
-            <!--  fin Contenu gauche   -->
-
+           </div>
+           <!--  fin Contenu gauche   -->
 
             <!--  Contenu droite   -->
             <div id="contenu_droite">
@@ -254,8 +337,7 @@
 
 
                 <div><br><br>
-              <p> Retrouvez toute l'actualité de KNX Les reseaux sociaux <a href="http://www.knx.fr/KNX-France-app.html" style="text-decoration:none;color:#1760b4; " title="Accès UserClub France" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a></p></div>
-
+              <p> Retrouvez toute l'actualité de KNX Tunisie sur les reseaux sociaux <a href="" style="text-decoration:none;color:#1760b4; " title="Accès UserClub France" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a></p></div>
 
 
                   <br>
@@ -338,6 +420,11 @@
                 <!-- Événements -->
                 <h1>Événements</h1>
 
+
+
+
+
+
                 <!-- Événements -->
             </div>
             <!--  fin Contenu droite   -->
@@ -345,10 +432,6 @@
         </div>
         <!--  fin Site   -->
 
-
-        <!--  Menu Mobile   -->
-
-        <!--  fin Menu Mobile   -->
 
     </div>
     <!--  fin div globale di site  -->
