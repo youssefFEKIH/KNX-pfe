@@ -75,15 +75,25 @@ class MembreController extends Controller
             'mail' => request('mail'),
             'password' => request('mot_de_passe'),
         ]);
-         return view('Front.tableaudebordmembre');
-        
+        if($resultat) {
+            return view('Front.tableaudebordmembre');
+        }
+        return redirect('connexion')->withInput()->withErrors([
+         'mot_de_passe'=>"Vos identifiants sont incorrects"
+        ]);
 	}
-    public function return(Membre $membre)
+    public function accueil()
     {
-       if  (Auth()::user()){
-        return back()->view('Front.tableaudebordmembre');
-       } 
+        if(auth()->guest()){
+            return redirect('connexion')->withInput()->withErrors([
+                'mot_de_passe'=>"Vous devez etre connecté pour avoir cette page."
+               ]);
+        }
+        else{
+        return var_dump (auth()->guest());}
     }
+
+    
     /**
      * Display the specified resource.
      *

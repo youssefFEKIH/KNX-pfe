@@ -17,7 +17,10 @@
                 <div class="form-group has-feedback">
                   <!----- mail -------------->
                   <input class="form-control"  placeholder="Email" name="mail" id="loginid" type="Email" autocomplete="off" value="{{old('mail')}}" required/>
-                  </div>
+                  @if($errors->has('mail'))
+                    <h6 style="color: red;">{{ $errors->first('mail') }}</h6>
+                    @endif  
+                </div>
                 <div class="form-group has-feedback">
                   <!----- password -------------->
                   <input class="form-control" name="mot_de_passe"  placeholder="mot de passe" id="loginpsw" type="password" autocomplete="off" required />

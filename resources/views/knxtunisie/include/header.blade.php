@@ -3,26 +3,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="KNX : le standard mondial pour la gestion technique des bâtiments résidentiels et tertiaires">
     <meta name="keywords" content="domotique, immotique, knx, konnex, EIB, ETS, ETS3, ETS4, gestion du bâtiment, technique, GTB, automatisme, GTC ">
-
-
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link href="Front2/style/style.css" rel="stylesheet" type="text/css">
 
     <!-- Gallerie Photos Newsletters -->
     <link href="Front2/style/gallerie.css" rel="stylesheet" type="text/css">
     <!-- Fin Gallerie Photos Newsletters -->
-
     <!-- Slideshows -->
     <link rel="stylesheet" href="Front2/style/flexslider.css" type="text/css" media="screen">
     <!-- Slideshows -->
-
     <!-- Menu -->
     <link type="text/css" rel="stylesheet" href="Front2/style/jquery.mmenu.css">
     <!-- Menu -->
-
     <!-- Script Menu Mobile + Tablette Type Facebook-->
     <script async="" src="//www.google-analytics.com/analytics.js"></script><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
             <script>
                 $(function() {
                     $('nav#menu').mmenu();
@@ -30,37 +24,26 @@
             </script>
 
     <!-- Script Menu Mobile + Tablette Type Facebook-->
-
-     <!-- Script Nouveau Slideshow -->
+    <!-- Script Nouveau Slideshow -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> </script>
-
-
-        <!-- Hook up the FlexSlider -->
+       <!-- Hook up the FlexSlider -->
         <script>
             $(window).load(function() {
                 $('.flexslider').flexslider();
             });
         </script>
     <!-- Fin Script Nouveau Slideshow -->
-
-
     <!-- script google analytics -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
       ga('create', 'UA-18782856-3', 'auto');
       ga('send', 'pageview');
-
     </script>
-
     <!-- fin script google analytics -->
-
     </head>
-
-
     <body><nav id="menu" class="mm-menu mm-horizontal mm-ismenu mm-offcanvas"><ul class="mm-list mm-panel mm-opened mm-current" id="mm-0">
                 <li><a href="{{ route('knxtunisie-acceuil') }}" title="Accueil">Accueil</a></li>
                 <li><a href="{{ route('knx') }}" title="KNX">KNX</a></li>
@@ -70,11 +53,8 @@
 
                 <li><a href="{{ route('knxtunisie-formation') }}" title="Formation">Formation</a></li>
                 <li><a href="{{ route('knxtunisie-actus') }}" title="News">Actus</a></li>
-                <li><a href="KNX-France-e-newsletter.html" title="News">Newsletter</a></li>
-                <li><a href="KNX-France-espace-membre.html" title="Espace Membre">Espace Membre</a></li>
-                <li><a href="KNX-France-espace-presse.html" title="Espace Presse">Presse</a></li>
                 <li><a href="{{ route('knxtunisie-contact') }}" title="Contact">Contact</a></li>
-                <li><a href="KNX-France-mentions-legales.html" title="Mentions légales">Mentions Légales</a></li>
+                
             </ul></nav>
     <!-- Script défilement logos membres-->
     <script>//<![CDATA[
@@ -164,35 +144,7 @@
 
             </div>
 
-            <div id="espace_prive">
-               <ul id="prive">
-
-                       <li>
-                      <a class="newsletter2" href="KNX-France-devenir-membre.html">
-                          Devenir membre
-                      </a>
-                    </li>
-
-                  <li>
-                      <a class="newsletter" href="KNX-France-e-newsletter.html">
-                          Newsletter
-                      </a>
-                    </li>
-
-                    <li>
-                       <a class="espace-membre" href="KNX-France-espace-membre.html">
-                        Espace Membres
-                       </a>
-                     </li>
-
-                    <li>
-                       <a class="presse" href="KNX-France-espace-presse.html">
-                        Presse
-                       </a>
-                    </li>
-
-                  </ul>
-                </div>
+            
         </div>
         <!--  fin header   -->
 
@@ -311,123 +263,6 @@
            </div>
            <!--  fin Contenu gauche   -->
 
-            <!--  Contenu droite   -->
-            <div id="contenu_droite">
-
-            <hr id="trait">
-
-
-                <!------ Bannière animée --->
-                <div style="padding: 40px 0 0 0;">
-
-                  <a href="https://bit.ly/2Z1TD7q" style="text-decoration:none;color:#1760b4; " title="Feuilleter le KNX Journal" target="_blank">
-                      <img src="Front2/images/Banniere_KNX_Journal_2021_300x200.gif" alt="Feuilleter le KNX Journal">
-                </a><br>
-    </div>
-
-                  <!------ Fin bannière animée --->
-                <!-- Réseaux Sociaux -->
-                <h1> Rejoignez-nous</h1>
-                <div id="reseaux_sociaux">
-                    <p><a href="" title="Facebook" target="_blank"><img src="Front2/images/facebook.jpg" alt="Facebook"></a>
-                      <a href="" title="Twitter" target="_blank"><img src="Front2/images/twitter.jpg" alt="Twitter"></a>
-                      <a href="" title="LinkedIn" target="_blank"><img src="Front2/images/linkedin.jpg" alt="LinkedIn"></a>
-                      <a href="" title="Instagram" target="_blank"><img src="Front2/images/instagram.jpg" alt="Instagram"></a>
-                      <a href="" title="YouTube" target="_blank"><img src="Front2/images/youtube.jpg" alt="YouTube"></a> </p> <br></div>
-
-
-                <div><br><br>
-              <p> Retrouvez toute l'actualité de KNX Tunisie sur les reseaux sociaux <a href="" style="text-decoration:none;color:#1760b4; " title="Accès UserClub France" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a></p></div>
-
-
-                  <br>
-                  <br>
-
-
-
-                  <div>
-
-                  <h1><a href="http://knx.fr/College_Integrateurs/" title="Collège KNX Intégrateurs" target="_blank">Collège Intégrateurs KNX France</a></h1>
-                  <p> Découvrez le Collège KNX Intégrateur <a href="http://knx.fr/College_Integrateurs/" style="text-decoration:none;color:#1760b4; " title="Collège KNX Intégrateurs" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a><br>
-    </p></div>
-                <br><br>
-
-
-
-                <div> <h1>Userclub France</h1>
-                  <p> Accès UserClub France <a href="https://goo.gl/dG9cjz" style="text-decoration:none;color:#1760b4; " title="Accès UserClub France" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a><br>
-    </p></div>
-
-                <!-- Réseaux Sociaux -->
-
-                <!-- Newsletter -->
-                <div id="inscription_newsletter">
-                    <h1>S'inscrire à la newsleter</h1>
-
-                    <p>Inscrivez-vous à la e-enewsletter pour recevoir les dernières actualités de KNX France</p>
-
-
-
-                    <a href="https://my.sendinblue.com/users/subscribe/js_id/3786j/id/1" title="S'inscrire à la newsletter" style="text-decoration:none;" target="_blank"><div id="bouton_newsletter">Inscription</div></a>
-
-                   <!--
-
-                    <a href="mailto:contact@knx.fr?&subject=Demande%20d'inscription&body=Bonjour,%20%0A%0Aje%20souhaiterais%20m'inscrire%20à%20la%20newsletter.%20%0A%0ACordialement," title="S'inscrire à la newsletter" style="text-decoration:none;"><div id="bouton_newsletter">Inscription</div></a>
-                     -->
-                </div>
-                <!-- Réseaux Sociaux -->
-
-
-
-                <br><br>
-
-
-                <!-- Actualités -->
-                <h1>Actualités</h1>
-
-
-
-                <p>La formation KNX Basic désormais éligible au financement CPF <a href="http://www.knx.fr/KNX-France-KNX-Basic-CPF.html" style="text-decoration:none;color:#1760b4;" title="La formation KNX Basic désormais éligible au financement CPF" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a><br>
-
-                </p>
-
-
-                <!-- Actualités -->
-
-
-
-                <p>Airzone rejoint KNX France <a href="http://serveur-infocom.fr/presse/CP_Adhesion_Airzone_11_03_22.pdf" style="text-decoration:none;color:#1760b4;" title="Airzone rejoint KNX France" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a><br>
-
-                </p>
-
-
-                <!-- Actualités -->
-
-
-
-                <p>Le Collège Intégrateurs KNX France présente ses nouveaux représentants <a href="http://knx.fr/College_Integrateurs/liste/" style="text-decoration:none;color:#1760b4;" title="Le Collège Intégrateurs KNX France présente ses nouveaux représentants" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a><br>
-
-                </p>
-
-
-                <!-- Actualités -->
-
-
-                <a href="KNX-France-actualites.html" title="Actualités"><h4>Plus d'actualités</h4></a>
-                <br>
-
-
-                <!-- Événements -->
-                <h1>Événements</h1>
-
-
-
-
-
-
-                <!-- Événements -->
-            </div>
-            <!--  fin Contenu droite   -->
 
         </div>
         <!--  fin Site   -->
