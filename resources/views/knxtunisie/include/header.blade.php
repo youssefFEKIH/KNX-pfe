@@ -1,5 +1,7 @@
-<html lang="fr"><head>
-    <link rel="icon" type="image/png" href="Front2/images/logo/knx.png">
+<html lang="fr">
+    <head>
+        
+    <link rel="shortcut icon" href="{{ asset('Front2/images/logo/knx.png')}}" type="image/png">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="KNX : le standard mondial pour la gestion technique des bâtiments résidentiels et tertiaires">
     <meta name="keywords" content="domotique, immotique, knx, konnex, EIB, ETS, ETS3, ETS4, gestion du bâtiment, technique, GTB, automatisme, GTC ">
@@ -138,7 +140,7 @@
         <div id="header">
             <div id="logo">
                <a href="{{ route('knxtunisie-acceuil') }}" title="Accueil">
-               <img src="Front2/images/logo/knx-tunisie.png" alt="logo" height="135px">
+               <img src="Front2/images/logo/knx.png" alt="logo" height="135px">
 
                 </a>
 

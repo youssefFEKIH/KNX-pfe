@@ -31,21 +31,6 @@ Route::post('/inscriptionget', [MembreController::class, 'store'])->name('inscri
 Route::post('/home/connect', [MembreController::class, 'connect'])->name('homeconnect');
 
 
-
-
-
-
-Route::get('/knxtunisiecom', function () {return view('Front.KnxTunisie.knxtunisiecom');})->name('knxtunisiecom');
-Route::get('/knxtunisieacceuil', function () {return view('Front.KnxTunisie.knxtunisieacceuil');})->name('knxtunisieacceuil');
-Route::get('/knx', function () {return view('Front.KnxTunisie.knx');})->name('knx');
-
-
-
-
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | KNX tunisie
@@ -56,7 +41,7 @@ Route::get('/knxtunisie-acceuil', function () {return view('knxtunisie.knxtunisi
 Route::get('/knx', function () {return view('knxtunisie.knx');})->name('knx');
 Route::get('/knxtunisie-logiciel', function () {return view('knxtunisie.knxtunisie-logiciel');})->name('knxtunisie-logiciel');
 Route::get('/knxtunisie-doc', function () {return view('knxtunisie.knxtunisie-doc');})->name('knxtunisie-doc');
-Route::get('/knxtunisie-formation', function () {return view('knxtunisie.knxtinisie-formation');})->name('knxtunisie-formation');
+Route::get('/knxtunisie-formation', function () {return view('knxtunisie.knxtunisie-formation');})->name('knxtunisie-formation');
 Route::get('/knxtunisie-actus', function () {return view('knxtunisie.knxtunisie-actus');})->name('knxtunisie-actus');
 Route::get('/knxtunisie-contact', function () {return view('knxtunisie.knxtunisie-contact');})->name('knxtunisie-contact');
 

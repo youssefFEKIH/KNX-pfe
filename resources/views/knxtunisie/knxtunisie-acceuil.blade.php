@@ -1,6 +1,6 @@
 
 
-     
+
 <html lang="fr">
     @extends('knxtunisie.layout')
     @section('content')
@@ -33,7 +33,7 @@
             </div>
             <!--  fin Contenu gauche   -->
 
- 
+
 
          </div>
          <!--  fin Site   -->
@@ -43,7 +43,6 @@
 
             <!--  Contenu droite   -->
             <div id="contenu_droite">
-
             <hr id="trait">
 
 
@@ -67,26 +66,10 @@
 
 
                 <div><br><br>
-              <p> Retrouvez toute l'actualité de KNX Tunisie sur les reseaux sociaux <a href="" style="text-decoration:none;color:#1760b4; " title="Accès UserClub France" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a></p></div>
-
-
+              <p> Retrouvez toute l'actualité de KNX Tunisie sur les reseaux sociaux </p>
+                </div>
                   <br>
                   <br>
-
-
-
-                  <div>
-
-                  <h1><a href="http://knx.fr/College_Integrateurs/" title="Collège KNX Intégrateurs" target="_blank">Collège Intégrateurs KNX France</a></h1>
-                  <p> Découvrez le Collège KNX Intégrateur <a href="http://knx.fr/College_Integrateurs/" style="text-decoration:none;color:#1760b4; " title="Collège KNX Intégrateurs" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a><br>
-    </p></div>
-                <br><br>
-
-
-
-                <div> <h1>Userclub France</h1>
-                  <p> Accès UserClub France <a href="https://goo.gl/dG9cjz" style="text-decoration:none;color:#1760b4; " title="Accès UserClub France" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a><br>
-    </p></div>
 
                 <!-- Réseaux Sociaux -->
 
@@ -100,10 +83,7 @@
 
                     <a href="https://my.sendinblue.com/users/subscribe/js_id/3786j/id/1" title="S'inscrire à la newsletter" style="text-decoration:none;" target="_blank"><div id="bouton_newsletter">Inscription</div></a>
 
-                   <!--
 
-                    <a href="mailto:contact@knx.fr?&subject=Demande%20d'inscription&body=Bonjour,%20%0A%0Aje%20souhaiterais%20m'inscrire%20à%20la%20newsletter.%20%0A%0ACordialement," title="S'inscrire à la newsletter" style="text-decoration:none;"><div id="bouton_newsletter">Inscription</div></a>
-                     -->
                 </div>
                 <!-- Réseaux Sociaux -->
 
@@ -112,52 +92,19 @@
                 <br><br>
 
 
-                <!-- Actualités -->
-                <h1>Actualités</h1>
 
 
 
-                <p>La formation KNX Basic désormais éligible au financement CPF <a href="http://www.knx.fr/KNX-France-KNX-Basic-CPF.html" style="text-decoration:none;color:#1760b4;" title="La formation KNX Basic désormais éligible au financement CPF" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a><br>
 
-                </p>
-
-
-                <!-- Actualités -->
-
-
-
-                <p>Airzone rejoint KNX France <a href="http://serveur-infocom.fr/presse/CP_Adhesion_Airzone_11_03_22.pdf" style="text-decoration:none;color:#1760b4;" title="Airzone rejoint KNX France" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a><br>
-
-                </p>
-
-
-                <!-- Actualités -->
-
-
-
-                <p>Le Collège Intégrateurs KNX France présente ses nouveaux représentants <a href="http://knx.fr/College_Integrateurs/liste/" style="text-decoration:none;color:#1760b4;" title="Le Collège Intégrateurs KNX France présente ses nouveaux représentants" target="_blank"><img src="Front2/images/en_savoir_plus.jpg" alt="en_savoir_plus"></a><br>
-
-                </p>
-
-
-                <!-- Actualités -->
-
-
-                <a href="KNX-France-actualites.html" title="Actualités"><h4>Plus d'actualités</h4></a>
-                <br>
 
 
                 <!-- Événements -->
                 <h1>Événements</h1>
-
-
-
-
-
-
                 <!-- Événements -->
+
             </div>
             <!--  fin Contenu droite   -->
-  
-@endsection
-</html>
+
+        </body>
+        @endsection
+        </html>
