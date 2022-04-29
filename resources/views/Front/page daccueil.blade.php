@@ -73,7 +73,7 @@
             <div class="pm-staff-profile-details text-center">
               <p class="pm-staff-profile-name">KNX Tunisie <br> "Trainers"</p>
               <p class="pm-staff-profile-bio">Les formateurs accrédités <br> KNX en Tunisie <br>et leurs nouveautés</p>
-              <a href="#"> <button   name="submit" type="submit" class="btn btn-block btn-submit">
+              <a href="{{ route('Formateur') }}"> <button   name="submit" type="submit" class="btn btn-block btn-submit">
             Consulter  <i class="fa fa-arrow-right"></i></button></a>
             </div>
           </div>
