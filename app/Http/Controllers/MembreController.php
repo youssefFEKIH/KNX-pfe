@@ -5,7 +5,7 @@ use Validator;
 use App\Models\Membre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
+use Illuminate\Support\Facades\Auth;
 class MembreController extends Controller
 {
     /**
@@ -55,7 +55,7 @@ class MembreController extends Controller
            $m-> mail=$request->mail;
            $m-> mot_de_passe=Hash::make($request->mot_de_passe);
            if ($m->save()){
-            return view('Front.tableaudebordmembre');
+            return view('Front.connexion');
            }
          
         
@@ -72,16 +72,26 @@ class MembreController extends Controller
     }
         
         $resultat=auth()->attempt([
-            'mail' => request('mail'),
-            'password' => request('mot_de_passe'),
+            $mail='mail' => request('mail'),
+            $pass='password' => request('mot_de_passe'),
         ]);
         if($resultat) {
-            return view('Front.tableaudebordmembre');
+            $request->session()->put('mail',$mail);
+                        return view('Front.tableaudebordmembre');
+           
         }
         return redirect('connexion')->withInput()->withErrors([
          'mot_de_passe'=>"Vos identifiants sont incorrects"
         ]);
 	}
+
+    public function deconnexion(Request $request)
+{
+    $request->session()->forget('mail');
+    auth()->logout();
+
+    return redirect('home');
+}
     public function accueil()
     {
         if(auth()->guest()){

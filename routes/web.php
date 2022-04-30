@@ -37,6 +37,7 @@ Route::get('/compte', function () {
     return view('Front.tableaudebordmembre');
 })->name('profil');
 Route::get('/home/connect', [MembreController::class, 'accueil'])->name('accueil');
+Route::get('/deconnexion', [MembreController::class, 'deconnexion']);
 
 Route::post('/home', [MembreController::class, 'store'])->name('home');
 Route::post('/cours', [MembreController::class, 'store'])->name('cours');
