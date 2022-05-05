@@ -78,11 +78,14 @@ class MembreController extends Controller
         if($resultat) {
             
             $request->session()->put('mail',$mail);
-            if (Auth::user()->mail=='admin1@gmail.com'){
+            if (Auth::user()->type=='A'){
                         return view('Admin.AdminDashboard');}
-            else{
+            elseif (Auth::user()->type=='F'){
                          return view('Front.tableaudebordmembre');    
-            }            
+            } 
+            else{
+                return view('Front.tableaudebordmembre');  
+            }           
            
         }
         return redirect('connexion')->withInput()->withErrors([
@@ -117,7 +120,8 @@ class MembreController extends Controller
      */
     public function show(Membre $membre)
     {
-        //
+        $membre = Membre::where('type','M')->toArray();
+        return view('Admin.AdminDashboard', compact('membre'));
     }
 
     /**
@@ -128,7 +132,9 @@ class MembreController extends Controller
      */
     public function edit(Membre $membre)
     {
-        //
+       
+          
+        
     }
 
     /**

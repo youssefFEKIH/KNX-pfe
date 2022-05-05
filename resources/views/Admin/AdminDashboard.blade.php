@@ -43,7 +43,58 @@
     </div>
   </nav>
   <!--/ Navigation bar-->
-  <section id="testimonial" class="section-padding">
-      <p>Formateurs</p>
-      
-</section>
+  <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 2px;
+  color:black;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.Formateurs { text-align: center; }
+</style>
+
+  <br />
+   <br />
+   <h2 class="Formateurs">Liste des Formateurs</h2>
+   <br />
+  </div>
+  <table class="table table-bordered table-striped">
+   <tr>
+    <th>id</th>
+    <th>nom</th>
+    <th>mail</th>
+    <th>mot_de_passe</th>
+    <th>Edit</th>
+    <th>Delete</th>
+   </tr>
+   @foreach($membre as $row)
+   <tr>
+    <td>{{$row['id']}}</td>
+    <td>{{$row['nom']}}</td>
+    <td>{{$row['mail']}}</td>
+    <td>{{$row['mot_de_passe']}}</td>
+    <td><a href="" class="btn btn-warning">Edit</a></td>
+    <td>
+     <form method="post" class="delete_form" action="">
+      {{csrf_field()}}
+      <input type="hidden" name="_method" value="DELETE" />
+      <button type="submit" class="btn btn-danger">Delete</button>
+     </form>
+    </td>
+   </tr>
+   @endforeach
+  </table>
+ </div>
+</div>
+
+

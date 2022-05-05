@@ -25,7 +25,7 @@ Route::get('/inscriptionget', function () {return view('Front.inscription');})->
 Route::get('/connexion', function () {return view('Front.connexion');})->name('connexion');
 Route::get('/compte', function () { return view('Front.tableaudebordmembre');})->name('profil');
 Route::get('/deconnexion', [MembreController::class, 'deconnexion']);
-Route::get('/AdminDashboard', function () { return view('Admin.AdminDashboard');})->name('AdminDashboard');
+Route::get('/AdminDashboard', [MembreController::class, 'show'])->name('AdminDashboard');
 
 Route::post('/home', [MembreController::class, 'store'])->name('home');
 Route::post('/cours', [MembreController::class, 'store'])->name('cours');
