@@ -120,9 +120,35 @@ class MembreController extends Controller
      */
     public function show(Membre $membre)
     {
-        $membre = Membre::where('type','M')->toArray();
+      
+        $membre = Membre::all()->where('type','F')->toArray();
         return view('Admin.AdminDashboard', compact('membre'));
     }
+    public function addF(Request $request)
+    {
+       
+        $validator = Validator::make($request->all(), 
+            [
+            'nom'=> 'required',
+            'mail'=>'required|email|unique:membres',
+            'mot_de_passe'=>'required|min:8',
+            'mot_de_passe_2'=>'required|same:mot_de_passe'
+           ]);
+           if($validator->fails()){
+            return redirect('AdminDashboard')->withErrors($validator)->withInput();
+        }
+           $m=new membre();
+           $m-> nom=$request->nom;
+           $m-> mail=$request->mail;
+           $m-> mot_de_passe=$request->mot_de_passe;
+           $m-> type=$request->type;
+           if ($m->save()){
+            return redirect('AdminDashboard');
+           }
+         
+        
+    }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -155,9 +181,11 @@ class MembreController extends Controller
      * @param  \App\Models\Membre  $membre
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Membre $membre)
+    public function destroy($id)
     {
-        //
+        $membre = Membre::find($id);
+        $membre->delete();
+        return redirect()->route('AdminDashboard');
     }
     
 }

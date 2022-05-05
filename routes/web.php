@@ -27,12 +27,15 @@ Route::get('/compte', function () { return view('Front.tableaudebordmembre');})-
 Route::get('/deconnexion', [MembreController::class, 'deconnexion']);
 Route::get('/AdminDashboard', [MembreController::class, 'show'])->name('AdminDashboard');
 
+
 Route::post('/home', [MembreController::class, 'store'])->name('home');
 Route::post('/cours', [MembreController::class, 'store'])->name('cours');
 Route::post('/projets', [MembreController::class, 'store'])->name('projets');
 Route::post('/inscriptionget', [MembreController::class, 'store'])->name('inscription');
 Route::post('/home/connect', [MembreController::class, 'connect'])->name('homeconnect');
 
+Route::post('/AdminDashboard/Formateur', [MembreController::class, 'addF'])->name('AddFormateur');
+Route::post('/destroy/{id}/', [MembreController::class, 'destroy'])->name('supprimerF');
 
 /*
 |--------------------------------------------------------------------------

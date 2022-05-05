@@ -74,27 +74,80 @@ tr:nth-child(even) {
     <th>nom</th>
     <th>mail</th>
     <th>mot_de_passe</th>
-    <th>Edit</th>
+    <th>type</th>
     <th>Delete</th>
    </tr>
    @foreach($membre as $row)
    <tr>
-    <td>{{$row['id']}}</td>
+   <td>{{$row['id']}}</td>
     <td>{{$row['nom']}}</td>
     <td>{{$row['mail']}}</td>
     <td>{{$row['mot_de_passe']}}</td>
-    <td><a href="" class="btn btn-warning">Edit</a></td>
+    <td>{{$row['type']}}</td>
+    
     <td>
-     <form method="post" class="delete_form" action="">
-      {{csrf_field()}}
-      <input type="hidden" name="_method" value="DELETE" />
-      <button type="submit" class="btn btn-danger">Delete</button>
+     <form   action="{{route('supprimerF',$row['id'])}}" method="POST">
+       @csrf
+    <button type="submit" class="btn btn-danger">Supprimer</button>
      </form>
     </td>
    </tr>
    @endforeach
   </table>
- </div>
+
+              <div class="modal-body padtrbl">
+
+            <div class="login-box-body">
+              <p class="login-box-msg">Ajouter un Formateur</p>
+              <div class="form-group">
+                <form action="/AdminDashboard/Formateur" method="POST"  id="loginForm">
+                  @csrf 
+                  <div class="form-group has-feedback">
+                    <!----- username -------------->
+                    <input class="form-control" placeholder="Nom d'utilisateur" name="nom" id="loginid" type="text" autocomplete="off" value="{{old('nom')}}" required />
+                    </div>
+                  <div class="form-group has-feedback">
+                    <!----- Email -------------->
+                      <input type="email" class="form-control" name="mail" id="email" placeholder="Email" autocomplete="off" value="{{old('mail')}}" required/>
+                    <!---Alredy exists  ! -->
+                    @if($errors->has('mail'))
+                   <h6 style="color: red;">{{ $errors->first('mail') }}</h6>
+                     @endif
+                  </div>
+                  <div class="form-group has-feedback">
+                    <!----- password -------------->
+                    <input class="form-control" placeholder="mot de passe" name="mot_de_passe" id="loginpsw" type="password" autocomplete="off" required/>
+                    <!---Alredy exists  ! -->
+                    @if($errors->has('mot_de_passe'))
+                    <h6 style="color: red;">{{ $errors->first('mot_de_passe') }}</h6>
+                    @endif
+                  </div>
+                  <div class="form-group has-feedback">
+                    <!----- Repat password -------------->
+                    <input class="form-control" placeholder="Repeter votre mot de passe" name="mot_de_passe_2" id="loginpsw" type="password" autocomplete="off" required />
+                   <!---Alredy exists  ! -->
+                    @if($errors->has('mot_de_passe_2'))
+                    <h6 style="color: red;">{{ $errors->first('mot_de_passe_2') }}</h6>
+                    @endif
+                    </div> 
+                    <div class="form-group has-feedback">
+                    <SELECT name="type" size="1">
+                    <OPTION>F
+                    </SELECT> 
+                    </div> 
+                    </br>
+
+<button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+ 
 </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
 
 
