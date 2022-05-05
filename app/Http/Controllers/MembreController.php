@@ -76,8 +76,13 @@ class MembreController extends Controller
             $pass='password' => request('mot_de_passe'),
         ]);
         if($resultat) {
+            
             $request->session()->put('mail',$mail);
-                        return view('Front.tableaudebordmembre');
+            if (Auth::user()->mail=='admin1@gmail.com'){
+                        return view('Admin.AdminDashboard');}
+            else{
+                         return view('Front.tableaudebordmembre');    
+            }            
            
         }
         return redirect('connexion')->withInput()->withErrors([

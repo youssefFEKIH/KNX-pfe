@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\MembreController;
+use App\Http\Controllers\AdminController;
+
 
 
 /*
@@ -15,29 +17,15 @@ use App\Http\Controllers\MembreController;
 */
 
 Route::get('/', 'App\Http\Controllers\front\homepageController@index')->name('pagedaccueil');
-Route::get('/home', function () {
-    return view('Front.index');
-})->name('home');
-Route::get('/home/connect', function () {
-    return view('Front.index');
-})->name('homeconnect');
-Route::get('/cours', function () {
-    return view('Front.cours');
-})->name('cours');
-Route::get('/projets', function () {
-    return view('Front.projets');
-})->name('projets');
-Route::get('/inscriptionget', function () {
-    return view('Front.inscription');
-})->name('inscriptionget');
-Route::get('/connexion', function () {
-    return view('Front.connexion');
-})->name('connexion');
-Route::get('/compte', function () {
-    return view('Front.tableaudebordmembre');
-})->name('profil');
-Route::get('/home/connect', [MembreController::class, 'accueil'])->name('accueil');
+Route::get('/home', function () {return view('Front.index');})->name('home');
+Route::get('/home/connect', function () {return view('Front.index');})->name('homeconnect');
+Route::get('/cours', function () {return view('Front.cours');})->name('cours');
+Route::get('/projets', function () {  return view('Front.projets');})->name('projets');
+Route::get('/inscriptionget', function () {return view('Front.inscription');})->name('inscriptionget');
+Route::get('/connexion', function () {return view('Front.connexion');})->name('connexion');
+Route::get('/compte', function () { return view('Front.tableaudebordmembre');})->name('profil');
 Route::get('/deconnexion', [MembreController::class, 'deconnexion']);
+Route::get('/AdminDashboard', function () { return view('Admin.AdminDashboard');})->name('AdminDashboard');
 
 Route::post('/home', [MembreController::class, 'store'])->name('home');
 Route::post('/cours', [MembreController::class, 'store'])->name('cours');
@@ -67,3 +55,12 @@ Route::get('/knxtunisie-contact', function () {return view('knxtunisie.knxtunisi
 |--------------------------------------------------------------------------
 */
 Route::get('/Formateur', function () {return view('Formateur.index');})->name('Formateur');
+
+
+/*
+|--------------------------------------------------------------------------
+| Admin
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/deconnexionAdmin', [AdminController::class, 'deconnexion']);

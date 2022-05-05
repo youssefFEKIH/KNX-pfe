@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="Fr">
 
-
+ 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mirage Group "KNX Training"</title>
+  <title>Admin Dashboard</title>
 
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
@@ -28,18 +28,22 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ route('home') }}">KNX<span> Training</span></a>
+        <a class="navbar-brand" href="{{ route('home') }}"> dashboard</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#featureX">Mirage Group</a></li>
-          <li><a href="#courses">Cours</a></li>
-          <li><a href="#faculity-member">Projet de Fin d'Études</a></li>
+          <li><a href="#featureX">Cours</a></li>
+          <li><a href="#courses">Projet de Fin d'Études</a></li>
+          <li><a href="#faculity-member">Formateurs</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#" >Profil</a></li>
-          <li class="btn-trial"><a href="#" >Se déconnecter</a></li>
+          <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
          </ul>
       </div>
     </div>
   </nav>
   <!--/ Navigation bar-->
+  <section id="testimonial" class="section-padding">
+      <p>Formateurs</p>
+      
+</section>

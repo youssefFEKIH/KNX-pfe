@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Admin;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    public function deconnexion(Request $request)
+    {
+        $request->session()->forget('mail');
+        auth()->logout();
+    
+        return redirect('home');
+    }
+
     /**
      * Display a listing of the resource.
      *
