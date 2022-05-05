@@ -121,8 +121,9 @@ class MembreController extends Controller
     public function show(Membre $membre)
     {
       
-        $membre = Membre::all()->where('type','F')->toArray();
-        return view('Admin.AdminDashboard', compact('membre'));
+        $formateur = Membre::all()->where('type','F')->toArray();
+        $membre = Membre::all()->where('type','M')->toArray();
+        return view('Admin.AdminDashboard', compact('formateur'), compact('membre'));
     }
     public function addF(Request $request)
     {

@@ -77,7 +77,7 @@ tr:nth-child(even) {
     <th>type</th>
     <th>Delete</th>
    </tr>
-   @foreach($membre as $row)
+   @foreach($formateur as $row)
    <tr>
    <td>{{$row['id']}}</td>
     <td>{{$row['nom']}}</td>
@@ -148,6 +148,39 @@ tr:nth-child(even) {
         </div>
 
       </div>
+
+      <br />
+   <br />
+   <h2 class="Formateurs">Liste des membres</h2>
+   <br />
+  </div>
+  <table class="table table-bordered table-striped">
+   <tr>
+    <th>id</th>
+    <th>nom</th>
+    <th>mail</th>
+    <th>mot_de_passe</th>
+    <th>type</th>
+    <th>Delete</th>
+   </tr>
+   @foreach($membre as $row)
+   <tr>
+   <td>{{$row['id']}}</td>
+    <td>{{$row['nom']}}</td>
+    <td>{{$row['mail']}}</td>
+    <td>{{$row['mot_de_passe']}}</td>
+    <td>{{$row['type']}}</td>
+    
+    <td>
+     <form   action="{{route('supprimerF',$row['id'])}}" method="POST">
+       @csrf
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+     </form>
+    </td>
+   </tr>
+   @endforeach
+  </table>
+
 
 
 
