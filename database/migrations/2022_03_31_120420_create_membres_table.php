@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nom');
             $table->string('mail');
             $table->string('mot_de_passe');
+            $table->string('type')->default('M');
             $table->timestamps();
         });
     }
