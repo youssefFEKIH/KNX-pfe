@@ -79,7 +79,7 @@ class MembreController extends Controller
             
             $request->session()->put('mail',$mail);
             if (Auth::user()->type=='A'){
-                        return view('Admin.AdminDashboard');}
+                        return redirect('AdminDashboard');}
             elseif (Auth::user()->type=='F'){
                          return view('Front.tableaudebordmembre');    
             } 
@@ -123,7 +123,7 @@ class MembreController extends Controller
       
         $formateur = Membre::all()->where('type','F')->toArray();
         $membre = Membre::all()->where('type','M')->toArray();
-        return view('Admin.AdminDashboard', compact('formateur'), compact('membre'));
+        return view('Admin.FormateursEtMembre', compact('formateur'), compact('membre'));
     }
     public function addF(Request $request)
     {

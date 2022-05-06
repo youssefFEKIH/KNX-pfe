@@ -68,7 +68,7 @@ tr:nth-child(even) {
    <h2 class="Formateurs">Liste des Formateurs</h2>
    <br />
   </div>
-  <table class="table table-bordered table-striped">
+  <table >
    <tr>
     <th>id</th>
     <th>nom</th>
@@ -149,8 +149,8 @@ tr:nth-child(even) {
 
       </div>
 
-      <br />
-   <br />
+  
+
    <h2 class="Formateurs">Liste des membres</h2>
    <br />
   </div>
