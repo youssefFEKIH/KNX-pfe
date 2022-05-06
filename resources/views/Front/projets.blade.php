@@ -12,128 +12,24 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
           <hr class="bottom-line">
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="pm-staff-profile-container">
-            <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img src="{{ asset('Front/img')}}/course01.jpg" alt="" class="img-thumbnail img-circle" />
-              </div>
-            </div>
-            <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Bryan Johnson</p>
-              <p class="pm-staff-profile-title">Lead Software Engineer</p>
-
-              <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="pm-staff-profile-container">
-            <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img src="{{ asset('Front/img')}}/course01.jpg" alt="" class="img-thumbnail img-circle" />
-              </div>
-            </div>
-            <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Bryan Johnson</p>
-              <p class="pm-staff-profile-title">Lead Software Engineer</p>
-
-              <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="pm-staff-profile-container">
-            <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img src="{{ asset('Front/img')}}/course01.jpg" alt="" class="img-thumbnail img-circle" />
-              </div>
-            </div>
-            <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Bryan Johnson</p>
-              <p class="pm-staff-profile-title">Lead Software Engineer</p>
-
-              <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
-              
-              </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="pm-staff-profile-container">
-            <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img src="{{ asset('Front/img')}}/course01.jpg" alt="" class="img-thumbnail img-circle" />
-              </div>
-            </div>
-            <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Bryan Johnson</p>
-              <p class="pm-staff-profile-title">Lead Software Engineer</p>
-
-              <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="pm-staff-profile-container">
-            <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img src="{{ asset('Front/img')}}/course01.jpg" alt="" class="img-thumbnail img-circle" />
-              </div>
-            </div>
-            <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Bryan Johnson</p>
-              <p class="pm-staff-profile-title">Lead Software Engineer</p>
-
-              <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="pm-staff-profile-container">
-            <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img src="{{ asset('Front/img')}}/course01.jpg" alt="" class="img-thumbnail img-circle" />
-              </div>
-            </div>
-            <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Bryan Johnson</p>
-              <p class="pm-staff-profile-title">Lead Software Engineer</p>
-
-              <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="pm-staff-profile-container">
-            <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img src="{{ asset('Front/img')}}/course01.jpg" alt="" class="img-thumbnail img-circle" />
-              </div>
-            </div>
-            <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Bryan Johnson</p>
-              <p class="pm-staff-profile-title">Lead Software Engineer</p>
-
-              <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
-            </div>
-          </div>
-        </div>
+        @foreach($projet as $projets)
         <!--un projet-->
         <div class="col-lg-4 col-md-4 col-sm-4">
           <div class="pm-staff-profile-container">
             <div class="pm-staff-profile-image-wrapper text-center">
               <div class="pm-staff-profile-image">
-                <img src="{{ asset('Front/img')}}/course01.jpg" alt="" class="img-thumbnail img-circle" />
+                <img src="{{ asset ('images/' . $projets->url_image)}}"class="pm-staff-profile-image"  alt="PFE" class="img-thumbnail img-circle" />
               </div>
             </div>
             <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Bryan Johnson</p>
-              <p class="pm-staff-profile-title">Lead Software Engineer</p>
+              <p class="pm-staff-profile-name">{{$projets->titre}}</p>
+            
 
-              <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
+              <a href="" class="pm-staff-profile-bio">{{$projets->description}} </a>
             </div>
           </div>
         </div>
+        @endforeach
         <!--fin d'un projet-->
       </div>
     </div>

@@ -384,9 +384,8 @@ Work Shop
 Mentor Team
 ************************************/
 .pm-staff-profile-image{
-  width: 150px;
-  height: 150px;
-  background-color: #C6C6C6;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   display: inline-block;
 }
@@ -905,3 +904,6 @@ mark {
 .dark-color {
     color: #20247b;
 }
+
+
+

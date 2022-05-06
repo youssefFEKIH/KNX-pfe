@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pves', function (Blueprint $table) {
+        Schema::create('projet', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nom');
-            $table->string('url_image');
-            $table->string('description');
+            $table->mediumText('url_image')->nullable();
+            $table->string('titre');
+            $table->string('description',9000);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pves');
+        Schema::dropIfExists('projet');
     }
 };

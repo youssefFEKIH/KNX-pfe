@@ -270,51 +270,29 @@
       <div class="row">
         <div class="header-section text-center">
           <h2>Projet de Fin d'Études</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+          <p>Les projet de fin d'études proposée par  mirage Group</p>
           <hr class="bottom-line">
-        </div>
+        </div>.
+        @php($count=0)
+
+        @foreach($projet as $projets)
+        @if($count < 3)
+        @php($count++)
+        <!--un projet-->
         <div class="col-lg-4 col-md-4 col-sm-4">
           <div class="pm-staff-profile-container">
             <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img src="{{ asset('Front/img')}}/course01.jpg" alt="" class="img-thumbnail img-circle" />
-              </div>
+            <img src="{{ asset ('images/' . $projets->url_image)}}"class="pm-staff-profile-image"  alt="PFE" class="img-thumbnail img-circle" />
             </div>
             <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Bryan Johnson</p>
-              <p class="pm-staff-profile-title">Lead Software Engineer</p>
-
-              <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
+              <p class="pm-staff-profile-name">{{$projets->titre}}</p>
+              <p class="pm-staff-profile-bio">{{$projets->description}} </p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="pm-staff-profile-container">
-            <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img src="{{ asset('Front/img')}}/course01.jpg" alt="" class="img-thumbnail img-circle" />
-              </div>
-            </div>
-            <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Bryan Johnson</p>
-              <p class="pm-staff-profile-title">Lead Software Engineer</p>
-
-              <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="pm-staff-profile-container">
-            <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img src="{{ asset('Front/img')}}/course01.jpg" alt="" class="img-thumbnail img-circle" />
-              </div>
-            </div>
-            <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Bryan Johnson</p>
-              <p class="pm-staff-profile-title">Lead Software Engineer</p>
-
-              <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
+        @endif
+        @endforeach
+        <!--fin d'un projet-->
               <a href="{{route('projets')}}"> <button name="submit" type="submit" class="btn btn-block btn-submit">
                 Consulter touts les projets  <i class="fa fa-arrow-right"></i></button> </a>
             </div>

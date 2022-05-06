@@ -65,28 +65,26 @@ tr:nth-child(even) {
 
   <br />
    <br />
-   <h2 class="Formateurs">Liste des Formateurs</h2>
+   <h2 class="Formateurs">Liste des Projets</h2>
    <br />
   </div>
   <table >
    <tr>
-    <th>id</th>
-    <th>nom</th>
-    <th>mail</th>
-    <th>mot_de_passe</th>
-    <th>type</th>
-    <th>Delete</th>
+    <th>Id</th>
+    <th>image</th>
+    <th>Titre</th>
+    <th>Description</th> 
+    <th>Supprimer</th>
    </tr>
-   @foreach($formateur as $row)
+   @foreach($projet as $projets)
    <tr>
-   <td>{{$row['id']}}</td>
-    <td>{{$row['nom']}}</td>
-    <td>{{$row['mail']}}</td>
-    <td>{{$row['mot_de_passe']}}</td>
-    <td>{{$row['type']}}</td>
-    
+   <td>{{$projets->id}}</td>
+   <td><img src="{{ asset ('images/' . $projets->url_image)}}" width="200px;" heigh="200px;" ></td>
+    <td>{{$projets->titre}}</td>
+    <td>{{$projets->description}}</td>
+      
     <td>
-     <form   action="{{route('supprimerF',$row['id'])}}" method="POST">
+     <form   action="{{route('supprimerP',$projets->id)}}" method="POST">
        @csrf
     <button type="submit" class="btn btn-danger">Supprimer</button>
      </form>
@@ -99,44 +97,24 @@ tr:nth-child(even) {
 </br>
 </br>
 <div class="login-box-body">
-  <p class="login-box-msg">Ajouter un Formateur</p>
+  <p class="login-box-msg">Ajouter un Projet</p>
   <div class="form-group">
-    <form action="/AdminDashboard/Formateur" method="POST"  id="loginForm">
+    <form action="/AdminDashboard/projet" method="POST" enctype="multipart/form-data"  id="loginForm">
       @csrf 
       <div class="form-group has-feedback">
-        <!----- username -------------->
-        <input class="form-control" placeholder="Nom d'utilisateur" name="nom" id="loginid" type="text" autocomplete="off" value="{{old('nom')}}" required />
+        <!----- Titre -------------->
+          <input type="text" class="form-control" name="titre"  placeholder="Titre" autocomplete="off" required/>
         </div>
       <div class="form-group has-feedback">
-        <!----- Email -------------->
-          <input type="email" class="form-control" name="mail" id="email" placeholder="Email" autocomplete="off" value="{{old('mail')}}" required/>
-        <!---Alredy exists  ! -->
-        @if($errors->has('mail'))
-       <h6 style="color: red;">{{ $errors->first('mail') }}</h6>
-         @endif
+        <!----- description -------------->
+        <textarea  name="description" rows="5" cols="155" placeholder="description" required> </textarea>
       </div>
-      <div class="form-group has-feedback">
-        <!----- password -------------->
-        <input class="form-control" placeholder="mot de passe" name="mot_de_passe" id="loginpsw" type="password" autocomplete="off" required/>
-        <!---Alredy exists  ! -->
-        @if($errors->has('mot_de_passe'))
-        <h6 style="color: red;">{{ $errors->first('mot_de_passe') }}</h6>
-        @endif
-      </div>
-      <div class="form-group has-feedback">
-        <!----- Repat password -------------->
-        <input class="form-control" placeholder="Repeter votre mot de passe" name="mot_de_passe_2" id="loginpsw" type="password" autocomplete="off" required />
-       <!---Alredy exists  ! -->
-        @if($errors->has('mot_de_passe_2'))
-        <h6 style="color: red;">{{ $errors->first('mot_de_passe_2') }}</h6>
-        @endif
-        </div> 
-        <div class="form-group has-feedback">
-        <SELECT name="type" size="1">
-        <OPTION>F
-        </SELECT> 
-        </div> 
-        </br>
+       <div class="form-group has-feedback">
+        <!----- image -------------->
+        <label style=color:black;>Ajouter une photo de projet</br></label>
+         <input type="file" name="url_image"  required>
+        </div>
+      
 
 <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Validator;
+use App\Models\Projet;
 use App\Models\Membre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -13,9 +14,10 @@ class MembreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Projet $projet)
     {
-        //
+        $projet = Projet::all();
+        return view('Front.index', compact('projet'));
     }
 
     /**
