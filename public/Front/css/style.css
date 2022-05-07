@@ -133,9 +133,7 @@ Banner
 	color: #fff;
 	margin-top: 30px;
 }
-.quote .btn{
-    background-color:
-}
+
 .modal-dialog {
     width: 600px;
     margin: 150px auto;
@@ -150,27 +148,7 @@ Banner
     margin-left: -12.5px;
     border-radius: 12px;
 }
-@-webkit-keyframes rotateplane {
-    0%   {top:10px;}
-    25%  {top:14px;}
-    50%  {top:19px;}
-    75%  {top:24px;}
-    100% {top:28px;}
-}
-@-moz-keyframes rotateplane {
-    0%   {top:10px;}
-    25%  {top:14px;}
-    50%  {top:19px;}
-    75%  {top:24px;}
-    100% {top:28px;}
-}
-@-o-keyframes rotateplane {
-    0%   {top:10px;}
-    25%  {top:14px;}
-    50%  {top:19px;}
-    75%  {top:24px;}
-    100% {top:28px;}
-}
+
 .mouse::after {
     content: "";
     position: absolute;
