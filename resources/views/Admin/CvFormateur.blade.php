@@ -1,142 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>CV Formateur</title>
-        <link rel="icon" type="image/x-icon" href="Front3/assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{ asset('Front3/css')}}//styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav" >
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Clarence Taylor</span>
+<html lang="Fr">
 
-                <span class="d-none d-lg-block">
-                    <div class="img-fluid img-profile rounded-circle mx-auto mb-2">
-                    <label style=color:black;>Ajouter une photo</br></label>
-                    <input type="file" name="image"  required>
-                    </div>
-                   </span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
-                </ul>
-            </div>
-        </nav>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
-            <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <h1 class="mb-0">
-                        Nom
-                        <span class="text-primary">Prenom</span>
-                    </h1>
-                    <div class="subheading mb-5">
-                       Adresse
-                        <a href="mailto:name@email.com">name@email.com</a>
-                    </div>
-                    <p class="lead mb-5">Description</p>
-                    <div class="social-icons">
-                        <a class="social-icon" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Experience-->
-            <section class="resume-section" id="experience">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Experience</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Senior Web Developer</h3>
-                            <div class="subheading mb-3">Intelitec Solutions</div>
-                            <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">March 2013 - Present</span></div>
-                    </div>
+ 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard</title>
 
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Education-->
-            <section class="resume-section" id="education">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Education</h2>
 
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">James Buchanan High School</h3>
-                            <div class="subheading mb-3">Technology Magnet Program</div>
-                            <p>GPA: 3.56</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2002 - May 2006</span></div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Skills-->
-            <section class="resume-section" id="skills">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Skills</h2>
-                    <div class="subheading mb-3">Programming Languages & Tools</div>
-                    <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="fab fa-html5"></i></li>
-                    </ul>
-                    <div class="subheading mb-3">Workflow</div>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Mobile-First, Responsive Design
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Interests-->
-            <section class="resume-section" id="interests">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Interests</h2>
-                    <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-                    <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Awards-->
-            <section class="resume-section" id="awards">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Awards & Certifications</h2>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Google Analytics Certified Developer
-                        </li>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//imagehover.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//style.css">
+  <link rel="shortcut icon" href="{{ asset('Front/img')}}/course01.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//style.css">
 
-                    </ul>
-                </div>
-            </section>
+</head>
+
+<body>
+  <!--Navigation bar-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href=""> dashboard</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#featureX">Cours</a></li>
+          <li><a href="#courses">Projet de Fin d'Études</a></li>
+          <li><a href="#faculity-member">Formateurs</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#" >Profil</a></li>
+          <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
+         </ul>
+      </div>
+    </div>
+  </nav>
+  <!--/ Navigation bar-->
+  <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 2px;
+  color:black;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.Formateurs { text-align: center; }
+</style>
+
+  <br />
+   <br />
+   <h2 class="Formateurs">Liste des Projets</h2>
+   <br />
+  </div>
+  <table >
+   <tr>
+    <th>Id</th>
+    <th>image</th>
+    <th>Titre</th>
+    <th>Description</th> 
+    <th>Supprimer</th>
+   </tr>
+  
+   <tr>
+   <td></td>
+   <td><img src="" width="200px;" heigh="200px;" ></td>
+    <td></td>
+    <td></td>
+      
+    <td>
+     <form   action="" method="POST">
+    
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+     </form>
+    </td>
+   </tr>
+
+  </table>
+  
+  <div class="modal-body padtrbl">
+</br>
+</br>
+<div class="login-box-body">
+  <p class="login-box-msg">Ajouter vos coordonnées </p>
+  <div class="form-group">
+    <form action="/AdminDashboard/cv" method="POST" enctype="multipart/form-data"  id="loginForm">
+      @csrf 
+      <div class="form-group has-feedback">
+        <!----- nom -------------->
+          <input type="text" class="form-control" name="nom"  placeholder=" nom" autocomplete="off" required/>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="Front3/js/scripts.js"></script>
-    </body>
-</html>
+        <div class="form-group has-feedback">
+        <!----- prénom -------------->
+          <input type="text" class="form-control" name="prenom"  placeholder=" prénom" autocomplete="off" required/>
+        </div>
+
+        <div class="form-group has-feedback">
+        <!----- prénom -------------->
+          <input type="text" class="form-control" name="adresse"  placeholder="adresse" autocomplete="off" required/>
+        </div>
+      		
+        <div class="form-group has-feedback">
+        <!----- prénom -------------->
+          <input type="Email" class="form-control" name="mail"  placeholder="mail" autocomplete="off" required/>
+        </div>
+        <div class="form-group has-feedback">
+        <!----- prénom -------------->
+          <input type="text" class="form-control" name="numero"  placeholder="numero_tel" autocomplete="off" required/>
+        </div>
+        
+      <div class="form-group has-feedback">
+        <!----- description -------------->
+        <textarea placeholder="description à propos" class="form-control" name="description" rows="5" cols="155"  required></textarea>
+      </div>
+      <div class="form-group has-feedback">
+        <!----- prénom -------------->
+          <input type="text" class="form-control" name="fb"  placeholder="lien facebook" autocomplete="off" required/>
+        </div>
+        
+        <div class="form-group has-feedback">
+        <!----- prénom -------------->
+          <input type="text" class="form-control" name="linkedin"  placeholder="lien linkedin" autocomplete="off" required/>
+          </div>
+     <div class="form-group has-feedback">
+        <!----- description -------------->
+        <textarea placeholder="vos compétance" class="form-control" name="competence" rows="5" cols="155"  required></textarea>
+      </div>
+      <div class="form-group has-feedback">
+        <!----- description -------------->
+        <textarea placeholder="votre centre d'interet" class="form-control" name="interet" rows="5" cols="155"  required></textarea>
+      </div>
+
+     
+       <div class="form-group has-feedback">
+        <!----- image -------------->
+        <label style=color:black;>Ajouter une photo de projet</br></label>
+         <input type="file" name="url_image"  required>
+        </div>
+      
+
+<button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+
+</div>
+      </div>
+    </form>
+
+
+</br>
+<p class="login-box-msg">Ajouter votre experience</p>
+
+<div class="modal-body padtrbl">
+
+<div class="login-box-body">
+  <div class="form-group">
+  <form action="/AdminDashboard/Exp" method="POST" enctype="multipart/form-data"  id="loginForm">
+  @csrf 
+          <div class="form-group has-feedback">
+        <!----- prénom -------------->
+          <input type="text" class="form-control" name="titre_experience"  placeholder="titre-experience" autocomplete="off" required/>
+          </div>
+          <div class="form-group has-feedback">
+        <!----- prénom -------------->
+          <input type="text" class="form-control" name="lieu_experience"  placeholder="lieu-experience" autocomplete="off" required/>
+          </div>
+
+          <div class="form-group has-feedback">
+        <!----- prénom -------------->
+          <input type="text" class="form-control" name="date_experience"  placeholder="date-experience" autocomplete="off" required/>
+          </div>
+        <!----- description -------------->
+        <textarea placeholder="descreption-experience" class="form-control" name="desc_experience" rows="5" cols="155"  required></textarea>
+      </div>
+      </div>
+      <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+      </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</br>
+<p class="login-box-msg">Ajouter votre education</p>
+
+<div class="modal-body padtrbl">
+
+<div class="login-box-body">
+  <div class="form-group">
+  <form action="/AdminDashboard/Edu" method="POST" enctype="multipart/form-data"  id="loginForm">
+  @csrf 
+          <div class="form-group has-feedback">
+        <!----- prénom -------------->
+          <input type="text" class="form-control" name="titre_education"  placeholder="titre-education" autocomplete="off" required/>
+          </div>
+          <div class="form-group has-feedback">
+        <!----- prénom -------------->
+          <input type="text" class="form-control" name="lieu_education"  placeholder="lieu-education" autocomplete="off" required/>
+          </div>
+
+          <div class="form-group has-feedback">
+        <!----- prénom -------------->
+          <input type="text" class="form-control" name="date_education"  placeholder="date-education" autocomplete="off" required/>
+          </div>
+        <!----- description -------------->
+        <textarea placeholder="descreption-education" class="form-control" name="desc_education" rows="5" cols="155"  required></textarea>
+      </div>
+      </div>
+      <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+      </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</br>
+<p class="login-box-msg">Ajouter vos certificats</p>
+
+<div class="modal-body padtrbl">
+
+<div class="login-box-body">
+  <div class="form-group">
+  <form action="/AdminDashboard/Crt" method="POST" enctype="multipart/form-data"  id="loginForm">
+  @csrf 
+          <div class="form-group has-feedback">
+        <!----- prénom -------------->
+          <input type="text" class="form-control" name="certif"  placeholder="vos certificats" autocomplete="off" required/>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+      </div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+
+</div>

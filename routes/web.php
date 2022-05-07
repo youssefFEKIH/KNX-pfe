@@ -3,6 +3,9 @@
 use App\Http\Controllers\MembreController;
 use App\Http\Controllers\ProjetController;
 use App\Http\Controllers\CvController;
+use App\Http\Controllers\ExpController;
+use App\Http\Controllers\CrtController;
+use App\Http\Controllers\EduController;
 
 
 
@@ -57,7 +60,7 @@ Route::get('/knxtunisie-contact', function () {return view('knxtunisie.knxtunisi
 | Formateur tunisie
 |--------------------------------------------------------------------------
 */
-Route::get('/Formateur', function () {return view('Formateur.index');})->name('Formateur');
+Route::get('/Formateur',[CvController::class, 'index'] )->name('Formateur');
 
 
 /*
@@ -75,4 +78,7 @@ Route::post('/AdminDashboard/Formateur', [MembreController::class, 'addF'])->nam
 Route::post('/destroy/{id}/', [MembreController::class, 'destroy'])->name('supprimerF');
 Route::post('/destroy/{id}/', [ProjetController::class, 'destroy'])->name('supprimerP');
 Route::post('/AdminDashboard/projet',  [ProjetController::class, 'create'])->name('AddProjet');
-
+Route::post('/AdminDashboard/cv', [CvController::class, 'create']);
+Route::post('/AdminDashboard/Edu', [EduController::class, 'create']);
+Route::post('/AdminDashboard/Exp', [ExpController::class, 'create']);
+Route::post('/AdminDashboard/Crt', [CrtController::class, 'create']);

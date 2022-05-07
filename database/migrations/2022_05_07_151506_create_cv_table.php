@@ -24,18 +24,8 @@ return new class extends Migration
             $table->string('fb');
             $table->string('linkedin');
             $table->string('description');
-            $table->string('titre-experience');
-            $table->string('desc-experience');
-            $table->string('lieu-experience');
-            $table->string('date-experience');
-            $table->string('titre-education');
-            $table->string('desc-education');
-            $table->string('lieu-educatin');
-            $table->string('date-education');
             $table->string('competence');
             $table->string('interet');
-            $table->string('certif');
-
             $table->timestamps();
         });
     }

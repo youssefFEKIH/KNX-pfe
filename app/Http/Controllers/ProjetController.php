@@ -43,7 +43,7 @@ class ProjetController extends Controller
      
         
         }          
-           if( $post->save()){ return redirect()->route('AdminDashboard/projet');}
+           if( $post->save()){ return redirect()->route('AdminDashboard/cv');}
          
            
     }
