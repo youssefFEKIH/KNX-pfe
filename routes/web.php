@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\MembreController;
 use App\Http\Controllers\ProjetController;
-
+use App\Http\Controllers\CvController;
 
 
 
@@ -69,8 +69,10 @@ Route::get('/Formateur', function () {return view('Formateur.index');})->name('F
 Route::get('/deconnexionAdmin', [AdminController::class, 'deconnexion']);
 Route::get('/AdminDashboard', [MembreController::class, 'show'])->name('AdminDashboard');
 Route::get('/AdminDashboard/projet', [ProjetController::class, 'index'])->name('AdminDashboard/projet');
+Route::get('/AdminDashboard/cv', [CvController::class, 'CvFormateur'])->name('AdminDashboard/cv');
 
 Route::post('/AdminDashboard/Formateur', [MembreController::class, 'addF'])->name('AddFormateur');
 Route::post('/destroy/{id}/', [MembreController::class, 'destroy'])->name('supprimerF');
 Route::post('/destroy/{id}/', [ProjetController::class, 'destroy'])->name('supprimerP');
 Route::post('/AdminDashboard/projet',  [ProjetController::class, 'create'])->name('AddProjet');
+

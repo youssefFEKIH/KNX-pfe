@@ -18,8 +18,7 @@ return new class extends Migration
             $table->string('nom');
             $table->string('adresse');
 
-            $table->foreign('chapitre_id')->on('chapitres');
-            $table->unsignedBigInteger('chapitre_id');
+            
             $table->timestamps();
         });
     }

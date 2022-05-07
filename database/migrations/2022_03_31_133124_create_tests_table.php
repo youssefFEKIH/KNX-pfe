@@ -18,11 +18,7 @@ return new class extends Migration
             $table->string('nom');
             $table->float('note')->nullable();
 
-            $table->foreign('membre_id')->on('membres');
-            $table->unsignedBigInteger('membre_id');
-
-            $table->foreign('cours_id')->on('cours');
-            $table->unsignedBigInteger('cours_id');
+           
             $table->timestamps();
         });
     }

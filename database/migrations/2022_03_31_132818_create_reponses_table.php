@@ -16,8 +16,7 @@ return new class extends Migration
         Schema::create('reponses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('contenu');
-            $table->foreign('reponse_id')->on('reponses');
-            $table->unsignedBigInteger('question_id');
+            
             $table->timestamps();
         });
     }

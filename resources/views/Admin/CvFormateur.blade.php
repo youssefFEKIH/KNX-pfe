@@ -13,18 +13,20 @@
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="Front3/css/styles.css" rel="stylesheet" />
+        <link href="{{ asset('Front3/css')}}//styles.css" rel="stylesheet" />
     </head>
-    @foreach($cv as $cvs)
     <body id="page-top">
         <!-- Navigation-->
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav" >
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <span class="d-block d-lg-none">Clarence Taylor</span>
+
                 <span class="d-none d-lg-block">
-                    <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ asset ('images/' . $cvs->image)}}" alt="..." />
-                </span>
+                    <div class="img-fluid img-profile rounded-circle mx-auto mb-2">
+                    <label style=color:black;>Ajouter une photo</br></label>
+                    <input type="file" name="image"  required>
+                    </div>
+                   </span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -127,7 +129,7 @@
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
                             Google Analytics Certified Developer
                         </li>
-                        
+
                     </ul>
                 </div>
             </section>
@@ -137,5 +139,4 @@
         <!-- Core theme JS-->
         <script src="Front3/js/scripts.js"></script>
     </body>
-    @endforeach
 </html>

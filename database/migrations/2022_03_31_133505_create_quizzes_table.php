@@ -17,8 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('quiz');
 
-            $table->foreign('chapitre_id')->on('chapitres');
-            $table->unsignedBigInteger('chapitre_id');
+            
             $table->timestamps();
         });
     }

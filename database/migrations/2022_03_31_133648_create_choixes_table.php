@@ -17,8 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('choix');
 
-            $table->foreign('enonce_id')->on('enonces');
-            $table->unsignedBigInteger('enonce_id');
+           
             $table->timestamps();
         });
     }

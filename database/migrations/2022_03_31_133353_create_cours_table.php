@@ -19,8 +19,7 @@ return new class extends Migration
             $table->string('url_image');
             $table->string('description');
 
-            $table->foreign('formateur_id')->on('formateurs');
-            $table->unsignedBigInteger('formateur_id');
+            
             $table->timestamps();
         });
     }

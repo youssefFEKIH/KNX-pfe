@@ -237,11 +237,11 @@ sup {
 }
 
 a {
-  color: #15bc3a;
+  color: rgb(30,144,255);
   text-decoration: underline;
 }
 a:hover {
-  color: rgba(100, 100, 225);
+    color: #5fcf80;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -7719,7 +7719,7 @@ textarea.form-control-lg {
 /* rtl:end:remove */
 .text-primary {
   --bs-text-opacity: 1;
-  color: rgba(100, 100, 225) !important;
+  color: #5fcf80 !important;
 }
 
 .text-secondary {
@@ -7810,7 +7810,7 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color:  rgba(100, 100, 225) !important;
+  background-color: #5fcf80  !important;
 }
 
 .bg-secondary {
@@ -11392,7 +11392,7 @@ p.lead {
   justify-content: center;
   height: 3.5rem;
   width: 3.5rem;
-  background-color: #15bc3a;
+  background-color: rgb(30,144,255);
   color: #fff;
   border-radius: 100%;
   font-size: 1.5rem;
@@ -11402,7 +11402,7 @@ p.lead {
   margin-right: 0;
 }
 .social-icons .social-icon:hover {
-  background-color: rgba(100, 100, 225) ;
+  background-color: #5fcf80 ;
 }
 
 .dev-icons {

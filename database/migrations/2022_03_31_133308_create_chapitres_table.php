@@ -17,8 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('nom');
 
-            $table->foreign('cours_id')->on('cours');
-            $table->unsignedBigInteger('cours_id');
+            
             $table->timestamps();
         });
     }
