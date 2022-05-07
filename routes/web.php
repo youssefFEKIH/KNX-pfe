@@ -18,7 +18,7 @@ use App\Http\Controllers\ProjetController;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\front\homepageController@index')->name('pagedaccueil');
+Route::get('/', [membreController::class, 'index3'])->name('pagedaccueil');
 Route::get('/home', [membreController::class, 'index'])->name('home');
 Route::get('/home/connect', function () {return view('Front.index');})->name('homeconnect');
 Route::get('/cours', function () {return view('Front.cours');})->name('cours');
