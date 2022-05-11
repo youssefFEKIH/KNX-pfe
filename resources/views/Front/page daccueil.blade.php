@@ -24,7 +24,8 @@
     <div class="container">
       <div class="row">
         <div class="header-section text-center">
-          <h2>Bienvenu Au Mirage GROUP</h2>
+          <h2>Bienvenu Au KNX UserClub Tunisia
+</h2>
 
           <hr class="bottom-line">
         </div>

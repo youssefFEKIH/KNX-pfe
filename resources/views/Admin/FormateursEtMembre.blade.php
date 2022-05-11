@@ -32,11 +32,10 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#featureX">Cours</a></li>
-          <li><a href="#courses">Projet de Fin d'Études</a></li>
-          <li><a href="#faculity-member">Formateurs</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#" >Profil</a></li>
+          <li><a href="{{ route('AdminDashboard') }}">Liste des Formateurs</a></li>
+          <li><a href="{{ route('AdminDashboard/projet') }}">Projet de Fin d'Études</a></li>
+          <li><a href="{{ route('AdminDashboard/cv') }}">cv</a></li>
+          <li><a href="{{ route('AdminDashboard/KNX') }}">knx Tunisie</a></li>
           <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
          </ul>
       </div>

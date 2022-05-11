@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Cv;
 use App\Models\Exp;
+
 use App\Models\Edu;
 use App\Models\Crt;
 use Illuminate\Http\Request;
@@ -14,21 +15,21 @@ class CvController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function CvFormateur(Cv $cv,Exp $exp, Edu $edu,Crt $crt)
+    public function CvFormateur(Cv $cv,Edu $edu,Exp $exp,Crt $crt)
     {
         $cv = Cv::all();
         $exp = Exp::all();
         $edu = Edu::all();
         $crt = Crt::all();
-        return view('Admin.CvFormateur', compact('cv'), compact('exp'), compact('edu'), compact('crt'));
+        return view('Admin.CvFormateur',compact('cv','exp','edu','crt'));
     }
-    public function index(Cv $cv,Exp $exp,Edu $edu,Crt $crt)
+    public function index(Cv $cv,Edu $edu,Exp $exp,Crt $crt)
     {
         $cv = Cv::all();
         $exp = Exp::all();
         $edu = Edu::all();
         $crt = Crt::all();
-        return view('Formateur.index',compact('cv'),compact('exp'),compact('edu'),compact('crt'));
+        return view('Formateur.index',compact('cv','exp','edu','crt'));
     }
     public function create(Request $request)
     {

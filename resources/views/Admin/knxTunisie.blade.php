@@ -69,21 +69,17 @@ tr:nth-child(even) {
   </div>
   <table >
    <tr>
-    <th>Id</th>
+    <th>id</th>
     <th>image</th>
-    <th>Titre</th>
-    <th>Description</th> 
-    <th>Supprimer</th>
+    <th>Delete</th>
    </tr>
-   @foreach($projet as $projets)
+   @foreach($N as $NS)
    <tr>
-   <td>{{$projets->id}}</td>
-   <td><img src="{{ asset ('images/' . $projets->url_image)}}" width="200px;"  ></td>
-    <td>{{$projets->titre}}</td>
-    <td>{{$projets->description}}</td>
-      
+   <td>{{$NS['id']}}</td>
+   <td>  <img src="{{ asset ('images/' . $NS->url_image)}}" width="500px;" height="150px;"></td>
+    
     <td>
-     <form   action="{{route('supprimerP',$projets->id)}}" method="POST">
+     <form   action="{{route('supprimerI',$NS->id)}}" method="POST">
        @csrf
     <button type="submit" class="btn btn-danger">Supprimer</button>
      </form>
@@ -96,19 +92,10 @@ tr:nth-child(even) {
 </br>
 </br>
 <div class="login-box-body">
-  <p class="login-box-msg">Ajouter un Projet</p>
+  <p class="login-box-msg">Ajouter image d'accueil</p>
   <div class="form-group">
-    <form action="/AdminDashboard/projet" method="POST" enctype="multipart/form-data"  id="loginForm">
+    <form action="/AdminDashboard/image" method="POST" enctype="multipart/form-data"  id="loginForm">
       @csrf 
-      <div class="form-group has-feedback">
-        <!----- Titre -------------->
-          <input type="text" class="form-control" name="titre"  placeholder="Titre" autocomplete="off" required/>
-        </div>
-      <div class="form-group has-feedback">
-        <!----- description -------------->
-        <textarea  name="description" rows="5" cols="155" placeholder="description" required> </textarea>
-      </div>
-       <div class="form-group has-feedback">
         <!----- image -------------->
         <label style=color:black;>Ajouter une photo de projet</br></label>
          <input type="file" name="url_image"  required>

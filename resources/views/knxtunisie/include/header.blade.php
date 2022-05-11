@@ -205,46 +205,24 @@
                     <ul class="slides">
 
                     <li style="width: 100%; float: left; margin-right: -100%; display: none;">
-                    <a href="https://bit.ly/2Z1TD7q" title="Lire Le KNX Journal 2021" target="_blank">
-                        <img src="Front2/images/Bandeau_KNX_Journal_2021_mobile.jpg" alt="header_mob">
-                        <img src="Front2/images/Bandeau_KNX_Journal_2021_tab.jpg" alt="header_tab">
-                        <img src="Front2/images/Bandeau_KNX_Journal_2021_site.jpg" alt="header_site">
-                    </a>
+                   
+                    @php($count=0)
+                    @foreach($N as $NS)
+                    @if($count < 1)
+                    @php($count++)
+                    <img src="{{ asset ('images/' . $NS->url_image)}}" class="im"  alt="header_site">
+                    @endif
+                    @endforeach
+                    
                     </li>
-                    <!--
-                    <li>
-                    <a href="https://youtu.be/_2NIx9Ru_Jw" title="Voir la nouvelle vidéo KNX France" target="_blank">
-                        <img src="http://www.knx.fr/images/header_mobile_img37.jpg" alt="header_mob" />
-                        <img src="http://www.knx.fr/images/header_tab_img37.jpg" alt="header_tab" />
-                        <img src="http://www.knx.fr/images/header_site_img37.jpg" alt="header_site" />
-                    </a>
-                    </li>
-                    -->
-                    <li style="width: 100%; float: left; margin-right: -100%; display: none;"> <a href="http://knx.fr/news/Formation_2021/" title="Former en KNX pour développer le marché du Smart Building" target="_blank">
-                        <img src="Front2/images/header_mobile_img38.jpg" alt="header_mob">
-                        <img src="Front2/images/bandeau_formation_2021_tab.jpg" alt="header_tab">
-                        <img src="Front2/images/bandeau_formation_2021.jpg" alt="header_site">
-                   </a> </li>
+                   
+                   
 
-                    <li style="width: 100%; float: left; margin-right: -100%; display: none;">
-                    <a href="http://www.knx.fr/KNX-France-ets6.html" title="Logiciel ETS6 : Intelligent, sécurisé et ouvert" target="_blank">
-                        <img src="Front2/images/Bandeau_ETS6_mobile.jpg" alt="header_mob">
-                        <img src="Front2/images/Bandeau_ETS6_tab.jpg" alt="header_tab">
-                        <img src="Front2/images/Bandeau_ETS6_site.jpg" alt="header_site">
-                        </a>
-                    </li>
+                    
 
-                    <li style="width: 100%; float: left; margin-right: -100%; display: none;"><a href="https://bit.ly/2Z1TD7q" title="Lire Le KNX Journal 2021" target="_blank">
-                        <img src="Front2/images/Bandeau_KNX_Journal_2021_mobile2.jpg" alt="header_mob">
-                        <img src="Front2/images/Bandeau_KNX_Journal_2021_tab2.jpg" alt="header_tab">
-                        <img src="Front2/images/Bandeau_KNX_Journal_2021_site2.jpg" alt="header_site">
-                        </a> </li>
+                  
 
-                    <li style="width: 100%; float: left; margin-right: -100%; display: list-item;">
-                        <img src="Front2/images/header_mobile_img41.jpg" alt="header_mob">
-                        <img src="Front2/images/header_tab_img41.jpg" alt="header_tab">
-                        <img src="Front2/images/header_site_img41.jpg" alt="header_site">
-                    </li>
+                   
                     </ul>
                 <ol class="flex-control-nav"><li><a class="">1</a></li><li><a class="">2</a></li><li><a class="">3</a></li><li><a class="">4</a></li><li><a class="active">5</a></li></ol><ul class="flex-direction-nav"><li><a class="prev" href="#">Previous</a></li><li><a class="next" href="#">Next</a></li></ul></div>
              </div>
@@ -254,7 +232,7 @@
             <br>
             <!--  Slideshow   -->
             <div id="logos">
-                <iframe id="frame_carousel" src="http://www.knx.fr/carousel_logo_2.html"></iframe>
+                <iframe id="frame_carousel" src=""> </iframe>
             </div>
             <!--  fin Slideshow   -->
 

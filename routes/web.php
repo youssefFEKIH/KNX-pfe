@@ -6,6 +6,7 @@ use App\Http\Controllers\CvController;
 use App\Http\Controllers\ExpController;
 use App\Http\Controllers\CrtController;
 use App\Http\Controllers\EduController;
+use App\Http\Controllers\nouveauteController;
 
 
 
@@ -45,15 +46,15 @@ Route::post('/home/connect', [MembreController::class, 'connect'])->name('homeco
 | KNX tunisie
 |--------------------------------------------------------------------------
 */
-Route::get('/knxtunisie-com', function () {return view('knxtunisie.knxtunisie-com');})->name('knxtunisie-com');
-Route::get('/knxtunisie-acceuil', function () {return view('knxtunisie.knxtunisie-acceuil');})->name('knxtunisie-acceuil');
-Route::get('/knx', function () {return view('knxtunisie.knx');})->name('knx');
-Route::get('/knxtunisie-logiciel', function () {return view('knxtunisie.knxtunisie-logiciel');})->name('knxtunisie-logiciel');
-Route::get('/knxtunisie-doc', function () {return view('knxtunisie.knxtunisie-doc');})->name('knxtunisie-doc');
-Route::get('/knxtunisie-formation', function () {return view('knxtunisie.knxtunisie-formation');})->name('knxtunisie-formation');
-Route::get('/knxtunisie-actus', function () {return view('knxtunisie.knxtunisie-actus');})->name('knxtunisie-actus');
-Route::get('/knxtunisie-contact', function () {return view('knxtunisie.knxtunisie-contact');})->name('knxtunisie-contact');
-Route::get('/knxtunisie-contact', function () {return view('knxtunisie.knxtunisie-contact');})->name('knxtunisie-contact');
+Route::get('/knxtunisie-com', [nouveauteController::class, 'index'])->name('knxtunisie-com');
+Route::get('/knxtunisie-acceuil', [nouveauteController::class, 'index2'])->name('knxtunisie-acceuil');
+Route::get('/knx',[nouveauteController::class, 'index3'])->name('knx');
+Route::get('/knxtunisie-logiciel', [nouveauteController::class, 'index4'])->name('knxtunisie-logiciel');
+Route::get('/knxtunisie-doc', [nouveauteController::class, 'index5'])->name('knxtunisie-doc');
+Route::get('/knxtunisie-formation',[nouveauteController::class, 'index6'])->name('knxtunisie-formation');
+Route::get('/knxtunisie-actus',[nouveauteController::class, 'index7'])->name('knxtunisie-actus');
+Route::get('/knxtunisie-contact', [nouveauteController::class, 'index8'])->name('knxtunisie-contact');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -73,12 +74,15 @@ Route::get('/deconnexionAdmin', [AdminController::class, 'deconnexion']);
 Route::get('/AdminDashboard', [MembreController::class, 'show'])->name('AdminDashboard');
 Route::get('/AdminDashboard/projet', [ProjetController::class, 'index'])->name('AdminDashboard/projet');
 Route::get('/AdminDashboard/cv', [CvController::class, 'CvFormateur'])->name('AdminDashboard/cv');
+Route::get('/AdminDashboard/KNX', [nouveauteController::class, 'nouveaute'])->name('AdminDashboard/KNX');
 
 Route::post('/AdminDashboard/Formateur', [MembreController::class, 'addF'])->name('AddFormateur');
-Route::post('/destroy/{id}/', [MembreController::class, 'destroy'])->name('supprimerF');
+Route::post('/destroy/{id}/F', [MembreController::class, 'destroy'])->name('supprimerF');
 Route::post('/destroy/{id}/', [ProjetController::class, 'destroy'])->name('supprimerP');
 Route::post('/AdminDashboard/projet',  [ProjetController::class, 'create'])->name('AddProjet');
 Route::post('/AdminDashboard/cv', [CvController::class, 'create']);
 Route::post('/AdminDashboard/Edu', [EduController::class, 'create']);
 Route::post('/AdminDashboard/Exp', [ExpController::class, 'create']);
 Route::post('/AdminDashboard/Crt', [CrtController::class, 'create']);
+Route::post('/AdminDashboard/image',  [nouveauteController::class, 'store'])->name('AddimageKnx');
+Route::post('/destroy/{id}/I', [nouveauteController::class, 'destroy'])->name('supprimerI');

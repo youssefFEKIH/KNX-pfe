@@ -1,5 +1,5 @@
 
-<html lang="fr">
+
     @extends('knxtunisie.layout')
     @section('content')
     <head>

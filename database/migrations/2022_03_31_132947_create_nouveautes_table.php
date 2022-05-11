@@ -15,8 +15,6 @@ return new class extends Migration
     {
         Schema::create('nouveautes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nom');
-            $table->string('description');
             $table->string('url_image');
             $table->timestamps();
         });
