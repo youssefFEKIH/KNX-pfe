@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Cv;
 use App\Models\Exp;
 
@@ -15,21 +16,21 @@ class CvController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function CvFormateur(Cv $cv,Edu $edu,Exp $exp,Crt $crt)
+    public function CvFormateur(Cv $cv, Edu $edu, Exp $exp, Crt $crt)
     {
         $cv = Cv::all();
         $exp = Exp::all();
         $edu = Edu::all();
         $crt = Crt::all();
-        return view('Admin.CvFormateur',compact('cv','exp','edu','crt'));
+        return view('Admin.CvFormateur', compact('cv', 'exp', 'edu', 'crt'));
     }
-    public function index(Cv $cv,Edu $edu,Exp $exp,Crt $crt)
+    public function index(Cv $cv, Edu $edu, Exp $exp, Crt $crt)
     {
         $cv = Cv::all();
         $exp = Exp::all();
         $edu = Edu::all();
         $crt = Crt::all();
-        return view('Formateur.index',compact('cv','exp','edu','crt'));
+        return view('Formateur.index', compact('cv', 'exp', 'edu', 'crt'));
     }
     public function create(Request $request)
     {
@@ -38,25 +39,23 @@ class CvController extends Controller
         $post->prenom = $request->prenom;
         $post->adresse = $request->adresse;
         $post->mail = $request->mail;
-        $post->numero= $request->numero;
-        $post->fb= $request->fb;
-        $post->linkedin= $request->linkedin;
-        $post->competence= $request->competence;      
-        $post->interet= $request->interet;
+        $post->numero = $request->numero;
+        $post->fb = $request->fb;
+        $post->linkedin = $request->linkedin;
+        $post->competence = $request->competence;
+        $post->interet = $request->interet;
         $post->description = $request->description;
-     
-        if($request->hasfile('image')){
+
+        if ($request->hasfile('image')) {
             $file = $request->file('image');
             $extenstion = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extenstion;
+            $filename = time() . '.' . $extenstion;
             $file->move('images/', $filename);
-            $post->image= $filename;
-     
-        
-        }          
-           if( $post->save()){ return redirect()->route('AdminDashboard/cv');}
-         
-           
+            $post->image = $filename;
+        }
+        if ($post->save()) {
+            return redirect()->route('AdminDashboard/cv');
+        }
     }
 
     /**
@@ -64,7 +63,7 @@ class CvController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
- 
+
 
     /**
      * Store a newly created resource in storage.

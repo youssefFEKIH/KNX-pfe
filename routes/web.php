@@ -7,6 +7,7 @@ use App\Http\Controllers\ExpController;
 use App\Http\Controllers\CrtController;
 use App\Http\Controllers\EduController;
 use App\Http\Controllers\nouveauteController;
+use App\Http\Controllers\CandidatController;
 
 
 
@@ -24,12 +25,22 @@ use App\Http\Controllers\nouveauteController;
 
 Route::get('/', [membreController::class, 'index3'])->name('pagedaccueil');
 Route::get('/home', [membreController::class, 'index'])->name('home');
-Route::get('/home/connect', function () {return view('Front.index');})->name('homeconnect');
-Route::get('/cours', function () {return view('Front.cours');})->name('cours');
+Route::get('/home/connect', function () {
+    return view('Front.index');
+})->name('homeconnect');
+Route::get('/cours', function () {
+    return view('Front.cours');
+})->name('cours');
 Route::get('/projets', [ProjetController::class, 'index2'])->name('projets');
-Route::get('/inscriptionget', function () {return view('Front.inscription');})->name('inscriptionget');
-Route::get('/connexion', function () {return view('Front.connexion');})->name('connexion');
-Route::get('/compte', function () { return view('Front.tableaudebordmembre');})->name('profil');
+Route::get('/inscriptionget', function () {
+    return view('Front.inscription');
+})->name('inscriptionget');
+Route::get('/connexion', function () {
+    return view('Front.connexion');
+})->name('connexion');
+Route::get('/compte', function () {
+    return view('Front.tableaudebordmembre');
+})->name('profil');
 Route::get('/deconnexion', [MembreController::class, 'deconnexion']);
 
 
@@ -48,11 +59,11 @@ Route::post('/home/connect', [MembreController::class, 'connect'])->name('homeco
 */
 Route::get('/knxtunisie-com', [nouveauteController::class, 'index'])->name('knxtunisie-com');
 Route::get('/knxtunisie-acceuil', [nouveauteController::class, 'index2'])->name('knxtunisie-acceuil');
-Route::get('/knx',[nouveauteController::class, 'index3'])->name('knx');
+Route::get('/knx', [nouveauteController::class, 'index3'])->name('knx');
 Route::get('/knxtunisie-logiciel', [nouveauteController::class, 'index4'])->name('knxtunisie-logiciel');
 Route::get('/knxtunisie-doc', [nouveauteController::class, 'index5'])->name('knxtunisie-doc');
-Route::get('/knxtunisie-formation',[nouveauteController::class, 'index6'])->name('knxtunisie-formation');
-Route::get('/knxtunisie-actus',[nouveauteController::class, 'index7'])->name('knxtunisie-actus');
+Route::get('/knxtunisie-formation', [nouveauteController::class, 'index6'])->name('knxtunisie-formation');
+Route::get('/knxtunisie-actus', [nouveauteController::class, 'index7'])->name('knxtunisie-actus');
 Route::get('/knxtunisie-contact', [nouveauteController::class, 'index8'])->name('knxtunisie-contact');
 
 
@@ -61,7 +72,7 @@ Route::get('/knxtunisie-contact', [nouveauteController::class, 'index8'])->name(
 | Formateur tunisie
 |--------------------------------------------------------------------------
 */
-Route::get('/Formateur',[CvController::class, 'index'] )->name('Formateur');
+Route::get('/Formateur', [CvController::class, 'index'])->name('Formateur');
 
 
 /*
@@ -75,6 +86,10 @@ Route::get('/AdminDashboard', [MembreController::class, 'show'])->name('AdminDas
 Route::get('/AdminDashboard/projet', [ProjetController::class, 'index'])->name('AdminDashboard/projet');
 Route::get('/AdminDashboard/cv', [CvController::class, 'CvFormateur'])->name('AdminDashboard/cv');
 Route::get('/AdminDashboard/KNX', [nouveauteController::class, 'nouveaute'])->name('AdminDashboard/KNX');
+Route::get('/AdminDashboard/candidat', [CandidatController::class, 'candidat'])->name('AdminDashboard/candidat');
+
+
+
 
 Route::post('/AdminDashboard/Formateur', [MembreController::class, 'addF'])->name('AddFormateur');
 Route::post('/destroy/{id}/F', [MembreController::class, 'destroy'])->name('supprimerF');

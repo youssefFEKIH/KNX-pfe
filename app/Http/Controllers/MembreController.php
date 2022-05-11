@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Validator;
 use App\Models\Projet;
 use App\Models\Membre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+
 class MembreController extends Controller
 {
     /**
@@ -21,7 +23,7 @@ class MembreController extends Controller
     }
     public function index3(Projet $projet)
     {
-       
+
         return view('Front.page daccueil');
     }
 
@@ -32,9 +34,6 @@ class MembreController extends Controller
      */
     public function create()
     {
-
-       
-
     }
 
     /**
@@ -46,79 +45,80 @@ class MembreController extends Controller
     public function store(Request $request)
     {
 
-        
-        $validator = Validator::make($request->all(), 
+
+        $validator = Validator::make(
+            $request->all(),
             [
-            'nom'=> 'required',
-            'mail'=>'required|email|unique:membres',
-            'mot_de_passe'=>'required|min:8',
-            'mot_de_passe_2'=>'required|same:mot_de_passe'
-           ]);
-           if($validator->fails()){
+                'nom' => 'required',
+                'mail' => 'required|email|unique:membres',
+                'mot_de_passe' => 'required|min:8',
+                'mot_de_passe_2' => 'required|same:mot_de_passe'
+            ]
+        );
+        if ($validator->fails()) {
             return redirect('inscriptionget')->withErrors($validator)->withInput();
         }
-           $m=new membre();
-           $m-> nom=$request->nom;
-           $m-> mail=$request->mail;
-           $m-> mot_de_passe=Hash::make($request->mot_de_passe);
-           if ($m->save()){
+        $m = new membre();
+        $m->nom = $request->nom;
+        $m->mail = $request->mail;
+        $m->mot_de_passe = Hash::make($request->mot_de_passe);
+        if ($m->save()) {
             return view('Front.connexion');
-           }
-         
-        
+        }
     }
-     public function connect(Request $request){
-        $validator = Validator::make($request->all(), 
-        [
-        'mail'=>'required|email|',
-        'mot_de_passe'=>'required|min:8',
-        
-       ]);
-       if($validator->fails()){
-        return redirect('connexion')->withErrors($validator)->withInput();
-    }
-        
-        $resultat=auth()->attempt([
-            $mail='mail' => request('mail'),
-            $pass='password' => request('mot_de_passe'),
+    public function connect(Request $request)
+    {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'mail' => 'required|email|',
+                'mot_de_passe' => 'required|min:8',
+
+            ]
+        );
+        if ($validator->fails()) {
+            return redirect('connexion')->withErrors($validator)->withInput();
+        }
+
+        $resultat = auth()->attempt([
+            $mail = 'mail' => request('mail'),
+            $pass = 'password' => request('mot_de_passe'),
         ]);
-        if($resultat) {
-            
-            $request->session()->put('mail',$mail);
-            if (Auth::user()->type=='A'){
-                        return redirect('AdminDashboard');}
-            elseif (Auth::user()->type=='F'){
-                         return view('Front.tableaudebordmembre');    
-            } 
-            else{
-                return view('Front.tableaudebordmembre');  
-            }           
-           
+        if ($resultat) {
+
+            $request->session()->put('mail', $mail);
+            if (Auth::user()->type == 'A') {
+                return redirect('AdminDashboard');
+            } elseif (Auth::user()->type == 'F') {
+                return view('Front.tableaudebordmembre');
+            } else {
+                return view('Front.tableaudebordmembre');
+            }
         }
         return redirect('connexion')->withInput()->withErrors([
-         'mot_de_passe'=>"Vos identifiants sont incorrects"
+            'mot_de_passe' => "Vos identifiants sont incorrects"
         ]);
-	}
-
-    public function deconnexion(Request $request)
-{
-    $request->session()->forget('mail');
-    auth()->logout();
-
-    return redirect('home');
-}
-    public function accueil()
-    {
-        if(auth()->guest()){
-            return redirect('connexion')->withInput()->withErrors([
-                'mot_de_passe'=>"Vous devez etre connecté pour avoir cette page."
-               ]);
-        }
-        else{
-        return var_dump (auth()->guest());}
     }
 
-    
+    public function deconnexion(Request $request)
+    {
+        $request->session()->forget('mail');
+        auth()->logout();
+
+        return redirect('home');
+    }
+    public function accueil()
+    {
+        if (auth()->guest()) {
+            return redirect('connexion')->withInput()->withErrors([
+                'mot_de_passe' => "Vous devez etre connecté pour avoir cette page."
+            ]);
+        } else {
+            return var_dump(auth()->guest());
+        }
+    }
+
+
     /**
      * Display the specified resource.
      *
@@ -127,36 +127,36 @@ class MembreController extends Controller
      */
     public function show(Membre $membre)
     {
-      
-        $formateur = Membre::all()->where('type','F')->toArray();
-        $membre = Membre::all()->where('type','M')->toArray();
+
+        $formateur = Membre::all()->where('type', 'F')->toArray();
+        $membre = Membre::all()->where('type', 'M')->toArray();
         return view('Admin.FormateursEtMembre', compact('formateur'), compact('membre'));
     }
     public function addF(Request $request)
     {
-       
-        $validator = Validator::make($request->all(), 
+
+        $validator = Validator::make(
+            $request->all(),
             [
-            'nom'=> 'required',
-            'mail'=>'required|email|unique:membres',
-            'mot_de_passe'=>'required|min:8',
-            'mot_de_passe_2'=>'required|same:mot_de_passe'
-           ]);
-           if($validator->fails()){
+                'nom' => 'required',
+                'mail' => 'required|email|unique:membres',
+                'mot_de_passe' => 'required|min:8',
+                'mot_de_passe_2' => 'required|same:mot_de_passe'
+            ]
+        );
+        if ($validator->fails()) {
             return redirect('AdminDashboard')->withErrors($validator)->withInput();
         }
-           $m=new membre();
-           $m-> nom=$request->nom;
-           $m-> mail=$request->mail;
-           $m-> mot_de_passe=$request->mot_de_passe;
-           $m-> type=$request->type;
-           if ($m->save()){
+        $m = new membre();
+        $m->nom = $request->nom;
+        $m->mail = $request->mail;
+        $m->mot_de_passe = $request->mot_de_passe;
+        $m->type = $request->type;
+        if ($m->save()) {
             return redirect('AdminDashboard');
-           }
-         
-        
+        }
     }
-    
+
 
     /**
      * Show the form for editing the specified resource.
@@ -166,9 +166,6 @@ class MembreController extends Controller
      */
     public function edit(Membre $membre)
     {
-       
-          
-        
     }
 
     /**
@@ -195,5 +192,4 @@ class MembreController extends Controller
         $membre->delete();
         return redirect()->route('AdminDashboard');
     }
-    
 }

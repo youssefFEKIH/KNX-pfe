@@ -8,7 +8,7 @@
     <div class="container">
       <div class="row">
         <div class="header-section text-center">
-          <h2>Cours En Ligne</h2>
+          <h2>Cours Présentiel</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
           <hr class="bottom-line">
         </div>
@@ -89,13 +89,9 @@
         </div>
    <!--fin d'un cours-->     
    
+
       </div>
     </div>
   </section>
   <!--/ Cours-->
   @endsection
-
-
-
-
-

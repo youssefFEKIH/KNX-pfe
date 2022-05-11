@@ -102,12 +102,12 @@
     </div>
   </section>
   <!--/ Testimonial-->
-   <!--Cours-->
+   <!--Cours en ligne-->
    <section id="courses" class="section-padding">
     <div class="container">
       <div class="row">
         <div class="header-section text-center">
-          <h2>Cours</h2>
+          <h2>Cours En Ligne</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
           <hr class="bottom-line">
         </div>
@@ -180,7 +180,86 @@
       </div>
     </div>
   </section>
-  <!--/ Cours-->
+  <!--/ Cours en ligne-->
+  <!--Cours Presentiel-->
+  <section id="coursesP" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>Cours Présentiel</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+          <hr class="bottom-line">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-6 padleft-right">
+          <figure class="imghvr-fold-up">
+            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
+            <figcaption>
+              <h3>Course Name</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
+            </figcaption>
+            <a href="#"></a>
+          </figure>
+        </div>
+        <div class="col-md-4 col-sm-6 padleft-right">
+          <figure class="imghvr-fold-up">
+            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
+            <figcaption>
+              <h3>Course Name</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
+            </figcaption>
+            <a href="#"></a>
+          </figure>
+        </div>
+        <div class="col-md-4 col-sm-6 padleft-right">
+          <figure class="imghvr-fold-up">
+            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
+            <figcaption>
+              <h3>Course Name</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
+            </figcaption>
+            <a href="#"></a>
+          </figure>
+        </div>
+        <div class="col-md-4 col-sm-6 padleft-right">
+          <figure class="imghvr-fold-up">
+            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
+            <figcaption>
+              <h3>Course Name</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
+            </figcaption>
+            <a href="#"></a>
+          </figure>
+        </div>
+        <div class="col-md-4 col-sm-6 padleft-right">
+          <figure class="imghvr-fold-up">
+            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
+            <figcaption>
+              <h3>Course Name</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
+            </figcaption>
+            <a href="#"></a>
+          </figure>
+        </div>
+        <div class="col-md-4 col-sm-6 padleft-right">
+          <figure class="imghvr-fold-up">
+            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
+            <figcaption>
+              <h3>Course Name</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
+            </figcaption>
+            <a href="#"></a>
+          </figure>
+          <a href="{{ route('cours') }}"> <button   name="submit" type="submit" class="btn btn-block btn-submit">
+            Consulter touts les cours  <i class="fa fa-arrow-right"></i></button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Cours Presentiel-->
   <!--Organisations-->
   <section id="organisations" class="section-padding">
     <div class="container">
@@ -303,7 +382,66 @@
 
   </section>
 
+<!--Postuler-->
+<section id="postuler" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>Postuler Maintenant</h2>
+          <p>Bienvenue sur les emplois de Mirage Group
+          <br/>Nous transmettrons votre cv aux employeurs intéressés</p>
+          <hr class="bottom-line">
+        </div>
+      </div>
+    </div>
 
+    <div class="container">
+     
+        <form action="" method="post" role="form" class="contactForm">
+            <div class="col-md-6 col-sm-6 col-xs-12 left">
+                
+              <div class="form-group">
+                <input type="text" name="name" class="form-control form" id="name" placeholder="Nom" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="name" class="form-control form" id="pays" placeholder="Pays" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+
+              
+              <div class="form-group">
+                <input type="tel" class="form-control" name="tel" id="tel" placeholder="numéro télephone"  data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+
+
+            </div>
+  
+            <div class="col-md-6 col-sm-6 col-xs-12 right">
+                <br> <br>
+                  <div class="form-group">
+                    <label style=color:black;>Ajouter votre CV </label>
+                    <input type="file" class="form-control" name="cv" id="cv" accept = "application/pdf" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                    <div class="validation"></div>
+                  </div>
+              </div>
+          
+            <div class="col-xs-12">
+              <!-- Button -->
+              <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light">Postuler</button>
+            </div>
+          </form>
+
+    </div>
+  </section>
+  <!--/ Postuler-->
 
   <!--Contact-->
   <section id="contact" class="section-padding">

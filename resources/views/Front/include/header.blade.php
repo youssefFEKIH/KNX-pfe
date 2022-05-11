@@ -35,8 +35,10 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#featureX">Mirage Group</a></li>
-          <li><a href="#courses">Cours</a></li>
+          <li><a href="#courses">Cours En Ligne</a></li>
+          <li><a href="#coursesP">Cours Présentiel</a></li>
           <li><a href="#faculity-member">Projet de Fin d'Études</a></li>
+          <li><a href="#postuler">Postuler</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#" data-target="#login" data-toggle="modal">Connexion</a></li>
           <li class="btn-trial"><a href="#" data-target="#inscrire" data-toggle="modal">S'inscrire</a></li>
@@ -61,7 +63,7 @@
             <p class="login-box-msg">Connectez-vous pour démarrer votre session</p>
             <div class="form-group">
               <form name="" action="/home/connect" method="POST" id="loginForm">
-                @csrf 
+                @csrf
                 <div class="form-group has-feedback">
                   <!----- mail -------------->
                   <input class="form-control"  placeholder="Email" name="mail" id="loginid" type="Email" autocomplete="off" required/>
@@ -107,7 +109,7 @@
               <p class="login-box-msg">Enregistrer un nouveau compte</p>
               <div class="form-group">
                 <form action="" method="POST"  id="loginForm">
-                  @csrf 
+                  @csrf
                   <div class="form-group has-feedback">
                     <!----- username -------------->
                     <input class="form-control" placeholder="Nom d'utilisateur" name="nom" id="loginid" type="text" autocomplete="off" required />
@@ -173,8 +175,10 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="{{ route('home') }}/#featureX">Mirage Group</a></li>
-          <li><a href="{{ route('home') }}/#courses">Cours</a></li>
+          <li><a href="{{ route('home') }}/#courses">Cours En Ligne</a></li>
+          <li><a href="{{ route('home') }}/#coursesP">Cours Présentiel</a></li>
           <li><a href="{{ route('home') }}/#faculity-member">Projet de Fin d'Études</a></li>
+          <li><a href="{{ route('home') }}/#postuler">Postuler</a></li>
           <li><a href="{{ route('home') }}/#contact">Contact</a></li>
           <li><a href="#" data-target="#login" data-toggle="modal">Connexion</a></li>
           <li class="btn-trial"><a href="#" data-target="#inscrire" data-toggle="modal">S'inscrire</a></li>
@@ -199,7 +203,7 @@
             <p class="login-box-msg">Connectez-vous pour démarrer votre session</p>
             <div class="form-group">
               <form name="" action="/home/connect" method="POST" id="loginForm">
-                @csrf 
+                @csrf
                 <div class="form-group has-feedback">
                   <!----- mail -------------->
                   <input class="form-control"  placeholder="Email" name="mail" id="loginid" type="Email" autocomplete="off" required/>
@@ -245,7 +249,7 @@
               <p class="login-box-msg">Enregistrer un nouveau compte</p>
               <div class="form-group">
                 <form action="" method="POST"  id="loginForm">
-                  @csrf 
+                  @csrf
                   <div class="form-group has-feedback">
                     <!----- username -------------->
                     <input class="form-control" placeholder="Nom d'utilisateur" name="nom" id="loginid" type="text" autocomplete="off" required />
@@ -277,11 +281,11 @@
       </div>
     </div>
     <!--/ Modal box-->
-    @elseif(session()->has('mail')) 
+    @elseif(session()->has('mail'))
     <!DOCTYPE html>
 <html lang="Fr">
 
- 
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -313,8 +317,10 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#featureX">Mirage Group</a></li>
-          <li><a href="#courses">Cours</a></li>
+          <li><a href="#courses">Cours En Ligne</a></li>
+          <li><a href="#coursesP">Cours Présentiel</a></li>
           <li><a href="#faculity-member">Projet de Fin d'Études</a></li>
+          <li><a href="#postuler">Postuler</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#" >Profil</a></li>
           <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
@@ -326,4 +332,3 @@
 @endif
 
 
-  
