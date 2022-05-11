@@ -178,7 +178,7 @@
                       <li><a href="{{ route('knxtunisie-com') }}" title="Communauté">Communauté</a></li>
                       <li><a href="{{ route('knxtunisie-formation') }}" title="Formation">Formation</a></li>
                       <li><a href="{{ route('knxtunisie-actus') }}" title="News">Actus</a></li>
-                      <li><a href="{{ route('knxtunisie-contact') }}" title="Contact">Contact</a></li>
+                      <li><a href="{{ route('knxtunisie-contact') }}" title="Contact">Contact.</a></li>
 
                   </ul>
                 </div>
