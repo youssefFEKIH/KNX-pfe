@@ -97,7 +97,7 @@ tr:nth-child(even) {
     <form action="/AdminDashboard/image" method="POST" enctype="multipart/form-data"  id="loginForm">
       @csrf 
         <!----- image -------------->
-        <label style=color:black;>Ajouter une photo de projet</br></label>
+        <label style=color:black;>Ajouter une photo de projet.</br></label>
          <input type="file" name="url_image"  required>
         </div>
       
