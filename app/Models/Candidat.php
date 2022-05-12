@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Candidat extends Model
 {
     protected $table='Candidat';
-    protected $fillable = ['nom','pays','email','numero','cv'];
+    protected $fillable = ['nom','pays','mail','numero','cv'];
     use HasFactory;
 }

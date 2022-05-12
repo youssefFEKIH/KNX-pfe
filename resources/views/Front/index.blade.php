@@ -95,7 +95,7 @@
         <div class="col-md-6 col-sm-6">
           <div class="text-comment">
             <p class="text-par">"Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, nec sagittis sem"</p>
-            <p class="text-name">Abraham Doe - Creative Dırector</p>
+            <p class="text-name">Abraham Doe - Creative Director</p>
           </div>
         </div>
       </div>
@@ -397,50 +397,69 @@
 
     <div class="container">
      
-        <form action="" method="post" role="form" class="contactForm">
-            <div class="col-md-6 col-sm-6 col-xs-12 left">
-                
-              <div class="form-group">
-                <input type="text" name="name" class="form-control form" id="name" placeholder="Nom" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
 
-              <div class="form-group">
-                <input type="text" name="name" class="form-control form" id="pays" placeholder="Pays" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
-
-              <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
-
+    <form action="/AdminDashboard/candidat" method="POST" enctype="multipart/form-data"  id="loginForm">
+        @csrf 
+        <div class="col-md-6 col-sm-6 col-xs-12 left">
+                    
+            <div class="form-group">
+              <input type="text" name="nom" class="form-control form" id="name" placeholder="Nom" required />
               
-              <div class="form-group">
-                <input type="tel" class="form-control" name="tel" id="tel" placeholder="numéro télephone"  data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
-
-
             </div>
-  
-            <div class="col-md-6 col-sm-6 col-xs-12 right">
-                <br> <br>
-                  <div class="form-group">
-                    <label style=color:black;>Ajouter votre CV </label>
-                    <input type="file" class="form-control" name="cv" id="cv" accept = "application/pdf" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                    <div class="validation"></div>
-                  </div>
-              </div>
-          
-            <div class="col-xs-12">
-              <!-- Button -->
-              <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light">Postuler</button>
+    
+            <div class="form-group">
+              <input type="text" name="pays" class="form-control form" id="pays" placeholder="Pays"  required />
+              
             </div>
-          </form>
-
+    
+            <div class="form-group">
+              <input type="email" class="form-control" name="mail" id="email" placeholder="Email"  required/>
+              
+            </div>
+    
+            
+            <div class="form-group">
+              <input type="tel" class="form-control" name="numero" id="tel" placeholder="numéro télephone"   required/>
+              
+            </div>
+    
+    
+          </div>
+    
+          <div class="col-md-6 col-sm-6 col-xs-12 right">
+              <br> <br>
+                <div class="form-group">
+                  <label style=color:black;>Ajouter votre CV </label>
+                  <input type="file" class="form-control" name="cv" id="cv" accept = "application/pdf"  required/>
+                  
+                </div>
+          </div>
+    </tr>
+        
+          <div class="col-xs-12">
+            <!-- Button -->
+            
+            <button type="submit" id="submit"  class="form contact-form-button light-form-button oswald light">Postuler</button>
+          </div>
+        </form>
+    
+    
+          </div>
+        
+    
+   
+    
     </div>
+        </div>
+      </form>
+    </div>
+    
   </section>
+
+
+
+
+  
   <!--/ Postuler-->
 
   <!--Contact-->
