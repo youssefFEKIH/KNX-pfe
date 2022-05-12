@@ -37,8 +37,8 @@
           <li><a href="#featureX">Mirage Group</a></li>
           <li><a href="#courses">Cours En Ligne</a></li>
           <li><a href="#coursesP">Cours Présentiel</a></li>
-          <li><a href="#faculity-member">Projet de Fin d'Études</a></li>
-          <li><a href="#postuler">Postuler</a></li>
+          <li><a href="#faculity-member">Projet PFE</a></li>
+          <li><a href="#postuler">KNX Travail</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#" data-target="#login" data-toggle="modal">Connexion</a></li>
           <li class="btn-trial"><a href="#" data-target="#inscrire" data-toggle="modal">S'inscrire</a></li>
@@ -177,8 +177,8 @@
           <li><a href="{{ route('home') }}/#featureX">Mirage Group</a></li>
           <li><a href="{{ route('home') }}/#courses">Cours En Ligne</a></li>
           <li><a href="{{ route('home') }}/#coursesP">Cours Présentiel</a></li>
-          <li><a href="{{ route('home') }}/#faculity-member">Projet de Fin d'Études</a></li>
-          <li><a href="{{ route('home') }}/#postuler">Postuler</a></li>
+          <li><a href="#faculity-member">Projet PFE</a></li>
+          <li><a href="#postuler">KNX Travail</a></li>
           <li><a href="{{ route('home') }}/#contact">Contact</a></li>
           <li><a href="#" data-target="#login" data-toggle="modal">Connexion</a></li>
           <li class="btn-trial"><a href="#" data-target="#inscrire" data-toggle="modal">S'inscrire</a></li>
@@ -319,8 +319,8 @@
           <li><a href="#featureX">Mirage Group</a></li>
           <li><a href="#courses">Cours En Ligne</a></li>
           <li><a href="#coursesP">Cours Présentiel</a></li>
-          <li><a href="#faculity-member">Projet de Fin d'Études</a></li>
-          <li><a href="#postuler">Postuler</a></li>
+          <li><a href="#faculity-member">Projet PFE</a></li>
+          <li><a href="#postuler">KNX Travail</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#" >Profil</a></li>
           <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
