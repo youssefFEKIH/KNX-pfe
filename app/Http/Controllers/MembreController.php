@@ -21,9 +21,8 @@ class MembreController extends Controller
         $projet = Projet::all();
         return view('Front.index', compact('projet'));
     }
-    public function index3(Projet $projet)
+    public function index3()
     {
-
         return view('Front.page daccueil');
     }
 
