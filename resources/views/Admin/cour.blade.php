@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="Fr">
 
- 
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,38 +71,37 @@ tr:nth-child(even) {
   </div>
   <table >
    <tr>
-    <th>id</th>
+    <th>Id</th>
     <th>image</th>
-    <th>Delete</th>
+    <th>Titre</th>
+    <th>Description</th>
+    <th>Supprimer</th>
    </tr>
-   @foreach($N as $NS)
-   <tr>
-   <td>{{$NS['id']}}</td>
-   <td>  <img src="{{ asset ('images/' . $NS->url_image)}}" width="500px;" height="150px;"></td>
-    
-    <td>
-     <form   action="{{route('supprimerI',$NS->id)}}" method="POST">
-       @csrf
-    <button type="submit" class="btn btn-danger">Supprimer</button>
-     </form>
-    </td>
-   </tr>
-   @endforeach
+
   </table>
-  
+
   <div class="modal-body padtrbl">
 </br>
 </br>
 <div class="login-box-body">
-  <p class="login-box-msg">Ajouter image d'accueil</p>
+  <p class="login-box-msg">Ajouter un Projet</p>
   <div class="form-group">
-    <form action="/AdminDashboard/image" method="POST" enctype="multipart/form-data"  id="loginForm">
-      @csrf 
+    <form action="" method="POST" enctype="multipart/form-data"  id="loginForm">
+      @csrf
+      <div class="form-group has-feedback">
+        <!----- Titre -------------->
+          <input type="text" class="form-control" name="titre"  placeholder="Titre" autocomplete="off" required/>
+        </div>
+      <div class="form-group has-feedback">
+        <!----- description -------------->
+        <textarea  name="description" rows="5" cols="155" placeholder="description" required> </textarea>
+      </div>
+       <div class="form-group has-feedback">
         <!----- image -------------->
-        <label style=color:black;>Ajouter une photo de projet.</br></label>
+        <label style=color:black;>Ajouter une photo de projet</br></label>
          <input type="file" name="url_image"  required>
         </div>
-      
+
 
 <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
 

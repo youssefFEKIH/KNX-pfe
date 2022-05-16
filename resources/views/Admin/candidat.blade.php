@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="Fr">
 
- 
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,6 +36,7 @@
           <li><a href="{{ route('AdminDashboard/projet') }}">Projet de Fin d'Études</a></li>
           <li><a href="{{ route('AdminDashboard/cv') }}">cv</a></li>
           <li><a href="{{ route('AdminDashboard/KNX') }}">knx Tunisie</a></li>
+          <li><a href="{{ route('AdminDashboard/cour') }}">Liste des Cours</a></li>
           <li><a href="{{ route('AdminDashboard/candidat') }}">Liste des Candidats</a></li>
           <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
          </ul>
@@ -48,20 +49,20 @@
       border-collapse: collapse;
       width: 100%;
     }
-    
+
     td, th {
       border: 1px solid #dddddd;
       text-align: left;
       padding: 2px;
       color:black;
     }
-    
+
     tr:nth-child(even) {
       background-color: #dddddd;
     }
     .Formateurs { text-align: center; }
     </style>
-    
+
       <br />
        <br />
        <h2 class="Formateurs">Liste des Projets</h2>
@@ -73,9 +74,9 @@
      <th>Id</th>
      <th>nom</th>
      <th>pays</th>
-     <th>mail</th> 
+     <th>mail</th>
      <th>numero</th>
-     <th>cv</th> 
+     <th>cv</th>
      <th>Supprimer</th>
     </tr>
     @foreach($Candidat as $Candidats)
@@ -86,7 +87,7 @@
     <td>{{$Candidats->mail}}</td>
     <td>{{$Candidats->numero}}</td>
     <td><a href="{{ asset ('images/' . $Candidats->cv)}}" >Télecharger le cv du candidat</a></td>
-    
+
      <td>
       <form   action="{{route('supprimerC',$Candidats->id)}}" method="POST">
         @csrf

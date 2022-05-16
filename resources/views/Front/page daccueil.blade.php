@@ -18,8 +18,6 @@
 </head>
 
 <body>
-
-
 <section id="faculity-member" class="section-padding">
     <div class="container">
       <div class="row">

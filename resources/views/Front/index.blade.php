@@ -3,7 +3,7 @@
 @extends('Front.layout')
 
 @section('content')
- 
+
 
   <!--Banner-->
   <div class="banner">
@@ -396,70 +396,60 @@
     </div>
 
     <div class="container">
-     
 
     <form action="/AdminDashboard/candidat" method="POST" enctype="multipart/form-data"  id="loginForm">
-        @csrf 
+        @csrf
         <div class="col-md-6 col-sm-6 col-xs-12 left">
-                    
+
             <div class="form-group">
               <input type="text" name="nom" class="form-control form" id="name" placeholder="Nom" required />
-              
+
             </div>
-    
+
             <div class="form-group">
               <input type="text" name="pays" class="form-control form" id="pays" placeholder="Pays"  required />
-              
+
             </div>
-    
+
             <div class="form-group">
               <input type="email" class="form-control" name="mail" id="email" placeholder="Email"  required/>
-              
+
             </div>
-    
-            
+
             <div class="form-group">
               <input type="tel" class="form-control" name="numero" id="tel" placeholder="numéro télephone"   required/>
-              
+
             </div>
-    
-    
+
+
           </div>
-    
+
           <div class="col-md-6 col-sm-6 col-xs-12 right">
               <br> <br>
                 <div class="form-group">
                   <label style=color:black;>Ajouter votre CV </label>
                   <input type="file" class="form-control" name="cv" id="cv" accept = "application/pdf"  required/>
-                  
+
                 </div>
           </div>
     </tr>
-        
+
           <div class="col-xs-12">
             <!-- Button -->
-            
+
             <button type="submit" id="submit"  class="form contact-form-button light-form-button oswald light">Postuler</button>
           </div>
         </form>
-    
-    
+
           </div>
-        
-    
-   
-    
+
     </div>
         </div>
       </form>
     </div>
-    
+
   </section>
 
-
-
-
-  
   <!--/ Postuler-->
 
   <!--Contact-->
@@ -509,6 +499,6 @@
 
   @endsection
 
-  
+
 
 

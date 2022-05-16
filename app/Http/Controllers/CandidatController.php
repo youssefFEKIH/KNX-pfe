@@ -20,17 +20,16 @@ class CandidatController extends Controller
         $post->pays = $request->pays;
         $post->mail = $request->mail;
         $post->numero = $request->numero;
-        if($request->hasfile('cv')){
+        if ($request->hasfile('cv')) {
             $file = $request->file('cv');
             $extenstion = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extenstion;
+            $filename = time() . '.' . $extenstion;
             $file->move('images/', $filename);
-            $post->cv= $filename;}  
-        
-              
-           if( $post->save()){ return redirect()->route('AdminDashboard/candidat');}
-         
-           
+            $post->cv = $filename;
+        }
+        if ($post->save()) {
+            return redirect()->route('AdminDashboard/candidat');
+        }
     }
 
 
