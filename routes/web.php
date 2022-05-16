@@ -1,4 +1,3 @@
-
 <?php
 
 use App\Http\Controllers\MembreController;
@@ -9,6 +8,7 @@ use App\Http\Controllers\CrtController;
 use App\Http\Controllers\EduController;
 use App\Http\Controllers\nouveauteController;
 use App\Http\Controllers\CandidatController;
+use App\Http\Controllers\CourController;
 
 
 
@@ -88,9 +88,7 @@ Route::get('/AdminDashboard/projet', [ProjetController::class, 'index'])->name('
 Route::get('/AdminDashboard/cv', [CvController::class, 'CvFormateur'])->name('AdminDashboard/cv');
 Route::get('/AdminDashboard/KNX', [nouveauteController::class, 'nouveaute'])->name('AdminDashboard/KNX');
 Route::get('/AdminDashboard/candidat', [CandidatController::class, 'candidat'])->name('AdminDashboard/candidat');
-
-
-
+Route::get('/AdminDashboard/cour', [CourController::class, 'cour'])->name('AdminDashboard/cour');
 
 Route::post('/AdminDashboard/Formateur', [MembreController::class, 'addF'])->name('AddFormateur');
 Route::post('/destroy/{id}/F', [MembreController::class, 'destroy'])->name('supprimerF');
