@@ -1,5 +1,5 @@
 
-@extends('Front.layout')
+@extends('Front.layout1')
 
 @section('content')
 
@@ -8,28 +8,57 @@
                 <div class="row align-items-center flex-row-reverse">
                     <div class="col-lg-6">
                         <div class="about-text go-to">
-                            <h3 class="dark-color">About Me</h3>
-                            <h6 class="theme-color lead">A Lead UX &amp; UI designer based in Canada</h6>
-                            <p>I <mark>design and develop</mark> services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.</p>
+                            <h3 class="dark-color">Mon profil</h3>
+                            
+                           
+                            <p>services for customers of all sizes, specializing in creating stylish, modern websites, 
+                                web services and online stores. 
+                                My passion is to design digital user experiences through the bold 
+                                interface and meaningful interactions.</p>
                             <div class="row about-list">
 
                                 <div class="col-md-6">
                                     <div class="media">
                                         <label>E-mail</label>
-                                        <p>info@domain.com</p>
+                                        <p></p>
                                     </div>
                                     <div class="media">
                                         <label>Numero Telephone</label>
-                                        <p>820-885-3321</p>
+                                        <p></p>
                                     </div>
+                                    <div class="media">
+                                        <label>Date de naissance</label>
+                                        <p></p>
+                                    </div>
+                                </div>
 
+                                <div class="col-md-6">
+                                    <div class="media">
+                                        <label>Adresse</label>
+                                        <p></p>
+                                    </div>
+                                    <div class="media">
+                                        <label>Pays</label>
+                                        <p></p>
+                                    </div>
+                                    <div class="media">
+                                        <label>Diplome</label>
+                                        <p></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Button -->
+                    <form action="/profil" method="POST" enctype="multipart/form-data"  id="loginForm">
+                        @csrf
+                    <div class="col-xs-12">
+                        <button type="submit" id="submit"  class="form contact-form-button light-form-button oswald light">Compléter Mon Profil</button>
+                      </div>
+                    </form>
                     <div class="col-lg-6">
                         <div class="about-avatar">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
+                            <img src="" title="" alt="">
                         </div>
                     </div>
                 </div>
@@ -63,3 +92,4 @@
                 </div>
             </div>
         </section>
+  @endsection

@@ -36,7 +36,6 @@
           <li><a href="{{ route('AdminDashboard/projet') }}">Projet de Fin d'Études</a></li>
           <li><a href="{{ route('AdminDashboard/cv') }}">cv</a></li>
           <li><a href="{{ route('AdminDashboard/KNX') }}">knx Tunisie</a></li>
-          <li><a href="{{ route('AdminDashboard/cour') }}">Liste des Cours</a></li>
           <li><a href="{{ route('AdminDashboard/candidat') }}">Liste des Candidats</a></li>
           <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
          </ul>
@@ -79,21 +78,22 @@
      <th>cv</th>
      <th>Supprimer</th>
     </tr>
-    @foreach($Candidat as $Candidats)
+    @foreach($Candidats as $Candidats)
     <tr>
-    <td>{{$Candidats->id}}</td>
-    <td>{{$Candidats->nom}}</td>
-    <td>{{$Candidats->pays}}</td>
-    <td>{{$Candidats->mail}}</td>
-    <td>{{$Candidats->numero}}</td>
-    <td><a href="{{ asset ('images/' . $Candidats->cv)}}" >Télecharger le cv du candidat</a></td>
-
-     <td>
-      <form   action="{{route('supprimerC',$Candidats->id)}}" method="POST">
-        @csrf
-     <button type="submit" class="btn btn-danger">Supprimer</button>
-      </form>
-     </td>
+     
+    <td>{{$Candidats['id']}}</td>
+    <td>{{$Candidats['nom']}}</td>
+    <td>{{$Candidats['pays']}}</td>
+    <td>{{$Candidats['mail']}}</td>
+    <td>{{$Candidats['numero']}}</td>
+    <td><a href="{{ asset ('images/' . $Candidats->cv)}}" >Telecharger cv</a></td>
+    
+    <td>
+        <form   action="{{route('supprimerC',$Candidats->id)}}" method="POST">
+          @csrf
+       <button type="submit" class="btn btn-danger">Supprimer</button>
+        </form>
+       </td>
     </tr>
     @endforeach
    </table>

@@ -32,11 +32,12 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ route('AdminDashboard/cour') }}">Liste des Cours</a></li>
           <li><a href="{{ route('AdminDashboard') }}">Liste des Formateurs</a></li>
           <li><a href="{{ route('AdminDashboard/projet') }}">Projet de Fin d'Études</a></li>
           <li><a href="{{ route('AdminDashboard/cv') }}">cv</a></li>
           <li><a href="{{ route('AdminDashboard/KNX') }}">knx Tunisie</a></li>
-          <li><a href="{{ route('AdminDashboard/cour') }}">Liste des Cours</a></li>
+         
           <li><a href="{{ route('AdminDashboard/candidat') }}">Liste des Candidats</a></li>
           <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
          </ul>
@@ -75,8 +76,24 @@ tr:nth-child(even) {
     <th>image</th>
     <th>Titre</th>
     <th>Description</th>
+    <th>Type</th>
     <th>Supprimer</th>
    </tr>
+@foreach($Cour as $Cours)
+   <tr>
+   <td>{{$Cours->id}}</td>
+   <td><img src="{{ asset ('images/' . $Cours->url_image)}}" width="200px;"  ></td>
+    <td>{{$Cours->nom}}</td>
+    <td>{{$Cours->description}}</td>
+    <td>{{$Cours->type}}</td>
+    <td>
+     <form   action="{{route('supprimerCour',$Cours->id)}}" method="POST">
+       @csrf
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+     </form>
+    </td>
+   </tr>
+   @endforeach
 
   </table>
 
@@ -84,21 +101,34 @@ tr:nth-child(even) {
 </br>
 </br>
 <div class="login-box-body">
-  <p class="login-box-msg">Ajouter un Projet</p>
+  <p class="login-box-msg">Ajouter un cour</p>
   <div class="form-group">
-    <form action="" method="POST" enctype="multipart/form-data"  id="loginForm">
+    <form action="/AdminDashboard/cour" method="POST" enctype="multipart/form-data"  id="loginForm">
       @csrf
       <div class="form-group has-feedback">
         <!----- Titre -------------->
-          <input type="text" class="form-control" name="titre"  placeholder="Titre" autocomplete="off" required/>
+          <input type="text" class="form-control" name="nom"  placeholder="Titre" autocomplete="off" required/>
         </div>
+
+
       <div class="form-group has-feedback">
         <!----- description -------------->
         <textarea  name="description" rows="5" cols="155" placeholder="description" required> </textarea>
       </div>
+
+      <div >
+        <label style=color:black; >Type de cour:</label></br>
+        <!----- Type -------------->
+        <select name="type"> 
+            <option  selected>En Ligne</option>
+            <option  >Presentiel</option>
+        </select>
+     </div>
+    </br> 
+    </br>
        <div class="form-group has-feedback">
         <!----- image -------------->
-        <label style=color:black;>Ajouter une photo de projet</br></label>
+        <label style=color:black;>Ajouter une photo de cour</br></label>
          <input type="file" name="url_image"  required>
         </div>
 

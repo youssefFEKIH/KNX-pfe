@@ -102,6 +102,7 @@
     </div>
   </section>
   <!--/ Testimonial-->
+
    <!--Cours en ligne-->
    <section id="courses" class="section-padding">
     <div class="container">
@@ -113,74 +114,37 @@
         </div>
       </div>
     </div>
+
+       
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm-6 padleft-right">
+            @php($count=0)
+            @foreach($Cours as $cours)
+            @if($cours->type == 'En Ligne')
+            @if($count < 3)
+            @php($count++)
           <figure class="imghvr-fold-up">
-            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
+            <img src="{{ asset ('images/' . $cours->url_image)}}" class="img-responsive" width="300px">
             <figcaption>
-              <h3>Course Name</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
+              <h3>{{$cours->nom}}</h3>
+              <p>{{$cours->description}}</p>
             </figcaption>
             <a href="#"></a>
           </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
-            <figcaption>
-              <h3>Course Name</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
-            <figcaption>
-              <h3>Course Name</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
-            <figcaption>
-              <h3>Course Name</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
-            <figcaption>
-              <h3>Course Name</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
-            <figcaption>
-              <h3>Course Name</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-          <a href="{{ route('cours') }}"> <button   name="submit" type="submit" class="btn btn-block btn-submit">
-            Consulter touts les cours  <i class="fa fa-arrow-right"></i></button></a>
+          @endif
+          @endif
+          @endforeach
+          <a href="{{route('cours')}}"> <button name="submit" type="submit" class="btn btn-block btn-submit">
+            Consulter touts les cours  <i class="fa fa-arrow-right"></i></button> </a>
         </div>
       </div>
     </div>
   </section>
+  
+
   <!--/ Cours en ligne-->
+  
   <!--Cours Presentiel-->
   <section id="coursesP" class="section-padding">
     <div class="container">
@@ -192,73 +156,35 @@
         </div>
       </div>
     </div>
+
+ 
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm-6 padleft-right">
+@php($count=0)
+  @foreach($Cours as $cours)
+  @if($cours->type == 'Presentiel')
+  @if($count < 3)
+  @php($count++)
           <figure class="imghvr-fold-up">
-            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
+            <img src="{{ asset ('images/' . $cours->url_image)}}" class="img-responsive" width="300px">
             <figcaption>
-              <h3>Course Name</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
+              <h3>{{$cours->nom}}</h3>
+              <p>{{$cours->description}}</p>
             </figcaption>
             <a href="#"></a>
           </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
-            <figcaption>
-              <h3>Course Name</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
-            <figcaption>
-              <h3>Course Name</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
-            <figcaption>
-              <h3>Course Name</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
-            <figcaption>
-              <h3>Course Name</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
-            <figcaption>
-              <h3>Course Name</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-          <a href="{{ route('cours') }}"> <button   name="submit" type="submit" class="btn btn-block btn-submit">
-            Consulter touts les cours  <i class="fa fa-arrow-right"></i></button></a>
+          @endif
+          @endif
+          @endforeach
+          <a href="{{route('cours')}}"> <button name="submit" type="submit" class="btn btn-block btn-submit">
+            Consulter touts les cours  <i class="fa fa-arrow-right"></i></button> </a>
         </div>
       </div>
     </div>
   </section>
+ 
+
   <!--/ Cours Presentiel-->
   <!--Organisations-->
   <section id="organisations" class="section-padding">
@@ -353,7 +279,6 @@
           <hr class="bottom-line">
         </div>.
         @php($count=0)
-
         @foreach($projet as $projets)
         @if($count < 3)
         @php($count++)
@@ -397,7 +322,7 @@
 
     <div class="container">
 
-    <form action="/AdminDashboard/candidat" method="POST" enctype="multipart/form-data"  id="loginForm">
+    <form action="/AdminDashboard/Candidat" method="POST" enctype="multipart/form-data"  id="loginForm">
         @csrf
         <div class="col-md-6 col-sm-6 col-xs-12 left">
 

@@ -36,7 +36,6 @@
           <li><a href="{{ route('AdminDashboard/projet') }}">Projet de Fin d'Études</a></li>
           <li><a href="{{ route('AdminDashboard/cv') }}">cv</a></li>
           <li><a href="{{ route('AdminDashboard/KNX') }}">knx Tunisie</a></li>
-          <li><a href="{{ route('AdminDashboard/cour') }}">Liste des Cours</a></li>
           <li><a href="{{ route('AdminDashboard/candidat') }}">Liste des Candidats</a></li>
           <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
          </ul>

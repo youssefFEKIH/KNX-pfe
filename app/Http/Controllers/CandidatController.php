@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class CandidatController extends Controller
 {
-    public function candidat(Candidat $Candidat)
+    public function candidat(Candidat $Candidats)
     {
-        $Candidat = Candidat::all();
-        return view('Admin.candidat', compact('Candidat'));
+        $Candidats = Candidat::all();
+        return view('Admin.candidat', compact('Candidats'));
     }
 
     public function create(Request $request)
@@ -20,6 +20,7 @@ class CandidatController extends Controller
         $post->pays = $request->pays;
         $post->mail = $request->mail;
         $post->numero = $request->numero;
+        
         if ($request->hasfile('cv')) {
             $file = $request->file('cv');
             $extenstion = $file->getClientOriginalExtension();
@@ -38,5 +39,6 @@ class CandidatController extends Controller
         $Candidats = Candidat::find($id);
         $Candidats->delete();
         return redirect()->route('AdminDashboard/candidat');
+
     }
 }

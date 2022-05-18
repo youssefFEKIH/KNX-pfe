@@ -14,12 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cours', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('nom');
-            $table->string('url_image');
             $table->string('description');
-
-            
+            $table->string('type');
+            $table->string('url_image');
             $table->timestamps();
         });
     }

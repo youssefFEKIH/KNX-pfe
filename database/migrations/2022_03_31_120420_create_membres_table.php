@@ -19,6 +19,13 @@ return new class extends Migration
             $table->string('mail');
             $table->string('mot_de_passe');
             $table->string('type')->default('M');
+
+            $table->integer('tel')->nullable();
+            $table->string('url_image')->nullable();
+            $table->string('diplome')->nullable();
+            $table->string('description')->nullable();
+            $table->string('adresse')->nullable();
+            $table->string('date_de_naissance')->nullable();
             $table->timestamps();
         });
     }
