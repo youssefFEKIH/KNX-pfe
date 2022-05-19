@@ -40,9 +40,7 @@ Route::get('/inscriptionget', function () {
 Route::get('/connexion', function () {
     return view('Front.connexion');
 })->name('connexion');
-Route::get('/compte', function () {
-    return view('Front.tableaudebordmembre');
-})->name('profil');
+Route::get('/compte', function () {return view('Front.tableaudebordmembre');})->name('profil');
 Route::get('/deconnexion', [MembreController::class, 'deconnexion']);
 
 
