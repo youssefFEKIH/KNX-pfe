@@ -80,14 +80,14 @@
     </tr>
     @foreach($Candidats as $Candidats)
     <tr>
-     
+
     <td>{{$Candidats['id']}}</td>
     <td>{{$Candidats['nom']}}</td>
     <td>{{$Candidats['pays']}}</td>
     <td>{{$Candidats['mail']}}</td>
     <td>{{$Candidats['numero']}}</td>
     <td><a href="{{ asset ('images/' . $Candidats->cv)}}" >Telecharger cv</a></td>
-    
+
     <td>
         <form   action="{{route('supprimerC',$Candidats->id)}}" method="POST">
           @csrf

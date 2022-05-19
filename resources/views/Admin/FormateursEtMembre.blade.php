@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="Fr">
 
- 
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,7 +84,7 @@ tr:nth-child(even) {
     <td>{{$row['mail']}}</td>
     <td>{{$row['mot_de_passe']}}</td>
     <td>{{$row['type']}}</td>
-    
+
     <td>
      <form   action="{{route('supprimerF',$row['id'])}}" method="POST">
        @csrf
@@ -101,7 +101,7 @@ tr:nth-child(even) {
               <p class="login-box-msg">Ajouter un Formateur</p>
               <div class="form-group">
                 <form action="/AdminDashboard/Formateur" method="POST"  id="loginForm">
-                  @csrf 
+                  @csrf
                   <div class="form-group has-feedback">
                     <!----- username -------------->
                     <input class="form-control" placeholder="Nom d'utilisateur" name="nom" id="loginid" type="text" autocomplete="off" value="{{old('nom')}}" required />
@@ -129,16 +129,16 @@ tr:nth-child(even) {
                     @if($errors->has('mot_de_passe_2'))
                     <h6 style="color: red;">{{ $errors->first('mot_de_passe_2') }}</h6>
                     @endif
-                    </div> 
+                    </div>
                     <div class="form-group has-feedback">
                     <SELECT name="type" size="1">
                     <OPTION>F
-                    </SELECT> 
-                    </div> 
+                    </SELECT>
+                    </div>
                     </br>
 
 <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
- 
+
 </div>
                   </div>
                 </form>
@@ -149,7 +149,7 @@ tr:nth-child(even) {
 
       </div>
 
-  
+
 
    <h2 class="Formateurs">Liste des membres</h2>
    <br />
@@ -170,7 +170,7 @@ tr:nth-child(even) {
     <td>{{$row['mail']}}</td>
     <td>{{$row['mot_de_passe']}}</td>
     <td>{{$row['type']}}</td>
-    
+
     <td>
      <form   action="{{route('supprimerF',$row['id'])}}" method="POST">
        @csrf
