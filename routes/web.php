@@ -37,9 +37,7 @@ Route::get('/projets', [ProjetController::class, 'index2'])->name('projets');
 Route::get('/inscriptionget', function () {
     return view('Front.inscription');
 })->name('inscriptionget');
-Route::get('/connexion', function () {
-    return view('Front.connexion');
-})->name('connexion');
+Route::get('/connexion', function () {return view('Front.connexion');})->name('connexion');
 Route::get('/compte', function () {return view('Front.tableaudebordmembre');})->name('profil');
 Route::get('/deconnexion', [MembreController::class, 'deconnexion']);
 
