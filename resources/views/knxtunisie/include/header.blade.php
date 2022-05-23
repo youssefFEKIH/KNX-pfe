@@ -1,6 +1,6 @@
 <html lang="fr">
     <head>
-        
+
     <link rel="shortcut icon" href="{{ asset('Front2/images/logo/knx.png')}}" type="image/png">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="KNX : le standard mondial pour la gestion technique des bâtiments résidentiels et tertiaires">
@@ -56,7 +56,7 @@
                 <li><a href="{{ route('knxtunisie-formation') }}" title="Formation">Formation</a></li>
                 <li><a href="{{ route('knxtunisie-actus') }}" title="News">Actus</a></li>
                 <li><a href="{{ route('knxtunisie-contact') }}" title="Contact">Contact</a></li>
-                
+
             </ul></nav>
     <!-- Script défilement logos membres-->
     <script>//<![CDATA[
@@ -146,7 +146,7 @@
 
             </div>
 
-            
+
         </div>
         <!--  fin header   -->
 
@@ -205,7 +205,7 @@
                     <ul class="slides">
 
                     <li style="width: 100%; float: left; margin-right: -100%; display: none;">
-                   
+
                     @php($count=0)
                     @foreach($N as $NS)
                     @if($count < 1)
@@ -213,16 +213,16 @@
                     <img src="{{ asset ('images/' . $NS->url_image)}}" class="im"  alt="header_site">
                     @endif
                     @endforeach
-                    
+
                     </li>
-                   
-                   
 
-                    
 
-                  
 
-                   
+
+
+
+
+
                     </ul>
                 <ol class="flex-control-nav"><li><a class="">1</a></li><li><a class="">2</a></li><li><a class="">3</a></li><li><a class="">4</a></li><li><a class="active">5</a></li></ol><ul class="flex-direction-nav"><li><a class="prev" href="#">Previous</a></li><li><a class="next" href="#">Next</a></li></ul></div>
              </div>
@@ -238,7 +238,7 @@
 
            <!--  Contenu gauche   -->
            <div id="contenu_gauche">
-          
+
 
            </div>
            <!--  fin Contenu gauche   -->

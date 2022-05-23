@@ -15,18 +15,17 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="Front3/css/styles.css" rel="stylesheet" />
     </head>
-    @php($count=0)
-    @foreach($cv as $cvs)
-    @if($count < 1)
-        @php($count++)
+   
     <body id="page-top">
         <!-- Navigation-->
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav" >
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                
+                @foreach($cv as $cvs)
+                @if($count < 1)
             <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ asset ('images/' . $cvs->image)}}" alt="..." />
-         
+            @endif
+            @endforeach
             </a>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
@@ -39,8 +38,13 @@
                 </ul>
             </div>
         </nav>
+
         <!-- Page Content-->
         <div class="container-fluid p-0">
+            @php($count=0)
+            @foreach($cv as $cvs)
+            @if($count < 1)
+            @php($count++)
             <!-- About-->
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
@@ -67,12 +71,12 @@
 </br>
 </br>
 </br>
-            
+
             <h2 class="mb-5" id="experience">Experience</h2>
-            
+
             @foreach($exp as $exps)
         <section  >
-       
+
             <div class="resume-section-content">
             <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="flex-grow-1">
@@ -83,21 +87,21 @@
                         <div class="flex-shrink-0"><span class="text-primary">{{$exps->date_experience}}</span></div>
                     </div>
                </div>
-    
-            </section>          
+
+            </section>
            @endforeach
            <hr class="m-0" />
-           
+
            </br>
 </br>
 </br>
 <h2 id="education" class="mb-5">Education</h2>
             @foreach($edu as $edus)
-           
+
             <!-- Education-->
             <section  >
                 <div class="resume-section-content">
-                    
+
 
                     <div class="d-flex flex-column flex-md-row justify-content-between">
                         <div class="flex-grow-1">
@@ -121,7 +125,7 @@
         @php($count++)
             <!-- Skills-->
             <section  >
-            
+
             <div class="resume-section-content">{{$cvs->competence}}</div>
             </section>
             @endif
@@ -144,12 +148,12 @@
             @endif
             @endforeach
             <hr class="m-0" />
-            
+
             </br>
 </br>
 </br><h2 id="awards" class="mb-5">Awards & Certifications</h2>
             @foreach($crt as $crts)
-            
+
             <!-- Awards-->
             <section   >
                 <div class="resume-section-content">
@@ -158,7 +162,7 @@
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
                             {{$crts->certif}}
                         </li>
-                        
+
                     </ul>
 
 

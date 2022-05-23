@@ -65,7 +65,7 @@ tr:nth-child(even) {
 
   <br />
    <br />
-   <h2 class="Formateurs">Liste des Projets</h2>
+   <h2 class="Formateurs">Liste des Nouveautés</h2>
    <br />
   </div>
   <table >
@@ -95,10 +95,11 @@ tr:nth-child(even) {
 <div class="login-box-body">
   <p class="login-box-msg">Ajouter image d'accueil</p>
   <div class="form-group">
+    
     <form action="/AdminDashboard/image" method="POST" enctype="multipart/form-data"  id="loginForm">
       @csrf 
         <!----- image -------------->
-        <label style=color:black;>Ajouter une photo de projet.</br></label>
+        <label style=color:black;>Ajouter un image d'acceuil</br></label>
          <input type="file" name="url_image"  required>
         </div>
       
@@ -110,6 +111,80 @@ tr:nth-child(even) {
     </form>
   </div>
 </div>
+
+</div>
+
+</br></br>
+<table >
+ <tr>
+  <th>id</th>
+  <th>url_nouveaute</th>
+  <th>titre</th>
+  <th>description</th>
+  <th>Type</th>
+  <th>Delete</th>
+ </tr>
+ @foreach($No as $No)
+ <tr>
+ <td>{{$No->id}}</td>
+ <td>  <img src="{{ asset ('images/' . $No->url_nouveaute)}}" width="500px;" height="150px;"></td>
+ <td>{{$No->titre}}</td>
+ <td>{{$No->description}}</td>
+ <td>{{$No->type}}</td>
+  <td>
+   <form   action="{{route('supprimerN',$No->id)}}" method="POST">
+     @csrf
+  <button type="submit" class="btn btn-danger">Supprimer</button>
+   </form>
+  </td>
+ </tr>
+ @endforeach
+</table>
+
+<div class="modal-body padtrbl">
+</br>
+</br>
+<div class="login-box-body">
+<p class="login-box-msg">Ajouter des nouveautés</p>
+<div class="form-group">
+  <form action="/AdminDashboard/nouv" method="POST" enctype="multipart/form-data"  id="loginForm">
+    @csrf 
+    <div class="form-group has-feedback">
+      <!----- Titre -------------->
+        <input type="text" class="form-control" name="titre"  placeholder="Titre" autocomplete="off" required/>
+      </div>
+    <div class="form-group has-feedback">
+      <!----- description -------------->
+      <textarea  name="description" rows="5" cols="155" placeholder="description" required> </textarea>
+    </div>
+    <div >
+      <label style=color:black; >La page d'affichage:</label></br>
+      <!----- Type -------------->
+      <select name="type"> 
+          <option  selected>Acceuil</option>
+          <option  >Actus</option>
+          <option  >KNX</option>
+          <option  >Communauté</option>
+          <option  >Contact</option>
+          <option  >Documentation</option>
+          <option  >Formation</option>
+          <option  >Logiciel</option>
+      </select>
+    <div>
+      <!----- image -------------->
+      <label style=color:black;>Ajouter un image pour la publication</br></label>
+       <input type="file" name="url_nouveaute"  required>
+      </div>
+    
+
+<button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+
+</div>
+    </div>
+  </form>
+</div>
+</div>
+
 </div>
 </div>
 

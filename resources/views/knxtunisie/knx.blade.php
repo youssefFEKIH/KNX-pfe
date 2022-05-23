@@ -16,17 +16,21 @@
         <!--  Site   -->
         <div id="site">
            <!--  Contenu gauche   -->
+           @foreach($No as $No)
+           @if($No->type == 'KNX')
            <div id="contenu_gauche">
             <p class="fil-ariane"><a href="KNX-France-accueil.html" title="Accueil">&gt; Accueil</a> &gt; KNX</p>
             <h1>KNX</h1>
             <a href="KNX-France-membres.html" title="Membres KNX France" style="text-decoration:none;">
             <div class="accueil-bloc">
-            <img src="Front2/images/membres.jpg" alt="accueil">
-            <h4> KNX Tunisie</h4>
-            <p>A'association KNX Tunisie</p>
+              <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" >
+            <h4> {{$No->titre}}</h4>
+             <p>{{$No->description}}</p>
             </div></a>
 
            </div>
+           @endif
+           @endforeach
            <!--  fin Contenu gauche   -->
 
 

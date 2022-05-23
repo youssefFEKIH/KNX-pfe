@@ -1,6 +1,3 @@
-
-
-
 <html lang="fr">
     @extends('knxtunisie.layout')
     @section('content')
@@ -13,24 +10,27 @@
     </head>
 
 
-
 <body>
      <!--  div globale di site   -->
      <div id="global" class="mm-page">
          <!--  Site   -->
          <div id="site">
             <!--  Contenu gauche   -->
+            @foreach($No as $No)
+            @if($No->type == 'Acceuil')
             <div id="contenu_gauche">
 
              <h1>Acceuil</h1>
              <a href="KNX-France-membres.html" title="Membres KNX France" style="text-decoration:none;">
              <div class="accueil-bloc">
-             <img src="Front2/images/membres.jpg" alt="accueil">
-             <h4> KNX Tunisie</h4>
-             <p>A'association KNX Tunisie</p>
+                <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" >
+             <h4> {{$No->titre}}</h4>
+             <p>{{$No->description}}</p>
              </div></a>
 
             </div>
+            @endif
+            @endforeach
             <!--  fin Contenu gauche   -->
 
 
@@ -49,8 +49,8 @@
                 <!------ Bannière animée --->
                 <div style="padding: 40px 0 0 0;">
 
-                  <a href="https://bit.ly/2Z1TD7q" style="text-decoration:none;color:#1760b4; " title="Feuilleter le KNX Journal" target="_blank">
-                      <img src="Front2/images/Banniere_KNX_Journal_2021_300x200.gif" alt="Feuilleter le KNX Journal">
+                  <a href="{{ route('home') }}" style="text-decoration:none;color:#1760b4; " title="Feuilleter le KNX Journal" target="_blank">
+                      <img src="{{ asset('Front/img')}}/mirage.jpg" height="200" width="350" alt="Feuilleter le KNX Journal">
                 </a><br>
     </div>
 

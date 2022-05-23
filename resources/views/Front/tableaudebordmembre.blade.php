@@ -9,12 +9,9 @@
                     <div class="col-lg-6">
                         <div class="about-text go-to">
                             <h3 class="dark-color">Mon profil</h3>
+
                             
-                           
-                            <p>services for customers of all sizes, specializing in creating stylish, modern websites, 
-                                web services and online stores. 
-                                My passion is to design digital user experiences through the bold 
-                                interface and meaningful interactions.</p>
+                            <p></p>
                             <div class="row about-list">
 
                                 <div class="col-md-6">
@@ -31,31 +28,40 @@
                                         <p></p>
                                     </div>
                                 </div>
-
                                 <div class="col-md-6">
                                     <div class="media">
                                         <label>Adresse</label>
                                         <p></p>
                                     </div>
-                                    <div class="media">
-                                        <label>Pays</label>
-                                        <p></p>
-                                    </div>
+                                   
                                     <div class="media">
                                         <label>Diplome</label>
                                         <p></p>
                                     </div>
+                                   
+                                    <div class="media">
+                                        <div class="form-group">
+                                            <a href="{{ route('mise') }}" class="form contact-form-button light-form-button oswald light" id="submit" placeholder="Mise à jour" > Mise à jour</a>
+                                          </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="about-avatar">
+                                          <img src="" title="" alt="">
+                                        </div>
+                                    </div>
+
                                 </div>
+                               
                             </div>
                         </div>
                     </div>
-                    <!-- Button -->
-                    <form action="/profil" method="POST" enctype="multipart/form-data"  id="loginForm">
-                        @csrf
-                    <div class="col-xs-12">
-                        <button type="submit" id="submit"  class="form contact-form-button light-form-button oswald light">Compléter Mon Profil</button>
-                      </div>
-                    </form>
+                    
+
+                    
+                   
+                          
+
                     <div class="col-lg-6">
                         <div class="about-avatar">
                             <img src="" title="" alt="">

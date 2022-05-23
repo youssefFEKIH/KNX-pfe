@@ -6,34 +6,29 @@
     <!-- titres des pages -->
     <title>KNX Tunisie - Logiciels/Outils</title>
     <!-- Fin Titres des pages -->
-
-
     </head>
-
-
-
-
     <body>
         <!--  div globale di site   -->
         <div id="global" class="mm-page">
             <!--  Site   -->
             <div id="site">
                <!--  Contenu gauche   -->
+               @foreach($No as $No)
+               @if($No->type == 'Logiciel')
                <div id="contenu_gauche">
                 <p class="fil-ariane"><a href="KNX-France-accueil.html" title="Accueil">&gt; Accueil</a> &gt; Logiciels</p>
                 <h1>Logiciels</h1>
                 <a href="KNX-France-membres.html" title="Membres KNX France" style="text-decoration:none;">
                 <div class="accueil-bloc">
-                <img src="Front2/images/membres.jpg" alt="accueil">
-                <h4> KNX Tunisie</h4>
-                <p>A'association KNX Tunisie</p>
+                <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" >
+                <h4> {{$No->titre}}</h4>
+                <p>{{$No->description}}</p>
                 </div></a>
 
                </div>
+               @endif
+               @endforeach
                <!--  fin Contenu gauche   -->
-
-
-
             </div>
             <!--  fin Site   -->
         </div>
@@ -48,7 +43,7 @@
                    <!------ Bannière animée --->
                    <div style="padding: 40px 0 0 0;">
 
-                     <a href="https://bit.ly/2Z1TD7q" style="text-decoration:none;color:#1760b4; " title="Feuilleter le KNX Journal" target="_blank">
+                     <a href="{{ route('home') }}" style="text-decoration:none;color:#1760b4; " title="Feuilleter le KNX Journal" target="_blank">
                          <img src="Front2/images/Banniere_KNX_Journal_2021_300x200.gif" alt="Feuilleter le KNX Journal">
                    </a><br>
        </div>

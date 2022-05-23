@@ -9,6 +9,7 @@ use App\Http\Controllers\EduController;
 use App\Http\Controllers\nouveauteController;
 use App\Http\Controllers\CandidatController;
 use App\Http\Controllers\CourController;
+use App\Http\Controllers\NouvController;
 
 
 
@@ -27,16 +28,10 @@ Route::get('/', [membreController::class, 'index3'])->name('pagedaccueil');
 Route::get('/home', [membreController::class, 'index'])->name('home');
 
 
-Route::get('/home/connect', function () {
-    return view('Front.index');
-})->name('homeconnect');
-Route::get('/cours', function () {
-    return view('Front.cours');
-})->name('cours');
+Route::get('/home/connect', function () {return view('Front.index');})->name('homeconnect');
+Route::get('/cours', function () {return view('Front.cours');})->name('cours');
 Route::get('/projets', [ProjetController::class, 'index2'])->name('projets');
-Route::get('/inscriptionget', function () {
-    return view('Front.inscription');
-})->name('inscriptionget');
+Route::get('/inscriptionget', function () {return view('Front.inscription');})->name('inscriptionget');
 Route::get('/connexion', function () {return view('Front.connexion');})->name('connexion');
 Route::get('/compte', function () {return view('Front.tableaudebordmembre');})->name('profil');
 Route::get('/deconnexion', [MembreController::class, 'deconnexion']);
@@ -104,8 +99,12 @@ Route::post('/destroy/{id}/C', [CandidatController::class, 'destroy'])->name('su
 Route::post('/destroy/{id}/Cour', [CourController::class, 'destroy'])->name('supprimerCour');
 Route::post('/AdminDashboard/cour',  [CourController::class, 'create'])->name('AddCour');
 
-/*
-|--------------------------------------------------------------------------
-| profil
-|--------------------------------------------------------------------------
-*/
+Route::post('/AdminDashboard/nouv',  [nouvController::class, 'store'])->name('Addnouv');
+Route::post('/destroy/{id}/N', [nouvController::class, 'destroy'])->name('supprimerN');
+
+
+
+
+Route::get('/mise', [membreController::class, 'mise'])->name('mise');
+
+

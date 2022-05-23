@@ -26,7 +26,14 @@ class MembreController extends Controller
     }
 
     
+    public function mise(Membre $membre) 
+    {
+        $membre = Membre::all();
+       
+        return view('Front.mise', compact('membre' ));
+    }
   
+    
 
 
     public function index3()
@@ -134,10 +141,10 @@ class MembreController extends Controller
      */
     public function show(Membre $membre)
     {
-
+        
         $formateur = Membre::all()->where('type', 'F')->toArray();
         $membre = Membre::all()->where('type', 'M')->toArray();
-        return view('Admin.FormateursEtMembre', compact('formateur'), compact('membre'));
+        return view('Admin.FormateursEtMembre', compact('formateur','membre'));
     }
     public function addF(Request $request)
     {
@@ -199,4 +206,7 @@ class MembreController extends Controller
         $membre->delete();
         return redirect()->route('AdminDashboard');
     }
+
+    
+    
 }
