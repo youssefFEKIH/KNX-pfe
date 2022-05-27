@@ -7,6 +7,8 @@
     <!-- titres des pages -->
     <title>KNX Tunisie - Acceuil</title><!-- Fin Titres des pages -->
 
+
+
     </head>
 
 
@@ -25,7 +27,7 @@
              <div class="accueil-bloc">
                 <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" >
              <h4> {{$No->titre}}</h4>
-             <p>{{$No->description}}</p>
+             <p class="readMore">{{$No->description}}</p>
              </div></a>
 
             </div>
@@ -47,12 +49,12 @@
 
 
                 <!------ Bannière animée --->
-                <div style="padding: 40px 0 0 0;">
-
-                  <a href="{{ route('home') }}" style="text-decoration:none;color:#1760b4; " title="Feuilleter le KNX Journal" target="_blank">
-                      <img src="{{ asset('Front/img')}}/mirage.jpg" height="200" width="350" alt="Feuilleter le KNX Journal">
+                <div style="padding: 40px 0 0 0; ">
+                  <p style="text-decoration: underline; color:#000000;">Bienvenu au Mirage Group</p>
+                  <a href="{{ route('home') }}" >
+                      <img style="border: 3px groove #000000;"  classe="mirage" src="{{ asset('Front/img')}}/mirage.jpg" height="200" width="350" >
                 </a><br>
-    </div>
+                </div>
 
                   <!------ Fin bannière animée --->
                 <!-- Réseaux Sociaux -->

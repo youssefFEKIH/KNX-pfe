@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('url_nouveaute');
             $table->string('type');
             $table->string('titre');
-            $table->string('description');
+            $table->string('description',9000);
             $table->timestamps();
         });
     }

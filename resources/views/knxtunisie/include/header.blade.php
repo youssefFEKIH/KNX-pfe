@@ -25,7 +25,34 @@
                 });
             </script>
 
-    <!-- Script Menu Mobile + Tablette Type Facebook-->
+    <!-- readMore-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+    var max = 200;
+    $(".readMore").each(function() {
+        var str = $(this).text();
+        if ($.trim(str).length > max) {
+            var subStr = str.substring(0, max);
+            var hiddenStr = str.substring(max, $.trim(str).length);
+            $(this).empty().html(subStr);
+            $(this).append(' <a href="javascript:void(0);" class="lire-plus">lire plus</a>');
+            $(this).append('<span class="addText">' + hiddenStr + '</span>');
+        }
+    });
+    $(".lire-plus").click(function() {
+        $(this).siblings(".addText").contents().unwrap();
+        $(this).remove();
+    });
+});
+    </script>
+    <style>
+    .readMore .addText {
+    display: none;
+}
+    </style>
+
+
     <!-- Script Nouveau Slideshow -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> </script>
        <!-- Hook up the FlexSlider -->

@@ -47,15 +47,15 @@
                <hr id="trait">
 
 
-                   <!------ Bannière animée --->
-                   <div style="padding: 40px 0 0 0;">
+                  <!------ Bannière animée --->
+                <div style="padding: 40px 0 0 0; ">
+                  <p style="text-decoration: underline; color:#000000;">Bienvenu au Mirage Group</p>
+                  <a href="{{ route('home') }}" >
+                      <img style="border: 3px groove #000000;"  classe="mirage" src="{{ asset('Front/img')}}/mirage.jpg" height="200" width="350" >
+                </a><br>
+                </div>
 
-                     <a href="{{ route('home') }}"style="text-decoration:none;color:#1760b4; " title="Feuilleter le KNX Journal" target="_blank">
-                         <img src="Front2/images/Banniere_KNX_Journal_2021_300x200.gif" alt="Feuilleter le KNX Journal">
-                   </a><br>
-       </div>
-
-                     <!------ Fin bannière animée --->
+                  <!------ Fin bannière animée --->
                    <!-- Réseaux Sociaux -->
                    <h1> Rejoignez-nous</h1>
                    <div id="reseaux_sociaux">

@@ -316,7 +316,7 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" >Mon Profil</a></li>
+            <li><a href="{{ route('profil') }}">Mon Profil</a></li>
           <li><a href="{{ route('home') }}">Mirage Group</a></li>
           <li><a href="#courses">Cours En Ligne</a></li>
           <li><a href="#coursesP">Cours Présentiel</a></li>

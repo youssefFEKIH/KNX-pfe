@@ -86,7 +86,9 @@
     <td>{{$Candidats['pays']}}</td>
     <td>{{$Candidats['mail']}}</td>
     <td>{{$Candidats['numero']}}</td>
-    <td><a href="{{ asset ('images/' . $Candidats->cv)}}" >Telecharger cv</a></td>
+    <td><a href="{{ asset ('images/' . $Candidats->cv)}}" >
+        <img  src="{{ asset('images')}}/pdf.png" height="100" width="100" >
+      </a></td>
 
     <td>
         <form   action="{{route('supprimerC',$Candidats->id)}}" method="POST">

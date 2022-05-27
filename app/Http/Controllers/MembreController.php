@@ -26,15 +26,42 @@ class MembreController extends Controller
     }
 
     
-    public function mise(Membre $membre) 
+    public function mise() 
     {
-        $membre = Membre::all();
-       
-        return view('Front.mise', compact('membre' ));
+        return view('Front.mise');
     }
   
+    public function profil(Membre $membre) 
+    {
+        $membre = Membre::all();
+        return view('Front.profil', compact('membre' ));
+    }
     
-
+    public function profilC(Request $request)
+    {
+        $post = new Membre();
+        $post->nom = $request->nom;
+        $post->mail = $request->mail;
+        $post->mot_de_passe = $request->mot_de_passe;
+        $post->date_de_naissance = $request->date_de_naissance;
+        $post->adresse = $request->adresse;
+        $post->diplome = $request->diplome;
+        $post->tel = $request->tel;
+        $post->description = $request->description;
+     
+        if($request->hasfile('url_image')){
+            $file = $request->file('url_image');
+            $extenstion = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extenstion;
+            $file->move('images/', $filename);
+            $post->url_image= $filename;
+     
+        
+        }          
+           if( $post->save()){ return redirect()->route('profil');}
+         
+           
+    }
 
     public function index3()
     {
@@ -80,6 +107,7 @@ class MembreController extends Controller
             return view('Front.connexion');
         }
     }
+
     public function connect(Request $request)
     {
         $validator = Validator::make(

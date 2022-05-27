@@ -10,6 +10,6 @@ class Nouv extends Model
     use HasFactory;
     protected $table='nouv';
     protected $fillable = ['titre', 'description', 'url_nouveaute','type'];
-    use HasFactory;
+    
 }
 

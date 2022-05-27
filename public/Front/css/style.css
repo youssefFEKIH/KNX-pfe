@@ -776,7 +776,7 @@ img {
     vertical-align: middle;
     border-style: none;
 }
-/* About Me 
+/* About Me
 ---------------------*/
 .about-text h3 {
   font-size: 45px;
@@ -880,4 +880,22 @@ mark {
 }
 .dark-color {
     color: #20247b;
+}
+.titre{
+    font-family: cursive;
+    font-size: 40px;
+    margin-left: 250px;
+    margin-top: 100px;
+    
+}
+.buttonnn{
+    background-color: #4CAF50;
+    color:white;
+    text-align: center;
+    padding:10px 18px;
+    border:none;
+    border-radius: 4px;
+}
+.buttonnn:hover{
+    background-color: green;
 }

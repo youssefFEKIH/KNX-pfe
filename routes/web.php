@@ -10,6 +10,7 @@ use App\Http\Controllers\nouveauteController;
 use App\Http\Controllers\CandidatController;
 use App\Http\Controllers\CourController;
 use App\Http\Controllers\NouvController;
+use App\Http\Controllers\ContactController;
 
 
 
@@ -28,12 +29,22 @@ Route::get('/', [membreController::class, 'index3'])->name('pagedaccueil');
 Route::get('/home', [membreController::class, 'index'])->name('home');
 
 
-Route::get('/home/connect', function () {return view('Front.index');})->name('homeconnect');
-Route::get('/cours', function () {return view('Front.cours');})->name('cours');
+Route::get('/home/connect', function () {
+    return view('Front.index');
+})->name('homeconnect');
+Route::get('/cours', function () {
+    return view('Front.cours');
+})->name('cours');
 Route::get('/projets', [ProjetController::class, 'index2'])->name('projets');
-Route::get('/inscriptionget', function () {return view('Front.inscription');})->name('inscriptionget');
-Route::get('/connexion', function () {return view('Front.connexion');})->name('connexion');
-Route::get('/compte', function () {return view('Front.tableaudebordmembre');})->name('profil');
+Route::get('/inscriptionget', function () {
+    return view('Front.inscription');
+})->name('inscriptionget');
+Route::get('/connexion', function () {
+    return view('Front.connexion');
+})->name('connexion');
+Route::get('/compte', function () {
+    return view('Front.tableaudebordmembre');
+})->name('profil');
 Route::get('/deconnexion', [MembreController::class, 'deconnexion']);
 
 
@@ -84,7 +95,10 @@ Route::get('/AdminDashboard/cour', [CourController::class, 'cour'])->name('Admin
 
 Route::post('/AdminDashboard/Formateur', [MembreController::class, 'addF'])->name('AddFormateur');
 Route::post('/destroy/{id}/F', [MembreController::class, 'destroy'])->name('supprimerF');
+
 Route::post('/destroy/{id}/P', [ProjetController::class, 'destroy'])->name('supprimerP');
+Route::post('/AdminDashboard/projet/update', [ProjetController::class, 'update'])->name('modifierP');
+
 Route::post('/AdminDashboard/projet',  [ProjetController::class, 'create'])->name('AddProjet');
 Route::post('/AdminDashboard/cv', [CvController::class, 'create']);
 Route::post('/AdminDashboard/Edu', [EduController::class, 'create']);
@@ -106,5 +120,8 @@ Route::post('/destroy/{id}/N', [nouvController::class, 'destroy'])->name('suppri
 
 
 Route::get('/mise', [membreController::class, 'mise'])->name('mise');
+Route::get('/profil', [membreController::class, 'profil'])->name('profil');
+Route::post('profilC', [membreController::class, 'profilC'])->name('profilC');
 
 
+Route::post('contact', [ContactController::class, 'contact'])->name('contact');

@@ -15,7 +15,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="Front3/css/styles.css" rel="stylesheet" />
     </head>
-   
+
     <body id="page-top">
         <!-- Navigation-->
 

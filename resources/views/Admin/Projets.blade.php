@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="Fr">
 
- 
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +15,8 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//style.css">
   <link rel="shortcut icon" href="{{ asset('Front/img')}}/course01.jpg" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//style.css">
+
+
 
 </head>
 
@@ -61,6 +63,11 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 .Formateurs { text-align: center; }
+#titre{
+    color:black;
+    font-size: 20px;
+    text-decoration: underline;
+}
 </style>
 
   <br />
@@ -73,8 +80,9 @@ tr:nth-child(even) {
     <th>Id</th>
     <th>image</th>
     <th>Titre</th>
-    <th>Description</th> 
+    <th>Description</th>
     <th>Supprimer</th>
+    <th>Mise à jour</th>
    </tr>
    @foreach($projet as $projets)
    <tr>
@@ -82,48 +90,51 @@ tr:nth-child(even) {
    <td><img src="{{ asset ('images/' . $projets->url_image)}}" width="200px;"  ></td>
     <td>{{$projets->titre}}</td>
     <td>{{$projets->description}}</td>
-      
+
     <td>
      <form   action="{{route('supprimerP',$projets->id)}}" method="POST">
        @csrf
-    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <button onclick="return confirm('voulez-vous vraiment supprimer ?')" type="submit" class="btn btn-danger">Supprimer</button>
+     </form>
+    </td>
+     <td>
+     <form   action="" method="POST">
+       @csrf
+    <button  type="submit" class="buttonnn" >Mise à jour</button>
      </form>
     </td>
    </tr>
    @endforeach
   </table>
-  
-  <div class="modal-body padtrbl">
-</br>
-</br>
-<div class="login-box-body">
-  <p class="login-box-msg">Ajouter un Projet</p>
+
+<div class="modal-body padtrbl">
+ </br>
+ </br>
+ <div class="login-box-body">
+  <p class="login-box-msg" id="titre">Ajouter un Projet</p>
   <div class="form-group">
     <form action="/AdminDashboard/projet" method="POST" enctype="multipart/form-data"  id="loginForm">
-      @csrf 
+      @csrf
       <div class="form-group has-feedback">
         <!----- Titre -------------->
           <input type="text" class="form-control" name="titre"  placeholder="Titre" autocomplete="off" required/>
         </div>
       <div class="form-group has-feedback">
         <!----- description -------------->
-        <textarea  name="description" rows="5" cols="155" placeholder="description" required> </textarea>
+        <textarea class="form-control" name="description" rows="5" cols="155" placeholder="description" required> </textarea>
       </div>
        <div class="form-group has-feedback">
         <!----- image -------------->
         <label style=color:black;>Ajouter une photo de projet</br></label>
          <input type="file" name="url_image"  required>
         </div>
-      
 
-<button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
-
-</div>
-      </div>
+        <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
     </form>
   </div>
-</div>
-</div>
+ </div>
 </div>
 
 </div>
+</div>
+

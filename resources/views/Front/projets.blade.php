@@ -25,7 +25,7 @@
               <p class="pm-staff-profile-name">{{$projets->titre}}</p>
             
 
-              <a href="" class="pm-staff-profile-bio">{{$projets->description}} </a>
+              <p class="readMore">{{$projets->description}} </p>
             </div>
           </div>
         </div>

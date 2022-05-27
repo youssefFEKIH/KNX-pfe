@@ -33,24 +33,24 @@ class ProjetController extends Controller
         $post = new Projet();
         $post->titre = $request->titre;
         $post->description = $request->description;
-     
+
         if($request->hasfile('url_image')){
             $file = $request->file('url_image');
             $extenstion = $file->getClientOriginalExtension();
             $filename = time().'.'.$extenstion;
             $file->move('images/', $filename);
             $post->url_image= $filename;
-     
-        
-        }          
+
+
+        }
            if( $post->save()){ return redirect()->route('AdminDashboard/projet');}
-         
-           
+
+
     }
-             
-            
-        
-    
+
+
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -92,9 +92,11 @@ class ProjetController extends Controller
      * @param  \App\Models\Projet $Projet
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Projet $Projet)
+    public function update(Request $request, $id)
     {
-        //
+        $Projet = Projet::find($id);
+        $Projet->update($request->all());
+        return redirect()->route('AdminDashboard/projet/update');
     }
 
     /**

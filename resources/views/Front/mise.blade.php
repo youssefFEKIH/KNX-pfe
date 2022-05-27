@@ -12,49 +12,48 @@
     <p class="login-box-msg">Ajouter des informations personnels</p>
         <div class="form-group">
             
-            <form action="/home/connect" method="POST" enctype="multipart/form-data"  id="loginForm">
+            <form action="profilC" method="POST" enctype="multipart/form-data"  id="loginForm">
             @csrf 
                 <div class="form-group has-feedback">
                       <!----- Nom -------------->
-                    <label style=color:black;>Nom</br></label>
-                    <input type="text" class="form-control" name="nom"  placeholder="nom"  >
+                    <label style=color:black;>Nom et Prénom</br></label>
+                    <input type="text" class="form-control" name="nom"  placeholder="nom" value="" >
                 </div>
-               
-               
+            
               <div class="form-group has-feedback">
                 <!----- tel -------------->
               <label style=color:black;>Numéro téléphone</br></label>
-              <input type="text" class="form-control" name="tel"  placeholder="Numéro téléphone"  >
+              <input type="text" class="form-control" name="tel"  placeholder="Numéro téléphone" value="" >
               </div>
 
               <div class="form-group has-feedback">
                 <!----- diplome -------------->
               <label style=color:black;>Diplome</br></label>
-              <input type="text" class="form-control" name="diplome"  placeholder="Diplome"  >
+              <input type="text" class="form-control" name="diplome"  placeholder="Diplome" value="" >
               </div>
 
               <div class="form-group has-feedback">
                 <!----- Adresse -------------->
               <label style=color:black;>Adresse</br></label>
-              <input type="text" class="form-control" name="adresse"  placeholder="Adresse"  >
+              <input type="text" class="form-control" name="adresse"  placeholder="Adresse" value="" >
               </div>
 
               <div class="form-group has-feedback">
                 <!----- Date de naissance -------------->
               <label style=color:black;>Date de naissance</br></label>
-              <input type="text" class="form-control" name="date_de_naissance"  placeholder="Date de naissance"  >
+              <input type="text" class="form-control" name="date_de_naissance"  placeholder="Date de naissance" value="" >
               </div>
 
               <div class="form-group has-feedback">
                 <!----- description -------------->
               <label style=color:black;>Déscription</br></label>
-              <textarea type="text" class="form-control" name="description"  placeholder="Déscription"  ></textarea>
+              <textarea type="text" class="form-control" name="description"  placeholder="Déscription" value="" ></textarea>
               </div>
 
                 <div class="form-group has-feedback">
                         <!----- image -------------->
                 <label style=color:black;>Ajouter une photo de profil</br></label>
-                    <input type="file" name="url_image"  >
+                    <input type="file" name="url_image" value="" >
                 </div>            
                       
     <button type="submit" class="btn btn-green btn-block btn-flat">Enregistre</button>        

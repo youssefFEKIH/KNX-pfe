@@ -115,7 +115,7 @@
       </div>
     </div>
 
-       
+
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm-6 padleft-right">
@@ -141,10 +141,10 @@
       </div>
     </div>
   </section>
-  
+
 
   <!--/ Cours en ligne-->
-  
+
   <!--Cours Presentiel-->
   <section id="coursesP" class="section-padding">
     <div class="container">
@@ -157,7 +157,7 @@
       </div>
     </div>
 
- 
+
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm-6 padleft-right">
@@ -183,7 +183,7 @@
       </div>
     </div>
   </section>
- 
+
 
   <!--/ Cours Presentiel-->
   <!--Organisations-->
@@ -290,7 +290,9 @@
             </div>
             <div class="pm-staff-profile-details text-center">
               <p class="pm-staff-profile-name">{{$projets->titre}}</p>
-              <p class="pm-staff-profile-bio">{{$projets->description}} </p>
+              
+              <p class="readMore" >{{$projets->description}} </p>
+              
             </div>
           </div>
         </div>
@@ -330,11 +332,11 @@
               <input type="text" name="nom" class="form-control form" id="name" placeholder="Nom" required />
 
             </div>
-            
+
             <div class="form-group">
               <select name="pays" class="form-control form" id="pays" >
                 <option value="Tunisie" selected="selected">Tunisie </option>
-                
+
                 <option value="Afghanistan">Afghanistan </option>
                 <option value="Afrique_Centrale">Afrique_Centrale </option>
                 <option value="Afrique_du_sud">Afrique_du_Sud </option>
@@ -350,7 +352,7 @@
                 <option value="Australie">Australie </option>
                 <option value="Autriche">Autriche </option>
                 <option value="Azerbaidjan">Azerbaidjan </option>
-                
+
                 <option value="Bahamas">Bahamas </option>
                 <option value="Bangladesh">Bangladesh </option>
                 <option value="Barbade">Barbade </option>
@@ -369,7 +371,7 @@
                 <option value="Bulgarie">Bulgarie </option>
                 <option value="Burkina_Faso">Burkina_Faso </option>
                 <option value="Burundi">Burundi </option>
-                
+
                 <option value="Caiman">Caiman </option>
                 <option value="Cambodge">Cambodge </option>
                 <option value="Cameroun">Cameroun </option>
@@ -390,11 +392,11 @@
                 <option value="Cote_d_Ivoire">Côte_d_Ivoire </option>
                 <option value="Croatie">Croatie </option>
                 <option value="Cuba">Cuba </option>
-                
+
                 <option value="Danemark">Danemark </option>
                 <option value="Djibouti">Djibouti </option>
                 <option value="Dominique">Dominique </option>
-                
+
                 <option value="Egypte">Egypte </option>
                 <option value="Emirats_Arabes_Unis">Emirats_Arabes_Unis </option>
                 <option value="Equateur">Equateur </option>
@@ -410,7 +412,7 @@
                 <option value="Fidji">Fidji </option>
                 <option value="Finlande">Finlande </option>
                 <option value="France">France </option>
-                
+
                 <option value="Gabon">Gabon </option>
                 <option value="Gambie">Gambie </option>
                 <option value="Georgie">Georgie </option>
@@ -428,13 +430,13 @@
                 <option value="Guinee equatoriale">Guinee_Equatoriale </option>
                 <option value="Guyana">Guyana </option>
                 <option value="Guyane_Francaise ">Guyane_Francaise </option>
-                
+
                 <option value="Haiti">Haiti </option>
                 <option value="Hawaii">Hawaii </option>
                 <option value="Honduras">Honduras </option>
                 <option value="Hong_Kong">Hong_Kong </option>
                 <option value="Hongrie">Hongrie </option>
-                
+
                 <option value="Inde">Inde </option>
                 <option value="Indonesie">Indonesie </option>
                 <option value="Iran">Iran </option>
@@ -443,19 +445,19 @@
                 <option value="Islande">Islande </option>
                 <option value="Israel">Israel </option>
                 <option value="Italie">italie </option>
-                
+
                 <option value="Jamaique">Jamaique </option>
                 <option value="Jan Mayen">Jan Mayen </option>
                 <option value="Japon">Japon </option>
                 <option value="Jersey">Jersey </option>
                 <option value="Jordanie">Jordanie </option>
-                
+
                 <option value="Kazakhstan">Kazakhstan </option>
                 <option value="Kenya">Kenya </option>
                 <option value="Kirghizstan">Kirghizistan </option>
                 <option value="Kiribati">Kiribati </option>
                 <option value="Koweit">Koweit </option>
-                
+
                 <option value="Laos">Laos </option>
                 <option value="Lesotho">Lesotho </option>
                 <option value="Lettonie">Lettonie </option>
@@ -465,7 +467,7 @@
                 <option value="Lituanie">Lituanie </option>
                 <option value="Luxembourg">Luxembourg </option>
                 <option value="Lybie">Lybie </option>
-                
+
                 <option value="Macao">Macao </option>
                 <option value="Macedoine">Macedoine </option>
                 <option value="Madagascar">Madagascar </option>
@@ -491,7 +493,7 @@
                 <option value="Mongolie">Mongolie </option>
                 <option value="Montserrat">Montserrat </option>
                 <option value="Mozambique">Mozambique </option>
-                
+
                 <option value="Namibie">Namibie </option>
                 <option value="Nauru">Nauru </option>
                 <option value="Nepal">Nepal </option>
@@ -503,11 +505,11 @@
                 <option value="Norvege">Norvege </option>
                 <option value="Nouvelle_Caledonie">Nouvelle_Caledonie </option>
                 <option value="Nouvelle_Zelande">Nouvelle_Zelande </option>
-                
+
                 <option value="Oman">Oman </option>
                 <option value="Ouganda">Ouganda </option>
                 <option value="Ouzbekistan">Ouzbekistan </option>
-                
+
                 <option value="Pakistan">Pakistan </option>
                 <option value="Palau">Palau </option>
                 <option value="Palestine">Palestine </option>
@@ -521,9 +523,9 @@
                 <option value="Polynesie">Polynesie </option>
                 <option value="Porto_Rico">Porto_Rico </option>
                 <option value="Portugal">Portugal </option>
-                
+
                 <option value="Qatar">Qatar </option>
-                
+
                 <option value="Republique_Dominicaine">Republique_Dominicaine </option>
                 <option value="Republique_Tcheque">Republique_Tcheque </option>
                 <option value="Reunion">Reunion </option>
@@ -531,7 +533,7 @@
                 <option value="Royaume_Uni">Royaume_Uni </option>
                 <option value="Russie">Russie </option>
                 <option value="Rwanda">Rwanda </option>
-                
+
                 <option value="Sahara Occidental">Sahara Occidental </option>
                 <option value="Sainte_Lucie">Sainte_Lucie </option>
                 <option value="Saint_Marin">Saint_Marin </option>
@@ -554,7 +556,7 @@
                 <option value="Surinam">Surinam </option>
                 <option value="Swaziland">Swaziland </option>
                 <option value="Syrie">Syrie </option>
-                
+
                 <option value="Tadjikistan">Tadjikistan </option>
                 <option value="Taiwan">Taiwan </option>
                 <option value="Tonga">Tonga </option>
@@ -566,29 +568,29 @@
                 <option value="Togo">Togo </option>
                 <option value="Trinite_et_Tobago">Trinite_et_Tobago </option>
                 <option value="Tristan da cunha">Tristan de cuncha </option>
-                
+
                 <option value="Turkmenistan">Turmenistan </option>
                 <option value="Turquie">Turquie </option>
-                
+
                 <option value="Ukraine">Ukraine </option>
                 <option value="Uruguay">Uruguay </option>
-                
+
                 <option value="Vanuatu">Vanuatu </option>
                 <option value="Vatican">Vatican </option>
                 <option value="Venezuela">Venezuela </option>
                 <option value="Vierges_Americaines">Vierges_Americaines </option>
                 <option value="Vierges_Britanniques">Vierges_Britanniques </option>
                 <option value="Vietnam">Vietnam </option>
-                
+
                 <option value="Wake">Wake </option>
                 <option value="Wallis et Futuma">Wallis et Futuma </option>
-                
+
                 <option value="Yemen">Yemen </option>
                 <option value="Yougoslavie">Yougoslavie </option>
-                
+
                 <option value="Zambie">Zambie </option>
                 <option value="Zimbabwe">Zimbabwe </option>
-                
+
                 </select>
 
             </div>
@@ -645,25 +647,31 @@
         </div>
         <div id="sendmessage">Your message has been sent. Thank you!</div>
         <div id="errormessage"></div>
-        <form action="" method="post" role="form" class="contactForm">
+
+        <form action="{{ route('contact') }}" method="post" role="form" class="contactForm">
+          @csrf
           <div class="col-md-6 col-sm-6 col-xs-12 left">
             <div class="form-group">
-              <input type="text" name="name" class="form-control form" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <input type="text" name="nom" class="form-control form" value="{{ old('name') }}" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              @error('nom') <span class="text-danger">{{$message}}</span>@enderror
               <div class="validation"></div>
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+              <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+              @error('email') <span class="text-danger">{{$message}}</span>@enderror
               <div class="validation"></div>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <input type="text" class="form-control" name="sujet" id="subject" value="{{ old('sujet') }}" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              @error('sujet') <span class="text-danger">{{$message}}</span>@enderror
               <div class="validation"></div>
             </div>
           </div>
 
           <div class="col-md-6 col-sm-6 col-xs-12 right">
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <textarea class="form-control" name="message" rows="5" data-rule="required" value="{{ old('message') }}" data-msg="Please write something for us" placeholder="Message"></textarea>
+              @error('message') <span class="text-danger">{{$message}}</span>@enderror
               <div class="validation"></div>
             </div>
           </div>
