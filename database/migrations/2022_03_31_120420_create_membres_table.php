@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('membres', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nom');
-            $table->string('mail')->nullable();
-            $table->string('mot_de_passe')->nullable();
-            $table->string('type')->default('M')->nullable();
+            $table->string('mail');
+            $table->string('mot_de_passe');
+            $table->string('type')->default('M');
 
             $table->integer('tel')->nullable();
             $table->string('url_image')->nullable();

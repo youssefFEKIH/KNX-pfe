@@ -67,27 +67,27 @@ tr:nth-child(even) {
 
   <br />
    <br />
-   <h2 class="Formateurs">Liste des Cours</h2>
+   <h2 class="Formateurs">Liste des Messages</h2>
    <br />
   </div>
   <table >
    <tr>
     <th>Id</th>
-    <th>image</th>
-    <th>Titre</th>
-    <th>Description</th>
-    <th>Type</th>
+    <th>Nom et Prenom</th>
+    <th>Email</th>
+    <th>Sujet</th>
+    <th>Message</th>
     <th>Supprimer</th>
    </tr>
-@foreach($Cour as $Cours)
+@foreach($message as $messages)
    <tr>
-   <td>{{$Cours->id}}</td>
-   <td><img src="{{ asset ('images/' . $Cours->url_image)}}" width="200px;"  ></td>
-    <td>{{$Cours->nom}}</td>
-    <td>{{$Cours->description}}</td>
-    <td>{{$Cours->type}}</td>
+   <td>{{$messages->id}}</td>
+    <td>{{$messages->nom}}</td>
+    <td>{{$messages->mail}}</td>
+    <td>{{$messages->sujet}}</td>
+    <td>{{$messages->message}}</td>
     <td>
-     <form   action="{{route('supprimerCour',$Cours->id)}}" method="POST">
+     <form   action="{{route('supprimerMessage',$messages->id)}}" method="POST">
        @csrf
     <button type="submit" class="btn btn-danger">Supprimer</button>
      </form>
@@ -97,50 +97,7 @@ tr:nth-child(even) {
 
   </table>
 
-  <div class="modal-body padtrbl">
-</br>
-</br>
-<div class="login-box-body">
-  <p class="login-box-msg">Ajouter un cour</p>
-  <div class="form-group">
-    <form action="/AdminDashboard/cour" method="POST" enctype="multipart/form-data"  id="loginForm">
-      @csrf
-      <div class="form-group has-feedback">
-        <!----- Titre -------------->
-          <input type="text" class="form-control" name="nom"  placeholder="Titre" autocomplete="off" required/>
-        </div>
 
-
-      <div class="form-group has-feedback">
-        <!----- description -------------->
-        <textarea  name="description" rows="5" cols="155" placeholder="description" required> </textarea>
-      </div>
-
-      <div >
-        <label style=color:black; >Type de cour:</label></br>
-        <!----- Type -------------->
-        <select name="type"> 
-            <option  selected>En Ligne</option>
-            <option  >Presentiel</option>
-        </select>
-     </div>
-    </br> 
-    </br>
-       <div class="form-group has-feedback">
-        <!----- image -------------->
-        <label style=color:black;>Ajouter une photo de cour</br></label>
-         <input type="file" name="url_image"  required>
-        </div>
-
-
-<button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
-
-</div>
-      </div>
-    </form>
-  </div>
-</div>
-</div>
 </div>
 
 </div>

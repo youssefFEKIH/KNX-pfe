@@ -10,8 +10,8 @@ use App\Http\Controllers\nouveauteController;
 use App\Http\Controllers\CandidatController;
 use App\Http\Controllers\CourController;
 use App\Http\Controllers\NouvController;
-use App\Http\Controllers\ContactController;
-
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\EmailController;
 
 
 /*
@@ -124,4 +124,9 @@ Route::get('/profil', [membreController::class, 'profil'])->name('profil');
 Route::post('profilC', [membreController::class, 'profilC'])->name('profilC');
 
 
-Route::post('contact', [ContactController::class, 'contact'])->name('contact');
+Route::get('/AdminDashboard/Message', [MessageController::class, 'message'])->name('/AdminDashboard/Message');
+Route::post('/AdminDashboard/Message',  [MessageController::class, 'create'])->name('AddMessage');
+Route::post('/destroy/{id}/M', [MessageController::class, 'destroy'])->name('supprimerM');
+
+Route::get('/contact', [EmailController::class, 'index']);
+Route::post('/sendemail/send',  [EmailController::class,'send']);

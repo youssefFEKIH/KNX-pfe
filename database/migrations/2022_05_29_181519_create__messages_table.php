@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('nouv', function (Blueprint $table) {
+        Schema::create('_messages', function (Blueprint $table) {
             $table->id();
-            $table->string('url_nouveaute');
-            $table->string('type');
-            $table->string('titre');
-            $table->string('description', 9000);
+            $table->string('nom');
+            $table->string('mail');
+            $table->string('sujet');
+            $table->string('message', 9000);
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nouv');
+        Schema::dropIfExists('_messages');
     }
 };
