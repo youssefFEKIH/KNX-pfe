@@ -34,7 +34,7 @@
       <div class="row">
         <div class="header-section text-center">
           <h2>Mirage Group</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+          <p>Mirage Group est un centre de formation KNX certifié qui propose une formation formelle <br> à plusieurs niveaux et propose un modèle d'éducation KNX pour la formation.</p>
           <hr class="bottom-line">
         </div>
         <div class="feature-info">
@@ -641,29 +641,29 @@
     <div class="container">
       <div class="row">
         <div class="header-section text-center">
-          <h2>Nous contacter</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+          <h2>Contactez‑nous</h2>
+          <p>VOUS SOUHAITEZ NOUS CONTACTER ? <br>Remplissez un formulaire reprenant les détails de celui‑ci.</p>
           <hr class="bottom-line">
         </div>
         <div id="sendmessage">Your message has been sent. Thank you!</div>
         <div id="errormessage"></div>
         <form action="/AdminDashboard/Message" method="POST" enctype="multipart/form-data"  id="loginForm">
-        
+
           @csrf
           <div class="col-md-6 col-sm-6 col-xs-12 left">
             <div class="form-group">
               <input type="text" name="nom" class="form-control form"  id="name" placeholder="Nom & Prénom" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-              
+
               <div class="validation"></div>
             </div>
             <div class="form-group">
               <input type="email" class="form-control" name="mail" id="email"  placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
-             
+
               <div class="validation"></div>
             </div>
             <div class="form-group">
               <input type="text" class="form-control" name="sujet" id="subject"  placeholder="Sujet" data-rule="required" data-msg="Please write something for us" />
-              
+
               <div class="validation"></div>
             </div>
           </div>
@@ -671,7 +671,7 @@
           <div class="col-md-6 col-sm-6 col-xs-12 right">
             <div class="form-group">
               <textarea class="form-control" name="message" rows="5" data-rule="required"  data-msg="Please write something for us" placeholder="Message"></textarea>
-              
+
               <div class="validation"></div>
             </div>
           </div>
