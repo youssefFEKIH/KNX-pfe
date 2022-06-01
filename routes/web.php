@@ -25,6 +25,9 @@ use App\Http\Controllers\EmailController;
 |
 */
 
+
+
+
 Route::get('/', [membreController::class, 'index3'])->name('pagedaccueil');
 Route::get('/home', [membreController::class, 'index'])->name('home');
 
@@ -39,12 +42,8 @@ Route::get('/projets', [ProjetController::class, 'index2'])->name('projets');
 Route::get('/inscriptionget', function () {
     return view('Front.inscription');
 })->name('inscriptionget');
-Route::get('/connexion', function () {
-    return view('Front.connexion');
-})->name('connexion');
-Route::get('/compte', function () {
-    return view('Front.tableaudebordmembre');
-})->name('profil');
+
+
 Route::get('/deconnexion', [MembreController::class, 'deconnexion']);
 
 
@@ -121,7 +120,8 @@ Route::post('/destroy/{id}/N', [nouvController::class, 'destroy'])->name('suppri
 
 Route::get('/mise', [membreController::class, 'mise'])->name('mise');
 Route::get('/profil', [membreController::class, 'profil'])->name('profil');
-Route::post('profilC', [membreController::class, 'profilC'])->name('profilC');
+Route::get('/profilA', [membreController::class, 'profilA'])->name('profilA');
+Route::post('/profilC', [membreController::class, 'profilC'])->name('profilC');
 
 
 Route::get('/AdminDashboard/Message', [MessageController::class, 'message'])->name('/AdminDashboard/Message');
@@ -130,3 +130,11 @@ Route::post('/destroy/{id}/M', [MessageController::class, 'destroy'])->name('sup
 
 Route::get('/contact', [EmailController::class, 'index']);
 Route::post('/sendemail/send',  [EmailController::class,'send']);
+
+
+
+
+
+
+
+

@@ -17,13 +17,26 @@ class MembreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Projet $projet, cours $Cours ) 
+  
+    
+    
+    
+     public function index(Projet $projet, cours $Cours ) 
     {
         $projet = Projet::all();
         $Cours = cours::all();
        
         return view('Front.index', compact('projet','Cours' ));
     }
+    public function profilA( ) 
+    {
+       if (session()->has('mail')){
+           return view('Front.tableaudebordmembre'); }
+      else
+      
+       return view('Front.connexion');
+    }
+
 
     
     public function mise() 
@@ -31,37 +44,47 @@ class MembreController extends Controller
         return view('Front.mise');
     }
   
-    public function profil(Membre $membre) 
-    {
-        $membre = Membre::all();
-        return view('Front.profil', compact('membre' ));
+    public function profil(Request $request,Membre $membre) 
+    {  if (session()->has('mail')){
+        $membre = Membre::all()->where('mail',session('mail'));
+        return view('Front.profil', compact('membre' ));}
+        else
+        return view('Front.connexion');
     }
+   
     
     public function profilC(Request $request)
     {
-        $post = new Membre();
-        $post->nom = $request->nom;
-        $post->mail = $request->mail;
-        $post->mot_de_passe = $request->mot_de_passe;
-        $post->date_de_naissance = $request->date_de_naissance;
-        $post->adresse = $request->adresse;
-        $post->diplome = $request->diplome;
-        $post->tel = $request->tel;
-        $post->description = $request->description;
+        
+        $nom = $request->nom;
+        $mot_de_passe = $request->mot_de_passe;
+        $date_de_naissance = $request->date_de_naissance;
+        $adresse = $request->adresse;
+        $tel = $request->tel;
+        $description = $request->description;
      
         if($request->hasfile('url_image')){
             $file = $request->file('url_image');
             $extenstion = $file->getClientOriginalExtension();
             $filename = time().'.'.$extenstion;
             $file->move('images/', $filename);
-            $post->url_image= $filename;
-     
+            $url_image= $filename;
+        }  
         
-        }          
-           if( $post->save()){ return redirect()->route('profil');}
-         
+    $update = [
+        'nom' =>$nom,
+        'date_de_naissance'=>$date_de_naissance ,
+        'adresse'=>$adresse ,
+        'tel'=>$tel ,
+        'description'=>$description,
+        'url_image'=>$url_image ];
+         if(Membre::where('mail',session('mail'))->update($update)){
+
+            return redirect()->route('profil');  
+         }     
            
     }
+    
 
     public function index3()
     {
@@ -127,17 +150,18 @@ class MembreController extends Controller
             $pass = 'password' => request('mot_de_passe'),
         ]);
         if ($resultat) {
+            $data=$request->input();
+            $request->session()->put('mail', $data['mail']);
 
-            $request->session()->put('mail', $mail);
             if (Auth::user()->type == 'A') {
                 return redirect('AdminDashboard');
             } elseif (Auth::user()->type == 'F') {
                 return view('Front.tableaudebordmembre');
             } else {
-                return view('Front.tableaudebordmembre');
+                return redirect()->route('profilA');
             }
         }
-        return redirect('connexion')->withInput()->withErrors([
+        return redirect('profilA')->withInput()->withErrors([
             'mot_de_passe' => "Vos identifiants sont incorrects"
         ]);
     }
@@ -146,6 +170,8 @@ class MembreController extends Controller
     {
         $request->session()->forget('mail');
         auth()->logout();
+       
+      
 
         return redirect('home');
     }

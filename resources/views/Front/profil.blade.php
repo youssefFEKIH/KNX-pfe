@@ -1,4 +1,4 @@
-@extends('Front.layout1')
+@extends('Front.layout')
 
 @section('content')
 
@@ -8,7 +8,6 @@
                     <div class="col-lg-6">
                         <div class="about-text go-to">
                             <h3 class="dark-color">Mon profil</h3>
-
                             @foreach($membre as $membre)
 
                             <p>{{$membre->description}}</p>
@@ -16,19 +15,17 @@
                             <div class="row about-list">
                                 <div class="col-md-6">
                                     <div class="media">
-
-                                        
-                                        <h5>{{$membre->nom}}</h5>
-
+                                    <label>Nom </label>
+                                    <h5>{{$membre->nom}}</h5>
                                     </div>
                                     <div class="media">
-
+                                    <label>telephone</label>
                                         
                                         <h5>{{$membre->tel}}</h5>
 
                                     </div>
                                     <div class="media">
-
+                                    <label>date de naissance</label>
                                        
                                         <h5>{{$membre->date_de_naissance}}</h5>
 
@@ -37,7 +34,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="media">
-
+                                    <label>adresse</label>
                                         
                                         <h5>{{$membre->adresse}}</h5>
 
@@ -60,15 +57,13 @@
                         </div>
 
                     </div>
-                      @endforeach
-                    <div class="media">
-                        <div class="form-group">
-                        <a href="{{ route('mise') }}" class="form contact-form-button light-form-button oswald light" id="submit" placeholder="Mise à jour" > Mise à jour</a>
-                        </div>
-                    </div>
+                   
+                   
                 </div>
-
-
+                @endforeach
+                <br>
+                <a href="{{route('profilA')}}"><button type="submit" class="btn btn-green btn-block btn-flat">Modifier</button> </a>
+                <br> 
                 <div class="counter">
                     <div class="row">
                         <div class="col-6 col-lg-3">
@@ -99,4 +94,5 @@
                 </div>
             </div>
         </section>
+
   @endsection
