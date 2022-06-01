@@ -38,36 +38,39 @@
           <hr class="bottom-line">
         </div>
         <div class="feature-info">
+          
+           
           <div class="fea">
             <div class="col-md-4">
               <div class="heading pull-right">
-                <h4>Latest Technologies</h4>
-                <p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum egestas sollicitudin metus non urna in eros tincidunt convallis id id nisi in interdum.</p>
-              </div>
-              <div class="fea-img pull-left">
-                <i class="fa fa-css3"></i>
+                <img src="{{ asset('Front/img')}}/capture2.png" alt="" height="180" width="300"/>
+                <h4>Workshop KNX</h4>
+                <p>Le centre Mirage Group faire des Workshops .</p>
+              
+
               </div>
             </div>
           </div>
           <div class="fea">
             <div class="col-md-4">
               <div class="heading pull-right">
-                <h4>Toons Background</h4>
-                <p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum egestas sollicitudin metus non urna in eros tincidunt convallis id id nisi in interdum.</p>
-              </div>
-              <div class="fea-img pull-left">
-                <i class="fa fa-drupal"></i>
+                <img src="{{ asset('Front/img')}}/capture1.png" alt="" height="180" width="300"/>
+                <h4>Formation En Ligne</h4>
+                <p>Le centre Mirage Group donne la possibilité d'obtenir des certificats en ligne.</p>
+              
+
               </div>
             </div>
           </div>
           <div class="fea">
             <div class="col-md-4">
               <div class="heading pull-right">
-                <h4>Award Winning Design</h4>
-                <p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum egestas sollicitudin metus non urna in eros tincidunt convallis id id nisi in interdum.</p>
+                <img src="{{ asset('Front/img')}}/formation.png" alt="" />
+                <h4>Formation Présentiel</h4>
+                <p>Le centre Mirage Group donne la possibilité d'obtenir des certificats présentiel.</p>
               </div>
               <div class="fea-img pull-left">
-                <i class="fa fa-trophy"></i>
+                
               </div>
             </div>
           </div>
@@ -82,20 +85,20 @@
     <div class="container">
       <div class="row">
         <div class="header-section text-center">
-          <h2 class="white">See What Our Customer Are Saying?</h2>
-          <p class="white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+          <h2 class="white">KNX IoTech signifie</h2>
+          <p class="white">Les nouveaux appareils et solutions KNX IoTech font passer les maisons et les bâtiments intelligents au niveau supérieur.</p>
           <hr class="bottom-line bg-white">
         </div>
         <div class="col-md-6 col-sm-6">
           <div class="text-comment">
-            <p class="text-par">"Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, nec sagittis sem"</p>
-            <p class="text-name">Abraham Doe - Creative Dırector</p>
+            <p class="text-name">Universel            </p>
+            <p class="text-par">Des solutions de pointe avec des informations précieuses de l'installation KNX, grâce à une couche complète d'informations sémantiques.</p>
           </div>
         </div>
         <div class="col-md-6 col-sm-6">
           <div class="text-comment">
-            <p class="text-par">"Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, nec sagittis sem"</p>
-            <p class="text-name">Abraham Doe - Creative Director</p>
+            <p class="text-name">Sécurisé</p>
+            <p class="text-par">Services sécurisés basés sur une puissante communication sécurisée des données et cryptée IP sur tous les produits et applications.</p>
           </div>
         </div>
       </div>
@@ -109,7 +112,7 @@
       <div class="row">
         <div class="header-section text-center">
           <h2>Cours En Ligne</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+          <p>Les cours en ligne disponible dans la plateforme.</p>
           <hr class="bottom-line">
         </div>
       </div>
@@ -151,7 +154,7 @@
       <div class="row">
         <div class="header-section text-center">
           <h2>Cours Présentiel</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+          <p>Les cours disponible dans Mirage Group.</p>
           <hr class="bottom-line">
         </div>
       </div>
@@ -231,37 +234,35 @@
     <div class="container">
       <div class="row">
         <div class="header-section text-center">
-          <h2>Upcoming Workshop</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+          <h2>Sécurité et domotique        </h2>
+          <p>Intégrateur de solutions de sécurité et d’automatisation pour le résidentiel, </br> le tertiaire et l’industrie.</p>
           <hr class="bottom-line">
         </div>
         <div class="col-md-4 col-sm-6">
           <div class="service-box text-center">
             <div class="icon-box">
-              <i class="fa fa-html5 color-green"></i>
+
             </div>
             <div class="icon-text">
-              <h4 class="ser-text">Mentor HTML5 Workshop</h4>
+                <img src="{{ asset('Front/img')}}/eclairagee.png" alt="" />
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6">
           <div class="service-box text-center">
             <div class="icon-box">
-              <i class="fa fa-css3 color-green"></i>
             </div>
             <div class="icon-text">
-              <h4 class="ser-text">Mentor CSS3 Workshop</h4>
+                <img src="{{ asset('Front/img')}}/alarme.png" alt="" />
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6">
           <div class="service-box text-center">
             <div class="icon-box">
-              <i class="fa fa-joomla color-green"></i>
             </div>
             <div class="icon-text">
-              <h4 class="ser-text">Mentor Joomla Workshop</h4>
+                <img src="{{ asset('Front/img')}}/camera.png" alt="" />
             </div>
           </div>
         </div>

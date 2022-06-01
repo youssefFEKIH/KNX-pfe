@@ -21,8 +21,10 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav" >
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                @php($count=0)
                 @foreach($cv as $cvs)
                 @if($count < 1)
+                @php($count++)
             <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ asset ('images/' . $cvs->image)}}" alt="..." />
             @endif
             @endforeach
