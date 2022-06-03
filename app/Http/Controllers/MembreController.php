@@ -6,6 +6,7 @@ use Validator;
 use App\Models\Projet;
 use App\Models\Membre;
 use App\Models\cours;
+use App\Models\courp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -21,12 +22,13 @@ class MembreController extends Controller
     
     
     
-     public function index(Projet $projet, cours $Cours ) 
+     public function index(Projet $projet, cours $Cours ,courp $Courp ) 
     {
         $projet = Projet::all();
         $Cours = cours::all();
+        $Courp = courp::all();
        
-        return view('Front.index', compact('projet','Cours' ));
+        return view('Front.index', compact('projet','Cours','Courp' ));
     }
     public function profilA( ) 
     {
@@ -156,7 +158,7 @@ class MembreController extends Controller
             if (Auth::user()->type == 'A') {
                 return redirect('AdminDashboard');
             } elseif (Auth::user()->type == 'F') {
-                return view('Front.tableaudebordmembre');
+                return redirect()->route('AdminDashboard/cour');
             } else {
                 return redirect()->route('profilA');
             }
@@ -218,7 +220,7 @@ class MembreController extends Controller
         $m = new membre();
         $m->nom = $request->nom;
         $m->mail = $request->mail;
-        $m->mot_de_passe = $request->mot_de_passe;
+        $m->mot_de_passe = Hash::make($request->mot_de_passe);
         $m->type = $request->type;
         if ($m->save()) {
             return redirect('AdminDashboard');

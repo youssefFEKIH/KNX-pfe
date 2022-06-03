@@ -66,16 +66,7 @@
             <a href="#"></a>
           </figure>
         </div>
-        <div class="col-md-4 col-sm-6 padleft-right">
-          <figure class="imghvr-fold-up">
-            <img src="{{ asset('Front/img')}}/course01.jpg" class="img-responsive">
-            <figcaption>
-              <h3>Course Name</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-            </figcaption>
-            <a href="#"></a>
-          </figure>
-        </div>
+       
   <!--un cours-->
   <div class="col-md-4 col-sm-6 padleft-right">
           <figure class="imghvr-fold-up">

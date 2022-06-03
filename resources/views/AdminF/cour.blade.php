@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin Dashboard</title>
+  <title>Formateur Dashboard</title>
 
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
@@ -28,18 +28,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href=""> dashboard</a>
+        <a class="navbar-brand" href=""> acceuil</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="{{ route('AdminDashboard/cour') }}">Liste des Cours</a></li>
-          <li><a href="{{ route('AdminDashboard/Message') }}">Liste des Messages</a></li>
-          <li><a href="{{ route('AdminDashboard/projet') }}">Projet de Fin d'Études</a></li>
-          <li><a href="{{ route('AdminDashboard/cv') }}">cv</a></li>
-          <li><a href="{{ route('AdminDashboard/KNX') }}">knx Tunisie</a></li>
-         
-          <li><a href="{{ route('AdminDashboard/candidat') }}">Liste des Candidats</a></li>
-          <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
+          <li><a href=""> Cours En ligne</a></li>
+          <li><a href="{{route('courp')}}">Cours Presentiel</a></li>
+          <li><a href="">Profil</a></li>        
+         <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
          </ul>
       </div>
     </div>
@@ -67,7 +63,7 @@ tr:nth-child(even) {
 
   <br />
    <br />
-   <h2 class="Formateurs">Liste des Cours</h2>
+   <h2 class="Formateurs"> Cours en ligne </h2>
    <br />
   </div>
   <table >
@@ -75,14 +71,14 @@ tr:nth-child(even) {
     <th>Id</th>
     <th>image</th>
     <th>Titre</th>
-    <th>Description</th>
+    <th>Résumer</th>
     <th>Type</th>
     <th>Supprimer</th>
    </tr>
 @foreach($Cour as $Cours)
    <tr>
    <td>{{$Cours->id}}</td>
-   <td><img src="{{ asset ('images/' . $Cours->url_image)}}" width="200px;"  ></td>
+   <td><img src="{{ asset ('images/' . $Cours->url_image)}}" height="100px" width="100px"  ></td>
     <td>{{$Cours->nom}}</td>
     <td>{{$Cours->description}}</td>
     <td>{{$Cours->type}}</td>
@@ -121,7 +117,7 @@ tr:nth-child(even) {
         <!----- Type -------------->
         <select name="type"> 
             <option  selected>En Ligne</option>
-            <option  >Presentiel</option>
+          
         </select>
      </div>
     </br> 
@@ -129,7 +125,7 @@ tr:nth-child(even) {
        <div class="form-group has-feedback">
         <!----- image -------------->
         <label style=color:black;>Ajouter une photo de cour</br></label>
-         <input type="file" name="url_image"  required>
+         <input type="file" name="url_image" accept=".png, .jpg, .jpeg" required>
         </div>
 
 

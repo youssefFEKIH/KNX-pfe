@@ -29,7 +29,7 @@ class CandidatController extends Controller
             $post->cv = $filename;
         }
         if ($post->save()) {
-            return redirect()->route('AdminDashboard/candidat');
+            return redirect()->route('home');
         }
     }
 

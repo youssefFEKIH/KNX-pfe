@@ -32,18 +32,12 @@ Route::get('/', [membreController::class, 'index3'])->name('pagedaccueil');
 Route::get('/home', [membreController::class, 'index'])->name('home');
 
 
-Route::get('/home/connect', function () {
-    return view('Front.index');
-})->name('homeconnect');
-Route::get('/cours', function () {
-    return view('Front.cours');
-})->name('cours');
+Route::get('/home/connect', function () {  return view('Front.index');})->name('homeconnect');
+Route::get('/coursp',[CourController::class, 'coursp'])->name('coursp');
+
+Route::get('/inscriptionget', function () {return view('Front.inscription');})->name('inscriptionget');
+
 Route::get('/projets', [ProjetController::class, 'index2'])->name('projets');
-Route::get('/inscriptionget', function () {
-    return view('Front.inscription');
-})->name('inscriptionget');
-
-
 Route::get('/deconnexion', [MembreController::class, 'deconnexion']);
 
 
@@ -91,6 +85,7 @@ Route::get('/AdminDashboard/cv', [CvController::class, 'CvFormateur'])->name('Ad
 Route::get('/AdminDashboard/KNX', [nouveauteController::class, 'nouveaute'])->name('AdminDashboard/KNX');
 Route::get('/AdminDashboard/candidat', [CandidatController::class, 'candidat'])->name('AdminDashboard/candidat');
 Route::get('/AdminDashboard/cour', [CourController::class, 'cour'])->name('AdminDashboard/cour');
+Route::get('/FormateurDashboard/courp', [CourController::class, 'courp'])->name('courp');
 
 Route::post('/AdminDashboard/Formateur', [MembreController::class, 'addF'])->name('AddFormateur');
 Route::post('/destroy/{id}/F', [MembreController::class, 'destroy'])->name('supprimerF');
@@ -110,7 +105,10 @@ Route::post('/AdminDashboard/Candidat',  [CandidatController::class, 'create'])-
 Route::post('/destroy/{id}/C', [CandidatController::class, 'destroy'])->name('supprimerC');
 
 Route::post('/destroy/{id}/Cour', [CourController::class, 'destroy'])->name('supprimerCour');
+Route::post('/destroy/{id}/Courp', [CourController::class, 'destroycourp'])->name('supprimerCourp');
+Route::post('/destroy/{id}/terminer', [CourController::class, 'terminer'])->name('terminer');
 Route::post('/AdminDashboard/cour',  [CourController::class, 'create'])->name('AddCour');
+Route::post('/Formateur/courp',  [CourController::class, 'ajouterCourp'])->name('AddCourp');
 
 Route::post('/AdminDashboard/nouv',  [nouvController::class, 'store'])->name('Addnouv');
 Route::post('/destroy/{id}/N', [nouvController::class, 'destroy'])->name('supprimerN');
@@ -130,6 +128,8 @@ Route::post('/destroy/{id}/M', [MessageController::class, 'destroy'])->name('sup
 
 Route::get('/contact', [EmailController::class, 'index']);
 Route::post('/sendemail/send',  [EmailController::class,'send']);
+
+
 
 
 

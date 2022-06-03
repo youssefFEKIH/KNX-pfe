@@ -899,3 +899,21 @@ mark {
 .buttonnn:hover{
     background-color: green;
 }
+.date{
+    color: green;
+      text-align: center;
+    text-decoration-line: overline underline;
+    text-decoration-color: red;
+    text-decoration-style: double;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 25%;
+    font-weight: bold;
+    font-size: 20px;}
+.titrep{
+    color:#5fcf80;
+    font-size: 18px;
+}
+.timep{
+    font-size: 10px;
+    color:black;  
+}

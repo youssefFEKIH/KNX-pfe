@@ -40,23 +40,13 @@
         <div class="feature-info">
           
            
-          <div class="fea">
-            <div class="col-md-4">
-              <div class="heading pull-right">
-                <img src="{{ asset('Front/img')}}/capture2.png" alt="" height="180" width="300"/>
-                <h4>Workshop KNX</h4>
-                <p>Le centre Mirage Group faire des Workshops .</p>
-              
-
-              </div>
-            </div>
-          </div>
+          
           <div class="fea">
             <div class="col-md-4">
               <div class="heading pull-right">
                 <img src="{{ asset('Front/img')}}/capture1.png" alt="" height="180" width="300"/>
                 <h4>Formation En Ligne</h4>
-                <p>Le centre Mirage Group donne la possibilité d'obtenir des certificats en ligne.</p>
+                <p>Mirage group a la possibilité de proposer des cours knx via un E-Learning en ligne .</p>
               
 
               </div>
@@ -67,10 +57,21 @@
               <div class="heading pull-right">
                 <img src="{{ asset('Front/img')}}/formation.png" alt="" />
                 <h4>Formation Présentiel</h4>
-                <p>Le centre Mirage Group donne la possibilité d'obtenir des certificats présentiel.</p>
+                <p> Mirage Group a la possibilité de proposer des cours knx en présentiel.</p>
               </div>
               <div class="fea-img pull-left">
                 
+              </div>
+            </div
+          </div>
+          <div class="fea">
+            <div class="col-md-4">
+              <div class="heading pull-right">
+                <img src="{{ asset('Front/img')}}/capture2.png" alt="" height="180" width="300"/>
+                <h4>Projet de fin d'étude KNX</h4>
+                <p> Mirage Group a la possibilité de proposer des projets de fin d'étude KNX.</p>
+              
+
               </div>
             </div>
           </div>
@@ -117,26 +118,23 @@
         </div>
       </div>
     </div>
-
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 col-sm-6 padleft-right">
             @php($count=0)
             @foreach($Cours as $cours)
-            @if($cours->type == 'En Ligne')
-            @if($count < 3)
+            @if($count < 6)
             @php($count++)
+    <div class="col-md-4 col-sm-6 padleft-right">
           <figure class="imghvr-fold-up">
-            <img src="{{ asset ('images/' . $cours->url_image)}}" class="img-responsive" width="300px">
+            <img src="{{ asset ('images/' . $cours->url_image)}}" height="300px" width="380px">
             <figcaption>
               <h3>{{$cours->nom}}</h3>
               <p>{{$cours->description}}</p>
             </figcaption>
             <a href="#"></a>
           </figure>
+        </div>
+        
           @endif
-          @endif
+          
           @endforeach
           <a href="{{route('cours')}}"> <button name="submit" type="submit" class="btn btn-block btn-submit">
             Consulter touts les cours  <i class="fa fa-arrow-right"></i></button> </a>
@@ -160,27 +158,25 @@
       </div>
     </div>
 
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 col-sm-6 padleft-right">
-@php($count=0)
-  @foreach($Cours as $cours)
-  @if($cours->type == 'Presentiel')
-  @if($count < 3)
+    @php($count=0)
+  @foreach($Courp as $courp)
+  @if($courp->statut == 'A venir')
+  @if($count < 6)
   @php($count++)
+  <div class="col-md-4 col-sm-6 padleft-right">
           <figure class="imghvr-fold-up">
-            <img src="{{ asset ('images/' . $cours->url_image)}}" class="img-responsive" width="300px">
+            <img src="{{ asset ('images/' . $courp->url_image)}}" height="300px" width="380px">
             <figcaption>
-              <h3>{{$cours->nom}}</h3>
-              <p>{{$cours->description}}</p>
+              <h3>{{$courp->nom}}</h3>
+              <p>{{$courp->resumer}}</p>
             </figcaption>
             <a href="#"></a>
           </figure>
+        </div>
           @endif
           @endif
           @endforeach
-          <a href="{{route('cours')}}"> <button name="submit" type="submit" class="btn btn-block btn-submit">
+          <a href="{{route('coursp')}}"> <button name="submit" type="submit" class="btn btn-block btn-submit">
             Consulter touts les cours  <i class="fa fa-arrow-right"></i></button> </a>
         </div>
       </div>
@@ -196,21 +192,21 @@
         <div class="col-md-6">
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
             <div class="orga-stru">
-              <h3>65%</h3>
+              <h3>87%</h3>
               <p>Oui!!</p>
               <img src="{{ asset('Front/img')}}/smile.png" alt="" />
             </div>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
             <div class="orga-stru">
-              <h3>20%</h3>
+              <h3>10%</h3>
               <p>Oui Non!!</p>
               <img src="{{ asset('Front/img')}}/smile1.png" alt="" />
             </div>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
             <div class="orga-stru">
-              <h3>15%</h3>
+              <h3>3%</h3>
               <p>Non!!</p>
               <img src="{{ asset('Front/img')}}/smile2.png" alt="" />
             </div>
