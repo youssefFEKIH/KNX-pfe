@@ -32,7 +32,7 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href=""> Cours En ligne</a></li>
-          <li><a href="">Cours Presentiel</a></li>
+          <li><a href="">Cours Presentiels</a></li>
           <li><a href="">Profil</a></li>        
          <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
          </ul>
@@ -62,9 +62,10 @@ tr:nth-child(even) {
 
   <br />
    <br />
-   <h2 class="Formateurs">  Cour Presentiel </h2>
-   <br />
-  </div>
+   <h2 class="Formateurs">  Cour Presentiel </h2> 
+
+   <div class="text-center"><a href="#Ajouter un cour"><button  type="button" class="btn btn-warning">Ajouter un cour</button></a>
+  </div>  </div>  <br />
   <table >
    <tr>
     <th>Id</th>
@@ -74,7 +75,7 @@ tr:nth-child(even) {
     <th>statut</th>
     <th>date de début</th>
     <th>heure de début</th>
-    <th>date de fin</th>
+
     <th>heure de fin</th>
     <th>Supprimer</th>
     <th>Modifier</th>
@@ -88,18 +89,16 @@ tr:nth-child(even) {
     <td>{{$Cours->resumer}}</td>
     <td>{{$Cours->statut}}</td>
     <td>{{$Cours->dated}}</td>
-    <td>{{$Cours->heured}}</td>
-    <td>{{$Cours->datef}}</td>
-    <td>{{$Cours->heuref}}</td>
+    <td>{{date('G:i', strtotime($Cours->heured))}}</td>
+  
+    <td>{{date('G:i', strtotime($Cours->heuref))}}</td>
     <td>
      <form   action="{{route('supprimerCourp',$Cours->id)}}" method="POST">
        @csrf
     <button onclick="return confirm('voulez-vous vraiment supprimer ?')" type="submit" class="btn btn-danger">Supprimer</button>
      </form></td><td>
      
-     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modifier">
-  Launch demo modal
-</button>
+     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modifier{{$Cours->id}}">Modifier</button>
   </td><td>
      <form   action="{{route('terminer',$Cours->id)}}" method="POST">
        @csrf
@@ -108,10 +107,12 @@ tr:nth-child(even) {
     </td>
    </tr>
    @endforeach
-
   </table>
+
+  @foreach($Cour as $Cours)
+
 <!--Modal box-->
-<div class="modal fade" id="modifier" role="dialog">
+<div class="modal fade" id="modifier{{$Cours->id}}" role="dialog">
     <div class="modal-dialog modal-sm-9">
 
       <!-- Modal content no 1-->
@@ -124,42 +125,46 @@ tr:nth-child(even) {
 
          
             <div class="form-group">
-              <form name="" action="" method="POST" id="loginForm">
+              <form action="{{route('ModifierCourp',$Cours->id)}}" method="POST" enctype="multipart/form-data" id="loginForm">
                 @csrf
                 <div class="form-group has-feedback">
                   <!----- mail -------------->
-                  <input type="text" class="form-control" name="nom"  placeholder="Titre"  required/>
+                  <input type="text" class="form-control" name="nom"  placeholder="Titre" value="{{$Cours->nom}}"  required/>
                   </div>
                   <div class="form-group has-feedback">
                   <!----- mail -------------->
-                  <input type="text" class="form-control" name="resumer"  placeholder="résumer" required/> 
+                  <input type="text" class="form-control" name="resumer" value="{{$Cours->resumer}}" placeholder="résumer" required/> 
       </div>
                   </div>
                   <div class="form-group has-feedback">
                   <!----- mail -------------->
-                  <textarea  name="description" rows="5" cols="65" placeholder="description détaillée " required>  </textarea>
+                  <textarea  name="description" rows="5" cols="65" placeholder="description détaillée " required>{{$Cours->description}}  </textarea>
                   </div>
                 <div class="form-group has-feedback">
                   <!----- password -------------->
                   <label style=color:black;>date de début</label>
-      <input Type="date" name="dated" rows="5" cols="155" placeholder="date de début " required/> 
+      <input Type="date" name="dated" rows="5" cols="155" placeholder="date de début " value="{{$Cours->dated}}"required/> 
       <label style=color:black;>heure début</label>
-      <input type="time" name="heured">
+      <input type="time" name="heured" value="{{$Cours->heured}}">
       <label style=color:black;>date de fin</label>
-      <input Type="date" name="datef" rows="5" cols="155" placeholder="date de fin " required/> 
+      <input Type="date" name="datef" rows="5" cols="155" placeholder="date de fin " value="{{$Cours->datef}}" required/> 
       <label style=color:black;>heure de fin </label>
-      <input type="time" name="heuref">
-                  </div>
+      <input type="time" name="heuref" value="{{$Cours->heuref}}"> </div>
       <div class="form-group has-feedback">
-                  <select name="statut"> 
+                  <select name="statut" value="{{$Cours->statut}}"> 
             <option  selected>A venir</option>
             <option  selected>Terminer</option>
         </select>
      </div>
      <div class="form-group has-feedback">
-     <label style=color:black;>Ajouter une photo de cour</br></label>
-         <input type="file" name="url_image" accept=".png, .jpg, .jpeg" required>
+        <!----- hidden id -------------->
+     
+         <input type="hidden" name="id" value="{{$Cours->id}}" >
         </div>
+     <div class="form-group has-feedback">
+     <label style=color:black;>Ajouter une photo de cour</br></label>  </div>
+         <input type="file" name="url_image" accept=".png, .jpg, .jpeg" enctype="multipart/form-data" required>
+         <img src="{{ asset ('images/' . $Cours->url_image)}}" height="100px" width="100px"  >
                
                     <button type="submit" class="btn btn-green btn-block btn-flat" >Modifier</button>
                   </div>
@@ -174,7 +179,7 @@ tr:nth-child(even) {
   </div>
   <!--/ Modal box-->
 
-
+  @endforeach
 
 
 
@@ -186,7 +191,7 @@ tr:nth-child(even) {
 </br>
 </br>
 <div class="login-box-body">
-  <p class="login-box-msg">Ajouter un cour</p>
+  <p class="login-box-msg" id="Ajouter un cour">Ajouter un cour</p>
   <div class="form-group">
     <form action="/Formateur/courp" method="POST" enctype="multipart/form-data"  id="loginForm">
       @csrf
@@ -221,7 +226,7 @@ tr:nth-child(even) {
         <!----- Type -------------->
         <select name="statut"> 
             <option  selected>A venir</option>
-            <option  selected>Terminer</option>
+           
         </select>
      </div>
     
@@ -230,6 +235,7 @@ tr:nth-child(even) {
         <label style=color:black;>Ajouter une photo de cour</br></label>
          <input type="file" name="url_image" accept=".png, .jpg, .jpeg" required>
         </div>
+        
 
 
 <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>

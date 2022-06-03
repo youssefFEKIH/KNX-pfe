@@ -5,8 +5,17 @@
 
    
 
-<br><br><br>
-     
+
+<section id="coursesP" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>Cours Présentiels</h2>
+          <p>Les cours présentiels disponible dans Mirage Group.</p>
+          <hr class="bottom-line">
+        </div>
+      </div>
+    </div>   
 <div id="main-content"><section class="content-area">
 <div class="top_heading_out">
 <div class="top_site_main" ></span>	<div class="page-title-wrapper">
@@ -37,8 +46,8 @@
                 </div>
                 <div class="col-sm-7">
                     <h5 class="titrep">{{$courp->nom}}</h5>
-                   <div><p> <img  src="{{ asset ('images/png-transparent-symbol-time-computer-icons-logo-symbol-miscellaneous-angle-logo.png')}}" alt="Suresh Dasari Card"height="25px" width="25px"> {{date('G:i', strtotime($courp->heured))}}-{{date('G:i', strtotime($courp->heuref))}} </p> </div>
-                    <p class="card-text">{{$courp->description}} </p></div>
+                   <div class="timep"><p> <img  src="{{ asset ('images/png-transparent-symbol-time-computer-icons-logo-symbol-miscellaneous-angle-logo.png')}}" alt="Suresh Dasari Card"height="22px" width="22px"> {{date('G:i', strtotime($courp->heured))}}  -  {{date('G:i', strtotime($courp->heuref))}} </p> </div>
+                    <p class="card-text">{{$courp->resumer}} </p></div>
                     <div style="text-align: right"><img  src="{{ asset ('images/' . $courp->url_image)}}" alt="Suresh Dasari Card"height="100px" width="200px"> </div>
                                 
                 </div>            
@@ -60,7 +69,8 @@
 	<div class="item-event post-17684 tp_event type-tp_event status-publish has-post-thumbnail hentry">
 	<div class="time-from">
   <div class="container bcontent">
-        
+  <br> 
+   
   @foreach($Courp as $courp)
   @if($courp->statut == 'Terminer')
 
@@ -74,8 +84,8 @@
                 </div>
                 <div class="col-sm-7">
                     <h5 class="titrep">{{$courp->nom}}</h5>
-                   <div ><p > <img  src="{{ asset ('images/png-transparent-symbol-time-computer-icons-logo-symbol-miscellaneous-angle-logo.png')}}" alt="Suresh Dasari Card"height="25px" width="25px"><p class="timep"> {{date('G:i', strtotime($courp->heured))}}-{{date('G:i', strtotime($courp->heuref))}}</p> </p> </div>
-                    <p class="card-text">{{$courp->description}} </p></div>
+                    <div class="timep"><p> <img  src="{{ asset ('images/png-transparent-symbol-time-computer-icons-logo-symbol-miscellaneous-angle-logo.png')}}" alt="Suresh Dasari Card"height="22px" width="22px"> {{date('G:i', strtotime($courp->heured))}}  -  {{date('G:i', strtotime($courp->heuref))}} </p> </div>
+                    <p class="card-text">{{$courp->resumer}} </p></div>
                     <div style="text-align: right"><img  src="{{ asset ('images/' . $courp->url_image)}}" alt="Suresh Dasari Card"height="100px" width="200px"> </div>
                                 
                 </div>            

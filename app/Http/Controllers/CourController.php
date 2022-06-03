@@ -92,5 +92,46 @@ class CourController extends Controller
         $Cours->delete();
         return redirect()->route('courp');
     }
+
+
+    public function modifierCourp(Request $request)
+    {
+        
+        $nom = $request->nom;
+        $resumer = $request->resumer;
+        $description = $request->description;
+        $dated = $request->dated;
+        $heured = $request->heured;
+        $datef = $request->datef;
+        $heuref = $request->heuref;
+        $statut = $request->statut;
+     
+        if($request->hasfile('url_image')){
+            
+            $file = $request->file('url_image');
+            $extenstion = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extenstion;
+            $file->move('images/', $filename);
+            $url_image= $filename;
+        } 
+        
+    $update = [
+        'nom' =>$nom,
+        'resumer'=>$resumer ,
+        'description'=>$description ,
+        'dated'=>$dated ,
+        'heured'=>$heured,
+        'datef'=>$datef,
+        'heuref'=>$heuref,
+        'statut'=>$statut,
+        'url_image'=>$url_image, ];
+        $id=$request->id;
+        $Cours = Courp::find($id);
+        $Cours->update($update);
+        return redirect()->route('courp');  
+        
+              
+           
+    }
    
 }

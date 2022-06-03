@@ -147,7 +147,7 @@
   <!--/ Cours en ligne-->
 
   <!--Cours Presentiel-->
-  <section id="coursesP" class="section-padding">
+  "<section id="coursesP" class="section-padding">
     <div class="container">
       <div class="row">
         <div class="header-section text-center">
@@ -165,7 +165,7 @@
   @php($count++)
   <div class="col-md-4 col-sm-6 padleft-right">
           <figure class="imghvr-fold-up">
-            <img src="{{ asset ('images/' . $courp->url_image)}}" height="300px" width="380px">
+            <img src="{{ asset ('images/' . $courp->url_image)}}" height="250px" width="300px">
             <figcaption>
               <h3>{{$courp->nom}}</h3>
               <p>{{$courp->resumer}}</p>

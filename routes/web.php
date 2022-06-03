@@ -86,54 +86,49 @@ Route::get('/AdminDashboard/KNX', [nouveauteController::class, 'nouveaute'])->na
 Route::get('/AdminDashboard/candidat', [CandidatController::class, 'candidat'])->name('AdminDashboard/candidat');
 Route::get('/AdminDashboard/cour', [CourController::class, 'cour'])->name('AdminDashboard/cour');
 Route::get('/FormateurDashboard/courp', [CourController::class, 'courp'])->name('courp');
-
-Route::post('/AdminDashboard/Formateur', [MembreController::class, 'addF'])->name('AddFormateur');
-Route::post('/destroy/{id}/F', [MembreController::class, 'destroy'])->name('supprimerF');
-
-Route::post('/destroy/{id}/P', [ProjetController::class, 'destroy'])->name('supprimerP');
-Route::post('/AdminDashboard/projet/update', [ProjetController::class, 'update'])->name('modifierP');
-
-Route::post('/AdminDashboard/projet',  [ProjetController::class, 'create'])->name('AddProjet');
-Route::post('/AdminDashboard/cv', [CvController::class, 'create']);
-Route::post('/AdminDashboard/Edu', [EduController::class, 'create']);
-Route::post('/AdminDashboard/Exp', [ExpController::class, 'create']);
-Route::post('/AdminDashboard/Crt', [CrtController::class, 'create']);
+/* ----Ajouter----------*/
 Route::post('/AdminDashboard/image',  [nouveauteController::class, 'store'])->name('AddimageKnx');
-Route::post('/destroy/{id}/I', [nouveauteController::class, 'destroy'])->name('supprimerI');
-
+Route::post('/AdminDashboard/Formateur', [MembreController::class, 'addF'])->name('AddFormateur');
+Route::post('/AdminDashboard/projet',  [ProjetController::class, 'create'])->name('AddProjet');
 Route::post('/AdminDashboard/Candidat',  [CandidatController::class, 'create'])->name('AddCV');
-Route::post('/destroy/{id}/C', [CandidatController::class, 'destroy'])->name('supprimerC');
-
-Route::post('/destroy/{id}/Cour', [CourController::class, 'destroy'])->name('supprimerCour');
-Route::post('/destroy/{id}/Courp', [CourController::class, 'destroycourp'])->name('supprimerCourp');
-Route::post('/destroy/{id}/terminer', [CourController::class, 'terminer'])->name('terminer');
 Route::post('/AdminDashboard/cour',  [CourController::class, 'create'])->name('AddCour');
 Route::post('/Formateur/courp',  [CourController::class, 'ajouterCourp'])->name('AddCourp');
-
 Route::post('/AdminDashboard/nouv',  [nouvController::class, 'store'])->name('Addnouv');
-Route::post('/destroy/{id}/N', [nouvController::class, 'destroy'])->name('supprimerN');
+Route::post('/AdminDashboard/Message',  [MessageController::class, 'create'])->name('AddMessage');
 
+/* ----Supprimer----------*/
+Route::post('/destroy/{id}/F', [MembreController::class, 'destroy'])->name('supprimerF');
+Route::post('/destroy/{id}/P', [ProjetController::class, 'destroy'])->name('supprimerP');
+Route::post('/destroy/{id}/I', [nouveauteController::class, 'destroy'])->name('supprimerI');
+Route::post('/destroy/{id}/C', [CandidatController::class, 'destroy'])->name('supprimerC');
+Route::post('/destroy/{id}/Cour', [CourController::class, 'destroy'])->name('supprimerCour');
+Route::post('/destroy/{id}/Courp', [CourController::class, 'destroycourp'])->name('supprimerCourp');
+Route::post('/destroy/{id}/N', [nouvController::class, 'destroy'])->name('supprimerN');
+Route::post('/destroy/{id}/M', [MessageController::class, 'destroy'])->name('supprimerM');
+
+/* ----Modifier----------*/
+Route::post('/destroy/{id}/terminer', [CourController::class, 'terminer'])->name('terminer');
+Route::post('/Formateur/{id}/Modifiercourp',  [CourController::class, 'modifierCourp'])->name('ModifierCourp');
+Route::post('/AdminDashboard/projet/update', [ProjetController::class, 'update'])->name('modifierP');
 
 
 
 Route::get('/mise', [membreController::class, 'mise'])->name('mise');
 Route::get('/profil', [membreController::class, 'profil'])->name('profil');
 Route::get('/profilA', [membreController::class, 'profilA'])->name('profilA');
+Route::get('/AdminDashboard/Message', [MessageController::class, 'message'])->name('/AdminDashboard/Message');
+Route::get('/contact', [EmailController::class, 'index']);
+
+Route::post('/sendemail/send',  [EmailController::class,'send']);
 Route::post('/profilC', [membreController::class, 'profilC'])->name('profilC');
 
 
-Route::get('/AdminDashboard/Message', [MessageController::class, 'message'])->name('/AdminDashboard/Message');
-Route::post('/AdminDashboard/Message',  [MessageController::class, 'create'])->name('AddMessage');
-Route::post('/destroy/{id}/M', [MessageController::class, 'destroy'])->name('supprimerM');
-
-Route::get('/contact', [EmailController::class, 'index']);
-Route::post('/sendemail/send',  [EmailController::class,'send']);
 
 
-
-
-
-
+Route::post('/AdminDashboard/cv', [CvController::class, 'create']);
+Route::post('/AdminDashboard/Edu', [EduController::class, 'create']);
+Route::post('/AdminDashboard/Exp', [ExpController::class, 'create']);
+Route::post('/AdminDashboard/Crt', [CrtController::class, 'create']);
 
 
 
