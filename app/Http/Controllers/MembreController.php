@@ -30,14 +30,6 @@ class MembreController extends Controller
        
         return view('Front.index', compact('projet','Cours','Courp' ));
     }
-    public function profilA( ) 
-    {
-       if (session()->has('mail')){
-           return view('Front.tableaudebordmembre'); }
-      else
-      
-       return view('Front.connexion');
-    }
 
 
     
@@ -160,10 +152,10 @@ class MembreController extends Controller
             } elseif (Auth::user()->type == 'F') {
                 return redirect()->route('AdminDashboard/cour');
             } else {
-                return redirect()->route('profilA');
+                return redirect()->route('profil');
             }
         }
-        return redirect('profilA')->withInput()->withErrors([
+        return  redirect('profil')->withInput()->withErrors([
             'mot_de_passe' => "Vos identifiants sont incorrects"
         ]);
     }
@@ -194,10 +186,11 @@ class MembreController extends Controller
      */
     public function show(Membre $membre)
     {
-        
+        if (session()->has('mail')){
         $formateur = Membre::all()->where('type', 'F')->toArray();
         $membre = Membre::all()->where('type', 'M')->toArray();
-        return view('Admin.FormateursEtMembre', compact('formateur','membre'));
+        return view('Admin.FormateursEtMembre', compact('formateur','membre'));}
+        else {return view('Front.connexion');}
     }
     public function addF(Request $request)
     {

@@ -63,9 +63,14 @@ tr:nth-child(even) {
 .Formateurs { text-align: center; }
 </style>
 
-  <br />
+  <br> <br>
+ 
+   <h2 class="Formateurs" id="Liste des Formateurs">Liste des Formateurs</h2>
+   <div class="text-center">  
+<a href="#Ajouter un Formateur"><button type="button" class="btn btn-success">Ajouter un Formateur</button>
+
+<a href="#Liste des membres"><button  type="button" class="btn btn-warning">Liste des membres</button></a></div>
    <br />
-   <h2 class="Formateurs">Liste des Formateurs</h2>
    <br />
   </div>
   <table >
@@ -75,7 +80,8 @@ tr:nth-child(even) {
     <th>mail</th>
     <th>mot_de_passe</th>
     <th>type</th>
-    <th>Delete</th>
+    <th>Supprimer</th>
+    <th>Modifier</th>
    </tr>
    @foreach($formateur as $row)
    <tr>
@@ -88,17 +94,19 @@ tr:nth-child(even) {
     <td>
      <form   action="{{route('supprimerF',$row['id'])}}" method="POST">
        @csrf
-    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer ?')" class="btn btn-danger">Supprimer</button>
      </form>
     </td>
+    <td>
+      
    </tr>
    @endforeach
   </table>
 
-              <div class="modal-body padtrbl">
+              <div class="modal-body padtrbl"id="Ajouter un Formateur">
 
             <div class="login-box-body">
-              <p class="login-box-msg">Ajouter un Formateur</p>
+              <p class="login-box-msg" >Ajouter un Formateur</p>
               <div class="form-group">
                 <form action="/AdminDashboard/Formateur" method="POST"  id="loginForm">
                   @csrf
@@ -151,7 +159,7 @@ tr:nth-child(even) {
 
 
 
-   <h2 class="Formateurs">Liste des membres</h2>
+   <h2 class="Formateurs" id="Liste des membres">Liste des membres</h2>
    <br />
   </div>
   <table class="table table-bordered table-striped">
@@ -174,7 +182,7 @@ tr:nth-child(even) {
     <td>
      <form   action="{{route('supprimerF',$row['id'])}}" method="POST">
        @csrf
-    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer ?')" class="btn btn-danger">Supprimer</button>
      </form>
     </td>
    </tr>

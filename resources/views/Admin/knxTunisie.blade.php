@@ -65,24 +65,28 @@ tr:nth-child(even) {
 
   <br />
    <br />
-   <h2 class="Formateurs">Liste des Nouveautés</h2>
+   <h2 class="Formateurs">Liste des images d'accueil</h2>
+   <div class="text-center">
+<a href="#Ajouter image d'accueil"><button type="button" class="btn btn-warning">Ajouter image d'accueil</button></a>
+<a href="#Liste des nouveautés"><button type="button" class="btn btn-secondary">Liste des nouveautés</button></a>
+<a href="#Ajouter des nouveautés"><button type="button" class="btn btn-success">Ajouter des nouveautés</button></a></div>
    <br />
   </div>
   <table >
    <tr>
-    <th>id</th>
-    <th>image</th>
-    <th>Delete</th>
+    <th>Id</th>
+    <th>Image</th>
+    <th>Supprimer</th>
    </tr>
    @foreach($N as $NS)
    <tr>
    <td>{{$NS['id']}}</td>
-   <td>  <img src="{{ asset ('images/' . $NS->url_image)}}" width="500px;" height="150px;"></td>
+   <td>  <img src="{{ asset ('images/' . $NS->url_image)}}" height="100px" width="250px"></td>
     
     <td>
      <form   action="{{route('supprimerI',$NS->id)}}" method="POST">
        @csrf
-    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer ?')" class="btn btn-danger">Supprimer</button>
      </form>
     </td>
    </tr>
@@ -92,7 +96,7 @@ tr:nth-child(even) {
   <div class="modal-body padtrbl">
 </br>
 </br>
-<div class="login-box-body">
+<div class="login-box-body" id="Ajouter image d'accueil">
   <p class="login-box-msg">Ajouter image d'accueil</p>
   <div class="form-group">
     
@@ -100,7 +104,7 @@ tr:nth-child(even) {
       @csrf 
         <!----- image -------------->
         <label style=color:black;>Ajouter un image d'acceuil</br></label>
-         <input type="file" name="url_image"  required>
+         <input type="file" name="url_image" accept=".png, .jpg, .jpeg" required>
         </div>
       
 
@@ -114,29 +118,35 @@ tr:nth-child(even) {
 
 </div>
 
-</br></br>
+</br>
+<h2 class="Formateurs" id="Liste des nouveautés">Liste des nouveautés</h2></br>
+
 <table >
  <tr>
-  <th>id</th>
-  <th>url_nouveaute</th>
-  <th>titre</th>
-  <th>description</th>
+  <th>Id</th>
+  <th>Url_nouveaute</th>
+  <th>Titre</th>
+  <th>Description</th>
   <th>Type</th>
-  <th>Delete</th>
+  <th>Supprimer</th>
+  <th>Modifier</th>
  </tr>
- @foreach($No as $No)
+ @foreach($No as $Nos)
  <tr>
- <td>{{$No->id}}</td>
- <td>  <img src="{{ asset ('images/' . $No->url_nouveaute)}}" width="500px;" height="150px;"></td>
- <td>{{$No->titre}}</td>
- <td>{{$No->description}}</td>
- <td>{{$No->type}}</td>
+ <td>{{$Nos->id}}</td>
+ <td>  <img src="{{ asset ('images/' . $Nos->url_nouveaute)}}" height="100px" width="100px"></td>
+ <td>{{$Nos->titre}}</td>
+ <td>{{$Nos->description}}</td>
+ <td>{{$Nos->type}}</td>
   <td>
-   <form   action="{{route('supprimerN',$No->id)}}" method="POST">
+   <form   action="{{route('supprimerN',$Nos->id)}}" method="POST">
      @csrf
-  <button type="submit" class="btn btn-danger">Supprimer</button>
+  <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer ?')" class="btn btn-danger">Supprimer</button>
    </form>
   </td>
+  <td>
+     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modifier{{$Nos->id}}">Modifier</button>
+     </td>
  </tr>
  @endforeach
 </table>
@@ -144,7 +154,7 @@ tr:nth-child(even) {
 <div class="modal-body padtrbl">
 </br>
 </br>
-<div class="login-box-body">
+<div class="login-box-body" id ="Ajouter des nouveautés">
 <p class="login-box-msg">Ajouter des nouveautés</p>
 <div class="form-group">
   <form action="/AdminDashboard/nouv" method="POST" enctype="multipart/form-data"  id="loginForm">
@@ -155,7 +165,7 @@ tr:nth-child(even) {
       </div>
     <div class="form-group has-feedback">
       <!----- description -------------->
-      <textarea  name="description" rows="5" cols="155" placeholder="description" required> </textarea>
+      <textarea  name="description" rows="5" cols="155"  required></textarea>
     </div>
     <div >
       <label style=color:black; >La page d'affichage:</label></br>
@@ -173,7 +183,7 @@ tr:nth-child(even) {
     <div>
       <!----- image -------------->
       <label style=color:black;>Ajouter un image pour la publication</br></label>
-       <input type="file" name="url_nouveaute"  required>
+       <input type="file" name="url_nouveaute" accept=".png, .jpg, .jpeg" required>
       </div>
     
 
@@ -189,3 +199,84 @@ tr:nth-child(even) {
 </div>
 
 </div>
+
+
+
+@foreach($No as $Nos)
+
+
+<!--Modal box-->
+<div class="modal fade" id="modifier{{$Nos->id}}" role="dialog">
+    <div class="modal-dialog modal-sm-9">
+
+      <!-- Modal content no 1-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center form-title">Modifier nouveautés</h4>
+        </div>
+        <div class="modal-body padtrbl">
+
+         
+            <div class="form-group">
+            <form action="/modifier/NouvKnx" method="POST" enctype="multipart/form-data"  id="loginForm">
+    @csrf 
+    <div class="form-group has-feedback">
+      <!----- Titre -------------->
+        <input type="text" class="form-control" name="titre"  value="{{$Nos->titre}}" required/>
+      </div>
+    <div class="form-group has-feedback">
+      <!----- description -------------->
+      <textarea  name="description" rows="5" cols="65" required>{{$Nos->description}}</textarea>
+    </div>
+    <div >
+      <label style=color:black; >La page d'affichage:</label></br>
+      <!----- Type -------------->
+      <select name="type" value="{{$Nos->type}}"> 
+          <option  >Acceuil</option>
+          <option  >Actus</option>
+          <option  >KNX</option>
+          <option  >Communauté</option>
+          <option  >Contact</option>
+          <option  >Documentation</option>
+          <option  >Formation</option>
+          <option  >Logiciel</option>
+      </select>
+    <div>
+      <!----- image -------------->
+      <label style=color:black;>Ajouter un image pour la publication</br></label>
+       <input type="file" name="url_nouveaute" accept=".png, .jpg, .jpeg" required>
+      </div>
+      <!----- hidden  -------------->
+    
+       <input type="hidden" name="id" value="{{$Nos->id}}" required>
+      </div>
+
+<button type="submit" class="btn btn-green btn-block btn-flat">Modifier</button>
+
+</div>
+    </div>
+  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!--/ Modal box-->
+
+  @endforeach
+
+
+
+
+
+
+<script src="{{ asset('Front/js')}}/jquery.min.js"></script>
+  <script src="{{ asset('Front/js')}}/jquery.easing.min.js"></script>
+  <script src="{{ asset('Front/js')}}/bootstrap.min.js"></script>
+  <script src="{{ asset('Front/js')}}/custom.js"></script>
+  <script src="{{ asset('Front/contactform')}}/contactform.js"></script>
+</body>
+  </html>

@@ -92,11 +92,34 @@ class ProjetController extends Controller
      * @param  \App\Models\Projet $Projet
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+   
+    public function modifierprojet(Request $request)
     {
-        $Projet = Projet::find($id);
-        $Projet->update($request->all());
-        return redirect()->route('AdminDashboard/projet/update');
+        
+        $titre = $request->titre;
+        $description = $request->description;
+    
+     
+        if($request->hasfile('url_image')){
+            
+            $file = $request->file('url_image');
+            $extenstion = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extenstion;
+            $file->move('images/', $filename);
+            $url_image= $filename;
+        } 
+        
+    $update = [
+        'titre' =>$titre,
+        'description'=>$description ,
+        'url_image'=>$url_image, ];
+        $id=$request->id;
+        $projet = Projet::find($id);
+        $projet->update($update);
+        return redirect()->route('AdminDashboard/projet');  
+        
+              
+           
     }
 
     /**

@@ -73,6 +73,7 @@ tr:nth-child(even) {
   <br />
    <br />
    <h2 class="Formateurs">Liste des Projets</h2>
+   <div class="text-center"><a href="#Ajouter un Projet"><button type="button" class="btn btn-warning">Ajouter un Projet</button></a></div>
    <br />
   </div>
   <table >
@@ -82,12 +83,12 @@ tr:nth-child(even) {
     <th>Titre</th>
     <th>Description</th>
     <th>Supprimer</th>
-    <th>Mise à jour</th>
+    <th>Modifier</th>
    </tr>
    @foreach($projet as $projets)
    <tr>
    <td>{{$projets->id}}</td>
-   <td><img src="{{ asset ('images/' . $projets->url_image)}}" width="200px;"  ></td>
+   <td><img src="{{ asset ('images/' . $projets->url_image)}}"  height="100px" width="100px"  ></td>
     <td>{{$projets->titre}}</td>
     <td>{{$projets->description}}</td>
 
@@ -98,11 +99,8 @@ tr:nth-child(even) {
      </form>
     </td>
      <td>
-     <form   action="" method="POST">
-       @csrf
-    <button  type="submit" class="buttonnn" >Mise à jour</button>
-     </form>
-    </td>
+     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modifier{{$projets->id}}">Modifier</button>
+     </td>
    </tr>
    @endforeach
   </table>
@@ -111,7 +109,7 @@ tr:nth-child(even) {
  </br>
  </br>
  <div class="login-box-body">
-  <p class="login-box-msg" id="titre">Ajouter un Projet</p>
+  <p class="login-box-msg" id="Ajouter un Projet">Ajouter un Projet</p>
   <div class="form-group">
     <form action="/AdminDashboard/projet" method="POST" enctype="multipart/form-data"  id="loginForm">
       @csrf
@@ -121,12 +119,12 @@ tr:nth-child(even) {
         </div>
       <div class="form-group has-feedback">
         <!----- description -------------->
-        <textarea class="form-control" name="description" rows="5" cols="155" placeholder="description" required> </textarea>
+        <textarea class="form-control" name="description" rows="5" cols="155" placeholder="description" required></textarea>
       </div>
        <div class="form-group has-feedback">
         <!----- image -------------->
         <label style=color:black;>Ajouter une photo de projet</br></label>
-         <input type="file" name="url_image"  required>
+         <input type="file" name="url_image" accept=".png, .jpg, .jpeg"  required>
         </div>
 
         <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
@@ -138,3 +136,63 @@ tr:nth-child(even) {
 </div>
 </div>
 
+
+
+
+@foreach($projet as $projets)
+
+
+<!--Modal box-->
+<div class="modal fade" id="modifier{{$projets->id}}" role="dialog">
+    <div class="modal-dialog modal-sm-9">
+
+      <!-- Modal content no 1-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center form-title">Modifier cour Presentiel</h4>
+        </div>
+        <div class="modal-body padtrbl">
+
+         
+            <div class="form-group">
+            <form action="{{route('modifierprojet',$projets->id)}}" method="POST" enctype="multipart/form-data"  id="loginForm">
+      @csrf
+      <div class="form-group has-feedback">
+        <!----- Titre -------------->
+          <input type="text" class="form-control" name="titre"  placeholder="Titre" value="{{$projets->titre}}" required/>
+        </div>
+      <div class="form-group has-feedback">
+        <!----- description -------------->
+        <textarea class="form-control" name="description" rows="5" cols="155" placeholder="description"  required>{{$projets->description}} </textarea>
+      </div>
+      <div class="form-group has-feedback">
+        <!----- hidden -------------->
+        <input type="hidden" class="form-control" name="id" value="{{$projets->id}}" ></textarea>
+      </div>
+       <div class="form-group has-feedback">
+        <!----- image -------------->
+        <label style=color:black;>Ajouter une photo de projet</br></label>
+         <input type="file" name="url_image" accept=".png, .jpg, .jpeg" required>
+        </div>
+
+        <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+    </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!--/ Modal box-->
+
+  @endforeach
+
+  <script src="{{ asset('Front/js')}}/jquery.min.js"></script>
+  <script src="{{ asset('Front/js')}}/jquery.easing.min.js"></script>
+  <script src="{{ asset('Front/js')}}/bootstrap.min.js"></script>
+  <script src="{{ asset('Front/js')}}/custom.js"></script>
+  <script src="{{ asset('Front/contactform')}}/contactform.js"></script>
+</body>
+  </html>
