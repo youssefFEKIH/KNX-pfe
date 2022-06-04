@@ -171,10 +171,7 @@ class MembreController extends Controller
     public function deconnexion(Request $request)
     {
         $request->session()->forget('mail');
-        auth()->logout();
-       
-      
-
+        auth()->logout();     
         return redirect('home');
     }
     public function accueil()

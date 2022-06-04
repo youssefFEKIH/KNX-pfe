@@ -13,7 +13,6 @@ use App\Http\Controllers\NouvController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\EmailController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,25 +27,17 @@ use App\Http\Controllers\EmailController;
 
 
 
-Route::get('/', [membreController::class, 'index3'])->name('pagedaccueil');
-Route::get('/home', [membreController::class, 'index'])->name('home');
-
-
-Route::get('/home/connect', function () {  return view('Front.index');})->name('homeconnect');
+Route::get('/', [membreController::class, 'index3'])->name('pagedaccueil');/*--page acceuil--*/
+Route::get('/home', [membreController::class, 'index'])->name('home');     /*--mirage groupe--*/
 Route::get('/coursp',[CourController::class, 'coursp'])->name('coursp');
-
-Route::get('/inscriptionget', function () {return view('Front.inscription');})->name('inscriptionget');
-
 Route::get('/projets', [ProjetController::class, 'index2'])->name('projets');
-Route::get('/deconnexion', [MembreController::class, 'deconnexion']);
+Route::get('/deconnexion', [MembreController::class, 'deconnexion']);      /*--deconnexion home--*/
 
-
-
-Route::post('/home', [MembreController::class, 'store'])->name('home');
-Route::post('/cours', [MembreController::class, 'store'])->name('cours');
-Route::post('/projets', [MembreController::class, 'store'])->name('projets');
-Route::post('/inscriptionget', [MembreController::class, 'store'])->name('inscription');
-Route::post('/home/connect', [MembreController::class, 'connect'])->name('homeconnect');
+Route::post('/home', [MembreController::class, 'store'])->name('home');       /*--nouvelle membre--*/  
+Route::post('/cours', [MembreController::class, 'store'])->name('cours');     /*--nouvelle membre--*/
+Route::post('/projets', [MembreController::class, 'store'])->name('projets'); /*--nouvelle membre--*/
+Route::post('/inscriptionget', [MembreController::class, 'store'])->name('inscription');/*--nouvelle membre--*/
+Route::post('/home/connect', [MembreController::class, 'connect'])->name('homeconnect');/*--connexion--*/
 
 
 /*
@@ -132,4 +123,5 @@ Route::post('/AdminDashboard/Crt', [CrtController::class, 'create']);
 
 
 
-
+Route::get('/home/connect', function () {  return view('Front.index');})->name('homeconnect');
+Route::get('/inscriptionget', function () {return view('Front.inscription');})->name('inscriptionget');
