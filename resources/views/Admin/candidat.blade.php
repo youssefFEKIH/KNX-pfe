@@ -28,15 +28,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href=""> dashboard</a>
+        <a class="navbar-brand" href=""> Acceuil</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right">
           <li><a href="{{ route('AdminDashboard') }}">Liste des Formateurs</a></li>
           <li><a href="{{ route('AdminDashboard/projet') }}">Projet de Fin d'Études</a></li>
           <li><a href="{{ route('AdminDashboard/cv') }}">cv</a></li>
           <li><a href="{{ route('AdminDashboard/KNX') }}">knx Tunisie</a></li>
           <li><a href="{{ route('AdminDashboard/candidat') }}">Liste des Candidats</a></li>
+          <li><a href="{{ route('AdminDashboard/messages') }}"> Les Messages reçus</a></li>
           <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
          </ul>
       </div>
@@ -64,7 +65,7 @@
 
       <br />
        <br />
-       <h2 class="Formateurs">Liste des Projets</h2>
+       <h2 class="Formateurs">CV des Candidats</h2>
        <br />
       </div>
   <!--/ Navigation bar-->

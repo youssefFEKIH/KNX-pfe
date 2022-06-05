@@ -24,9 +24,9 @@
            @if($No->type == 'KNX')
            
             <div class="accueil-bloc">
-                <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" >
+                <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" height="260px" width="270px" >
                 <h4> {{$No->titre}}</h4>
-                <p  class="texte_bloc">{{$No->description}}</p>
+                <p  class="readMore">{{$No->description}}</p>
                  </div>
                  @endif
                  @endforeach

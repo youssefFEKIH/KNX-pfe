@@ -288,7 +288,7 @@
             <div class="pm-staff-profile-details text-center">
               <p class="pm-staff-profile-name">{{$projets->titre}}</p>
 
-              <p class="readMore" >{{$projets->description}} </p>
+              <p  >{{$projets->description}} </p>
 
             </div>
           </div>
@@ -649,17 +649,17 @@
           @csrf
           <div class="col-md-6 col-sm-6 col-xs-12 left">
             <div class="form-group">
-              <input type="text" name="nom" class="form-control form"  id="name" placeholder="Nom & Prénom" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <input type="text" name="nom" class="form-control form"  id="name" placeholder="Nom & Prénom"  required />
 
               <div class="validation"></div>
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" name="mail" id="email"  placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
+              <input type="email" class="form-control" name="mail" id="email"  placeholder="Email" required />
 
               <div class="validation"></div>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" name="sujet" id="subject"  placeholder="Sujet" data-rule="required" data-msg="Please write something for us" />
+              <input type="text" class="form-control" name="sujet" id="subject"  placeholder="Sujet" required />
 
               <div class="validation"></div>
             </div>
@@ -667,7 +667,7 @@
 
           <div class="col-md-6 col-sm-6 col-xs-12 right">
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required"  data-msg="Please write something for us" placeholder="Message"></textarea>
+              <textarea class="form-control" name="message" rows="5"  placeholder="Message" required></textarea>
 
               <div class="validation"></div>
             </div>

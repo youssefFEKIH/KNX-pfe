@@ -72,10 +72,11 @@ Route::get('/Formateur', [CvController::class, 'index'])->name('Formateur');/*--
 Route::get('/deconnexionAdmin', [AdminController::class, 'deconnexion']);
 Route::get('/AdminDashboard', [MembreController::class, 'show'])->name('AdminDashboard');/*--  dashbord accueil formateur et membre  --*/
 Route::get('/AdminDashboard/projet', [ProjetController::class, 'index'])->name('AdminDashboard/projet');/*--  dashbord projet  --*/
-Route::get('/AdminDashboard/cv', [CvController::class, 'CvFormateur'])->name('AdminDashboard/cv');
+Route::get('/AdminDashboard/cv', [CvController::class, 'CvFormateur'])->name('AdminDashboard/cv');      /*--  dashbord cv formateur  --*/
 Route::get('/AdminDashboard/KNX/', [nouveauteController::class, 'nouveaute'])->name('AdminDashboard/KNX'); /*--  dashbord nouveaute KNX  --*/
-Route::get('/AdminDashboard/candidat', [CandidatController::class, 'candidat'])->name('AdminDashboard/candidat');
-Route::get('/AdminDashboard/Message', [MessageController::class, 'message'])->name('/AdminDashboard/Message');
+Route::get('/AdminDashboard/candidat', [CandidatController::class, 'candidat'])->name('AdminDashboard/candidat');/*--  dashbord les cv de condidats  --*/
+Route::get('/AdminDashboard/Messages', [MessageController::class, 'showmessage'])->name('AdminDashboard/messages');/*--  dashbord les messages recus  --*/
+
 /* ----Ajouter----------*/
 Route::post('/AdminDashboard/image',  [nouveauteController::class, 'store'])->name('AddimageKnx');
 Route::post('/AdminDashboard/Formateur', [MembreController::class, 'addF'])->name('AddFormateur');
@@ -84,7 +85,7 @@ Route::post('/AdminDashboard/Candidat',  [CandidatController::class, 'create'])-
 Route::post('/AdminDashboard/cour',  [CourController::class, 'create'])->name('AddCour');
 Route::post('/Formateur/courp',  [CourController::class, 'ajouterCourp'])->name('AddCourp');/*--ajouter cour P--*/
 Route::post('/AdminDashboard/nouv',  [nouvController::class, 'store'])->name('Addnouv');
-Route::post('/AdminDashboard/Message',  [MessageController::class, 'create'])->name('AddMessage');
+Route::post('/AdminDashboard/Message',  [MessageController::class, 'create'])->name('AddMessage');/*--envoyer un message--*/
 
 /* ----Supprimer----------*/
 Route::post('/destroy/{id}/F', [MembreController::class, 'destroy'])->name('supprimerF');
@@ -105,7 +106,7 @@ Route::post('/modifier/NouvKnx', [nouvController::class, 'modifierNouvKnx'])->na
 
 
 
-
+Route::post('/reponse/mail', [MessageController::class, 'reponsemail'])->name('mail');/*--  dashbord les messages recus  --*/
 
 Route::post('/sendemail/send',  [EmailController::class,'send']);
 

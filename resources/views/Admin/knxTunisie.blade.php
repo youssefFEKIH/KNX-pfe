@@ -28,15 +28,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href=""> dashboard</a>
+        <a class="navbar-brand" href=""> Acceuil</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right">
           <li><a href="{{ route('AdminDashboard') }}">Liste des Formateurs</a></li>
           <li><a href="{{ route('AdminDashboard/projet') }}">Projet de Fin d'Études</a></li>
           <li><a href="{{ route('AdminDashboard/cv') }}">cv</a></li>
           <li><a href="{{ route('AdminDashboard/KNX') }}">knx Tunisie</a></li>
           <li><a href="{{ route('AdminDashboard/candidat') }}">Liste des Candidats</a></li>
+          <li><a href="{{ route('AdminDashboard/messages') }}"> Les Messages reçus</a></li>
           <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
          </ul>
       </div>
@@ -161,7 +162,7 @@ tr:nth-child(even) {
     @csrf 
     <div class="form-group has-feedback">
       <!----- Titre -------------->
-        <input type="text" class="form-control" name="titre"  placeholder="Titre" autocomplete="off" required/>
+        <input type="text" class="form-control" name="titre"  placeholder="Titre" autocomplete="on" maxlength="50" required/>
       </div>
     <div class="form-group has-feedback">
       <!----- description -------------->

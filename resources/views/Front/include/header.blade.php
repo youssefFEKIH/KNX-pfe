@@ -354,7 +354,7 @@ display: none;
   <link rel="shortcut icon" href="{{ asset('Front/img')}}/course01.jpg" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//style.css">
 
-<!-- readMore-->
+<!-- afficher la suite-->
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {

@@ -25,18 +25,18 @@
                 });
             </script>
 
-    <!-- readMore-->
+    <!-- Lire la suite-->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-    var max = 200;
+    var max = 140;
     $(".readMore").each(function() {
         var str = $(this).text();
         if ($.trim(str).length > max) {
             var subStr = str.substring(0, max);
             var hiddenStr = str.substring(max, $.trim(str).length);
             $(this).empty().html(subStr);
-            $(this).append(' <a href="javascript:void(0);" class="lire-plus">lire plus</a>');
+            $(this).append(' <a href="javascript:void(0);" class="lire-plus">Lire la suite</a>');
             $(this).append('<span class="addText">' + hiddenStr + '</span>');
         }
     });
@@ -49,7 +49,13 @@
     <style>
     .readMore .addText {
     display: none;
+    
 }
+.lire-plus{
+    color: green;
+}
+
+
     </style>
 
 

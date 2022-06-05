@@ -23,9 +23,9 @@
                 @foreach($No as $No)
                @if($No->type == 'Communauté')
                 <div class="accueil-bloc">
-                    <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" >
+                    <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" height="150px" width="200px">
                     <h4> {{$No->titre}}</h4>
-                    <p  class="texte_bloc">{{$No->description}}</p>
+                    <div class="readMore"><div > <p  class="texte_bloc">{{$No->description}}</p></div></div>
                      </div>
                      @endif
                      @endforeach
