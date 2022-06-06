@@ -72,6 +72,20 @@ tr:nth-child(even) {
 
 <a href="#Liste des membres"><button  type="button" class="btn btn-warning">Liste des membres</button></a></div>
    <br />
+   @if(session()->has('success'))
+        <div class="container">
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+        </div>
+    @endif 
+    @if(session()->has('erreur'))
+        <div class="container">
+            <div class="alert alert-danger">
+                {{ session()->get('erreur') }}
+            </div>
+        </div>
+    @endif 
    <br />
   </div>
   <table >

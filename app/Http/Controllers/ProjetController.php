@@ -14,8 +14,12 @@ class ProjetController extends Controller
      */
     public function index(Projet $projet)
     {
+
+
+        if (session()->has('mail')){          
         $projet = Projet::all();
-        return view('Admin.Projets', compact('projet'));
+        return view('Admin.Projets', compact('projet'));}
+        else {return view('Front.connexion');}
     }
     public function index2(Projet $projet)
     {
@@ -43,7 +47,7 @@ class ProjetController extends Controller
 
 
         }
-           if( $post->save()){ return redirect()->route('AdminDashboard/projet');}
+           if( $post->save()){ return redirect()->route('AdminDashboard/projet')->with('success', 'Le projet a été créé avec succès.');}
 
 
     }
@@ -115,9 +119,9 @@ class ProjetController extends Controller
         'url_image'=>$url_image, ];
         $id=$request->id;
         $projet = Projet::find($id);
-        $projet->update($update);
-        return redirect()->route('AdminDashboard/projet');  
-        
+        if ($projet->update($update)){
+        return redirect()->route('AdminDashboard/projet')->with('success', 'Modification effectuée avec succès.');  
+    }else  return redirect()->route('AdminDashboard/projet')->with('erreur', 'Erreur de modification.');  
               
            
     }
@@ -132,6 +136,6 @@ class ProjetController extends Controller
     {
         $projet = Projet::find($id);
         $projet->delete();
-        return redirect()->route('AdminDashboard/projet');
+        return redirect()->route('AdminDashboard/projet')->with('erreur', 'Projet supprimé avec succès');
     }
 }

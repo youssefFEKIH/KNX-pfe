@@ -74,6 +74,13 @@
             </div>
         </div>
     @endif 
+    @if(session()->has('erreur'))
+        <div class="container">
+            <div class="alert alert-danger">
+                {{ session()->get('erreur') }}
+            </div>
+        </div>
+    @endif 
       
       </div>
   <!--/ Navigation bar-->

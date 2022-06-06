@@ -9,9 +9,12 @@ class CandidatController extends Controller
 {
     public function candidat(Candidat $Candidats)
     {
-        $Candidats = Candidat::all();
-        return view('Admin.candidat', compact('Candidats'));
-    }
+
+        if (session()->has('mail')){          
+            $Candidats = Candidat::all();
+            return view('Admin.candidat', compact('Candidats'));}
+            else {return view('Front.connexion');}
+        }
 
     public function create(Request $request)
     {

@@ -19,7 +19,7 @@ class NouvController extends Controller
             $post->url_nouveaute= $filename;
         } 
 
-           if( $post->save()){ return redirect()->route('AdminDashboard/KNX');}
+           if( $post->save()){ return redirect()->route('AdminDashboard/KNX')->with('success', 'Nouveauté a été créé avec succès.');}
          
     }
 
@@ -28,7 +28,7 @@ class NouvController extends Controller
     {
         $No = nouv::find($id);
         $No->delete();
-        return redirect()->route('AdminDashboard/KNX');
+        return redirect()->route('AdminDashboard/KNX')->with('erreur', 'Nouveauté supprimé avec succès.');
     }
 
     public function modifierNouvKnx(Request $request)
@@ -57,7 +57,7 @@ class NouvController extends Controller
         $id=$request->id;
         $nouv = nouv::find($id);
         $nouv->update($update);
-        return redirect()->route('AdminDashboard/KNX');  
+        return redirect()->route('AdminDashboard/KNX')->with('success', 'Modification effectuée avec succès.');  
           
     }
 

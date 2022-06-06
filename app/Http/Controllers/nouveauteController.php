@@ -85,7 +85,7 @@ class NouveauteController extends Controller
             $post->url_image= $filename;
         }
 
-           if( $post->save()){ return redirect()->route('AdminDashboard/KNX');}
+           if( $post->save()){ return redirect()->route('AdminDashboard/KNX')->with('success', 'Image ajouter avec succès.');}
 
     }
 
@@ -94,17 +94,19 @@ class NouveauteController extends Controller
 
     public function nouveaute(nouveaute $nouveaute, nouv $No)
     {
-        $N = nouveaute::all();
-        $No = nouv::all();
-        return view('Admin.KnxTunisie', compact('N','No'));
-    }
+        if (session()->has('mail')){          
+            $N = nouveaute::all();
+            $No = nouv::all();
+            return view('Admin.KnxTunisie', compact('N','No'));}
+            else {return view('Front.connexion');}
+         }
 
 
     public function destroy($id)
     {
         $N = nouveaute::find($id);
         $N->delete();
-        return redirect()->route('AdminDashboard/KNX');
+        return redirect()->route('AdminDashboard/KNX')->with('erreur', 'Image supprimé avec succès.');
     }
 
 

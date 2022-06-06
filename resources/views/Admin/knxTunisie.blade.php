@@ -72,6 +72,20 @@ tr:nth-child(even) {
 <a href="#Liste des nouveautés"><button type="button" class="btn btn-secondary">Liste des nouveautés</button></a>
 <a href="#Ajouter des nouveautés"><button type="button" class="btn btn-success">Ajouter des nouveautés</button></a></div>
    <br />
+   @if(session()->has('success'))
+        <div class="container">
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+        </div>
+    @endif 
+    @if(session()->has('erreur'))
+        <div class="container">
+            <div class="alert alert-danger">
+                {{ session()->get('erreur') }}
+            </div>
+        </div>
+    @endif 
   </div>
   <table >
    <tr>

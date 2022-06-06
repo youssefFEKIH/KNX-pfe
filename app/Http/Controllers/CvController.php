@@ -18,11 +18,14 @@ class CvController extends Controller
      */
     public function CvFormateur(Cv $cv, Edu $edu, Exp $exp, Crt $crt)
     {
+        
+        if (session()->has('mail')){          
         $cv = Cv::all();
         $exp = Exp::all();
         $edu = Edu::all();
         $crt = Crt::all();
-        return view('Admin.CvFormateur', compact('cv', 'exp', 'edu', 'crt'));
+        return view('Admin.CvFormateur', compact('cv', 'exp', 'edu', 'crt'));}
+        else {return view('Front.connexion');}
     }
     public function index(Cv $cv, Edu $edu, Exp $exp, Crt $crt)
     {

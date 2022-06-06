@@ -213,7 +213,7 @@ class MembreController extends Controller
         $m->mot_de_passe = Hash::make($request->mot_de_passe);
         $m->type = $request->type;
         if ($m->save()) {
-            return redirect('AdminDashboard');
+            return redirect('AdminDashboard')->with('success', 'Formateur ajouter avec succès');
         }
     }
 
@@ -250,7 +250,7 @@ class MembreController extends Controller
     {
         $membre = Membre::find($id);
         $membre->delete();
-        return redirect()->route('AdminDashboard');
+        return redirect()->route('AdminDashboard')->with('erreur', 'Utilisateur supprimé avec succès');
     }
 
     

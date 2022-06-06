@@ -10,8 +10,12 @@ class MessageController extends Controller
 {
     public function showmessage(Message $messages)
     {
-        $message = Message::all();
-        return view('Admin.messages', compact('message'));
+
+        if (session()->has('mail')){          
+            $message = Message::all();
+            return view('Admin.messages', compact('message'));}
+            else {return view('Front.connexion');}
+   
     }
 
     public function create(Request $request)
@@ -45,10 +49,11 @@ class MessageController extends Controller
              'title'=>$sujet,
              'body'=>$réponse,
         ];
-      Mail::to($from)->send(new reponse($detail));
+        Mail::to($from)->send(new reponse($detail));
       return redirect()->route('AdminDashboard/messages')->with('success', 'Votre message a été envoyé avec succès.');
+  
+   
+
     }
-
-
 }
 

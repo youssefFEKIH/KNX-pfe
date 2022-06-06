@@ -74,9 +74,24 @@ tr:nth-child(even) {
   <br />
    <br />
    <h2 class="Formateurs">Liste des Projets</h2>
-   <div class="text-center"><a href="#Ajouter un Projet"><button type="button" class="btn btn-warning">Ajouter un Projet</button></a></div>
+      <div class="text-center"><a href="#Ajouter un Projet"><button type="button" class="btn btn-warning">Ajouter un Projet</button></a></div>
    <br />
   </div>
+  <br />
+  @if(session()->has('success'))
+        <div class="container">
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+        </div>
+    @endif 
+    @if(session()->has('erreur'))
+        <div class="container">
+            <div class="alert alert-danger">
+                {{ session()->get('erreur') }}
+            </div>
+        </div>
+    @endif 
   <table >
    <tr>
     <th>Id</th>
@@ -177,7 +192,7 @@ tr:nth-child(even) {
          <input type="file" name="url_image" accept=".png, .jpg, .jpeg" required>
         </div>
 
-        <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+        <button type="submit" class="btn btn-green btn-block btn-flat">Modifier</button>
     </form>
             </div>
           </div>
