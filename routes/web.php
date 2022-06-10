@@ -48,8 +48,8 @@ Route::get('/coursp',[CourController::class, 'coursp'])->name('coursp');
 Route::get('/projets', [ProjetController::class, 'index2'])->name('projets');
 Route::get('/deconnexion', [MembreController::class, 'deconnexion']);      /*--deconnexion home--*/
 Route::get('/profil', [membreController::class, 'profil'])->name('profil');/*--page profil--*/
-Route::get('/home/connect', function () {  return view('Front.index');})->name('homeconnect');
 Route::get('/inscriptionget', function () {return view('Front.inscription');})->name('inscriptionget');
+Route::get('/cours/{id}/présentiel',[CourController::class, 'courpresentiel'])->name('presentielcours');
 
 
 
@@ -61,8 +61,8 @@ Route::get('/inscriptionget', function () {return view('Front.inscription');})->
 */
 Route::get('/FormateurDashboard/courp', [CourController::class, 'courp'])->name('courp');/*--dashborf courP--*/
 Route::get('/AdminDashboard/cour', [CourController::class, 'cour'])->name('AdminDashboard/cour');/*--dashborf cour en ligne--*/
-
 Route::get('/Formateur', [CvController::class, 'index'])->name('Formateur');/*--dashborf formateur1 --*/
+Route::get('/Formateur/{id}/list', [CourController::class, 'listeCP'])->name('liste');/*--dashborf formateur listeCP --*/
 /*
 |--------------------------------------------------------------------------
 | Admin
@@ -105,15 +105,8 @@ Route::post('/modifier/projet', [ProjetController::class, 'modifierprojet'])->na
 Route::post('/modifier/NouvKnx', [nouvController::class, 'modifierNouvKnx'])->name('modifierknxnouv');/*--modifier nouv KNX--*/
 
 
-
+/* ----Creer----------*/
 Route::post('/reponse/mail', [MessageController::class, 'reponsemail'])->name('mail');/*--  dashbord les messages recus  --*/
-
-Route::post('/sendemail/send',  [EmailController::class,'send']);
-
-
-
-
-
 Route::post('/AdminDashboard/cv', [CvController::class, 'create']);
 Route::post('/AdminDashboard/Edu', [EduController::class, 'create']);
 Route::post('/AdminDashboard/Exp', [ExpController::class, 'create']);
@@ -123,9 +116,7 @@ Route::post('/cours', [MembreController::class, 'store'])->name('cours');     /*
 Route::post('/projets', [MembreController::class, 'store'])->name('projets'); /*--nouvelle membre--*/
 Route::post('/inscriptionget', [MembreController::class, 'store'])->name('inscription');/*--nouvelle membre--*/
 Route::post('/home/connect', [MembreController::class, 'connect'])->name('homeconnect');/*--connexion--*/
+Route::post('/reserver/{id}', [CourController::class, 'reserver'])->name('reserver');/*--reserver courp --*/
 
 
 
-
-
-Route::get('/contact', [EmailController::class, 'index']);

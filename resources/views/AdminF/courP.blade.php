@@ -73,13 +73,14 @@ tr:nth-child(even) {
     <th>Titre</th>
     <th>Résumer</th>
     <th>statut</th>
+    <th>NB places</th>
     <th>date de début</th>
     <th>heure de début</th>
-
     <th>heure de fin</th>
     <th>Supprimer</th>
     <th>Modifier</th>
     <th>Terminer</th>
+    <th>Liste des participants</th>
    </tr>
 @foreach($Cour as $Cours)
    <tr>
@@ -88,10 +89,12 @@ tr:nth-child(even) {
     <td>{{$Cours->nom}}</td>
     <td>{{$Cours->resumer}}</td>
     <td>{{$Cours->statut}}</td>
+    <td>{{$Cours->nb}}</td>
     <td>{{$Cours->dated}}</td>
     <td>{{date('G:i', strtotime($Cours->heured))}}</td>
   
     <td>{{date('G:i', strtotime($Cours->heuref))}}</td>
+  
     <td>
      <form   action="{{route('supprimerCourp',$Cours->id)}}" method="POST">
        @csrf
@@ -105,6 +108,11 @@ tr:nth-child(even) {
     <button type="submit" class="btn btn-success">Terminer</button>
      </form></td>
     </td>
+    <td>
+     
+    <a href="{{route('liste',$Cours->id)}}"><button type="button" class="btn btn-info" >Liste des participants</button></a>
+  </td>
+    
    </tr>
    @endforeach
   </table>
@@ -134,14 +142,20 @@ tr:nth-child(even) {
                   <div class="form-group has-feedback">
                   <!----- mail -------------->
                   <input type="text" class="form-control" name="resumer" value="{{$Cours->resumer}}" placeholder="résumer" required/> 
-      </div>
+             </div>
                   </div>
                   <div class="form-group has-feedback">
                   <!----- mail -------------->
                   <textarea  name="description" rows="5" cols="65" placeholder="description détaillée " required>{{$Cours->description}}  </textarea>
                   </div>
+
+                  <div class="form-group has-feedback">
+                  <!----- mail -------------->
+                  <input type="number"  name="nb" value="{{$Cours->nb}}" placeholder="nombres des places" required/> 
+               </div>
                 <div class="form-group has-feedback">
                   <!----- password -------------->
+                  
                   <label style=color:black;>date de début</label>
       <input Type="date" name="dated" rows="5" cols="155" placeholder="date de début " value="{{$Cours->dated}}"required/> 
       <label style=color:black;>heure début</label>
@@ -209,6 +223,10 @@ tr:nth-child(even) {
       <!----- déscription  -------------->
       <textarea  name="description" rows="5" cols="155" placeholder="description détaillée " required> </textarea>
       </div>
+      <div class="form-group has-feedback">
+                  <!----- mail -------------->
+                  <input type="number"  name="nb" placeholder="nombres des places" required/> 
+               </div>
 
       <!----- date   -------------->
       <label style=color:black;>date de début</label>

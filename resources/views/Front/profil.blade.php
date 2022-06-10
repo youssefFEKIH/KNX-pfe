@@ -1,7 +1,7 @@
 @extends('Front.layout')
 
 @section('content')
-@foreach($membre as $membre)
+@foreach($membre as $membres)
 
 <p class="titre">Bienvenu, {{session('mail')}}</p>
 <p class="login-box-msg">Si vous êtes connecté pour la première fois merci de mettre à jour vos informations personnelles</p>
@@ -18,24 +18,24 @@
                         
                             <h3 class="dark-color">Mon profil</h3>
                            
-                            <p>{{$membre->description}}</p>
+                            <p>{{$membres->description}}</p>
 
                             <div class="row about-list">
                                 <div class="col-md-6">
                                     <div class="media">
                                     <label>Nom </label>
-                                    <h5>{{$membre->nom}}</h5>
+                                    <h5>{{$membres->nom}}</h5>
                                     </div>
                                     <div class="media">
                                     <label>telephone</label>
                                         
-                                        <h5>{{$membre->tel}}</h5>
+                                        <h5>{{$membres->tel}}</h5>
 
                                     </div>
                                     <div class="media">
                                     <label>date de naissance</label>
                                        
-                                        <h5>{{$membre->date_de_naissance}}</h5>
+                                        <h5>{{$membres->date_de_naissance}}</h5>
 
                                     </div>
 
@@ -44,13 +44,13 @@
                                     <div class="media">
                                     <label>adresse</label>
                                         
-                                        <h5>{{$membre->adresse}}</h5>
+                                        <h5>{{$membres->adresse}}</h5>
 
                                     </div>
                                     <div class="media">
 
                                         
-                                        <h5>{{$membre->diplome}}</h5>
+                                        <h5>{{$membres->diplome}}</h5>
 
                                     </div>
 
@@ -61,7 +61,7 @@
                 </br> </br> </br>
                     <div class="col-lg-6">
                         <div class="about-avatar">
-                            <img src="{{ asset ('images/' . $membre->url_image)}}" title="" alt="">
+                            <img src="{{ asset ('images/' . $membres->url_image)}}" title="" alt=""height="400px" width="400px" >
                         </div>
 
                     </div>
@@ -103,7 +103,7 @@
             </div>
         </section>
 
-        @foreach($membre as $membre)
+        @foreach($membre as $membres)
         <!--Modal box-->
 <div class="modal fade" id="modifier" role="dialog">
     <div class="modal-dialog modal-sm-9">
@@ -121,13 +121,13 @@
                 <div class="form-group has-feedback">
                  <!----- Nom -------------->
                 <label style=color:black;>Nom et Prénom</br></label>
-                <input type="text" class="form-control" name="nom"  placeholder="nom"  required >
+                <input type="text" class="form-control" name="nom"  placeholder="nom"  value="{{$membres->nom}}" required >
                 </div>
             
               <div class="form-group has-feedback">
                 <!----- tel -------------->
               <label style=color:black;>Numéro téléphone</br></label>
-              <input type="number" class="form-control" name="tel"  placeholder="Numéro téléphone"  required >
+              <input type="number" class="form-control" name="tel"  placeholder="Numéro téléphone" value="{{$membres->tel}}"  required >
               </div>
 
               <div class="form-group has-feedback">
@@ -136,19 +136,19 @@
               <div class="form-group has-feedback">
                 <!----- Adresse -------------->
               <label style=color:black;>Adresse</br></label>
-              <input type="text" class="form-control" name="adresse"  placeholder="Adresse" required>
+              <input type="text" class="form-control" name="adresse"  placeholder="Adresse" value="{{$membres->adresse}}" required>
               </div>
 
               <div class="form-group has-feedback">
                 <!----- Date de naissance -------------->
               <label style=color:black;>Date de naissance</br></label>
-              <input type="date" class="form-control" name="date_de_naissance"  placeholder="Date de naissance"  required>
+              <input type="date" class="form-control" name="date_de_naissance"  placeholder="Date de naissance" value="{{$membres->date_de_naissance}}" required>
               </div>
 
               <div class="form-group has-feedback">
                 <!----- description -------------->
               <label style=color:black;>Déscription</br></label>
-              <textarea type="text" class="form-control" name="description"  placeholder="Déscription"  required ></textarea>
+              <textarea type="text" class="form-control" name="description"  placeholder="Déscription" value="{{$membres->description}}" required ></textarea>
               </div>
 
                 <div class="form-group has-feedback">

@@ -131,7 +131,7 @@ tr:nth-child(even) {
       @csrf
       <div class="form-group has-feedback">
         <!----- Titre -------------->
-          <input type="text" class="form-control" name="titre"  placeholder="Titre" autocomplete="off" required/>
+          <input type="text" class="form-control" name="titre"  placeholder="Titre" autocomplete="off" maxlength="70" required/>
         </div>
       <div class="form-group has-feedback">
         <!----- description -------------->
@@ -176,7 +176,7 @@ tr:nth-child(even) {
       @csrf
       <div class="form-group has-feedback">
         <!----- Titre -------------->
-          <input type="text" class="form-control" name="titre"  placeholder="Titre" value="{{$projets->titre}}" required/>
+          <input type="text" class="form-control" name="titre"  placeholder="Titre" value="{{$projets->titre}}" maxlength="70" required/>
         </div>
       <div class="form-group has-feedback">
         <!----- description -------------->
@@ -205,6 +205,39 @@ tr:nth-child(even) {
 
   @endforeach
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   <script src="{{ asset('Front/js')}}/jquery.min.js"></script>
   <script src="{{ asset('Front/js')}}/jquery.easing.min.js"></script>
   <script src="{{ asset('Front/js')}}/bootstrap.min.js"></script>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cours;
 use App\Models\Courp;
+use App\Models\membre;
 use Illuminate\Http\Request;
 
 class CourController extends Controller
@@ -52,6 +53,7 @@ class CourController extends Controller
         $post->nom = $request->nom;
         $post->resumer = $request->resumer;
         $post->description = $request->description;
+        $post->nb = $request->nb;
         $post->dated = $request->dated;
         $post->heured = $request->heured;
         $post->datef = $request->datef;
@@ -100,6 +102,7 @@ class CourController extends Controller
         $nom = $request->nom;
         $resumer = $request->resumer;
         $description = $request->description;
+        $nb = $request->nb;
         $dated = $request->dated;
         $heured = $request->heured;
         $datef = $request->datef;
@@ -119,6 +122,7 @@ class CourController extends Controller
         'nom' =>$nom,
         'resumer'=>$resumer ,
         'description'=>$description ,
+        'nb'=>$nb ,
         'dated'=>$dated ,
         'heured'=>$heured,
         'datef'=>$datef,
@@ -133,5 +137,41 @@ class CourController extends Controller
               
            
     }
+    public function courpresentiel($id,Courp $Courp)
+    {   
+        $Courp = Courp::find($id);
+       return view('Front.courpresentiels', compact('Courp'));
+    }
+    public function   reserver($id)
+    {
+        $Cours = Courp::find($id);
+        if(($Cours->nb)>0){
+        $membre= auth()->user();
+        $cour=Courp::find($id);
+        $cour->membres()->attach($membre);
+        $x=(int)($Cours->nb)-1;
+        $update =['nb'=>$x,];
+        if($Cours->update($update)){
+            return redirect(route('presentielcours',$id));}}
+
+        
+    }
+    public function listeCP($id,Courp $Courp,Membre $membre)
+    {   
+        $tab=[];
+        $Courp = Courp::find($id);
+        $membre = Membre::with('courp')->get()->toArray();
+        foreach($membre as $m){
+         if(!(empty($m["courp"]))) 
+            foreach($m["courp"] as $c)
+            if(($c['id']==$id)&&!(in_array($m,$tab)))
+            array_push($tab,$m);
+            
+
+        }
+        
+        return view('AdminF.liste', compact('Courp','tab'));
+    }
+    
    
 }

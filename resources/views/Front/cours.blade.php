@@ -45,7 +45,7 @@
               <div class="date"> {{$courp->dated}} </div>
                 </div>
                 <div class="col-sm-7">
-                    <h5 class="titrep">{{$courp->nom}}</h5>
+                    <a href="{{route('presentielcours',$courp->id)}}"><h5 class="titrep">{{$courp->nom}}</h5></a>
                    <div class="timep"><p> <img  src="{{ asset ('images/png-transparent-symbol-time-computer-icons-logo-symbol-miscellaneous-angle-logo.png')}}" alt="Suresh Dasari Card"height="22px" width="22px"> {{date('G:i', strtotime($courp->heured))}}  -  {{date('G:i', strtotime($courp->heuref))}} </p> </div>
                     <p class="card-text">{{$courp->resumer}} </p></div>
                     <div style="text-align: right"><img  src="{{ asset ('images/' . $courp->url_image)}}" alt="Suresh Dasari Card"height="100px" width="200px"> </div>
@@ -83,7 +83,7 @@
               <div class="date"> {{$courp->dated}} </div>
                 </div>
                 <div class="col-sm-7">
-                    <h5 class="titrep">{{$courp->nom}}</h5>
+                <a href="{{route('presentielcours',$courp->id)}}"><h5 class="titrep">{{$courp->nom}}</h5></a>
                     <div class="timep"><p> <img  src="{{ asset ('images/png-transparent-symbol-time-computer-icons-logo-symbol-miscellaneous-angle-logo.png')}}" alt="Suresh Dasari Card"height="22px" width="22px"> {{date('G:i', strtotime($courp->heured))}}  -  {{date('G:i', strtotime($courp->heuref))}} </p> </div>
                     <p class="card-text">{{$courp->resumer}} </p></div>
                     <div style="text-align: right"><img  src="{{ asset ('images/' . $courp->url_image)}}" alt="Suresh Dasari Card"height="100px" width="200px"> </div>

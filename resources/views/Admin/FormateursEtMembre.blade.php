@@ -93,7 +93,7 @@ tr:nth-child(even) {
     <th>id</th>
     <th>nom</th>
     <th>mail</th>
-    <th>mot_de_passe</th>
+    <th>tel</th>
     <th>type</th>
     <th>Supprimer</th>
     <th>Modifier</th>
@@ -103,7 +103,7 @@ tr:nth-child(even) {
    <td>{{$row['id']}}</td>
     <td>{{$row['nom']}}</td>
     <td>{{$row['mail']}}</td>
-    <td>{{$row['mot_de_passe']}}</td>
+    <td>{{$row['tel']}}</td>
     <td>{{$row['type']}}</td>
 
     <td>

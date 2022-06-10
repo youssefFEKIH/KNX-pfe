@@ -11,10 +11,20 @@ class membre extends Model implements Authenticatable
 {
     use BasicAuthenticatable; 
     protected $table='membres';
-    protected $fillable = ['mail', 'mot_de_passe'];
+    protected $fillable = ['id','mail', 'mot_de_passe'];
+    
 
     public function getAuthPassword()
 {
     return $this->mot_de_passe;
+}
+public function courp(){
+    return $this->belongsToMany('App\Models\courp', 'membre_courp', 'membre_id', 'courp_id','id','id'); 
+}
+public function reserve($Courp){
+    
+   return $this->courp()->where('courp_id',$Courp->id)->exists();
+
+  
 }
 }

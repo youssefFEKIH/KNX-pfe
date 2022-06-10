@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nom');
             $table->string('resumer');
             $table->string('description',9000);
+            $table->integer('nb');
             $table->date('dated');
             $table->time('heured');
             $table->date('datef');

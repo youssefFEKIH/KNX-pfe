@@ -335,7 +335,7 @@ display: none;
       </div>
     </div>
     <!--/ Modal box-->
-    @elseif(session()->has('mail'))
+    @elseif(!(Route::is('home'))&&(session()->has('mail')))
     <!DOCTYPE html>
 <html lang="Fr">
 
@@ -411,6 +411,83 @@ display: none;
     </div>
   </nav>
   <!--/ Navigation bar-->
-@endif
 
+
+@elseif((Route::is('home'))&&(session()->has('mail')))
+<!DOCTYPE html>
+<html lang="Fr">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mirage Group "KNX Training"</title>
+
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//imagehover.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//style.css">
+  <link rel="shortcut icon" href="{{ asset('Front/img')}}/course01.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//style.css">
+
+<!-- afficher la suite-->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+var max = 100;
+$(".readMore").each(function() {
+    var str = $(this).text();
+    if ($.trim(str).length > max) {
+        var subStr = str.substring(0, max);
+        var hiddenStr = str.substring(max, $.trim(str).length);
+        $(this).empty().html(subStr);
+        $(this).append(' <a href="javascript:void(0);" class="lire-plus">lire plus...</a>');
+        $(this).append('<span class="addText">' + hiddenStr + '</span>');
+    }
+});
+$(".lire-plus").click(function() {
+    $(this).siblings(".addText").contents().unwrap();
+    $(this).remove();
+});
+});
+</script>
+<style>
+.readMore .addText {
+display: none;
+}
+</style>
+
+
+</head>
+
+<body>
+  <!--Navigation bar-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ route('home') }}">Accueil</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="#featureX">Mirage Group</a></li>
+          <li><a href="#courses">Cours En Ligne</a></li>
+          <li><a href="#coursesP">Cours Présentiel</a></li>
+          <li><a href="#faculity-member">Projet PFE</a></li>
+          <li><a href="#postuler">KNX Travail</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="{{ route('profil') }}" >Profil</a></li>
+          <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
+         </ul>
+      </div>
+    </div>
+  </nav>
+  <!--/ Navigation bar-->
+@endif
 

@@ -917,3 +917,40 @@ mark {
     font-size: 12px;
     color:black;  
 }
+.center {
+    display:block;
+    margin-left: 28em;
+    margin-right: 1em;
+    box-align:left;
+    
+  }
+.courph3{
+    color:#000;
+    text-align: center;
+    margin-right: 2em;
+    box-align:left;
+}
+.courpp{
+    margin-left: 1em;
+    margin-right: 2em;
+    text-align: justify;
+    box-align:left;
+}
+.time{
+    margin-left: 30em;
+    margin-right: 1em;
+    text-align: justify;
+    box-align:right;
+}
+.a {
+    display: flex;
+  }
+  
+  .b {
+    flex: 50%;
+    padding: 5px;
+  }
+  .timepf{
+    font-size: 15px;
+    color:black;  
+}
