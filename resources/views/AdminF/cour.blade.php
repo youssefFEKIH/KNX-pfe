@@ -197,6 +197,34 @@ tr:nth-child(even) {
     </td>
    </tr>
    @endforeach
+
+
+   <div class="text-center"> <h3>Listes des énoncés</h3></div>
+  <table >
+   <tr>
+    <th>Id</th>
+    <th>nom</th>
+    <th>Supprimer</th>
+    <th>Traiter</th>
+    </tr>
+@foreach($media as $Md)
+   <tr>
+   <td>{{$Md->id}}</td>
+  <td>{{$Md->nom}}</td>
+    <td>
+     <form   action="" method="">
+       @csrf
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+     </form>
+    </td>
+    <td>
+     <form   action="" method="">
+       @csrf
+    <button type="submit" class="btn btn-success">Traiter</button>
+     </form>
+    </td>
+   </tr>
+   @endforeach
    
    
 
