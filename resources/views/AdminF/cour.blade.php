@@ -70,11 +70,44 @@ tr:nth-child(even) {
    <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#quiz">Ajouter des quiz </button>
    <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#enonce">Ajouter des Enoncé </button>
    <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#choix">Ajouter des choix </button>
-   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#tests">Ajouter des tests </button>
-   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#questions">Ajouter des questions </button>
-   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#reponses">Ajouter des reponses </button></div>
+   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#video">Ajouter vidéo </button>
+   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#test">Ajouter des tests </button>
+   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#question">Ajouter des questions </button>
+   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#reponse">Ajouter des reponses </button></div>
    <br />
   </div>
+
+  <div class="text-center"> <h3>Listes des chapitres</h3></div>
+  <table >
+   <tr>
+    <th>Id</th>
+    <th>nom</th>
+    <th>Supprimer</th>
+    <th>Traiter</th>
+    </tr>
+@foreach($chapitre as $Ch)
+   <tr>
+   <td>{{$Ch->id}}</td>
+  <td>{{$Ch->nom}}</td>
+    <td>
+     <form   action="" method="">
+       @csrf
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+     </form>
+    </td>
+    <td>
+     <form   action="" method="">
+       @csrf
+    <button type="submit" class="btn btn-success">Traiter</button>
+     </form>
+    </td>
+   </tr>
+   @endforeach
+   
+
+  </table>
+
+  <div class="text-center"> <h3>Listes des cours</h3></div>
   <table >
    <tr>
     <th>Id</th>
@@ -88,7 +121,7 @@ tr:nth-child(even) {
 @foreach($Cour as $Cours)
    <tr>
    <td>{{$Cours->id}}</td>
-   <td><img src="{{ asset ('images/' . $Cours->url_image)}}" height="100px" width="100px"  ></td>
+   <td><img src="{{ asset ('images/' . $Cours->url_image)}}" height="50px" width="50px"  ></td>
     <td>{{$Cours->nom}}</td>
     <td>{{$Cours->description}}</td>
     <td>{{$Cours->type}}</td>
@@ -110,7 +143,64 @@ tr:nth-child(even) {
   </table>
 
 
+  <div class="text-center"> <h3>Listes des quiz</h3></div>
+  <table >
+   <tr>
+    <th>Id</th>
+    <th>nom</th>
+    <th>Supprimer</th>
+    <th>Traiter</th>
+    </tr>
+@foreach($quiz as $Qz)
+   <tr>
+   <td>{{$Qz->id}}</td>
+  <td>{{$Qz->quiz}}</td>
+    <td>
+     <form   action="" method="">
+       @csrf
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+     </form>
+    </td>
+    <td>
+     <form   action="" method="">
+       @csrf
+    <button type="submit" class="btn btn-success">Traiter</button>
+     </form>
+    </td>
+   </tr>
+   @endforeach
+   </table>
 
+   <div class="text-center"> <h3>Listes des media</h3></div>
+  <table >
+   <tr>
+    <th>Id</th>
+    <th>nom</th>
+    <th>Supprimer</th>
+    <th>Traiter</th>
+    </tr>
+@foreach($media as $Md)
+   <tr>
+   <td>{{$Md->id}}</td>
+  <td>{{$Md->nom}}</td>
+    <td>
+     <form   action="" method="">
+       @csrf
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+     </form>
+    </td>
+    <td>
+     <form   action="" method="">
+       @csrf
+    <button type="submit" class="btn btn-success">Traiter</button>
+     </form>
+    </td>
+   </tr>
+   @endforeach
+   
+   
+
+  </table>
 
 <!--Modal box-->
 <div class="modal fade" id="chapitre" role="dialog">
@@ -119,7 +209,7 @@ tr:nth-child(even) {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title text-center form-title">Ajouter cour</h4>
+          <h4 class="modal-title text-center form-title">Ajouter un chapitre</h4>
         </div>
         <div class="modal-body padtrbl">
          
@@ -180,7 +270,7 @@ tr:nth-child(even) {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title text-center form-title">Ajouter cour</h4>
+          <h4 class="modal-title text-center form-title">Ajouter un quiz</h4>
         </div>
         <div class="modal-body padtrbl">
          
@@ -202,7 +292,7 @@ tr:nth-child(even) {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title text-center form-title">Ajouter cour</h4>
+          <h4 class="modal-title text-center form-title">Ajouter enoncer</h4>
         </div>
         <div class="modal-body padtrbl">
          
@@ -224,7 +314,7 @@ tr:nth-child(even) {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title text-center form-title">Ajouter cour</h4>
+          <h4 class="modal-title text-center form-title">Ajouter un choix</h4>
         </div>
         <div class="modal-body padtrbl">
          
@@ -235,6 +325,102 @@ tr:nth-child(even) {
         <!----- Titre -------------->
           <input type="text" class="form-control" name="nom"  placeholder="Titre" autocomplete="off" required/>
         </div>
+        <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+        </form></div> </div></div></div> </div></div>
+  <!--/ Modal box-->
+
+        <!--Modal box-->
+<div class="modal fade" id="video" role="dialog">
+    <div class="modal-dialog modal-sm-9">
+      <!-- Modal content no 1-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center form-title">Ajouter un vidéo</h4>
+        </div>
+        <div class="modal-body padtrbl">
+         
+            <div class="form-group">
+            <form action="{{route('ajoutervideo')}}" method="POST" enctype="multipart/form-data"  id="loginForm">
+      @csrf
+      <div class="form-group has-feedback">
+        <!----- Titre -------------->
+          <input type="text" class="form-control" name="nom"  placeholder="Titre" autocomplete="off" required/>
+        </div>
+        <div class="form-group has-feedback">
+        <!----- image -------------->
+        <label style=color:black;>Ajouter une photo de cour</br></label>
+         <input type="file" name="adresse"  required>
+        </div>
+        <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+        </form></div> </div></div></div> </div></div>
+  <!--/ Modal box-->
+
+          <!--Modal box-->
+<div class="modal fade" id="test" role="dialog">
+    <div class="modal-dialog modal-sm-9">
+      <!-- Modal content no 1-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center form-title">Ajouter un test</h4>
+        </div>
+        <div class="modal-body padtrbl">
+         
+            <div class="form-group">
+            <form action="{{route('ajoutertest')}}" method="POST" enctype="multipart/form-data"  id="loginForm">
+      @csrf
+      <div class="form-group has-feedback">
+        <!----- Titre -------------->
+          <input type="text" class="form-control" name="nom"  placeholder="Titre" autocomplete="off" required/>
+        </div>
+       
+        <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+        </form></div> </div></div></div> </div></div>
+  <!--/ Modal box-->
+
+            <!--Modal box-->
+<div class="modal fade" id="question" role="dialog">
+    <div class="modal-dialog modal-sm-9">
+      <!-- Modal content no 1-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center form-title">Ajouter un question</h4>
+        </div>
+        <div class="modal-body padtrbl">
+         
+            <div class="form-group">
+            <form action="{{route('ajouterquestion')}}" method="POST" enctype="multipart/form-data"  id="loginForm">
+      @csrf
+      <div class="form-group has-feedback">
+        <!----- Titre -------------->
+          <input type="text" class="form-control" name="nom"  placeholder="Question" autocomplete="off" required/>
+        </div>
+       
+        <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+        </form></div> </div></div></div> </div></div>
+  <!--/ Modal box-->
+
+              <!--Modal box-->
+<div class="modal fade" id="reponse" role="dialog">
+    <div class="modal-dialog modal-sm-9">
+      <!-- Modal content no 1-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center form-title">Ajouter une Reponse</h4>
+        </div>
+        <div class="modal-body padtrbl">
+         
+            <div class="form-group">
+            <form action="{{route('ajouterreponse')}}" method="POST" enctype="multipart/form-data"  id="loginForm">
+      @csrf
+      <div class="form-group has-feedback">
+        <!----- Titre -------------->
+          <input type="text" class="form-control" name="nom"  placeholder="Reponse" autocomplete="off" required/>
+        </div>
+       
         <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
         </form></div> </div></div></div> </div></div>
   <!--/ Modal box-->

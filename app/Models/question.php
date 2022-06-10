@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class question extends Model
 {
+    protected $table='questions';
+    protected $fillable = ['id','question'];
     use HasFactory;
 }

@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Projet extends Model
 {
     protected $table='projet';
-    protected $fillable = ['url_image', 'titre', 'description'];
+    protected $fillable = ['id','url_image', 'titre', 'description'];
     use HasFactory;
 }

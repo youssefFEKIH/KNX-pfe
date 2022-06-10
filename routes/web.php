@@ -16,6 +16,10 @@ use App\Http\Controllers\ChapitreController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\EnonceController;
 use App\Http\Controllers\ChoixController;
+use App\Http\Controllers\MediaController;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\ReponseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -125,4 +129,8 @@ Route::post('/ajouter/chapitre', [ChapitreController::class, 'ajouterchapitre'])
 Route::post('/ajouter/quiz', [QuizController::class, 'ajouterquiz'])->name('ajouterquiz');/*--ajouter quiz --*/
 Route::post('/ajouter/enonce', [EnonceController::class, 'ajouterenonce'])->name('ajouterenonce');/*--ajouter enonce --*/
 Route::post('/ajouter/choix', [ChoixController::class, 'ajouterchoix'])->name('ajouterchoix');/*--ajouter choix --*/
+Route::post('/ajouter/video', [MediaController::class, 'ajoutervideo'])->name('ajoutervideo');/*--ajouter video --*/
+Route::post('/ajouter/test', [TestController::class, 'ajoutertest'])->name('ajoutertest');/*--ajouter test --*/
+Route::post('/ajouter/question', [QuestionController::class, 'ajouterquestion'])->name('ajouterquestion');/*--ajouter test --*/
+Route::post('/ajouter/reponse', [ReponseController::class, 'ajouterreponse'])->name('ajouterreponse');/*--ajouter test --*/
 

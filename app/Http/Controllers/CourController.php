@@ -4,15 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Models\Cours;
 use App\Models\Courp;
+use App\Models\chapitre;
+use App\Models\enonce;
+use App\Models\choix;
+use App\Models\media;
+use App\Models\question;
+use App\Models\test;
+use App\Models\reponse;
+use App\Models\quiz;
 use App\Models\membre;
 use Illuminate\Http\Request;
 
 class CourController extends Controller
 {
-    public function cour(Cours $Cour)
-    {
+    public function cour(Cours $Cour,Chapitre $chapitre,Enonce $enonce,Choix $choix,Media $media,Question $question,Quiz $quiz,Test $test,Reponse $reponse)
+    {   
         $Cour = Cours::all();
-        return view('AdminF.cour', compact('Cour'));
+        $quiz = Quiz::all();
+        $enonce = Enonce::all();
+        $choix = Choix::all();
+        $media = Media::all();
+        $question = question::all();
+        $test = Test::all();
+        $reponse = Reponse::all();
+        $chapitre = Chapitre::all();
+        return view('AdminF.cour', compact('Cour','chapitre','quiz','enonce','choix','test','media',));
     }
     public function courp(Courp $Cour)
     {
