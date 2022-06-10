@@ -1,10 +1,10 @@
-
 @extends('Front.layout')
 
 @section('content')
+ 
 
 
-    </script>
+
 
 <br> <br>
 
@@ -31,6 +31,7 @@
        @csrf
        @if(session()->has('mail')&&($Courp->statut=='A venir')&&($Courp->nb!=0)&&(Auth::user()->reserve($Courp)))
        <input type="button" class="btn btn-success" disabled="disabled" value="Réserver votre place"/>
+       <p>Vous êtes déjà inscrit</p>
        @elseif(session()->has('mail')&&($Courp->statut=='A venir')&&($Courp->nb!=0)&&!(Auth::user()->reserve($Courp)))
     <button onclick="return confirm('voulez-vous vraiment participer à ce cour ?')" type="submit" class="btn btn-success">Réserver votre place</button>
      </form>

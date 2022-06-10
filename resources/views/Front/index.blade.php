@@ -62,7 +62,7 @@
               <div class="fea-img pull-left">
                 
               </div>
-            </div
+</div>
           </div>
           <div class="fea">
             <div class="col-md-4">
@@ -165,7 +165,7 @@
   @php($count++)
   <div class="col-md-4 col-sm-6 padleft-right">
           <figure class="imghvr-fold-up">
-           <img src="{{ asset ('images/' . $courp->url_image)}}" height="250px" width="300px">
+           <img src="{{ asset ('images/' . $courp->url_image)}}" height="300px" width="380px">
             <figcaption>
             <h3>{{$courp->nom}}</h3>
              <div class="readMore2"> <p>{{$courp->resumer}}</div>...</p>
@@ -312,8 +312,8 @@
       <div class="row">
         <div class="header-section text-center">
           <h2>Postuler Maintenant</h2>
-          <p>Bienvenue sur les emplois de Mirage Group
-          <br/>Nous transmettrons votre cv aux employeurs intéressés</p>
+          <p> EN TRAIN DE CHERCHER DU TRAVAIL ? 
+          <br/>Déposer vos Cvs ici</p>
           <hr class="bottom-line">
         </div>
       </div>

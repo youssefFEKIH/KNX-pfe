@@ -10,6 +10,6 @@ class chapitre extends Model
     use HasFactory;
     protected $table='chapitres';
     protected $fillable = ['nom'];
-    use HasFactory;
+
 }
 

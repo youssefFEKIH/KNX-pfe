@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class enonce extends Model
 {
     use HasFactory;
+    protected $table='enonces';
+    protected $fillable = ['enonce'];
+    
 }

@@ -64,6 +64,15 @@ tr:nth-child(even) {
   <br />
    <br />
    <h2 class="Formateurs"> Cours en ligne </h2>
+   <div class="text-center"> 
+   <button type="submit" class="btn btn-success"data-toggle="modal" data-target="#cour">Ajouter cour</button>
+   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#chapitre">Ajouter chapitre</button></a>
+   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#quiz">Ajouter des quiz </button>
+   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#enonce">Ajouter des Enoncé </button>
+   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#choix">Ajouter des choix </button>
+   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#tests">Ajouter des tests </button>
+   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#questions">Ajouter des questions </button>
+   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#reponses">Ajouter des reponses </button></div>
    <br />
   </div>
   <table >
@@ -74,6 +83,7 @@ tr:nth-child(even) {
     <th>Résumer</th>
     <th>Type</th>
     <th>Supprimer</th>
+    <th>Traiter</th>
    </tr>
 @foreach($Cour as $Cours)
    <tr>
@@ -88,55 +98,152 @@ tr:nth-child(even) {
     <button type="submit" class="btn btn-danger">Supprimer</button>
      </form>
     </td>
+    <td>
+     <form   action="" method="">
+       @csrf
+    <button type="submit" class="btn btn-success">Traiter</button>
+     </form>
+    </td>
    </tr>
    @endforeach
 
   </table>
 
-  <div class="modal-body padtrbl">
-</br>
-</br>
-<div class="login-box-body">
-  <p class="login-box-msg">Ajouter un cour</p>
-  <div class="form-group">
-    <form action="/AdminDashboard/cour" method="POST" enctype="multipart/form-data"  id="loginForm">
+
+
+
+<!--Modal box-->
+<div class="modal fade" id="chapitre" role="dialog">
+    <div class="modal-dialog modal-sm-9">
+      <!-- Modal content no 1-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center form-title">Ajouter cour</h4>
+        </div>
+        <div class="modal-body padtrbl">
+         
+            <div class="form-group">
+            <form action="{{route('ajouterchapitre')}}" method="POST" enctype="multipart/form-data"  id="loginForm">
       @csrf
       <div class="form-group has-feedback">
         <!----- Titre -------------->
           <input type="text" class="form-control" name="nom"  placeholder="Titre" autocomplete="off" required/>
         </div>
+        <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+        </form></div> </div></div></div> </div></div>
+  <!--/ Modal box-->
 
 
+<!--Modal box-->
+<div class="modal fade" id="cour" role="dialog">
+    <div class="modal-dialog modal-sm-9">
+      <!-- Modal content no 1-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center form-title">Ajouter cour</h4>
+        </div>
+        <div class="modal-body padtrbl">
+         
+            <div class="form-group">
+            <form action="/AdminDashboard/cour" method="POST" enctype="multipart/form-data"  id="loginForm">
+      @csrf
+      <div class="form-group has-feedback">
+        <!----- Titre -------------->
+          <input type="text" class="form-control" name="nom"  placeholder="Titre" autocomplete="off" required/>
+        </div>
       <div class="form-group has-feedback">
         <!----- description -------------->
-        <textarea  name="description" rows="5" cols="155" placeholder="description" required> </textarea>
+        <textarea  name="description" rows="10" cols="65" placeholder="description" required> </textarea>
       </div>
-
       <div >
-        <label style=color:black; >Type de cour:</label></br>
+        <label style=color:black; >Type de cour:</label>
         <!----- Type -------------->
         <select name="type"> 
             <option  selected>En Ligne</option>
-          
         </select>
      </div>
-    </br> 
-    </br>
        <div class="form-group has-feedback">
         <!----- image -------------->
         <label style=color:black;>Ajouter une photo de cour</br></label>
          <input type="file" name="url_image" accept=".png, .jpg, .jpeg" required>
         </div>
-
-
 <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+</div></div></form></div> </div></div></div> </div></div>
+  <!--/ Modal box-->
 
-</div>
-      </div>
-    </form>
-  </div>
-</div>
-</div>
-</div>
+  <!--Modal box-->
+<div class="modal fade" id="quiz" role="dialog">
+    <div class="modal-dialog modal-sm-9">
+      <!-- Modal content no 1-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center form-title">Ajouter cour</h4>
+        </div>
+        <div class="modal-body padtrbl">
+         
+            <div class="form-group">
+            <form action="{{route('ajouterquiz')}}" method="POST" enctype="multipart/form-data"  id="loginForm">
+      @csrf
+      <div class="form-group has-feedback">
+        <!----- Titre -------------->
+          <input type="text" class="form-control" name="nom"  placeholder="Titre" autocomplete="off" required/>
+        </div>
+        <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+        </form></div> </div></div></div> </div></div>
+  <!--/ Modal box-->
 
-</div>
+    <!--Modal box-->
+<div class="modal fade" id="enonce" role="dialog">
+    <div class="modal-dialog modal-sm-9">
+      <!-- Modal content no 1-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center form-title">Ajouter cour</h4>
+        </div>
+        <div class="modal-body padtrbl">
+         
+            <div class="form-group">
+            <form action="{{route('ajouterenonce')}}" method="POST" enctype="multipart/form-data"  id="loginForm">
+      @csrf
+      <div class="form-group has-feedback">
+        <!----- Titre -------------->
+          <input type="text" class="form-control" name="nom"  placeholder="Titre" autocomplete="off" required/>
+        </div>
+        <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+        </form></div> </div></div></div> </div></div>
+  <!--/ Modal box-->
+
+      <!--Modal box-->
+<div class="modal fade" id="choix" role="dialog">
+    <div class="modal-dialog modal-sm-9">
+      <!-- Modal content no 1-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center form-title">Ajouter cour</h4>
+        </div>
+        <div class="modal-body padtrbl">
+         
+            <div class="form-group">
+            <form action="{{route('ajouterchoix')}}" method="POST" enctype="multipart/form-data"  id="loginForm">
+      @csrf
+      <div class="form-group has-feedback">
+        <!----- Titre -------------->
+          <input type="text" class="form-control" name="nom"  placeholder="Titre" autocomplete="off" required/>
+        </div>
+        <button type="submit" class="btn btn-green btn-block btn-flat">Ajouter</button>
+        </form></div> </div></div></div> </div></div>
+  <!--/ Modal box-->
+
+
+<script src="{{ asset('Front/js')}}/jquery.min.js"></script>
+  <script src="{{ asset('Front/js')}}/jquery.easing.min.js"></script>
+  <script src="{{ asset('Front/js')}}/bootstrap.min.js"></script>
+  <script src="{{ asset('Front/js')}}/custom.js"></script>
+  <script src="{{ asset('Front/contactform')}}/contactform.js"></script>
+</body>
+  </html>

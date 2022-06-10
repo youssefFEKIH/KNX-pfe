@@ -12,6 +12,10 @@ use App\Http\Controllers\CourController;
 use App\Http\Controllers\NouvController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\ChapitreController;
+use App\Http\Controllers\QuizController;
+use App\Http\Controllers\EnonceController;
+use App\Http\Controllers\ChoixController;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,6 +121,8 @@ Route::post('/projets', [MembreController::class, 'store'])->name('projets'); /*
 Route::post('/inscriptionget', [MembreController::class, 'store'])->name('inscription');/*--nouvelle membre--*/
 Route::post('/home/connect', [MembreController::class, 'connect'])->name('homeconnect');/*--connexion--*/
 Route::post('/reserver/{id}', [CourController::class, 'reserver'])->name('reserver');/*--reserver courp --*/
-
-
+Route::post('/ajouter/chapitre', [ChapitreController::class, 'ajouterchapitre'])->name('ajouterchapitre');/*--ajouter chapitre --*/
+Route::post('/ajouter/quiz', [QuizController::class, 'ajouterquiz'])->name('ajouterquiz');/*--ajouter quiz --*/
+Route::post('/ajouter/enonce', [EnonceController::class, 'ajouterenonce'])->name('ajouterenonce');/*--ajouter enonce --*/
+Route::post('/ajouter/choix', [ChoixController::class, 'ajouterchoix'])->name('ajouterchoix');/*--ajouter choix --*/
 
