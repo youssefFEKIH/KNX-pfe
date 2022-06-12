@@ -31,9 +31,9 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href=""> Cours En ligne</a></li>
-          <li><a href="">Cours Presentiels</a></li>
-          <li><a href="">Profil</a></li>        
+        <li><a href="{{route('AdminDashboard/cour')}}"> Cours En ligne</a></li>
+          <li><a href="{{route('courp')}}">Cours Presentiels</a></li>
+          <li><a href="{{route('profilF')}}">Profil</a></li>       
          <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
          </ul>
       </div>

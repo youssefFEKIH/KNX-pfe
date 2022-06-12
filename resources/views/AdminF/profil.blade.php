@@ -1,6 +1,44 @@
-@extends('Front.layout')
+<!DOCTYPE html>
+<html lang="Fr">
 
-@section('content')
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formateur Dashboard</title>
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//imagehover.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ asset('Front/css')}}//style.css">
+  <link rel="shortcut icon" href="{{ asset('Front/img')}}/course01.jpg" type="image/x-icon">
+
+
+<body>
+  <!--Navigation bar-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href=""> acceuil</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{route('AdminDashboard/cour')}}"> Cours En ligne</a></li>
+          <li><a href="{{route('courp')}}">Cours Presentiels</a></li>
+          <li><a href="{{route('profilF')}}">Profil</a></li>         
+         <li class="btn-trial"><a href="/deconnexion" >Se déconnecter</a></li>
+         </ul>
+      </div>
+    </div>
+  </nav>
+  <!--/ Navigation bar-->
+
 @foreach($membre as $membres)
 
 <p class="titre">Bienvenu, {{session('mail')}}</p>
@@ -72,7 +110,7 @@
                 <br>
              <button type="submit" class="btn btn-green btn-block btn-flat" data-toggle="modal" data-target="#modifier">Modifier</button> 
                 <br> 
-         
+               
         </section>
 
         @foreach($membre as $membres)
@@ -88,7 +126,7 @@
         </div>
         <div class="modal-body padtrbl">
         <div class="form-group">
-        <form action="/profilC" method="POST" enctype="multipart/form-data"  id="loginForm">
+        <form action="/profilCF" method="POST" enctype="multipart/form-data"  id="loginForm">
             @csrf 
                 <div class="form-group has-feedback">
                  <!----- Nom -------------->
@@ -144,4 +182,9 @@
   </div>
   <!--/ Modal box-->
   @endforeach
-  @endsection
+
+  <script src="{{ asset('Front/js')}}/jquery.min.js"></script>
+  <script src="{{ asset('Front/js')}}/jquery.easing.min.js"></script>
+  <script src="{{ asset('Front/js')}}/bootstrap.min.js"></script>
+  <script src="{{ asset('Front/js')}}/custom.js"></script>
+  <script src="{{ asset('Front/contactform')}}/contactform.js"></script>

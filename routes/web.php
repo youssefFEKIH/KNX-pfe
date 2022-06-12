@@ -56,6 +56,7 @@ Route::get('/coursp',[CourController::class, 'coursp'])->name('coursp');
 Route::get('/projets', [ProjetController::class, 'index2'])->name('projets');
 Route::get('/deconnexion', [MembreController::class, 'deconnexion']);      /*--deconnexion home--*/
 Route::get('/profil', [membreController::class, 'profil'])->name('profil');/*--page profil--*/
+Route::get('/profilF', [membreController::class, 'profilF'])->name('profilF');/*--page profilF--*/
 Route::get('/inscriptionget', function () {return view('Front.inscription');})->name('inscriptionget');
 Route::get('/cours/{id}/présentiel',[CourController::class, 'courpresentiel'])->name('presentielcours');
 
@@ -125,6 +126,7 @@ Route::post('/destroy/{id}/R', [ReponseController::class, 'destroy'])->name('sup
 Route::post('/destroy/{id}/terminer', [CourController::class, 'terminer'])->name('terminer');/*--smodifier statut cour P--*/
 Route::post('/Formateur/{id}/Modifiercourp',  [CourController::class, 'modifierCourp'])->name('ModifierCourp');/*--modifier cour P--*/
 Route::post('/profilC', [membreController::class, 'profilC'])->name('profilC');/*--modifier profil--*/
+Route::post('/profilCF', [membreController::class, 'profilCF'])->name('profilCF');/*--modifier profil--*/
 Route::post('/modifier/projet', [ProjetController::class, 'modifierprojet'])->name('modifierprojet');/*--modifier projet--*/
 Route::post('/modifier/NouvKnx', [nouvController::class, 'modifierNouvKnx'])->name('modifierknxnouv');/*--modifier nouv KNX--*/
 Route::post('/Formateur/{id}/Modifiercours', [CourController::class, 'modifiercour'])->name('modifiercours');/*--modifier cour en ligne--*/

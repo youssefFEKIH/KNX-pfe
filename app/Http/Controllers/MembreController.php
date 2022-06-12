@@ -45,6 +45,13 @@ class MembreController extends Controller
         else
         return view('Front.connexion');
     }
+    public function profilF(Request $request,Membre $membre) 
+    {  if (session()->has('mail')){
+        $membre = Membre::all()->where('mail',session('mail'));
+        return view('AdminF.profil', compact('membre' ));}
+        else
+        return view('Front.connexion');
+    }
    
     
     public function profilC(Request $request)
@@ -75,6 +82,37 @@ class MembreController extends Controller
          if(Membre::where('mail',session('mail'))->update($update)){
 
             return redirect()->route('profil');  
+         }     
+           
+    }
+    public function profilCF(Request $request)
+    {
+        
+        $nom = $request->nom;
+        $mot_de_passe = $request->mot_de_passe;
+        $date_de_naissance = $request->date_de_naissance;
+        $adresse = $request->adresse;
+        $tel = $request->tel;
+        $description = $request->description;
+     
+        if($request->hasfile('url_image')){
+            $file = $request->file('url_image');
+            $extenstion = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extenstion;
+            $file->move('images/', $filename);
+            $url_image= $filename;
+        }  
+        
+    $update = [
+        'nom' =>$nom,
+        'date_de_naissance'=>$date_de_naissance ,
+        'adresse'=>$adresse ,
+        'tel'=>$tel ,
+        'description'=>$description,
+        'url_image'=>$url_image ];
+         if(Membre::where('mail',session('mail'))->update($update)){
+
+            return redirect()->route('profilF');  
          }     
            
     }
