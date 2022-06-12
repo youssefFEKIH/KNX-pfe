@@ -22,10 +22,13 @@ class QuizController extends Controller
     }
     public function traiterquiz($id,Chapitre $Quizz)
     {   
-        $Chapitre=Chapitre::find($id);
-        $media=Chapitre::find($id)->Media;
-        $Quizz=Chapitre::find($id)->Quizz;
-        return view('AdminF.traiterchapitre', compact('Quizz','Chapitre','media'));
+        if (session()->has('mail')){     
+            $Chapitre=Chapitre::find($id);
+            $media=Chapitre::find($id)->Media;
+            $Quizz=Chapitre::find($id)->Quizz;
+            return view('AdminF.traiterchapitre', compact('Quizz','Chapitre','media'));}
+            else {return view('Front.connexion');}
+     
     }
     public function   modifierquiz ($id,Request $request,Quiz $quiz){
         $nom = $request->nom;

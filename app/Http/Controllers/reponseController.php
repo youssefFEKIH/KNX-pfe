@@ -11,6 +11,7 @@ class ReponseController extends Controller
     {
         $post = new Reponse();
         $post->contenu = $request->nom;
+        $post->type = $request->type;
         $Question=Question::find($id);
         $post->question_id=$Question->id;
           
@@ -20,15 +21,20 @@ class ReponseController extends Controller
     }
     public function traiterreponse($id,Question $Question)
     {   
-        $Question=Question::find($id);
-        $reponse=Question::find($id)->reponses;
-        return view('AdminF.traiterquestion', compact('reponse','Question'));
+        if (session()->has('mail')){     
+            $Question=Question::find($id);
+            $reponse=Question::find($id)->reponses;
+            return view('AdminF.traiterquestion', compact('reponse','Question'));}
+            else {return view('Front.connexion');}
+   
     }
   
     public function   modifierreponse ($id,Request $request,Reponse $reponse){
         $nom = $request->nom;
+        $type = $request->type;
         $update = [
-        'contenu' =>$nom,];
+        'contenu' =>$nom,
+        'type' =>$type,];
         $id1=$request->id;
         $reponse = Reponse::find($id);
         $reponse->update($update);

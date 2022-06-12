@@ -21,10 +21,14 @@ class ChapitreController extends Controller
     }
     public function traitercours($id,Cours $Cours)
     {   
-        $Cours=Cours::find($id);
+        if (session()->has('mail')){          
+            $Cours=Cours::find($id);
         $Cour=Cours::find($id)->chapitres;
         $Test=Cours::find($id)->tests;
-        return view('AdminF.traitercour', compact('Cour','Test','Cours'));
+        return view('AdminF.traitercour', compact('Cour','Test','Cours'));}
+            else {return view('Front.connexion');}
+       
+       
     }
     public function   modifierchapitre ($id,Request $request,Chapitre $chapitre){
         $nom = $request->nom;

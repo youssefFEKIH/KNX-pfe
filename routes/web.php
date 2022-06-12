@@ -113,7 +113,7 @@ Route::post('/destroy/{id}/Courp', [CourController::class, 'destroycourp'])->nam
 Route::post('/destroy/{id}/N', [nouvController::class, 'destroy'])->name('supprimerN');
 Route::post('/destroy/{id}/M', [MessageController::class, 'destroy'])->name('supprimerM');
 Route::post('/destroy/{id}/C', [ChapitreController::class, 'destroy'])->name('supprimerchapitre');
-Route::post('/destroy/{id}/Q', [QuizController::class, 'destroy'])->name('supprimerquiz');
+Route::post('/destroy/{id}/Quiz', [QuizController::class, 'destroy'])->name('supprimerquiz');
 Route::post('/destroy/{id}/V', [MediaController::class, 'destroy'])->name('supprimervideo');
 Route::post('/destroy/{id}/E', [EnonceController::class, 'destroy'])->name('supprimerenonce');
 Route::post('/destroy/{id}/Choix', [ChoixController::class, 'destroy'])->name('supprimerchoix');

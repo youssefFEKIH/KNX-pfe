@@ -20,10 +20,12 @@ class ChoixController extends Controller
         }
     }
      public function traiterchoix($id,Enonce $Enonce)
-    {   
+     
+    {    if (session()->has('mail')){     
         $Enonce=Enonce::find($id);
         $choix=Enonce::find($id)->choix;
-        return view('AdminF.traiterenonce', compact('Enonce','choix'));
+        return view('AdminF.traiterenonce', compact('Enonce','choix'));}
+        else {return view('Front.connexion');}
     }
     public function   modifierchoix($id,Request $request,Choix $choix){
         $nom = $request->nom;

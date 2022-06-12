@@ -21,9 +21,12 @@ class EnonceController extends Controller
     
       public function traiterenonce($id,Quiz $Quizz)
     {   
-        $Quiz=Quiz::find($id);
-        $enonce=Quiz::find($id)->enonce;
-        return view('AdminF.traiterquiz', compact('Quiz','enonce'));
+        if (session()->has('mail')){     
+            $Quiz=Quiz::find($id);
+            $enonce=Quiz::find($id)->enonce;
+            return view('AdminF.traiterquiz', compact('Quiz','enonce'));}
+            else {return view('Front.connexion');}
+       
     }
     public function   modifierenonce ($id,Request $request,Enonce $enonce){
         $nom = $request->nom;

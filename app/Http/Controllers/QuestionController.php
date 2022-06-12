@@ -21,9 +21,13 @@ class QuestionController extends Controller
    
       public function traiterquestion($id,Test $test)
     {   
-        $Test=Test::find($id);
+
+        if (session()->has('mail')){     
+            $Test=Test::find($id);
         $Question=Test::find($id)->question;
-        return view('AdminF.traitertest', compact('Test','Question'));
+        return view('AdminF.traitertest', compact('Test','Question'));}
+            else {return view('Front.connexion');}
+       
     }
     public function   modifierquestion ($id,Request $request,Question $question){
         $nom = $request->nom;

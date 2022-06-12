@@ -73,6 +73,7 @@ tr:nth-child(even) {
    <tr>
     <th>Id</th>
     <th>nom</th>
+    <th>Type</th>
     <th>Modifier</th>
     <th>Supprimer</th>
     </tr>
@@ -80,6 +81,7 @@ tr:nth-child(even) {
    <tr>
    <td>{{$Rp->id}}</td>
    <td>{{$Rp->contenu}}</td>
+   <td>{{$Rp->type}}</td>
    <td>
     <button type="submit" class="btn btn-primary"data-toggle="modal" data-target="#modifier{{$Rp->id}}">modifier</button>
     </td>
