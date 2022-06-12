@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('choixes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('choix');
-
+            $table->string('type');
+            $table->unsignedBigInteger('enonce_id');
+            $table->foreign('enonce_id')->references('id')->on('enonces')->onDelete('cascade');
            
             $table->timestamps();
         });

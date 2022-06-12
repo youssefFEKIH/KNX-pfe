@@ -17,7 +17,8 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('nom');
             $table->float('note')->nullable();
-
+            $table->unsignedBigInteger('cours_id');
+            $table->foreign('cours_id')->references('id')->on('cours')->onDelete('cascade');
            
             $table->timestamps();
         });

@@ -9,6 +9,9 @@ class enonce extends Model
 {
     use HasFactory;
     protected $table='enonces';
-    protected $fillable = ['enonce'];
-    
+    protected $fillable = ['enonce','quiz_id'];
+    public function choix()
+    {
+        return $this->hasMany('App\Models\choix');
+    }
 }

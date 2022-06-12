@@ -9,6 +9,6 @@ class choix extends Model
 {
     use HasFactory;
     protected $table='choixes';
-    protected $fillable = ['choix'];
+    protected $fillable = ['choix','type','enonce_id'];
     
 }

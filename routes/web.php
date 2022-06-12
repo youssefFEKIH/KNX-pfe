@@ -71,6 +71,14 @@ Route::get('/FormateurDashboard/courp', [CourController::class, 'courp'])->name(
 Route::get('/AdminDashboard/cour', [CourController::class, 'cour'])->name('AdminDashboard/cour');/*--dashborf cour en ligne--*/
 Route::get('/Formateur', [CvController::class, 'index'])->name('Formateur');/*--dashborf formateur1 --*/
 Route::get('/Formateur/{id}/list', [CourController::class, 'listeCP'])->name('liste');/*--dashborf formateur listeCP --*/
+Route::get('/traiter/cours/{id}', [ChapitreController::class, 'traitercours'])->name('afficherchapitre');/*--traiter cours ajouter chapitre --*/
+Route::get('/traiter/chapitre/{id}', [QuizController::class, 'traiterquiz'])->name('traiterchapitre');/*--traiter chapitre ajouter quiz --*/
+Route::get('/traiter/quiz/{id}', [EnonceController::class, 'traiterenonce'])->name('traiterquiz');/*--traiter chapitre ajouter quiz --*/
+Route::get('/traiter/enonce/{id}', [ChoixController::class, 'traiterchoix'])->name('traiterenonce');/*--traiter chapitre ajouter quiz --*/
+Route::get('/traiter/test/{id}', [QuestionController::class, 'traiterquestion'])->name('traitertest');/*--traiter chapitre ajouter quiz --*/
+Route::get('/traiter/reponse/{id}', [ReponseController::class, 'traiterreponse'])->name('traiterquestion');/*--traiter chapitre ajouter quiz --*/
+
+
 /*
 |--------------------------------------------------------------------------
 | Admin
@@ -104,6 +112,14 @@ Route::post('/destroy/{id}/Cour', [CourController::class, 'destroy'])->name('sup
 Route::post('/destroy/{id}/Courp', [CourController::class, 'destroycourp'])->name('supprimerCourp');/*--supprimer cour P--*/
 Route::post('/destroy/{id}/N', [nouvController::class, 'destroy'])->name('supprimerN');
 Route::post('/destroy/{id}/M', [MessageController::class, 'destroy'])->name('supprimerM');
+Route::post('/destroy/{id}/C', [ChapitreController::class, 'destroy'])->name('supprimerchapitre');
+Route::post('/destroy/{id}/Q', [QuizController::class, 'destroy'])->name('supprimerquiz');
+Route::post('/destroy/{id}/V', [MediaController::class, 'destroy'])->name('supprimervideo');
+Route::post('/destroy/{id}/E', [EnonceController::class, 'destroy'])->name('supprimerenonce');
+Route::post('/destroy/{id}/Choix', [ChoixController::class, 'destroy'])->name('supprimerchoix');
+Route::post('/destroy/{id}/T', [TestController::class, 'destroy'])->name('supprimertest');
+Route::post('/destroy/{id}/Q', [QuestionController::class, 'destroy'])->name('supprimerquestion');
+Route::post('/destroy/{id}/R', [ReponseController::class, 'destroy'])->name('supprimerreponse');
 
 /* ----Modifier----------*/
 Route::post('/destroy/{id}/terminer', [CourController::class, 'terminer'])->name('terminer');/*--smodifier statut cour P--*/
@@ -111,6 +127,16 @@ Route::post('/Formateur/{id}/Modifiercourp',  [CourController::class, 'modifierC
 Route::post('/profilC', [membreController::class, 'profilC'])->name('profilC');/*--modifier profil--*/
 Route::post('/modifier/projet', [ProjetController::class, 'modifierprojet'])->name('modifierprojet');/*--modifier projet--*/
 Route::post('/modifier/NouvKnx', [nouvController::class, 'modifierNouvKnx'])->name('modifierknxnouv');/*--modifier nouv KNX--*/
+Route::post('/Formateur/{id}/Modifiercours', [CourController::class, 'modifiercour'])->name('modifiercours');/*--modifier cour en ligne--*/
+Route::post('/Formateur/{id}/Modifierchapitre', [ChapitreController::class, 'modifierchapitre'])->name('modifierchapitre');/*--modifier cour en ligne--*/
+Route::post('/Formateur/{id}/Modifierquiz', [QuizController::class, 'modifierquiz'])->name('modifierquiz');/*--modifier cour en ligne--*/
+Route::post('/Formateur/{id}/Modifierenonce', [EnonceController::class, 'modifierenonce'])->name('modifierenonce');/*--modifier cour en ligne--*/
+Route::post('/Formateur/{id}/Modifierchoix', [ChoixController::class, 'modifierchoix'])->name('modifierchoix');
+Route::post('/Formateur/{id}/Modifiertest', [TestController::class, 'modifiertest'])->name('modifiertest');
+Route::post('/Formateur/{id}/Modifierquestion', [QuestionController::class, 'modifierquestion'])->name('modifierquestion');
+Route::post('/Formateur/{id}/Modifierreponse', [ReponseController::class, 'modifierreponse'])->name('modifierreponse');
+
+
 
 
 /* ----Creer----------*/
@@ -125,12 +151,20 @@ Route::post('/projets', [MembreController::class, 'store'])->name('projets'); /*
 Route::post('/inscriptionget', [MembreController::class, 'store'])->name('inscription');/*--nouvelle membre--*/
 Route::post('/home/connect', [MembreController::class, 'connect'])->name('homeconnect');/*--connexion--*/
 Route::post('/reserver/{id}', [CourController::class, 'reserver'])->name('reserver');/*--reserver courp --*/
-Route::post('/ajouter/chapitre', [ChapitreController::class, 'ajouterchapitre'])->name('ajouterchapitre');/*--ajouter chapitre --*/
-Route::post('/ajouter/quiz', [QuizController::class, 'ajouterquiz'])->name('ajouterquiz');/*--ajouter quiz --*/
-Route::post('/ajouter/enonce', [EnonceController::class, 'ajouterenonce'])->name('ajouterenonce');/*--ajouter enonce --*/
-Route::post('/ajouter/choix', [ChoixController::class, 'ajouterchoix'])->name('ajouterchoix');/*--ajouter choix --*/
-Route::post('/ajouter/video', [MediaController::class, 'ajoutervideo'])->name('ajoutervideo');/*--ajouter video --*/
-Route::post('/ajouter/test', [TestController::class, 'ajoutertest'])->name('ajoutertest');/*--ajouter test --*/
-Route::post('/ajouter/question', [QuestionController::class, 'ajouterquestion'])->name('ajouterquestion');/*--ajouter test --*/
-Route::post('/ajouter/reponse', [ReponseController::class, 'ajouterreponse'])->name('ajouterreponse');/*--ajouter test --*/
+Route::post('/ajouter/chapitre/{id}', [ChapitreController::class, 'ajouterchapitre'])->name('ajouterchapitre');/*--ajouter chapitre --*/
+Route::post('/ajouter/quiz/{id}', [QuizController::class, 'ajouterquiz'])->name('ajouterquiz');/*--ajouter quiz --*/
+Route::post('/ajouter/enonce/{id}', [EnonceController::class, 'ajouterenonce'])->name('ajouterenonce');/*--ajouter enonce --*/
+Route::post('/ajouter/choix/{id}', [ChoixController::class, 'ajouterchoix'])->name('ajouterchoix');/*--ajouter choix --*/
+Route::post('/ajouter/video/{id}', [MediaController::class, 'ajoutervideo'])->name('ajoutervideo');/*--ajouter video --*/
+Route::post('/ajouter/test/{id}', [TestController::class, 'ajoutertest'])->name('ajoutertest');/*--ajouter test --*/
+Route::post('/ajouter/question/{id}', [QuestionController::class, 'ajouterquestion'])->name('ajouterquestion');/*--ajouter test --*/
+Route::post('/ajouter/reponse/test/{id}', [ReponseController::class, 'ajouterreponse'])->name('ajouterreponses');/*--ajouter test --*/
 
+
+/* ----Gérer----------*/
+Route::post('/traiter/cours/{id}', [ChapitreController::class, 'traitercours'])->name('traitercours');/*--traiter cours ajouter chapitre --*/
+Route::post('/traiter/chapitre/{id}', [QuizController::class, 'traiterquiz'])->name('traiterchapitre');/*--traiter chapitre ajouter quiz --*/
+Route::post('/traiter/quiz/{id}', [EnonceController::class, 'traiterenonce'])->name('traiterquiz');/*--traiter chapitre ajouter quiz --*/
+Route::post('/traiter/enonce/{id}', [ChoixController::class, 'traiterchoix'])->name('traiterenonce');/*--traiter chapitre ajouter quiz --*/
+Route::post('/traiter/test/{id}', [QuestionController::class, 'traiterquestion'])->name('traitertest');/*--traiter chapitre ajouter quiz --*/
+Route::post('/traiter/reponse/{id}', [ReponseController::class, 'traiterreponse'])->name('traiterquestion');/*--traiter chapitre ajouter quiz --*/

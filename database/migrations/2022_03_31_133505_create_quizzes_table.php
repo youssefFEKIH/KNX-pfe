@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('quizzes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('quiz');
-
+            $table->unsignedBigInteger('chapitre_id');
+            $table->foreign('chapitre_id')->references('id')->on('chapitres')->onDelete('cascade');
             
             $table->timestamps();
         });

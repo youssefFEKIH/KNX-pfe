@@ -52,7 +52,7 @@
               </div>
             </div>
             <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">KNX NATIONAL <br> Tunisie </p>
+              <p class="pm-staff-profile-name">KNX UserClub  <br> Tunisia </p>
               <p class="pm-staff-profile-bio">KNX : le standard mondial pour la gestion technique des bâtiments résidentiels et tertiaires.</p>
               <a href="{{ route('knxtunisie-acceuil') }}"> <button   name="submit" type="submit" class="btn btn-block btn-submit">
             Consulter  <i class="fa fa-arrow-right"></i></button></a>

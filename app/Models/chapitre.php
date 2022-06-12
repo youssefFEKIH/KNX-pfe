@@ -9,7 +9,15 @@ class chapitre extends Model
 {
     use HasFactory;
     protected $table='chapitres';
-    protected $fillable = ['nom'];
+    protected $fillable = ['nom','cours_id'];
+    public function Quizz()
+    {
+        return $this->hasMany('App\Models\quiz');
+    }
+    public function Media()
+    {
+        return $this->hasMany('App\Models\media');
+    }
 
 }
 

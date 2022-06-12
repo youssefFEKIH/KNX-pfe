@@ -19,6 +19,7 @@ class CourController extends Controller
 {
     public function cour(Cours $Cour,Chapitre $chapitre,Enonce $enonce,Choix $choix,Media $media,Question $question,Quiz $quiz,Test $test,Reponse $reponse)
     {   
+        //dd(Cours::find(1)->chapitres);
         $Cour = Cours::all();
         $quiz = Quiz::all();
         $enonce = Enonce::all();
@@ -28,12 +29,37 @@ class CourController extends Controller
         $test = Test::all();
         $reponse = Reponse::all();
         $chapitre = Chapitre::all();
-        return view('AdminF.cour', compact('Cour','chapitre','quiz','enonce','choix','test','media',));
+        return view('AdminF.cour', compact('Cour','chapitre','quiz','enonce','choix','test','media','question','reponse'));
     }
     public function courp(Courp $Cour)
     {
         $Cour = courp::all();
         return view('AdminF.courp', compact('Cour'));
+    }
+    public function modifiercour(Request $request){
+        $nom = $request->nom;
+        $description = $request->description;
+          
+        if($request->hasfile('url_image')){
+            
+            $file = $request->file('url_image');
+            $extenstion = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extenstion;
+            $file->move('images/', $filename);
+            $url_image= $filename;
+        } 
+        
+    $update = [
+        'nom' =>$nom,
+        'description'=>$description ,
+        'url_image'=>$url_image, ];
+        $id=$request->id;
+        $Cours = Cours::find($id);
+        $Cours->update($update);
+        return redirect()->route('AdminDashboard/cour');  
+        
+              
+
     }
     public function coursp(Courp $Courp)
     {

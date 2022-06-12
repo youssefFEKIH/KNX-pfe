@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('enonces', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('enonce');
-
+            $table->unsignedBigInteger('quiz_id');
+            $table->foreign('quiz_id')->references('id')->on('quizzes')->onDelete('cascade');
             
             $table->timestamps();
         });

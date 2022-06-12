@@ -9,5 +9,10 @@ class quiz extends Model
 {
     use HasFactory;
     protected $table='quizzes';
-    protected $fillable = ['id','quiz'];
+    protected $fillable = ['id','quiz','chapitre_id'];
+    public function enonce()
+    {
+        return $this->hasMany('App\Models\enonce');
+    }
+
 }
