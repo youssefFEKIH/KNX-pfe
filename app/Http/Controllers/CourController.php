@@ -250,5 +250,22 @@ class CourController extends Controller
        
     return view('Front.quiz', compact('quiz','enonce','c'));
     }
-   
+   public function choix(Request $request,$id){
+        $score=0;
+ 
+foreach($request->request->all() as $k=>$c){
+    if($k=='_token'){
+        continue;
+    }else{
+        $choix=Choix::find($k);
+        if($choix->type=="Correcte"){
+        $score=$score+1;
+        }
+        dump($score);  
+    }
+}
+$score=($score/$id)*100;
+dd($score);
+      return view('Front.quiz', compact('quiz','enonce','c'));
+   }
 }

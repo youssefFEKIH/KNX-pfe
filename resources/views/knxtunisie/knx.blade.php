@@ -18,15 +18,15 @@
            <!--  Contenu gauche   -->
 
            <div id="contenu_gauche">
-            <p class="fil-ariane"><a href="KNX-France-accueil.html" title="Accueil">&gt; Accueil</a> &gt; KNX</p>
+            <p class="fil-ariane"><a href="" title="Accueil">&gt; Accueil</a> &gt; KNX</p>
             <h1>KNX</h1>
             @foreach($No as $No)
            @if($No->type == 'KNX')
 
             <div class="accueil-bloc">
-                <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" height="260px" width="270px" >
+                <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" height="150px" width="200px">
                 <h4> {{$No->titre}}</h4>
-                <a style="color:black;" href="{{route('suite1',$No->id)}}"> <p class="readMore">{{$No->description}}</p><a>
+                <a style="color:black;" href="{{route('suite1',$No->id)}}"> <p class="readMore">{{$No->description}}</p></a>
                  </div>
                  @endif
                  @endforeach

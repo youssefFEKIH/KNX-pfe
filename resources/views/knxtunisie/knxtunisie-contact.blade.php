@@ -18,19 +18,21 @@
             <div id="site">
                <!--  Contenu gauche   -->
                
+               
                <div id="contenu_gauche">
-                <p class="fil-ariane"><a href="KNX-France-accueil.html" title="Accueil">&gt; Accueil</a> &gt; Contact</p>
-                <h1>Contact</h1>
-                @foreach($No as $No)
-               @if($No->type == 'Contact')
-                <div class="accueil-bloc">
-                    <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" height="150px" width="200px" >
-                    <h4> {{$No->titre}}</h4>
-                    <a style="color:black;" href="{{route('suite5',$No->id)}}"> <p class="readMore">{{$No->description}}</p><a></div></div>
-                     </div>
-                     @endif
-                     @endforeach
-                    </div>
+            <p class="fil-ariane"><a href="" title="Accueil">&gt; Accueil</a> &gt;Contact</p>
+            <h1>Contact</h1>
+            @foreach($No as $No)
+           @if($No->type == 'Contact')
+
+            <div class="accueil-bloc">
+                <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" height="150px" width="200px">
+                <h4> {{$No->titre}}</h4>
+                <a style="color:black;" href="{{route('suite1',$No->id)}}"> <p class="readMore">{{$No->description}}</p></a>
+                 </div>
+                 @endif
+                 @endforeach
+           </div>
                <!--  fin Contenu gauche   -->
 
 

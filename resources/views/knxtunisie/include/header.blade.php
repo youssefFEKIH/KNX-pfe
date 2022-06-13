@@ -29,7 +29,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-    var max = 140;
+    var max = 110;
     $(".readMore").each(function() {
         var str = $(this).text();
         if ($.trim(str).length > max) {

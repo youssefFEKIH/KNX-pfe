@@ -19,21 +19,21 @@
          <div id="site">
             <!--  Contenu gauche   -->
             
+            
             <div id="contenu_gauche">
+            <p class="fil-ariane"><a href="" title="Accueil">&gt; Accueil</a> &gt; </p>
+            <h1>Acceuil</h1>
+            @foreach($No as $No)
+           @if($No->type == 'Acceuil')
 
-             <h1>Acceuil</h1>
-             @foreach($No as $No)
-             @if($No->type == 'Acceuil')
-             
-             <div class="accueil-bloc">
-            <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" height="150px" width="200px">
-            <h4> {{$No->titre}}</h4>
-            <a style="color:black;" href="{{route('suite2',$No->id)}}"> <p class="readMore">{{$No->description}}</p><a></div></div>
-             </div>
-             @endif
-             @endforeach
-            </div>
-           
+            <div class="accueil-bloc">
+                <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" height="150px" width="200px">
+                <h4> {{$No->titre}}</h4>
+                <a style="color:black;" href="{{route('suite1',$No->id)}}"> <p class="readMore">{{$No->description}}</p></a>
+                 </div>
+                 @endif
+                 @endforeach
+           </div>
             <!--  fin Contenu gauche   -->
 
             

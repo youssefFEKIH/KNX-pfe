@@ -10,15 +10,22 @@
 
   <h1 style="text-align:center">{{$quiz->quiz}}</h1>
   <br>
-   
+   <form method="POST" action="{{route('choix',count($enonce))}}">
+   @csrf 
   @foreach($enonce as $en)
-  <h3>{{$en->enonce}}</h3>
+  <h4 style="color:black;">{{$en->enonce}}</h4>
 
-  @foreach($c as $ch)
-<h3>{{$ch->id}}</h3>
+  @foreach($en->choix as $choix)
+
+    <div>
+      
+      <input type="radio" id="{{($choix->id)}}" name="{{$en->id}}"  >
+      <label >{{$choix->choix}}</label>
+    </div>
   @endforeach
   @endforeach
-
+  <input type="submit" value="Valider"/>
+</form>
 <br>
 <br>
 <br>
