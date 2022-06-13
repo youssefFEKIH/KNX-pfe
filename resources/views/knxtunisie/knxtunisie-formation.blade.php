@@ -72,34 +72,13 @@
 
                    <!-- Réseaux Sociaux -->
 
-                   <!-- Newsletter -->
-                   <div id="inscription_newsletter">
-                       <h1>S'inscrire à la newsleter</h1>
-
-                       <p>Inscrivez-vous à la e-enewsletter pour recevoir les dernières actualités de KNX France</p>
-
-
-
-                       <a href="https://my.sendinblue.com/users/subscribe/js_id/3786j/id/1" title="S'inscrire à la newsletter" style="text-decoration:none;" target="_blank"><div id="bouton_newsletter">Inscription</div></a>
-
-
-                   </div>
+                   
                    <!-- Réseaux Sociaux -->
 
 
 
                    <br><br>
 
-
-
-
-
-
-
-
-                   <!-- Événements -->
-                   <h1>Événements</h1>
-                   <!-- Événements -->
 
                </div>
                <!--  fin Contenu droite   -->
