@@ -129,14 +129,14 @@
               <h3>{{$cours->nom}}</h3>
               <p>{{$cours->description}}</p>
             </figcaption>
-            <a href="#"></a>
+            <a href="{{route('enlignecours',$cours->id)}}"></a>
           </figure>
         </div>
         
           @endif
           
           @endforeach
-          <a href="{{route('cours')}}"> <button name="submit" type="submit" class="btn btn-block btn-submit">
+          <a href="{{route('course')}}"> <button name="submit" type="submit" class="btn btn-block btn-submit">
             Consulter touts les cours  <i class="fa fa-arrow-right"></i></button> </a>
         </div>
       </div>
