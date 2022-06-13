@@ -25,7 +25,7 @@
               <p class="pm-staff-profile-name">{{$projets->titre}}</p>
             
 
-              <p class="readMore">{{$projets->description}} </p>
+              <a style="color:black;" href="{{route('projetdetail',$projets->id)}}"> <p class="readMore">{{$projets->description}} </p></a>
             </div>
           </div>
         </div>

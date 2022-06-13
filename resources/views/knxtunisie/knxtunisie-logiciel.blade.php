@@ -22,7 +22,7 @@
                 <div class="accueil-bloc">
                   <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" height="150px" width="200px">
                   <h4> {{$No->titre}}</h4>
-                  <div class="readMore"><div > <p  class="texte_bloc">{{$No->description}}</p></div></div>
+                  <a style="color:black;" href="{{route('suite8',$No->id)}}"> <p class="readMore">{{$No->description}}</p><a></div></div>
                    </div>
                    @endif
                    @endforeach

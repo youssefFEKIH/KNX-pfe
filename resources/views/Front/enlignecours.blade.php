@@ -18,7 +18,7 @@
      
      
        
-      <form   action="{{route('video',$cours->id)}}" method="POST">
+      <form   action="{{route('video',$Courp->id)}}" method="POST">
       <br>
      <br>
         <br>

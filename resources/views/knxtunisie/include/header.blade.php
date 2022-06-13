@@ -41,21 +41,16 @@
         }
     });
     $(".lire-plus").click(function() {
-        $(this).siblings(".addText").contents().unwrap();
-        $(this).remove();
+     
     });
 });
     </script>
     <style>
     .readMore .addText {
     display: none;
+    color:green;
     
 }
-.lire-plus{
-    color: green;
-}
-
-
     </style>
 
 

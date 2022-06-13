@@ -72,6 +72,64 @@ class NouveauteController extends Controller
 
 
 
+    public function suite1(nouveaute $N, nouv $No)
+    {
+        $N = nouveaute::all();
+        $No = nouv::all();
+         return view('knxtunisie.knxbladesuite', compact('N', 'No'));
+
+    }
+    public function suite2($id,nouveaute $N, nouv $No)
+    {
+        $N = nouveaute::all();
+        $No = nouv::all();
+         return view('knxtunisie.acceuil', compact('N', 'No'));
+
+    }
+    public function suite3($id,nouveaute $N, nouv $No)
+    {
+        $N = nouveaute::all();
+        $No = nouv::all();
+         return view('knxtunisie.actus', compact('N', 'No'));
+
+    }
+    public function suite4($id,nouveaute $N, nouv $No)
+    {
+        $N = nouveaute::all();
+        $No = nouv::all();
+         return view('knxtunisie.com', compact('N', 'No'));
+
+    }
+    public function suite5($id,nouveaute $N, nouv $No)
+    {
+        $N = nouveaute::all();
+        $No = nouv::all();
+         return view('knxtunisie.contact', compact('N', 'No'));
+
+    }
+    public function suite6($id,nouveaute $N, nouv $No)
+    {
+        $N = nouveaute::all();
+        $No = nouv::all();
+         return view('knxtunisie.doc', compact('N', 'No'));
+
+    }
+    public function suite7($id,nouveaute $N, nouv $No)
+    {
+        $N = nouveaute::all();
+        $No = nouv::all();
+         return view('knxtunisie.formation', compact('N', 'No'));
+
+    }
+    public function suite8($id,nouveaute $N, nouv $No)
+    {
+        $N = nouveaute::all();
+        $No = nouv::all();
+         return view('knxtunisie.logiciel', compact('N', 'No'));
+
+    }
+
+
 
     public function store(Request $request)
     {   $post = new nouveaute();

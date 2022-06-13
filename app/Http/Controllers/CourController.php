@@ -227,8 +227,28 @@ class CourController extends Controller
     }
     public function video($id,Cours $Cours)
     {   
-        $Courp = Cours::find($id);
-       return view('Front.videocour', compact('Courp'));
+        $Cours=Cours::find($id);
+        $Test=Cours::find($id)->tests;
+        $chapitre=Cours::find($id)->chapitres;      
+       return view('Front.videocour', compact('Cours','Test','chapitre'));
+    }
+    public function chapitre($id,Chapitre $Cours)
+    {   
+        $chapitre=Chapitre::find($id); 
+        $media=Chapitre::find($id)->Media;
+        $Quizz=Chapitre::find($id)->Quizz;
+    return view('Front.chapitre', compact('media','Quizz','chapitre'));
+    }
+    public function quiz($id,Quiz $quiz)
+    {   
+        $quiz=Quiz::find($id); 
+        $enonce=Quiz::find($id)->enonce;
+    
+     foreach($enonce as $c){
+        $c->choix;
+         }
+       
+    return view('Front.quiz', compact('quiz','enonce','c'));
     }
    
 }

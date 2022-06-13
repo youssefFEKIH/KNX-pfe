@@ -200,14 +200,14 @@ $(".readMore").each(function() {
     }
 });
 $(".lire-plus").click(function() {
-    $(this).siblings(".addText").contents().unwrap();
-    $(this).remove();
+
 });
 });
 </script>
 <style>
 .readMore .addText {
 display: none;
+color:green;
 }
 </style>
 
@@ -370,14 +370,14 @@ $(".readMore").each(function() {
     }
 });
 $(".lire-plus").click(function() {
-    $(this).siblings(".addText").contents().unwrap();
-    $(this).remove();
+
 });
 });
 </script>
 <style>
 .readMore .addText {
 display: none;
+color:green;
 }
 </style>
 
@@ -448,14 +448,14 @@ $(".readMore").each(function() {
     }
 });
 $(".lire-plus").click(function() {
-    $(this).siblings(".addText").contents().unwrap();
-    $(this).remove();
+
 });
 });
 </script>
 <style>
 .readMore .addText {
 display: none;
+color:green;
 }
 </style>
 

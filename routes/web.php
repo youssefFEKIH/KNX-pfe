@@ -162,7 +162,7 @@ Route::post('/ajouter/video/{id}', [MediaController::class, 'ajoutervideo'])->na
 Route::post('/ajouter/test/{id}', [TestController::class, 'ajoutertest'])->name('ajoutertest');/*--ajouter test --*/
 Route::post('/ajouter/question/{id}', [QuestionController::class, 'ajouterquestion'])->name('ajouterquestion');/*--ajouter test --*/
 Route::post('/ajouter/reponse/test/{id}', [ReponseController::class, 'ajouterreponse'])->name('ajouterreponses');/*--ajouter test --*/
-
+Route::post('/cours/{id}/evideo',[CourController::class, 'video'])->name('video');
 
 /* ----Gérer----------*/
 Route::post('/traiter/cours/{id}', [ChapitreController::class, 'traitercours'])->name('traitercours');/*--traiter cours ajouter chapitre --*/
@@ -171,3 +171,16 @@ Route::post('/traiter/quiz/{id}', [EnonceController::class, 'traiterenonce'])->n
 Route::post('/traiter/enonce/{id}', [ChoixController::class, 'traiterchoix'])->name('traiterenonce');/*--traiter chapitre ajouter quiz --*/
 Route::post('/traiter/test/{id}', [QuestionController::class, 'traiterquestion'])->name('traitertest');/*--traiter chapitre ajouter quiz --*/
 Route::post('/traiter/reponse/{id}', [ReponseController::class, 'traiterreponse'])->name('traiterquestion');/*--traiter chapitre ajouter quiz --*/
+
+/* ----Cour en ligne ----------*/
+Route::get('/detail/projet/{id}', [ProjetController::class, 'projetdetail'])->name('projetdetail');/*--chapitre en ligne --*/
+Route::get('/detail1/knx', [nouveauteController::class, 'suite1'])->name('suite1');
+Route::get('/detail2/knx/{id}', [nouveauteController::class, 'suite2'])->name('suite2');
+Route::get('/detail3/knx/{id}', [nouveauteController::class, 'suite3'])->name('suite3');
+Route::get('/detail4/knx/{id}', [nouveauteController::class, 'suite4'])->name('suite4');
+Route::get('/detail5/knx/{id}', [nouveauteController::class, 'suite5'])->name('suite5');
+Route::get('/detail6/knx/{id}', [nouveauteController::class, 'suite6'])->name('suite6');
+Route::get('/detail7/knx/{id}', [nouveauteController::class, 'suite7'])->name('suite7');
+Route::get('/detail8/knx/{id}', [nouveauteController::class, 'suite8'])->name('suite8');
+Route::get('/enligne/chapitre/{id}', [CourController::class, 'chapitre'])->name('chapitre');/*--chapitre en ligne --*/
+Route::get('/enligne/quiz/{id}', [CourController::class, 'quiz'])->name('quiz');/*--chapitre en ligne --*/

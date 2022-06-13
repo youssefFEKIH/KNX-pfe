@@ -26,7 +26,12 @@ class ProjetController extends Controller
         $projet = Projet::all();
         return view('Front.projets', compact('projet'));
     }
-
+    public function projetdetail(Projet $projet,$id)
+    {
+        $projet = Projet::find($id);
+   
+        return view('Front.projetdetail', compact('projet'));
+    }
     /**
      * Show the form for creating a new resource.
      *

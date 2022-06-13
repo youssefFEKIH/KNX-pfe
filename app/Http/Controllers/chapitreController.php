@@ -22,7 +22,7 @@ class ChapitreController extends Controller
     public function traitercours($id,Cours $Cours)
     {   
         if (session()->has('mail')){          
-            $Cours=Cours::find($id);
+        $Cours=Cours::find($id);
         $Cour=Cours::find($id)->chapitres;
         $Test=Cours::find($id)->tests;
         return view('AdminF.traitercour', compact('Cour','Test','Cours'));}
