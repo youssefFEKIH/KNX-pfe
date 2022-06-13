@@ -16,22 +16,22 @@
         <!--  Site   -->
         <div id="site">
            <!--  Contenu gauche   -->
-
+           
            <div id="contenu_gauche">
             <p class="fil-ariane"><a href="KNX-France-accueil.html" title="Accueil">&gt; Accueil</a> &gt; KNX</p>
             <h1>KNX</h1>
             @foreach($No as $No)
            @if($No->type == 'KNX')
-
+           
             <div class="accueil-bloc">
                 <img src="{{ asset ('images/' . $No->url_nouveaute)}}" alt="accueil" height="260px" width="270px" >
                 <h4> {{$No->titre}}</h4>
-                <a style="color:black;" href="{{route('suite1',$No->id)}}"> <p class="readMore">{{$No->description}}</p><a>
+                <p  class="readMore">{{$No->description}}</p>
                  </div>
                  @endif
                  @endforeach
            </div>
-
+          
            <!--  fin Contenu gauche   -->
 
 
@@ -74,11 +74,12 @@
 
                <!-- Réseaux Sociaux -->
 
-
+               
                <!-- Réseaux Sociaux -->
 
                <br><br>
 
+              
 
            </div>
            <!--  fin Contenu droite   -->
