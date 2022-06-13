@@ -53,14 +53,15 @@ mirage groupe get
 Route::get('/', [membreController::class, 'index3'])->name('pagedaccueil');/*--page acceuil--*/
 Route::get('/home', [membreController::class, 'index'])->name('home');     /*--mirage groupe--*/
 Route::get('/coursp',[CourController::class, 'coursp'])->name('coursp');
+Route::get('/course',[CourController::class, 'course'])->name('course');
 Route::get('/projets', [ProjetController::class, 'index2'])->name('projets');
 Route::get('/deconnexion', [MembreController::class, 'deconnexion']);      /*--deconnexion home--*/
 Route::get('/profil', [membreController::class, 'profil'])->name('profil');/*--page profil--*/
 Route::get('/profilF', [membreController::class, 'profilF'])->name('profilF');/*--page profilF--*/
 Route::get('/inscriptionget', function () {return view('Front.inscription');})->name('inscriptionget');
 Route::get('/cours/{id}/présentiel',[CourController::class, 'courpresentiel'])->name('presentielcours');
-
-
+Route::get('/cours/{id}/enligne',[CourController::class, 'courenligne'])->name('enlignecours');
+Route::get('/cours/{id}/evideo',[CourController::class, 'video'])->name('video');
 
 
 /*

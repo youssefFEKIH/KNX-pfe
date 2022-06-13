@@ -36,6 +36,7 @@ class CourController extends Controller
         $Cour = courp::all();
         return view('AdminF.courp', compact('Cour'));
     }
+    
     public function modifiercour(Request $request){
         $nom = $request->nom;
         $description = $request->description;
@@ -64,7 +65,12 @@ class CourController extends Controller
     public function coursp(Courp $Courp)
     {
         $Courp = courp::all();
-        return view('Front.cours', compact('Courp'));
+        return view('Front.cours', compact('Cours'));
+    }
+    public function course(Cours $Courp)
+    {
+        $Cours = cours::all();
+        return view('Front.coursenligne', compact('Cours'));
     }
 
     public function create(Request $request)
@@ -184,6 +190,11 @@ class CourController extends Controller
         $Courp = Courp::find($id);
        return view('Front.courpresentiels', compact('Courp'));
     }
+    public function courenligne($id,Cours $Cours)
+    {   
+        $Courp = Cours::find($id);
+       return view('Front.enlignecours', compact('Courp'));
+    }
     public function   reserver($id)
     {
         $Cours = Courp::find($id);
@@ -214,6 +225,10 @@ class CourController extends Controller
         
         return view('AdminF.liste', compact('Courp','tab'));
     }
-    
+    public function video($id,Cours $Cours)
+    {   
+        $Courp = Cours::find($id);
+       return view('Front.videocour', compact('Courp'));
+    }
    
 }
