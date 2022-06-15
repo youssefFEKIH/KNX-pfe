@@ -65,7 +65,7 @@
 
       <br />
        <br />
-       <h2 class="Formateurs">CV des Candidats</h2>
+       <h2 class="Formateurs">CVs des Candidats</h2>
        <br />
       </div>
   <!--/ Navigation bar-->

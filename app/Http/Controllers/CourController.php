@@ -65,7 +65,7 @@ class CourController extends Controller
     public function coursp(Courp $Courp)
     {
         $Courp = courp::all();
-        return view('Front.cours', compact('Cours'));
+        return view('Front.cours', compact('Courp'));
     }
     public function course(Cours $Courp)
     {

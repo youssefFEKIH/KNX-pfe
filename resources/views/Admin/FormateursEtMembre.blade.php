@@ -96,7 +96,7 @@ tr:nth-child(even) {
     <th>tel</th>
     <th>type</th>
     <th>Supprimer</th>
-    <th>Modifier</th>
+
    </tr>
    @foreach($formateur as $row)
    <tr>

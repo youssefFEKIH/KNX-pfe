@@ -110,7 +110,7 @@ Route::post('/AdminDashboard/Message',  [MessageController::class, 'create'])->n
 Route::post('/destroy/{id}/F', [MembreController::class, 'destroy'])->name('supprimerF');
 Route::post('/destroy/{id}/P', [ProjetController::class, 'destroy'])->name('supprimerP');
 Route::post('/destroy/{id}/I', [nouveauteController::class, 'destroy'])->name('supprimerI');
-Route::post('/destroy/{id}/C', [CandidatController::class, 'destroy'])->name('supprimerC');
+Route::post('/destroy/{id}/Cp', [CandidatController::class, 'destroy'])->name('supprimerC');
 Route::post('/destroy/{id}/Cour', [CourController::class, 'destroy'])->name('supprimerCour');
 Route::post('/destroy/{id}/Courp', [CourController::class, 'destroycourp'])->name('supprimerCourp');/*--supprimer cour P--*/
 Route::post('/destroy/{id}/N', [nouvController::class, 'destroy'])->name('supprimerN');

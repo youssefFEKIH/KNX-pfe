@@ -120,7 +120,7 @@
     </div>
             @php($count=0)
             @foreach($Cours as $cours)
-            @if($count < 6)
+            @if($count < 3)
             @php($count++)
     <div class="col-md-4 col-sm-6 padleft-right">
           <figure class="imghvr-fold-up">
@@ -161,7 +161,7 @@
     @php($count=0)
   @foreach($Courp as $courp)
   @if($courp->statut == 'A venir')
-  @if($count < 6)
+  @if($count < 3)
   @php($count++)
   <div class="col-md-4 col-sm-6 padleft-right">
           <figure class="imghvr-fold-up">

@@ -66,7 +66,7 @@ tr:nth-child(even) {
 
   <br />
    <br />
-   <h2 class="Formateurs">Liste des Projets</h2>
+   <h2 class="Formateurs">Liste des CVs</h2>
    <br />
   </div>
   <table >
@@ -86,8 +86,7 @@ tr:nth-child(even) {
       
     <td>
      <form   action="" method="POST">
-    
-    <button type="submit" class="btn btn-danger">Supprimer</button>
+
      </form>
     </td>
    </tr>
@@ -104,39 +103,39 @@ tr:nth-child(even) {
       @csrf 
       <div class="form-group has-feedback">
         <!----- nom -------------->
-          <input type="text" class="form-control" name="nom"  placeholder=" nom" autocomplete="off" required/>
+          <input type="text" class="form-control" name="nom"  placeholder=" nom" autocomplete="on" required/>
         </div>
         <div class="form-group has-feedback">
         <!----- prénom -------------->
-          <input type="text" class="form-control" name="prenom"  placeholder=" prénom" autocomplete="off" required/>
+          <input type="text" class="form-control" name="prenom"  placeholder=" prénom" autocomplete="on" required/>
         </div>
 
         <div class="form-group has-feedback">
         <!----- prénom -------------->
-          <input type="text" class="form-control" name="adresse"  placeholder="adresse" autocomplete="off" required/>
+          <input type="text" class="form-control" name="adresse"  placeholder="adresse" autocomplete="on" required/>
         </div>
       		
         <div class="form-group has-feedback">
         <!----- prénom -------------->
-          <input type="Email" class="form-control" name="mail"  placeholder="mail" autocomplete="off" required/>
+          <input type="Email" class="form-control" name="mail"  placeholder="mail" autocomplete="on" required/>
         </div>
         <div class="form-group has-feedback">
         <!----- prénom -------------->
-          <input type="text" class="form-control" name="numero"  placeholder="numero_tel" autocomplete="off" required/>
+          <input type="text" class="form-control" name="numero"  placeholder="numero_tel" autocomplete="on" required/>
         </div>
         
       <div class="form-group has-feedback">
         <!----- description -------------->
-        <textarea placeholder="description à propos" class="form-control" name="description" rows="5" cols="155"  required></textarea>
+        <textarea placeholder="description à propos" class="form-control" name="description" rows="5" cols="on"  required></textarea>
       </div>
       <div class="form-group has-feedback">
         <!----- prénom -------------->
-          <input type="text" class="form-control" name="fb"  placeholder="lien facebook" autocomplete="off" required/>
+          <input type="text" class="form-control" name="fb"  placeholder="lien facebook" autocomplete="on" required/>
         </div>
         
         <div class="form-group has-feedback">
         <!----- prénom -------------->
-          <input type="text" class="form-control" name="linkedin"  placeholder="lien linkedin" autocomplete="off" required/>
+          <input type="text" class="form-control" name="linkedin"  placeholder="lien linkedin" autocomplete="on" required/>
           </div>
      <div class="form-group has-feedback">
         <!----- description -------------->
@@ -150,7 +149,7 @@ tr:nth-child(even) {
      
        <div class="form-group has-feedback">
         <!----- image -------------->
-        <label style=color:black;>Ajouter une photo de projet</br></label>
+        <label style=color:black;>Ajouter une photo </br></label>
          <input type="file" name="image"  required>
         </div>
       
