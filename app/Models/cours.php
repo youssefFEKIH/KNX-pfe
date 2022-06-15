@@ -9,7 +9,7 @@ class cours extends Model
 {
     use HasFactory;
     protected $table='Cours';
-    protected $fillable = ['nom','description','type','url_image'];
+    protected $fillable = ['id','nom','description','type','url_image'];
 
     public function chapitres()
     {
@@ -18,5 +18,9 @@ class cours extends Model
     public function tests()
     {
         return $this->hasMany('App\Models\test');
+    }
+    public function membres(){
+        return $this->belongsToMany('App\Models\membre', 'membre_cours', 'cours_id', 'membre_id','id','id'); 
+
     }
 }

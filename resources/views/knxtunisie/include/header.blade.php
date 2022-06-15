@@ -36,7 +36,7 @@
             var subStr = str.substring(0, max);
             var hiddenStr = str.substring(max, $.trim(str).length);
             $(this).empty().html(subStr);
-            $(this).append(' <a href="javascript:void(0);" class="lire-plus">Lire la suite</a>');
+            $(this).append(' <a href="javascript:void(0);" class="lire-plus">Lire la suite...</a>');
             $(this).append('<span class="addText">' + hiddenStr + '</span>');
         }
     });

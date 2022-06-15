@@ -21,6 +21,9 @@ class membre extends Model implements Authenticatable
 public function courp(){
     return $this->belongsToMany('App\Models\courp', 'membre_courp', 'membre_id', 'courp_id','id','id'); 
 }
+public function cours(){
+    return $this->belongsToMany('App\Models\cours', 'membre_cours', 'membre_id', 'cours_id','id','id'); 
+}
 public function reserve($Courp){
     
    return $this->courp()->where('courp_id',$Courp->id)->exists();

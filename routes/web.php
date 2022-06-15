@@ -73,6 +73,7 @@ Route::get('/FormateurDashboard/courp', [CourController::class, 'courp'])->name(
 Route::get('/AdminDashboard/cour', [CourController::class, 'cour'])->name('AdminDashboard/cour');/*--dashborf cour en ligne--*/
 Route::get('/Formateur', [CvController::class, 'index'])->name('Formateur');/*--dashborf formateur1 --*/
 Route::get('/Formateur/{id}/list', [CourController::class, 'listeCP'])->name('liste');/*--dashborf formateur listeCP --*/
+Route::get('/Formateur/{id}/listE', [CourController::class, 'listeCE'])->name('listeE');/*--dashborf formateur listeCE --*/
 Route::get('/traiter/cours/{id}', [ChapitreController::class, 'traitercours'])->name('afficherchapitre');/*--traiter cours ajouter chapitre --*/
 Route::get('/traiter/chapitre/{id}', [QuizController::class, 'traiterquiz'])->name('traiterchapitre');/*--traiter chapitre ajouter quiz --*/
 Route::get('/traiter/quiz/{id}', [EnonceController::class, 'traiterenonce'])->name('traiterquiz');/*--traiter chapitre ajouter quiz --*/
@@ -164,6 +165,8 @@ Route::post('/ajouter/question/{id}', [QuestionController::class, 'ajouterquesti
 Route::post('/ajouter/reponse/test/{id}', [ReponseController::class, 'ajouterreponse'])->name('ajouterreponses');/*--ajouter test --*/
 Route::post('/cours/{id}/evideo',[CourController::class, 'video'])->name('video');
 Route::post('/choix/{id}',[CourController::class, 'choix'])->name('choix');
+Route::post('/reponse/{id}',[CourController::class, 'reponse'])->name('reponse');
+
 
 /* ----Gérer----------*/
 Route::post('/traiter/cours/{id}', [ChapitreController::class, 'traitercours'])->name('traitercours');/*--traiter cours ajouter chapitre --*/
@@ -177,4 +180,7 @@ Route::post('/traiter/reponse/{id}', [ReponseController::class, 'traiterreponse'
 Route::get('/detail/projet/{id}', [ProjetController::class, 'projetdetail'])->name('projetdetail');/*--chapitre en ligne --*/
 Route::get('/detail1/knx/{id}', [nouveauteController::class, 'suite1'])->name('suite1');
 Route::get('/enligne/chapitre/{id}', [CourController::class, 'chapitre'])->name('chapitre');/*--chapitre en ligne --*/
+Route::get('/enligne/test/{id}', [CourController::class, 'test'])->name('test');/*--chapitre en ligne --*/
 Route::get('/enligne/quiz/{id}', [CourController::class, 'quiz'])->name('quiz');/*--chapitre en ligne --*/
+Route::get('/resultat/{id}', [CourController::class, 'resultat'])->name('resultat');/*--chapitre en ligne --*/
+Route::get('/resultatT/{id}', [CourController::class, 'resultatT'])->name('resultatT');/*--chapitre en ligne --*/

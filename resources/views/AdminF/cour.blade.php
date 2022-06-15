@@ -107,9 +107,8 @@ tr:nth-child(even) {
     
    
     <td>
-     <form   action="" method="">
-       @csrf
-    <button type="submit" class="btn btn-warning">Listes des participants</button>
+ 
+    <a href="{{route('listeE',$Cours->id)}}"><button type="submit" class="btn btn-warning">Listes des participants</button></a>
      </form>
     </td>
    </tr>

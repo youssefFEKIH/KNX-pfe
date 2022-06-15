@@ -225,9 +225,26 @@ class CourController extends Controller
         
         return view('AdminF.liste', compact('Courp','tab'));
     }
-    public function video($id,Cours $Cours)
+    public function listeCE($id,Cours $Cours,Membre $membre)
     {   
-        $Cours=Cours::find($id);
+        $tab=[];
+        $Cours = Cours::find($id);
+        $membre = Membre::with('cours')->get()->toArray();
+        foreach($membre as $m){
+         if(!(empty($m["cours"]))) 
+            foreach($m["cours"] as $c)
+            if(($c['id']==$id)&&!(in_array($m,$tab)))
+            array_push($tab,$m);
+            
+
+        }
+        
+        return view('AdminF.listeE', compact('Cours','tab'));
+    }
+    public function video($id,Cours $Cours)
+    {   $Cours=Cours::find($id);
+        $membre= auth()->user();
+        $Cours->membres()->attach($membre);
         $Test=Cours::find($id)->tests;
         $chapitre=Cours::find($id)->chapitres;      
        return view('Front.videocour', compact('Cours','Test','chapitre'));
@@ -250,22 +267,70 @@ class CourController extends Controller
        
     return view('Front.quiz', compact('quiz','enonce','c'));
     }
-   public function choix(Request $request,$id){
+    public function test($id,Test $test)
+    {   
+        $test=Test::find($id); 
+        $question=Test::find($id)->question;
+    
+     foreach($question as $c){
+        $c->reponses;
+         }
+       
+    return view('Front.test', compact('test','question','c'));
+    }
+    public function choix(Request $request,$id){
         $score=0;
- 
+      
 foreach($request->request->all() as $k=>$c){
     if($k=='_token'){
         continue;
     }else{
-        $choix=Choix::find($k);
+        $choix=Choix::find($c);
+     
         if($choix->type=="Correcte"){
         $score=$score+1;
         }
-        dump($score);  
+        
     }
 }
 $score=($score/$id)*100;
-dd($score);
-      return view('Front.quiz', compact('quiz','enonce','c'));
-   }
+if ($score>=80){
+
+     return redirect()->route('resultat',$score)->with('success', 'Félicitations vous pouvez passer le test, votre score = ');
+   }else{
+    return redirect()->route('resultat',$score)->with('erreur', 'Malheureusement vous ne pouvez pas passer le test,  votre score = ');
+   }}
+public function resultat($score){
+    
+    return view('Front.resultat', compact('score'));
+}
+
+
+public function reponse (Request $request,$id){
+    $score=0;
+  
+foreach($request->request->all() as $k=>$c){
+if($k=='_token'){
+    continue;
+}else{
+    $reponse=Reponse::find($c);
+ 
+    if($reponse->type=="Correcte"){
+    $score=$score+1;
+    }
+    
+}
+}
+$score=($score/$id)*100;
+if ($score>=80){
+
+ return redirect()->route('resultatT',$score)->with('success', 'Félicitations nous somme en train de traiter votre attestation, votre score = ');
+}else{
+return redirect()->route('resultatT',$score)->with('erreur', 'Malheureusement score n est pas insuffisant,  votre score = ');
+}}
+public function resultatT($score){
+
+return view('Front.resultatT', compact('score'));
+}
+
 }

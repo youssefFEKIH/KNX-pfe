@@ -15,7 +15,7 @@
   <a href="{{route('chapitre',$Ch->id)}}"><button class="btn btn-success" > {{$Ch->nom}} </button></a>
   @endforeach
   @foreach($Test as $ts)
-  <a href=""><button class="btn btn-danger" > {{$ts->nom}} </button></a>
+  <a href="{{route('test',$ts->id)}}"><button class="btn btn-danger" > {{$ts->nom}} </button></a>
    @endforeach
 </div>
 <br>
